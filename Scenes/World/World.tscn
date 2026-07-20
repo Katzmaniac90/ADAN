@@ -199,17 +199,8 @@ position = Vector2(20, 233)
 [node name="Bush4" parent="." unique_id=899067017 instance=ExtResource("5_p7pgw")]
 position = Vector2(73, 246)
 
-[node name="Tree" parent="." unique_id=2000084765 instance=ExtResource("2_hveh7")]
-position = Vector2(434, 48)
-
-[node name="Tree2" parent="." unique_id=386446137 instance=ExtResource("2_hveh7")]
-position = Vector2(289, 46)
-
-[node name="Tree3" parent="." unique_id=1910585949 instance=ExtResource("2_hveh7")]
-position = Vector2(289, 192)
-
 [node name="Tree4" parent="." unique_id=1503417714 instance=ExtResource("2_hveh7")]
-position = Vector2(432, 191)
+position = Vector2(360, 68)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1335323103]
 script = ExtResource("7_87yka")
@@ -281,13 +272,7 @@ offset_top = -23.0
 offset_right = 121.0
 
 [node name="Tree5" parent="." unique_id=1809299270 instance=ExtResource("2_hveh7")]
-position = Vector2(294, 125)
+position = Vector2(300, 170)
 
 [node name="Tree6" parent="." unique_id=1888116059 instance=ExtResource("2_hveh7")]
-position = Vector2(432, 121)
-
-[node name="Tree7" parent="." unique_id=1536853077 instance=ExtResource("2_hveh7")]
-position = Vector2(357, 49)
-
-[node name="Tree8" parent="." unique_id=1711471451 instance=ExtResource("2_hveh7")]
-position = Vector2(366, 195)
+position = Vector2(423, 170)

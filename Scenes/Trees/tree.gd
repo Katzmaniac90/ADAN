@@ -17,6 +17,8 @@ func _ready():
 	$Area2D.body_entered.connect(_on_body_entered)
 	$Area2D.body_exited.connect(_on_body_exited)
 	$ChopTimer.timeout.connect(_on_chop_timer_timeout)
+	$RespawnTimer.timeout.connect(_on_respawn_timer_timeout)
+	
 	$ChopProgress.visible = false
 
 
@@ -82,10 +84,29 @@ func chop_tree():
 	get_parent().add_child(log)
 
 	chopping = false
-	queue_free()
+	hide_tree()
 
 func shake_tree():
 	if chopping:
 		$TreeModified.position.x = original_position.x + randf_range(-shake_amount, shake_amount)
 	else:
 		$TreeModified.position = original_position
+
+func _on_respawn_timer_timeout():
+	$TreeModified.visible = true
+	$Area2D.monitoring = true
+	
+	$ChopProgress.visible = false
+	$ChopProgress.value = 0
+	
+	chopping = false
+
+func hide_tree():
+	$TreeModified.visible = false
+	$Area2D.monitoring = false
+	
+	$InteractionLabel.visible = false
+	$ChopProgress.visible = false
+	$ChopProgress.value = 0
+	
+	$RespawnTimer.start()
