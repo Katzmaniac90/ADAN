@@ -279,3 +279,15 @@ layout_mode = 0
 offset_left = 1.0
 offset_top = -23.0
 offset_right = 121.0
+
+[node name="Tree5" parent="." unique_id=1809299270 instance=ExtResource("2_hveh7")]
+position = Vector2(294, 125)
+
+[node name="Tree6" parent="." unique_id=1888116059 instance=ExtResource("2_hveh7")]
+position = Vector2(432, 121)
+
+[node name="Tree7" parent="." unique_id=1536853077 instance=ExtResource("2_hveh7")]
+position = Vector2(357, 49)
+
+[node name="Tree8" parent="." unique_id=1711471451 instance=ExtResource("2_hveh7")]
+position = Vector2(366, 195)
