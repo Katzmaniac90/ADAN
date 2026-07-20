@@ -45,3 +45,7 @@ theme_override_font_sizes/font_size = 10
 text = "[E] Chop Tree"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ChopTimer" type="Timer" parent="." unique_id=1715468972]
+wait_time = 3.0
+one_shot = true
