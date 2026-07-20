@@ -1,6 +1,7 @@
 extends StaticBody2D
 
 var player_near = false
+var chopping = false
 
 @export var stump_scene: PackedScene
 @export var log_scene: PackedScene
@@ -11,6 +12,7 @@ func _ready():
 	$Area2D.body_entered.connect(_on_body_entered)
 	$Area2D.body_exited.connect(_on_body_exited)
 	$ChopTimer.timeout.connect(_on_chop_timer_timeout)
+	$ChopProgress.visible = false
 
 
 func _on_body_entered(body):
@@ -26,12 +28,21 @@ func _on_body_exited(body):
 
 
 func _process(delta):
-	if player_near and Input.is_action_just_pressed("interact"):
+	if chopping:
+		$ChopProgress.value += (100 / chop_time) * delta
+
+	if player_near and Input.is_action_just_pressed("interact") and not chopping:
 		start_chopping()
 
 
 func start_chopping():
 	print("Starting chop...")
+	chopping = true
+	
+	$InteractionLabel.visible = false
+	$ChopProgress.visible = true
+	$ChopProgress.value = 0
+	
 	$ChopTimer.start(chop_time)
 
 
@@ -56,4 +67,5 @@ func chop_tree():
 	log.global_position = global_position + offset
 	get_parent().add_child(log)
 
+	chopping = false
 	queue_free()

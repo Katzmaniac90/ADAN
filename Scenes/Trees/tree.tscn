@@ -11,6 +11,20 @@ size = Vector2(23, 16)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22gus"]
 size = Vector2(25, 18)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq0y2"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5hao"]
+bg_color = Color(0.11772732, 0.4863708, 0.7360337, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [node name="Tree" type="StaticBody2D" unique_id=2000084765]
 z_index = 5
 script = ExtResource("1_m636k")
@@ -22,11 +36,13 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_8mq3t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141913667]
+visible = false
 position = Vector2(-0.5, 17)
 shape = SubResource("RectangleShape2D_wla72")
 debug_color = Color(0.34128827, 0.5011388, 0.9447065, 0.5254902)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=860053328]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=552153863]
 position = Vector2(-0.5, 17)
@@ -49,3 +65,15 @@ vertical_alignment = 1
 [node name="ChopTimer" type="Timer" parent="." unique_id=1715468972]
 wait_time = 3.0
 one_shot = true
+
+[node name="ChopProgress" type="ProgressBar" parent="." unique_id=1614617401]
+visible = false
+offset_left = -43.0
+offset_top = -38.0
+offset_right = 43.0
+offset_bottom = -32.0
+theme_override_styles/background = SubResource("StyleBoxFlat_jq0y2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_y5hao")
+show_percentage = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1024194447]
