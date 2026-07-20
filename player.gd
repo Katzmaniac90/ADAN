@@ -11,6 +11,7 @@ var barkbreaking_xp = 0
 
 
 func _physics_process(delta):
+	#basic player movement
 	if is_busy:
 		velocity = Vector2.ZERO
 		move_and_slide()
@@ -21,6 +22,7 @@ func _physics_process(delta):
 	playerAnimationsAdam()
 	move_and_slide()
 
+#Walking and Idle animations for the player
 func playerAnimationsAdam(): 
 	if direction:
 		if direction.x > 0:
