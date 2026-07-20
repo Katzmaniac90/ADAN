@@ -210,26 +210,22 @@ position = Vector2(362, 117)
 script = ExtResource("7_87yka")
 
 [node name="WelcomePanel" type="Panel" parent="UI" unique_id=341210594]
-offset_left = 691.0
-offset_top = 63.0
-offset_right = 837.0
-offset_bottom = 180.0
+offset_left = 283.0
+offset_top = 82.0
+offset_right = 429.0
+offset_bottom = 199.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wla72")
 
 [node name="WelcomeMessage" type="Label" parent="UI/WelcomePanel" unique_id=355282641]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 3.0
-offset_right = 142.0
-offset_bottom = 115.0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 136.0
+offset_bottom = 110.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 10
-text = "Added this dumb
-text box so we could
-write dumb stuff to
-eachother under
-World (UI)"
+text = "Welcome to ADAN, let's  get choppin"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
