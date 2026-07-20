@@ -189,7 +189,7 @@ position = Vector2(360, 124)
 position = Vector2(298, 124)
 
 [node name="Tree3" parent="." unique_id=1031189852 instance=ExtResource("2_hveh7")]
-position = Vector2(221, 82)
+position = Vector2(221, 67)
 
 [node name="Tree4" parent="." unique_id=270463927 instance=ExtResource("2_hveh7")]
 position = Vector2(184, 168)
