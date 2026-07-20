@@ -156,7 +156,7 @@ tile_set = SubResource("TileSet_ejjrp")
 position = Vector2(49, 198)
 
 [node name="Flowers" parent="." unique_id=244299242 instance=ExtResource("4_kjd5s")]
-position = Vector2(458, 183)
+position = Vector2(479, 10)
 
 [node name="Bush14" parent="." unique_id=341973255 instance=ExtResource("5_p7pgw")]
 position = Vector2(41, 125)
