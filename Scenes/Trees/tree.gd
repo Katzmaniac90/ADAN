@@ -9,7 +9,13 @@ var original_position: Vector2
 @export var stump_scene: PackedScene
 @export var log_scene: PackedScene
 @export var chop_time: float = 3.0
-@export var respawn_time: float = 10.0
+@export var respawn_time: float = 5.0
+
+# Tree respawn area
+@export var min_x: float = 250
+@export var max_x: float = 450
+@export var min_y: float = 40
+@export var max_y: float = 200
 
 
 func _ready():
@@ -69,9 +75,6 @@ func chop_tree():
 	player.add_barkbreaking_xp(25)
 	print("CHOPPING TREE!")
 
-	var stump = stump_scene.instantiate()
-	stump.global_position = global_position
-	get_parent().add_child(stump)
 
 	var log = log_scene.instantiate()
 
@@ -97,9 +100,15 @@ func shake_tree():
 	else:
 		$TreeModified.position = original_position
 
+
 func _on_respawn_timer_timeout():
+	global_position = Vector2(
+		randf_range(min_x, max_x),
+		randf_range(min_y, max_y)
+	)
+
+	$TreeModified.position = Vector2.ZERO
+	original_position = $TreeModified.position
+
 	show()
 	$CollisionShape2D.disabled = false
-	$TreeModified.position = original_position
-	$InteractionLabel.visible = false
-	$ChopProgress.visible = false
