@@ -8,6 +8,9 @@ var is_busy = false
 var inventory = {}
 var barkbreaking_level = 1
 var barkbreaking_xp = 0
+var zoom_speed = 0.1
+var min_zoom = 0.5
+var max_zoom = 5.0
 
 
 func _physics_process(delta):
@@ -20,6 +23,15 @@ func _physics_process(delta):
 	direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * speed
 	playerAnimationsAdam()
+		# Camera zoom controls
+	if Input.is_action_just_pressed("zoom_in"):
+		$Camera2D.zoom += Vector2(zoom_speed, zoom_speed)
+
+	if Input.is_action_just_pressed("zoom_out"):
+		$Camera2D.zoom -= Vector2(zoom_speed, zoom_speed)
+
+	$Camera2D.zoom.x = clamp($Camera2D.zoom.x, min_zoom, max_zoom)
+	$Camera2D.zoom.y = clamp($Camera2D.zoom.y, min_zoom, max_zoom)
 	move_and_slide()
 
 #Walking and Idle animations for the player
