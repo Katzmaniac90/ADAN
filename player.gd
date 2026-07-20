@@ -6,6 +6,8 @@ var direction: Vector2 = Vector2(1,1)
 var speed: int = 150
 var is_busy = false
 var inventory = {}
+var woodcutting_level = 1
+var woodcutting_xp = 0
 
 
 func _physics_process(delta):
@@ -40,3 +42,13 @@ func add_item(item_name, amount):
 
 	inventory_changed.emit()
 	print(inventory)
+
+func add_woodcutting_xp(amount):
+	woodcutting_xp += amount
+
+	while woodcutting_xp >= woodcutting_level * 100:
+		woodcutting_xp -= woodcutting_level * 100
+		woodcutting_level += 1
+
+		print("LEVEL UP!")
+		print("Woodcutting Level:", woodcutting_level)

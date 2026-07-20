@@ -5,6 +5,7 @@ var chopping = false
 var shake_amount = 3.0
 var original_position: Vector2
 
+
 @export var stump_scene: PackedScene
 @export var log_scene: PackedScene
 @export var chop_time: float = 3.0
@@ -62,7 +63,9 @@ func _on_chop_timer_timeout():
 func chop_tree():
 	var player = get_tree().get_first_node_in_group("player")
 	player.is_busy = false
+	player.add_woodcutting_xp(25)
 	print("CHOPPING TREE!")
+	
 
 	var stump = stump_scene.instantiate()
 	stump.global_position = global_position
