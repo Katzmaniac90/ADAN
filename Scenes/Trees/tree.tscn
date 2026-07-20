@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://cxabfcb3e2cij" path="res://Scenes/Trees/log.tscn" id="3_ii8u4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wla72"]
-size = Vector2(23, 16)
+size = Vector2(32, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22gus"]
-size = Vector2(25, 18)
+size = Vector2(36, 24)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq0y2"]
 bg_color = Color(0, 0, 0, 1)
@@ -36,16 +36,14 @@ scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_8mq3t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141913667]
-visible = false
-position = Vector2(-0.5, 17)
+position = Vector2(-1, 20.5)
 shape = SubResource("RectangleShape2D_wla72")
 debug_color = Color(0.34128827, 0.5011388, 0.9447065, 0.5254902)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=860053328]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=552153863]
-position = Vector2(-0.5, 17)
+position = Vector2(-1, 21)
 shape = SubResource("RectangleShape2D_22gus")
 
 [node name="InteractionLabel" type="Label" parent="." unique_id=278786865]
@@ -79,5 +77,5 @@ show_percentage = false
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1024194447]
 
 [node name="RespawnTimer" type="Timer" parent="." unique_id=354760686]
-wait_time = 10.0
+wait_time = 5.0
 one_shot = true
