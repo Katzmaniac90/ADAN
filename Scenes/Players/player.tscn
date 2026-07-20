@@ -1,7 +1,88 @@
 [gd_scene format=3 uid="uid://bqtkrfptg4qyj"]
 
 [ext_resource type="Script" uid="uid://bxq3cpm5yg7yy" path="res://player.gd" id="1_37lpg"]
-[ext_resource type="Texture2D" uid="uid://cog32mtlohym4" path="res://Tiles/images-modified.png" id="2_8qn36"]
+[ext_resource type="Texture2D" uid="uid://dprhl0hksja58" path="res://Tiles/player_adam_new.png" id="2_8qn36"]
+[ext_resource type="Texture2D" uid="uid://b7g3i32u1uj0f" path="res://Tiles/player_adam_new_idle_animation.png" id="2_37lpg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qn36"]
+atlas = ExtResource("2_37lpg")
+region = Rect2(0, 0, 446, 447)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppdxs"]
+atlas = ExtResource("2_37lpg")
+region = Rect2(446, 0, 446, 447)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_22fdy"]
+atlas = ExtResource("2_37lpg")
+region = Rect2(892, 0, 446, 447)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24nbk"]
+atlas = ExtResource("2_37lpg")
+region = Rect2(1338, 0, 446, 447)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sd12v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8qn36")
+}],
+"loop": 1,
+"name": &"downWalking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qn36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppdxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22fdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24nbk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_22fdy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppdxs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qn36")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qn36")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8qn36")
+}],
+"loop": 1,
+"name": &"leftWalking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8qn36")
+}],
+"loop": 1,
+"name": &"rightWalking",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8qn36")
+}],
+"loop": 1,
+"name": &"upWalking",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wla72"]
 radius = 6.0
@@ -9,9 +90,11 @@ radius = 6.0
 [node name="Player" type="CharacterBody2D" unique_id=226938582]
 script = ExtResource("1_37lpg")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1918177163]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=122674131]
 scale = Vector2(0.03, 0.03)
-texture = ExtResource("2_8qn36")
+sprite_frames = SubResource("SpriteFrames_sd12v")
+animation = &"upWalking"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=411845142]
 z_index = 1
