@@ -18,7 +18,7 @@ func _process(delta):
 
 
 func update_skill():
-	level_label.text = "Woodcutting Lv. " + str(player.woodcutting_level)
+	level_label.text = "Barkbreaking Lv. " + str(player.barkbreaking_level)
 
-	xp_bar.max_value = player.woodcutting_level * 100
-	xp_bar.value = player.woodcutting_xp
+	xp_bar.max_value = player.barkbreaking_level * 100
+	xp_bar.value = player.barkbreaking_xp
