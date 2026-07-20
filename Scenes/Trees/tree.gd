@@ -41,9 +41,9 @@ func chop_tree():
 
 	# Random drop location near tree
 	var offset = Vector2(
-		randf_range(-16, 16),
-		randf_range(8, 20)
-	)
+	randf_range(-20, 20),
+	randf_range(25, 45)
+)
 
 	log.global_position = global_position + offset
 	get_parent().add_child(log)
