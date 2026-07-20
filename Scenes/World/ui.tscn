@@ -40,18 +40,18 @@ corner_radius_bottom_left = 3
 script = ExtResource("1_l88uj")
 
 [node name="WelcomePanel" type="Panel" parent="." unique_id=91816730]
-offset_left = 283.0
-offset_top = 82.0
-offset_right = 429.0
-offset_bottom = 199.0
+offset_left = 2.0
+offset_top = 168.0
+offset_right = 148.0
+offset_bottom = 285.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wla72")
 
 [node name="WelcomeMessage" type="Label" parent="WelcomePanel" unique_id=1254765993]
 layout_mode = 0
 offset_left = 8.0
-offset_top = 6.0
+offset_top = 7.0
 offset_right = 136.0
-offset_bottom = 110.0
+offset_bottom = 111.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 0
 theme_override_font_sizes/font_size = 10

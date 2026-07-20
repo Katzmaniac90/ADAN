@@ -13,7 +13,8 @@ func _ready():
 
 
 func update_inventory():
-	label.text = "Inventory\n\n"
-
-	for item in GameManager.inventory:
-		label.text += item + ": " + str(GameManager.inventory[item]) + "\n"
+	var wood = GameManager.inventory.get("Wood Log", 0)
+	$InventoryLabel.text = "Inventory\nWood Log: " + str(wood)
+	
+func _process(delta):
+	update_inventory()

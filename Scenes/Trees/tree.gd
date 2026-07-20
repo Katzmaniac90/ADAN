@@ -4,18 +4,13 @@ var player_near = false
 var chopping = false
 var shake_amount = 3.0
 var original_position: Vector2
-
+var spawn_position: Vector2
 
 @export var stump_scene: PackedScene
 @export var log_scene: PackedScene
 @export var chop_time: float = 3.0
 @export var respawn_time: float = 5.0
-
-# Tree respawn area
-@export var min_x: float = 250
-@export var max_x: float = 450
-@export var min_y: float = 40
-@export var max_y: float = 200
+@export var respawn_radius := 50.0
 
 
 func _ready():
@@ -27,7 +22,11 @@ func _ready():
 	$RespawnTimer.timeout.connect(_on_respawn_timer_timeout)
 
 	$ChopProgress.visible = false
+	spawn_position = global_position
+	var angle = randf_range(0.0, TAU)
+	var distance = randf_range(0.0, respawn_radius)
 
+	global_position = spawn_position + Vector2.RIGHT.rotated(angle) * distance
 
 func _on_body_entered(body):
 	if body.name == "Player":
@@ -102,10 +101,10 @@ func shake_tree():
 
 
 func _on_respawn_timer_timeout():
-	global_position = Vector2(
-		randf_range(min_x, max_x),
-		randf_range(min_y, max_y)
-	)
+	var angle = randf_range(0.0, TAU)
+	var distance = randf_range(0.0, respawn_radius)
+
+	global_position += Vector2.RIGHT.rotated(angle) * distance
 
 	$TreeModified.position = Vector2.ZERO
 	original_position = $TreeModified.position

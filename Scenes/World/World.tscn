@@ -161,16 +161,13 @@ tile_set = SubResource("TileSet_ejjrp")
 position = Vector2(479, 10)
 
 [node name="Player" parent="." unique_id=226938582 instance=ExtResource("6_kuxid")]
-position = Vector2(361, 153)
+position = Vector2(366, 152)
 
 [node name="Rock2" parent="." unique_id=265874353 instance=ExtResource("3_87yka")]
 position = Vector2(20, 233)
 
 [node name="Bush4" parent="." unique_id=899067017 instance=ExtResource("5_p7pgw")]
 position = Vector2(73, 246)
-
-[node name="Tree3" parent="." unique_id=1910585949 instance=ExtResource("2_hveh7")]
-position = Vector2(362, 117)
 
 [node name="UI" parent="." unique_id=480595847 instance=ExtResource("7_kjd5s")]
 
@@ -182,31 +179,16 @@ next_scene = "uid://cadmeeeodj7xi"
 position = Vector2(176, 254.25)
 shape = SubResource("RectangleShape2D_sd12v")
 
-[node name="Tree" parent="." unique_id=2000084765 instance=ExtResource("2_hveh7")]
-position = Vector2(623, 162)
-
 [node name="Tree2" parent="." unique_id=1068366782 instance=ExtResource("2_hveh7")]
-position = Vector2(759, 201)
-
-[node name="Tree4" parent="." unique_id=1913435662 instance=ExtResource("2_hveh7")]
-position = Vector2(661, 295)
-
-[node name="Tree5" parent="." unique_id=565292594 instance=ExtResource("2_hveh7")]
-position = Vector2(546, 251)
+position = Vector2(315, 136)
 
 [node name="Tree6" parent="." unique_id=918345591 instance=ExtResource("2_hveh7")]
-position = Vector2(823, 330)
+position = Vector2(370, 182)
 
 [node name="Tree7" parent="." unique_id=1350074414 instance=ExtResource("2_hveh7")]
-position = Vector2(736, 54)
-
-[node name="Tree8" parent="." unique_id=1361980581 instance=ExtResource("2_hveh7")]
-position = Vector2(532, 59)
+position = Vector2(360, 73)
 
 [node name="Tree9" parent="." unique_id=1516105269 instance=ExtResource("2_hveh7")]
-position = Vector2(855, 134)
-
-[node name="Tree10" parent="." unique_id=424938391 instance=ExtResource("2_hveh7")]
-position = Vector2(511, 168)
+position = Vector2(423, 139)
 
 [connection signal="body_entered" from="door_WorldtoMap1" to="door_WorldtoMap1" method="_on_body_entered"]
