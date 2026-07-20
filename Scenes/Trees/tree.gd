@@ -14,10 +14,12 @@ var original_position: Vector2
 
 func _ready():
 	original_position = $TreeModified.position
-	
+
 	$Area2D.body_entered.connect(_on_body_entered)
 	$Area2D.body_exited.connect(_on_body_exited)
 	$ChopTimer.timeout.connect(_on_chop_timer_timeout)
+	$RespawnTimer.timeout.connect(_on_respawn_timer_timeout)
+
 	$ChopProgress.visible = false
 
 
@@ -66,7 +68,6 @@ func chop_tree():
 	player.is_busy = false
 	player.add_barkbreaking_xp(25)
 	print("CHOPPING TREE!")
-	
 
 	var stump = stump_scene.instantiate()
 	stump.global_position = global_position
@@ -83,10 +84,22 @@ func chop_tree():
 	get_parent().add_child(log)
 
 	chopping = false
-	queue_free()
+	$ChopProgress.visible = false
+
+	hide()
+	$CollisionShape2D.disabled = true
+
+	$RespawnTimer.start(respawn_time)
 
 func shake_tree():
 	if chopping:
 		$TreeModified.position.x = original_position.x + randf_range(-shake_amount, shake_amount)
 	else:
 		$TreeModified.position = original_position
+
+func _on_respawn_timer_timeout():
+	show()
+	$CollisionShape2D.disabled = false
+	$TreeModified.position = original_position
+	$InteractionLabel.visible = false
+	$ChopProgress.visible = false

@@ -78,4 +78,6 @@ show_percentage = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1024194447]
 
-[node name="Timer" type="Timer" parent="." unique_id=354760686]
+[node name="RespawnTimer" type="Timer" parent="." unique_id=354760686]
+wait_time = 10.0
+one_shot = true
