@@ -9,6 +9,7 @@ var original_position: Vector2
 @export var stump_scene: PackedScene
 @export var log_scene: PackedScene
 @export var chop_time: float = 3.0
+@export var respawn_time: float = 10.0
 
 
 func _ready():

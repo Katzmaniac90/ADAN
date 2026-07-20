@@ -77,3 +77,5 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_y5hao")
 show_percentage = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1024194447]
+
+[node name="Timer" type="Timer" parent="." unique_id=354760686]
