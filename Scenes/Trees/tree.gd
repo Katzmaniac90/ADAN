@@ -36,8 +36,10 @@ func _process(delta):
 
 
 func start_chopping():
-	print("Starting chop...")
 	chopping = true
+	
+	var player = get_tree().get_first_node_in_group("player")
+	player.is_busy = true
 	
 	$InteractionLabel.visible = false
 	$ChopProgress.visible = true
@@ -51,6 +53,8 @@ func _on_chop_timer_timeout():
 
 
 func chop_tree():
+	var player = get_tree().get_first_node_in_group("player")
+	player.is_busy = false
 	print("CHOPPING TREE!")
 
 	var stump = stump_scene.instantiate()

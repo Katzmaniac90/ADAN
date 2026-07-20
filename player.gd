@@ -2,8 +2,14 @@ extends CharacterBody2D
 
 var direction: Vector2 = Vector2(1,1)
 var speed: int = 150
+var is_busy = false
 
 func _physics_process(delta):
+	if is_busy:
+		velocity = Vector2.ZERO
+		move_and_slide()
+		return
+
 	direction = Input.get_vector("left", "right", "up", "down")
 	velocity = direction * speed
 	playerAnimationsAdam()
