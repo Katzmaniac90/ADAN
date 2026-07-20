@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://banexdacv6htb"]
+
+[ext_resource type="Texture2D" uid="uid://dsfkjv1b23nxy" path="res://tree-modified.png" id="1_8mq3t"]
+[ext_resource type="Script" uid="uid://djewqdd4jj3j1" path="res://Scenes/Trees/tree.gd" id="1_m636k"]
+[ext_resource type="PackedScene" uid="uid://en1v3li7f35r" path="res://Scenes/Trees/stump.tscn" id="2_nm08u"]
+[ext_resource type="PackedScene" uid="uid://cxabfcb3e2cij" path="res://Scenes/Trees/log.tscn" id="3_ii8u4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wla72"]
+size = Vector2(23, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22gus"]
+size = Vector2(25, 18)
+
+[node name="Tree" type="StaticBody2D" unique_id=2000084765]
+z_index = 5
+script = ExtResource("1_m636k")
+stump_scene = ExtResource("2_nm08u")
+log_scene = ExtResource("3_ii8u4")
+
+[node name="TreeModified" type="Sprite2D" parent="." unique_id=573872850]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_8mq3t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141913667]
+position = Vector2(-0.5, 17)
+shape = SubResource("RectangleShape2D_wla72")
+debug_color = Color(0.34128827, 0.5011388, 0.9447065, 0.5254902)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=860053328]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=552153863]
+position = Vector2(-0.5, 17)
+shape = SubResource("RectangleShape2D_22gus")
+
+[node name="InteractionLabel" type="Label" parent="." unique_id=278786865]
+visible = false
+offset_left = -52.0
+offset_top = -43.0
+offset_right = 51.0
+offset_bottom = -20.0
+theme_override_colors/font_color = Color(0.38039216, 0.2509804, 0.31764707, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 10
+text = "[E] Chop Tree"
+horizontal_alignment = 1
+vertical_alignment = 1

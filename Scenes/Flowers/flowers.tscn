@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dmhtpoija66wm"]
+
+[ext_resource type="Texture2D" uid="uid://blj17ymi7i6a7" path="res://Tiles/pixelated-bouquet-light-blue-flowers-pixelated-illustration-light-blue-flower-bouquet-green-stem-leaves-386409351-modified.png" id="1_7k5pi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wla72"]
+size = Vector2(4, 4)
+
+[node name="Flowers" type="StaticBody2D" unique_id=996755686]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1492116881]
+scale = Vector2(0.02, 0.02)
+texture = ExtResource("1_7k5pi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1942153998]
+z_index = 5
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_wla72")

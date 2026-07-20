@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cqt5rjjga564r"]
+
+[ext_resource type="Texture2D" uid="uid://dnq6lxwkkxlnf" path="res://Tiles/6c48beb9be3726603ca14a29f835642b_t-modified.png" id="1_m68cv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wla72"]
+radius = 18.0
+
+[node name="Rock" type="StaticBody2D" unique_id=265874353]
+
+[node name="6c48Beb9Be3726603Ca14a29f835642bTModified" type="Sprite2D" parent="." unique_id=1877923005]
+position = Vector2(-4.9999695, 5.0000305)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_m68cv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=392878537]
+z_index = 5
+position = Vector2(-5, 5)
+shape = SubResource("CircleShape2D_wla72")
