@@ -2,6 +2,8 @@ extends StaticBody2D
 
 var player_near = false
 var chopping = false
+var shake_amount = 3.0
+var original_position: Vector2
 
 @export var stump_scene: PackedScene
 @export var log_scene: PackedScene
@@ -9,6 +11,8 @@ var chopping = false
 
 
 func _ready():
+	original_position = $TreeModified.position
+	
 	$Area2D.body_entered.connect(_on_body_entered)
 	$Area2D.body_exited.connect(_on_body_exited)
 	$ChopTimer.timeout.connect(_on_chop_timer_timeout)
@@ -30,6 +34,9 @@ func _on_body_exited(body):
 func _process(delta):
 	if chopping:
 		$ChopProgress.value += (100 / chop_time) * delta
+		shake_tree()
+	else:
+		$TreeModified.position = original_position
 
 	if player_near and Input.is_action_just_pressed("interact") and not chopping:
 		start_chopping()
@@ -73,3 +80,9 @@ func chop_tree():
 
 	chopping = false
 	queue_free()
+
+func shake_tree():
+	if chopping:
+		$TreeModified.position.x = original_position.x + randf_range(-shake_amount, shake_amount)
+	else:
+		$TreeModified.position = original_position

@@ -1,8 +1,12 @@
 extends CharacterBody2D
 
+signal inventory_changed
+
 var direction: Vector2 = Vector2(1,1)
 var speed: int = 150
 var is_busy = false
+var inventory = {}
+
 
 func _physics_process(delta):
 	if is_busy:
@@ -27,3 +31,12 @@ func playerAnimationsAdam():
 			$AnimatedSprite2D.animation = 'upWalking'
 	else:
 		$AnimatedSprite2D.animation = 'idle'
+
+func add_item(item_name, amount):
+	if inventory.has(item_name):
+		inventory[item_name] += amount
+	else:
+		inventory[item_name] = amount
+
+	inventory_changed.emit()
+	print(inventory)
