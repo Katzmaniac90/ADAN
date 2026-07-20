@@ -184,3 +184,14 @@ position = Vector2(59, 134)
 
 [node name="Tree" parent="." unique_id=2000084765 instance=ExtResource("2_hveh7")]
 position = Vector2(360, 124)
+stump_scene = null
+log_scene = null
+
+[node name="Tree2" parent="." unique_id=504742826 instance=ExtResource("2_hveh7")]
+position = Vector2(241, 124)
+
+[node name="Tree3" parent="." unique_id=1662376802 instance=ExtResource("2_hveh7")]
+position = Vector2(179, 219)
+
+[node name="Tree4" parent="." unique_id=569744203 instance=ExtResource("2_hveh7")]
+position = Vector2(456, 69)
