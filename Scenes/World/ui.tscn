@@ -36,6 +36,9 @@ corner_radius_top_right = 3
 corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l88uj"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="UI" type="CanvasLayer" unique_id=480595847]
 script = ExtResource("1_l88uj")
 
@@ -61,18 +64,15 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="InventoryPanel" type="Panel" parent="." unique_id=78205363]
-offset_top = 1.0
-offset_right = 124.0
-offset_bottom = 97.0
+offset_right = 116.0
+offset_bottom = 77.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kjd5s")
 script = ExtResource("2_m6ews")
 
 [node name="InventoryLabel" type="Label" parent="InventoryPanel" unique_id=2091477444]
 layout_mode = 0
-offset_left = 3.0
-offset_top = 6.0
-offset_right = 59.0
-offset_bottom = 35.0
+offset_right = 116.0
+offset_bottom = 77.0
 theme_override_font_sizes/font_size = 12
 text = "Inventory
 Wood Log: 0 "
@@ -80,23 +80,26 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SkillsPanel" type="Panel" parent="." unique_id=1478144087]
-offset_left = 1.0
-offset_top = 145.0
-offset_right = 123.0
-offset_bottom = 151.0
+offset_top = 99.0
+offset_right = 116.0
+offset_bottom = 107.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kuxid")
 script = ExtResource("3_wh8m4")
 
 [node name="ProgressBar" type="ProgressBar" parent="SkillsPanel" unique_id=588890411]
 layout_mode = 0
-offset_right = 122.0
-offset_bottom = 6.0
+offset_right = 116.0
+offset_bottom = 9.0
 theme_override_styles/background = SubResource("StyleBoxFlat_0d0er")
 theme_override_styles/fill = SubResource("StyleBoxFlat_ng1ea")
 show_percentage = false
 
 [node name="Label" type="Label" parent="SkillsPanel" unique_id=649127536]
 layout_mode = 0
-offset_left = 1.0
 offset_top = -23.0
-offset_right = 121.0
+offset_right = 116.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
+horizontal_alignment = 1
+vertical_alignment = 1
