@@ -6,9 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dmhtpoija66wm" path="res://Scenes/Flowers/flowers.tscn" id="4_kjd5s"]
 [ext_resource type="PackedScene" uid="uid://cuhcopyrnd8by" path="res://Scenes/Bushes/bush.tscn" id="5_p7pgw"]
 [ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="6_kuxid"]
-[ext_resource type="Script" uid="uid://cuc4uu3psb7a7" path="res://Scenes/World/ui.gd" id="7_87yka"]
-[ext_resource type="Script" uid="uid://d37j66gxov6ra" path="res://Scenes/World/inventory_panel.gd" id="8_kjd5s"]
-[ext_resource type="Script" uid="uid://b486xt56rg72o" path="res://Scenes/World/skills_panel.gd" id="9_p7pgw"]
+[ext_resource type="PackedScene" uid="uid://yibi3d0w56cc" path="res://Scenes/World/ui.tscn" id="7_kjd5s"]
 [ext_resource type="Script" uid="uid://dn4t13xkvynt" path="res://Scenes/World/door_worldto_map_1.gd" id="10_kuxid"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87yka"]
@@ -149,38 +147,6 @@ texture = ExtResource("1_hveh7")
 [sub_resource type="TileSet" id="TileSet_ejjrp"]
 sources/0 = SubResource("TileSetAtlasSource_87yka")
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wla72"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjd5s"]
-bg_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuxid"]
-bg_color = Color(0.2347951, 0.90982777, 0.35912356, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d0er"]
-bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ng1ea"]
-bg_color = Color(0.44248194, 0.9934606, 0.27661282, 1)
-corner_radius_top_left = 3
-corner_radius_top_right = 3
-corner_radius_bottom_right = 3
-corner_radius_bottom_left = 3
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sd12v"]
 size = Vector2(26, 6.5)
 
@@ -206,70 +172,7 @@ position = Vector2(73, 246)
 [node name="Tree3" parent="." unique_id=1910585949 instance=ExtResource("2_hveh7")]
 position = Vector2(362, 117)
 
-[node name="UI" type="CanvasLayer" parent="." unique_id=1335323103]
-script = ExtResource("7_87yka")
-
-[node name="WelcomePanel" type="Panel" parent="UI" unique_id=341210594]
-offset_left = 283.0
-offset_top = 82.0
-offset_right = 429.0
-offset_bottom = 199.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_wla72")
-
-[node name="WelcomeMessage" type="Label" parent="UI/WelcomePanel" unique_id=355282641]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 6.0
-offset_right = 136.0
-offset_bottom = 110.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 0
-theme_override_font_sizes/font_size = 10
-text = "Welcome to ADAN, let's  get choppin"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
-
-[node name="InventoryPanel" type="Panel" parent="UI" unique_id=820105583]
-offset_top = 1.0
-offset_right = 124.0
-offset_bottom = 97.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_kjd5s")
-script = ExtResource("8_kjd5s")
-
-[node name="InventoryLabel" type="Label" parent="UI/InventoryPanel" unique_id=1865632099]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 6.0
-offset_right = 59.0
-offset_bottom = 35.0
-theme_override_font_sizes/font_size = 12
-text = "Inventory
-Wood Log: 0 "
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SkillsPanel" type="Panel" parent="UI" unique_id=1621300915]
-offset_left = 1.0
-offset_top = 145.0
-offset_right = 123.0
-offset_bottom = 151.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_kuxid")
-script = ExtResource("9_p7pgw")
-
-[node name="ProgressBar" type="ProgressBar" parent="UI/SkillsPanel" unique_id=1203914943]
-layout_mode = 0
-offset_right = 122.0
-offset_bottom = 6.0
-theme_override_styles/background = SubResource("StyleBoxFlat_0d0er")
-theme_override_styles/fill = SubResource("StyleBoxFlat_ng1ea")
-show_percentage = false
-
-[node name="Label" type="Label" parent="UI/SkillsPanel" unique_id=710234921]
-layout_mode = 0
-offset_left = 1.0
-offset_top = -23.0
-offset_right = 121.0
+[node name="UI" parent="." unique_id=480595847 instance=ExtResource("7_kjd5s")]
 
 [node name="door_WorldtoMap1" type="Area2D" parent="." unique_id=1644531863]
 script = ExtResource("10_kuxid")

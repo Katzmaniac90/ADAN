@@ -5,6 +5,7 @@ extends Node
 #========================
 
 var inventory = {}
+signal inventory_changed
 
 
 #========================
@@ -31,6 +32,8 @@ func add_item(item_name, amount):
 		inventory[item_name] += amount
 	else:
 		inventory[item_name] = amount
+
+	inventory_changed.emit()
 
 
 func get_item_count(item_name):

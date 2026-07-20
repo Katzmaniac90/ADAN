@@ -1,0 +1,102 @@
+[gd_scene format=3 uid="uid://yibi3d0w56cc"]
+
+[ext_resource type="Script" uid="uid://cuc4uu3psb7a7" path="res://Scenes/World/ui.gd" id="1_l88uj"]
+[ext_resource type="Script" uid="uid://d37j66gxov6ra" path="res://Scenes/World/inventory_panel.gd" id="2_m6ews"]
+[ext_resource type="Script" uid="uid://b486xt56rg72o" path="res://Scenes/World/skills_panel.gd" id="3_wh8m4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wla72"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjd5s"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuxid"]
+bg_color = Color(0.2347951, 0.90982777, 0.35912356, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d0er"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ng1ea"]
+bg_color = Color(0.44248194, 0.9934606, 0.27661282, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="UI" type="CanvasLayer" unique_id=480595847]
+script = ExtResource("1_l88uj")
+
+[node name="WelcomePanel" type="Panel" parent="." unique_id=91816730]
+offset_left = 283.0
+offset_top = 82.0
+offset_right = 429.0
+offset_bottom = 199.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wla72")
+
+[node name="WelcomeMessage" type="Label" parent="WelcomePanel" unique_id=1254765993]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 6.0
+offset_right = 136.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 10
+text = "Welcome to ADAN, let's  get choppin"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="InventoryPanel" type="Panel" parent="." unique_id=78205363]
+offset_top = 1.0
+offset_right = 124.0
+offset_bottom = 97.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kjd5s")
+script = ExtResource("2_m6ews")
+
+[node name="InventoryLabel" type="Label" parent="InventoryPanel" unique_id=2091477444]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 6.0
+offset_right = 59.0
+offset_bottom = 35.0
+theme_override_font_sizes/font_size = 12
+text = "Inventory
+Wood Log: 0 "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SkillsPanel" type="Panel" parent="." unique_id=1478144087]
+offset_left = 1.0
+offset_top = 145.0
+offset_right = 123.0
+offset_bottom = 151.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kuxid")
+script = ExtResource("3_wh8m4")
+
+[node name="ProgressBar" type="ProgressBar" parent="SkillsPanel" unique_id=588890411]
+layout_mode = 0
+offset_right = 122.0
+offset_bottom = 6.0
+theme_override_styles/background = SubResource("StyleBoxFlat_0d0er")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ng1ea")
+show_percentage = false
+
+[node name="Label" type="Label" parent="SkillsPanel" unique_id=649127536]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -23.0
+offset_right = 121.0
