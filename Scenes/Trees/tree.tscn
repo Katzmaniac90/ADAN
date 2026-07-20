@@ -9,7 +9,7 @@
 size = Vector2(32, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22gus"]
-size = Vector2(36, 24)
+size = Vector2(36, 39)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq0y2"]
 bg_color = Color(0, 0, 0, 1)
@@ -43,7 +43,7 @@ debug_color = Color(0.34128827, 0.5011388, 0.9447065, 0.5254902)
 [node name="Area2D" type="Area2D" parent="." unique_id=860053328]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=552153863]
-position = Vector2(-1, 21)
+position = Vector2(-1, 14.5)
 shape = SubResource("RectangleShape2D_22gus")
 
 [node name="InteractionLabel" type="Label" parent="." unique_id=278786865]

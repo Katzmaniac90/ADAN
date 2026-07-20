@@ -1,0 +1,55 @@
+extends Node
+
+#========================
+# INVENTORY
+#========================
+
+var inventory = {}
+
+
+#========================
+# SKILLS
+#========================
+
+var barkbreaking_level = 1
+var barkbreaking_xp = 0
+
+
+#========================
+# PLAYER DATA
+#========================
+
+var player_position = Vector2.ZERO
+
+
+#========================
+# INVENTORY FUNCTIONS
+#========================
+
+func add_item(item_name, amount):
+	if inventory.has(item_name):
+		inventory[item_name] += amount
+	else:
+		inventory[item_name] = amount
+
+
+func get_item_count(item_name):
+	return inventory.get(item_name, 0)
+
+
+#========================
+# BARKBREAKING
+#========================
+
+func add_barkbreaking_xp(amount):
+
+	barkbreaking_xp += amount
+
+	while barkbreaking_xp >= barkbreaking_level * 100:
+
+		barkbreaking_xp -= barkbreaking_level * 100
+
+		barkbreaking_level += 1
+
+		print("LEVEL UP!")
+		print("Barkbreaking Level:", barkbreaking_level)
