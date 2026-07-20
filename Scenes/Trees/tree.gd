@@ -47,23 +47,17 @@ func start_chopping():
 
 
 func _on_chop_timer_timeout():
-	print("Timer finished!")
 	chop_tree()
 
 
 func chop_tree():
-	print("Entering chop_tree()")
+	print("CHOPPING TREE!")
 
-	print("Creating stump...")
 	var stump = stump_scene.instantiate()
-	print("Stump created.")
-
 	stump.global_position = global_position
 	get_parent().add_child(stump)
 
-	print("Creating log...")
 	var log = log_scene.instantiate()
-	print("Log created.")
 
 	var offset = Vector2(
 		randf_range(-20, 20),
