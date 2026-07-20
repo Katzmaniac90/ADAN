@@ -6,8 +6,6 @@ var direction: Vector2 = Vector2(1,1)
 var speed: int = 150
 var is_busy = false
 var inventory = {}
-var barkbreaking_level = 1
-var barkbreaking_xp = 0
 var zoom_speed = 0.1
 var min_zoom = 0.5
 var max_zoom = 5.0
@@ -59,11 +57,4 @@ func add_item(item_name, amount):
 	print(inventory)
 
 func add_barkbreaking_xp(amount):
-	barkbreaking_xp += amount
-
-	while barkbreaking_xp >= barkbreaking_level * 100:
-		barkbreaking_xp -= barkbreaking_level * 100
-		barkbreaking_level += 1
-
-		print("LEVEL UP!")
-		print("barkbreaking Level:", barkbreaking_level)
+	GameManager.add_barkbreaking_xp(amount)
