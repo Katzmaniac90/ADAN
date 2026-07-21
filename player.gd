@@ -59,12 +59,7 @@ func playerAnimationsAdam():
 
 
 func add_item(item_name, amount):
-	if GameManager.inventory.has(item_name):
-		GameManager.inventory[item_name] += amount
-	else:
-		GameManager.inventory[item_name] = amount
-
-	print(GameManager.inventory)
+	GameManager.add_item(item_name, amount)
 
 
 func add_barkbreaking_xp(amount):
