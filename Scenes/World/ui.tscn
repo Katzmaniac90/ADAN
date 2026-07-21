@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://yibi3d0w56cc"]
 
-[ext_resource type="Script" uid="uid://cuc4uu3psb7a7" path="res://Scenes/World/ui.gd" id="1_l88uj"]
-[ext_resource type="Script" uid="uid://d37j66gxov6ra" path="res://Scenes/World/inventory_panel.gd" id="2_m6ews"]
-[ext_resource type="Script" uid="uid://b486xt56rg72o" path="res://Scenes/World/skills_panel.gd" id="3_wh8m4"]
+[ext_resource type="Script" uid="uid://cuc4uu3psb7a7" path="res://Scenes/Scripts/ui.gd" id="1_l88uj"]
+[ext_resource type="Script" uid="uid://d37j66gxov6ra" path="res://Scenes/Scripts/inventory_panel.gd" id="2_m6ews"]
+[ext_resource type="Script" uid="uid://b486xt56rg72o" path="res://Scenes/Scripts/skills_panel.gd" id="3_wh8m4"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wla72"]
 bg_color = Color(1, 1, 1, 1)
@@ -103,3 +103,13 @@ theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CraftButton" type="Button" parent="." unique_id=2128830562]
+offset_left = 116.0
+offset_top = 31.0
+offset_right = 167.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 12
+text = "Text: Craft Wooden Axe "
+
+[connection signal="pressed" from="CraftButton" to="." method="_on_craft_button_pressed"]

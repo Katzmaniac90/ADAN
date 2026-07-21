@@ -4,6 +4,7 @@ extends Node
 # INVENTORY
 #========================
 
+var current_axe = "Hands"
 var inventory = {}
 signal inventory_changed
 
@@ -38,6 +39,18 @@ func add_item(item_name, amount):
 
 func get_item_count(item_name):
 	return inventory.get(item_name, 0)
+	
+func craft_wooden_axe():
+
+	if inventory.get("Wood Log", 0) >= 10:
+		inventory["Wood Log"] -= 10
+		current_axe = "Wood Axe"
+
+		inventory_changed.emit()
+
+		print("Crafted Wooden Axe!")
+	else:
+		print("Need 10 logs")
 
 
 #========================

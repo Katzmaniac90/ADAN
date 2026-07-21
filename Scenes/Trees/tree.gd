@@ -8,7 +8,6 @@ var spawn_position: Vector2
 
 @export var stump_scene: PackedScene
 @export var log_scene: PackedScene
-@export var chop_time: float = 3.0
 @export var respawn_time: float = 5.0
 @export var respawn_radius := 50.0
 
@@ -42,7 +41,7 @@ func _on_body_exited(body):
 
 func _process(delta):
 	if chopping:
-		$ChopProgress.value += (100 / chop_time) * delta
+		$ChopProgress.value += (100.0 / get_chop_time()) * delta
 		shake_tree()
 	else:
 		$TreeModified.position = original_position
@@ -61,7 +60,7 @@ func start_chopping():
 	$ChopProgress.visible = true
 	$ChopProgress.value = 0
 	
-	$ChopTimer.start(chop_time)
+	$ChopTimer.start(get_chop_time())
 
 
 func _on_chop_timer_timeout():
@@ -104,10 +103,31 @@ func _on_respawn_timer_timeout():
 	var angle = randf_range(0.0, TAU)
 	var distance = randf_range(0.0, respawn_radius)
 
-	global_position += Vector2.RIGHT.rotated(angle) * distance
+	global_position = spawn_position + Vector2.RIGHT.rotated(angle) * distance
 
 	$TreeModified.position = Vector2.ZERO
 	original_position = $TreeModified.position
 
 	show()
 	$CollisionShape2D.disabled = false
+
+func get_chop_time():
+	match GameManager.current_axe:
+		"Hands":
+			return 5.0
+		"Wood Axe":
+			return 3.0
+		"Stone Axe":
+			return 2.5
+		"Iron Axe":
+			return 2.0
+		"Steel Axe":
+			return 1.6
+		"Mithril Axe":
+			return 1.3
+		"Adamant Axe":
+			return 1.1
+		"Rune Axe":
+			return 0.9
+		_:
+			return 5.0

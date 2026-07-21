@@ -10,7 +10,6 @@ var max_zoom = 5.0
 
 
 func _physics_process(delta):
-	print(GameManager.barkbreaking_level)
 
 	if is_busy:
 		velocity = Vector2.ZERO
