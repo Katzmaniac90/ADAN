@@ -9,8 +9,7 @@ func _pressed():
 	update_craft_button()
 
 func update_craft_button():
-	var logs = GameManager.inventory.get("Wood Log", 0)
-	var needed = max(0, 10 - logs)
+	var logs = GameManager.get_item_count("Wood Log")
 
 	if GameManager.current_axe == "Wood Axe":
 		hide()
@@ -20,5 +19,6 @@ func update_craft_button():
 		text = "Craft Wooden Axe"
 		disabled = false
 	else:
-		text = "Need %d more logs" % needed
+		var needed = 10 - logs
+		text = "Need %d more logs\n(Wooden Axe)" % needed
 		disabled = true
