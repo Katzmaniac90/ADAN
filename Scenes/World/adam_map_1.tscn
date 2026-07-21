@@ -317,6 +317,11 @@ position = Vector2(304, 8)
 
 [node name="myFirstSign" parent="." unique_id=431273787 instance=ExtResource("4_015eb")]
 position = Vector2(264, 48)
-sign_text = "Testing sign text and testing wrapping for the text. NOt sure how long it will go or when it will start to trail off, but maybe I can add a scroll to the dialogue box or something, or we just ensure that you can't put a certain amount of words or characters in the label window. let's see how this works now. "
+sign_text = "It's a sign.. not sure what else to say here. 
+
+
+
+
+poop.."
 
 [node name="DialogueUI" parent="." unique_id=353898798 instance=ExtResource("5_0gwv0")]
