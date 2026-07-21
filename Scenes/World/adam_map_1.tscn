@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://jquypphb3tdc" path="res://tilemap_packed.png" id="1_j0xaa"]
 [ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="2_qhoht"]
 [ext_resource type="Script" uid="uid://c4vva4pfk7ogy" path="res://Scenes/Scripts/door_map_1_to_world.gd" id="3_cnabq"]
+[ext_resource type="PackedScene" uid="uid://d25bqmehtoacy" path="res://Scenes/Doors/door.tscn" id="4_015eb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qhoht"]
 texture = ExtResource("1_j0xaa")
@@ -309,5 +310,19 @@ next_scene = "uid://bgwiao8n0t2wo"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="door_Map1toWorld" unique_id=53137044]
 position = Vector2(304, 2.875)
 shape = SubResource("RectangleShape2D_sd12v")
+
+[node name="PlayerSpawnPoints" type="Node2D" parent="." unique_id=1149230011]
+
+[node name="HouseDoor" type="Marker2D" parent="PlayerSpawnPoints" unique_id=224179725]
+
+[node name="ShopDoor" type="Marker2D" parent="PlayerSpawnPoints" unique_id=1080768083]
+
+[node name="CastleDoor" type="Marker2D" parent="PlayerSpawnPoints" unique_id=553012934]
+
+[node name="Door" parent="." unique_id=1895642603 instance=ExtResource("4_015eb")]
+position = Vector2(192, 40)
+
+[node name="Door2" parent="." unique_id=52995584 instance=ExtResource("4_015eb")]
+position = Vector2(248, 40)
 
 [connection signal="body_entered" from="door_Map1toWorld" to="door_Map1toWorld" method="_on_body_entered"]

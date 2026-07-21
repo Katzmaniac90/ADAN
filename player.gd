@@ -8,6 +8,16 @@ var zoom_speed = 0.1
 var min_zoom = 0.5
 var max_zoom = 5.0
 
+#This positions the player automatically when going into doors
+func _ready():
+	if SceneManager.spawn_id != "":
+		var spawn = get_tree().current_scene.find_child(
+			SceneManager.spawn_id,
+			true,
+			false
+		)
+		if spawn:
+			global_position = spawn.global_position
 
 func _physics_process(delta):
 

@@ -191,4 +191,9 @@ position = Vector2(360, 73)
 [node name="Tree9" parent="." unique_id=1516105269 instance=ExtResource("2_hveh7")]
 position = Vector2(423, 139)
 
+[node name="PlayerSpawnPoints" type="Node2D" parent="." unique_id=674744226]
+
+[node name="TestMarker" type="Marker2D" parent="PlayerSpawnPoints" unique_id=1136726849]
+position = Vector2(495, 14)
+
 [connection signal="body_entered" from="door_WorldtoMap1" to="door_WorldtoMap1" method="_on_body_entered"]
