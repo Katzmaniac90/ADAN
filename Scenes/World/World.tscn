@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="6_kuxid"]
 [ext_resource type="PackedScene" uid="uid://yibi3d0w56cc" path="res://Scenes/World/ui.tscn" id="7_kjd5s"]
 [ext_resource type="PackedScene" uid="uid://p7irvj1ita47" path="res://Scenes/Doors/WorldtoAdamMap1.tscn" id="8_kjd5s"]
+[ext_resource type="PackedScene" uid="uid://cc5ycu1xk87ga" path="res://Scenes/Signs/worldSign1.tscn" id="9_kuxid"]
+[ext_resource type="PackedScene" uid="uid://vp2kwubidkxn" path="res://Scenes/Signs/dialogue_ui.tscn" id="10_ng1ea"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87yka"]
 texture = ExtResource("1_hveh7")
@@ -211,3 +213,14 @@ position = Vector2(-4806, -744)
 
 [node name="Tree14" parent="." unique_id=2071501639 instance=ExtResource("2_hveh7")]
 position = Vector2(-4513, -335)
+
+[node name="worldSign1" parent="." unique_id=431273787 instance=ExtResource("9_kuxid")]
+position = Vector2(882, 26)
+sign_text = "Hey... I just want you to know that..
+
+
+
+
+I'm beautiful..."
+
+[node name="DialogueUI" parent="." unique_id=353898798 instance=ExtResource("10_ng1ea")]

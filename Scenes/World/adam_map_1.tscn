@@ -3,6 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://jquypphb3tdc" path="res://tilemap_packed.png" id="1_j0xaa"]
 [ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="2_qhoht"]
 [ext_resource type="PackedScene" uid="uid://ugiqnb30s8mw" path="res://Scenes/Doors/AdamMap1toWorld.tscn" id="3_cnabq"]
+[ext_resource type="PackedScene" uid="uid://cqobii0pk60jo" path="res://Scenes/Signs/sign.tscn" id="4_015eb"]
+[ext_resource type="PackedScene" uid="uid://vp2kwubidkxn" path="res://Scenes/Signs/dialogue_ui.tscn" id="5_0gwv0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qhoht"]
 texture = ExtResource("1_j0xaa")
@@ -285,6 +287,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_j0xaa")
 
 [node name="adamMap1" type="Node2D" unique_id=484409366]
+y_sort_enabled = true
 
 [node name="baseLayer" type="TileMapLayer" parent="." unique_id=642535247]
 texture_filter = 1
@@ -297,6 +300,7 @@ tile_map_data = PackedByteArray("AAAUAAYAAAALAAMAAAAUAAcAAAALAAQAAAAUAAgAAAALAAQ
 tile_set = SubResource("TileSet_po1pm")
 
 [node name="Player" parent="." unique_id=226938582 instance=ExtResource("2_qhoht")]
+y_sort_enabled = true
 position = Vector2(304, 56)
 
 [node name="PlayerSpawnPoints" type="Node2D" parent="." unique_id=1149230011]
@@ -310,3 +314,9 @@ position = Vector2(304, 32)
 
 [node name="AdamMap1toWorld" parent="." unique_id=1895642603 instance=ExtResource("3_cnabq")]
 position = Vector2(304, 8)
+
+[node name="myFirstSign" parent="." unique_id=431273787 instance=ExtResource("4_015eb")]
+position = Vector2(264, 48)
+sign_text = "Testing sign text and testing wrapping for the text. NOt sure how long it will go or when it will start to trail off, but maybe I can add a scroll to the dialogue box or something, or we just ensure that you can't put a certain amount of words or characters in the label window. let's see how this works now. "
+
+[node name="DialogueUI" parent="." unique_id=353898798 instance=ExtResource("5_0gwv0")]
