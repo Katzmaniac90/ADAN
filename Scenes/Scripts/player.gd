@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var direction: Vector2 = Vector2(1,1)
-var speed: int = 150
+var speed: int = 100
 var is_busy = false
 
 var zoom_speed = 0.1
