@@ -28,8 +28,8 @@ corner_radius_bottom_left = 3
 z_index = 5
 script = ExtResource("1_oq1sf")
 log_scene = ExtResource("2_oq1sf")
-required_axe = "Tree3 Axe"
-chop_time = 1.0
+required_axe_tier = 3
+chop_time = 10.0
 barkbreaking_xp = 100
 
 [node name="TreeModified" type="Sprite2D" parent="." unique_id=573872850]

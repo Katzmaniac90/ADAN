@@ -5,6 +5,29 @@ extends Node
 #========================
 
 var current_axe = "Hands"
+
+
+func get_axe_tier():
+
+	match current_axe:
+
+		"Hands":
+			return 0
+
+		"Wood Axe":
+			return 1
+
+		"Tree2 Axe":
+			return 2
+
+		"Tree3 Axe":
+			return 3
+
+		"Super Saiyan Axe":
+			return 4
+
+		_:
+			return 0
 var inventory = {}
 signal inventory_changed
 
