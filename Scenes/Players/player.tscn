@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bqtkrfptg4qyj"]
 
-[ext_resource type="Script" uid="uid://bxq3cpm5yg7yy" path="res://player.gd" id="1_37lpg"]
+[ext_resource type="Script" uid="uid://bxq3cpm5yg7yy" path="res://Scenes/Scripts/player.gd" id="1_37lpg"]
 [ext_resource type="Texture2D" uid="uid://dprhl0hksja58" path="res://Tiles/player_adam_new.png" id="2_8qn36"]
 [ext_resource type="Texture2D" uid="uid://b7g3i32u1uj0f" path="res://Tiles/player_adam_new_idle_animation.png" id="2_37lpg"]
 [ext_resource type="Texture2D" uid="uid://bd3rjc0m14px6" path="res://Tiles/player_adam_new_flipped.png" id="4_ppdxs"]

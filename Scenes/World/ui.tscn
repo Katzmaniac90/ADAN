@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cuc4uu3psb7a7" path="res://Scenes/Scripts/ui.gd" id="1_l88uj"]
 [ext_resource type="Script" uid="uid://d37j66gxov6ra" path="res://Scenes/Scripts/inventory_panel.gd" id="2_m6ews"]
 [ext_resource type="Script" uid="uid://b486xt56rg72o" path="res://Scenes/Scripts/skills_panel.gd" id="3_wh8m4"]
-[ext_resource type="Script" uid="uid://b6n45mrs26udf" path="res://Scenes/World/craft_button.gd" id="4_m6ews"]
+[ext_resource type="Script" uid="uid://b6n45mrs26udf" path="res://Scenes/Scripts/craft_button.gd" id="4_m6ews"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wla72"]
 bg_color = Color(1, 1, 1, 1)

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ce15cjnt4dcl0"]
+
+[ext_resource type="Script" uid="uid://bp16nbv5ej7lk" path="res://tree_spawner.gd" id="1_cmkcd"]
+[ext_resource type="PackedScene" uid="uid://banexdacv6htb" path="res://Scenes/Trees/tree.tscn" id="2_330bt"]
+
+[node name="TreeSpawner" type="Node2D" unique_id=387497259]
+script = ExtResource("1_cmkcd")
+tree_scene = ExtResource("2_330bt")
+spawn_width = 600.0
+spawn_height = 500.0
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=1738769559]

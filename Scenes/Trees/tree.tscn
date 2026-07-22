@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://banexdacv6htb"]
 
 [ext_resource type="Texture2D" uid="uid://dsfkjv1b23nxy" path="res://tree-modified.png" id="1_8mq3t"]
-[ext_resource type="Script" uid="uid://djewqdd4jj3j1" path="res://Scenes/Trees/tree.gd" id="1_m636k"]
+[ext_resource type="Script" uid="uid://djewqdd4jj3j1" path="res://Scenes/Scripts/tree.gd" id="1_m636k"]
 [ext_resource type="PackedScene" uid="uid://en1v3li7f35r" path="res://Scenes/Trees/stump.tscn" id="2_nm08u"]
 [ext_resource type="PackedScene" uid="uid://cxabfcb3e2cij" path="res://Scenes/Trees/log.tscn" id="3_ii8u4"]
 
