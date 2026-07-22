@@ -14,7 +14,7 @@ var original_position: Vector2
 
 # Axe progression
 @export var required_axe_tier: int = 0
-
+@export var required_barkbreaking_level: int = 1
 # Tree settings
 @export var barkbreaking_xp: int = 25
 @export var tree_difficulty: int = 1
@@ -71,10 +71,11 @@ func _process(delta):
 func start_chopping():
 
 	if GameManager.get_axe_tier() < required_axe_tier:
-
 		print("Your axe is too weak!")
 		return
-
+	if GameManager.barkbreaking_level < required_barkbreaking_level:
+		print("Your Barkbreaking level is too low!")
+		return
 
 	chopping = true
 
@@ -131,7 +132,11 @@ func chop_tree():
 	$CollisionShape2D.disabled = true
 
 
-	var random_respawn = randf_range(min_respawn_time, max_respawn_time)
+	var r = randf()
+
+# Bias toward the maximum respawn time
+	var random_respawn = lerp(min_respawn_time, max_respawn_time, sqrt(r))
+
 	$RespawnTimer.start(random_respawn)
 
 
