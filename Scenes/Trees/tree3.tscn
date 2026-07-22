@@ -28,8 +28,8 @@ corner_radius_bottom_left = 3
 z_index = 5
 script = ExtResource("1_q4htd")
 log_scene = ExtResource("2_q4htd")
+min_respawn_time = 20.0
 required_axe_tier = 2
-chop_time = 10.0
 barkbreaking_xp = 75
 tree_difficulty = 3
 

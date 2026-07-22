@@ -9,7 +9,8 @@ var original_position: Vector2
 @export var stump_scene: PackedScene
 @export var log_scene: PackedScene
 
-@export var respawn_time: float = 1.0
+@export var min_respawn_time: float = 4.0
+@export var max_respawn_time: float = 8.0
 
 # Axe progression
 @export var required_axe_tier: int = 0
@@ -130,7 +131,8 @@ func chop_tree():
 	$CollisionShape2D.disabled = true
 
 
-	$RespawnTimer.start(respawn_time)
+	var random_respawn = randf_range(min_respawn_time, max_respawn_time)
+	$RespawnTimer.start(random_respawn)
 
 
 
