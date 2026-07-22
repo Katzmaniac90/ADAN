@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b1d0qlsk8p6ao"]
+
+[ext_resource type="Script" uid="uid://d30fvwklqcrpt" path="res://Scenes/Quests/QuestItem.gd" id="1_yr6t3"]
+[ext_resource type="Texture2D" uid="uid://byxyifckt2tik" path="res://Tiles/TownAssets/tile_0081.png" id="2_a0053"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0053"]
+size = Vector2(10, 10)
+
+[node name="Area2D" type="Area2D" unique_id=68760205]
+script = ExtResource("1_yr6t3")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=220241890]
+texture_filter = 1
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("2_a0053")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1031595952]
+shape = SubResource("RectangleShape2D_a0053")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

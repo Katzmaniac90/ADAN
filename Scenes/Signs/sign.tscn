@@ -26,15 +26,15 @@ shape = SubResource("RectangleShape2D_sd12v")
 [node name="Label" type="Label" parent="." unique_id=1750671623]
 visible = false
 texture_filter = 1
-offset_left = -28.0
-offset_top = -21.0
-offset_right = 31.0
-offset_bottom = -5.0
+offset_left = -7.0
+offset_top = -26.0
+offset_right = 7.0
+offset_bottom = -10.0
 theme_override_colors/font_color = Color(0.8117647, 0.72156864, 0.5803922, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
 theme_override_font_sizes/font_size = 11
-text = "[E] To Read"
+text = "[E]"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1207821136]
 
