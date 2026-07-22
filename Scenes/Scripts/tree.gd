@@ -8,9 +8,10 @@ var original_position: Vector2
 
 @export var stump_scene: PackedScene
 @export var log_scene: PackedScene
-@export var respawn_time: float = 5.0
-
-@export var resource_boundary: Area2D
+@export var respawn_time: float = 1.0
+@export var required_axe: String = "Hands"
+@export var chop_time: float = 5.0
+@export var barkbreaking_xp: int = 25
 
 
 func _ready():
@@ -23,8 +24,6 @@ func _ready():
 
 	$ChopProgress.visible = false
 
-	if not is_inside_barkbreaking_area():
-		print("Tree outside area!")
 
 func _on_body_entered(body):
 	if body.name == "Player":
@@ -50,6 +49,11 @@ func _process(delta):
 
 
 func start_chopping():
+
+	if not can_chop():
+		print("You need a better axe!")
+		return
+
 	chopping = true
 	
 	var player = get_tree().get_first_node_in_group("player")
@@ -60,8 +64,6 @@ func start_chopping():
 	$ChopProgress.value = 0
 	
 	$ChopTimer.start(get_chop_time())
-
-
 func _on_chop_timer_timeout():
 	chop_tree()
 
@@ -69,8 +71,7 @@ func _on_chop_timer_timeout():
 func chop_tree():
 	var player = get_tree().get_first_node_in_group("player")
 	player.is_busy = false
-	player.add_barkbreaking_xp(25)
-
+	player.add_barkbreaking_xp(barkbreaking_xp)
 
 
 	var log = log_scene.instantiate()
@@ -106,38 +107,11 @@ func _on_respawn_timer_timeout():
 	$CollisionShape2D.disabled = false
 
 func get_chop_time():
-	match GameManager.current_axe:
-		"Hands":
-			return 5.0
-		"Wood Axe":
-			return 3.0
-		"Stone Axe":
-			return 2.5
-		"Iron Axe":
-			return 2.0
-		"Steel Axe":
-			return 1.6
-		"Mithril Axe":
-			return 1.3
-		"Adamant Axe":
-			return 1.1
-		"Rune Axe":
-			return 0.9
-		_:
-			return 5.0
+	return chop_time
 
-func is_inside_barkbreaking_area():
-	if resource_boundary == null:
+func can_chop():
+
+	if required_axe == "Hands":
 		return true
 
-	var shape = resource_boundary.get_node("CollisionShape2D").shape as RectangleShape2D
-
-	var area_position = resource_boundary.global_position
-	var half_size = shape.size / 2
-
-	return (
-		global_position.x > area_position.x - half_size.x and
-		global_position.x < area_position.x + half_size.x and
-		global_position.y > area_position.y - half_size.y and
-		global_position.y < area_position.y + half_size.y
-	)
+	return GameManager.current_axe == required_axe

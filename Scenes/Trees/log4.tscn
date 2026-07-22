@@ -1,21 +1,21 @@
-[gd_scene format=3 uid="uid://cxabfcb3e2cij"]
+[gd_scene format=3 uid="uid://c053m8saay2h7"]
 
-[ext_resource type="Texture2D" uid="uid://cmbb721yselqq" path="res://images-modified (1).png" id="1_1u518"]
-[ext_resource type="Script" uid="uid://dqqqs32o3jf1w" path="res://Scenes/Scripts/log.gd" id="1_yarrl"]
+[ext_resource type="Script" uid="uid://dqqqs32o3jf1w" path="res://Scenes/Scripts/log.gd" id="1_ri50t"]
+[ext_resource type="Texture2D" uid="uid://c85shulyk4s2u" path="res://trees/PNG/Assets_separately/Trees/Snow_tree3.png" id="2_ri50t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yarrl"]
 size = Vector2(10, 6)
 
 [node name="Log" type="StaticBody2D" unique_id=1450102656]
-script = ExtResource("1_yarrl")
-item_name = "Tree1 Log"
+script = ExtResource("1_ri50t")
+item_name = "Tree4 Log"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1610669406]
 z_index = 5
 y_sort_enabled = true
-position = Vector2(1, 1)
-scale = Vector2(0.025, 0.025)
-texture = ExtResource("1_1u518")
+position = Vector2(1, 9.536743e-07)
+scale = Vector2(0.29375, 0.2625)
+texture = ExtResource("2_ri50t")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1017855555]
 

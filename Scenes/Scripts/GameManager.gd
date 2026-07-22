@@ -41,16 +41,86 @@ func get_item_count(item_name):
 	return inventory.get(item_name, 0)
 	
 func craft_wooden_axe():
-	if inventory.get("Wood Log", 0) < 10:
+	if inventory.get("Tree1 Log", 0) < 10:
 		return false
 
-	inventory["Wood Log"] -= 10
+	inventory["Tree1 Log"] -= 10
 	current_axe = "Wood Axe"
 
 	inventory_changed.emit()
 	return true
+func craft_tree2_axe():
+
+	if current_axe != "Wood Axe":
+		print("Need Wood Axe first!")
+		return false
+
+	if inventory.get("Tree1 Log", 0) < 20:
+		print("Need 20 Tree1 Logs")
+		return false
+
+	if inventory.get("Tree2 Log", 0) < 20:
+		print("Need 20 Tree2 Logs")
+		return false
 
 
+	inventory["Tree1 Log"] -= 20
+	inventory["Tree2 Log"] -= 20
+
+	current_axe = "Tree2 Axe"
+
+	inventory_changed.emit()
+
+	print("Crafted Tree2 Axe!")
+	return true
+func craft_tree3_axe():
+
+	if current_axe != "Tree2 Axe":
+		print("Need Tree2 Axe first!")
+		return false
+
+	if inventory.get("Tree1 Log", 0) < 30:
+		print("Need 30 Tree1 Logs")
+		return false
+
+	if inventory.get("Tree2 Log", 0) < 30:
+		print("Need 30 Tree2 Logs")
+		return false
+
+	if inventory.get("Tree3 Log", 0) < 30:
+		print("Need 30 Tree3 Logs")
+		return false
+
+
+	inventory["Tree1 Log"] -= 30
+	inventory["Tree2 Log"] -= 30
+	inventory["Tree3 Log"] -= 30
+
+	current_axe = "Tree3 Axe"
+
+	inventory_changed.emit()
+
+	print("Crafted Tree3 Axe!")
+	return true
+func craft_super_saiyan_axe():
+
+	if current_axe != "Tree3 Axe":
+		print("Need Tree3 Axe first!")
+		return false
+
+	if inventory.get("Tree4 Log", 0) < 100:
+		print("Need 100 Tree4 Logs")
+		return false
+
+
+	inventory["Tree4 Log"] -= 100
+
+	current_axe = "Super Saiyan Axe"
+
+	inventory_changed.emit()
+
+	print("SUPER SAIYAN AXE CREATED!")
+	return true
 #========================
 # BARKBREAKING
 #========================

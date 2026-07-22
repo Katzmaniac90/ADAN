@@ -4,6 +4,9 @@
 [ext_resource type="Script" uid="uid://d37j66gxov6ra" path="res://Scenes/Scripts/inventory_panel.gd" id="2_m6ews"]
 [ext_resource type="Script" uid="uid://b486xt56rg72o" path="res://Scenes/Scripts/skills_panel.gd" id="3_wh8m4"]
 [ext_resource type="Script" uid="uid://b6n45mrs26udf" path="res://Scenes/Scripts/craft_button.gd" id="4_m6ews"]
+[ext_resource type="Script" uid="uid://b2oj6f7d561uu" path="res://Scenes/World/tree_2_axe.gd" id="5_wh8m4"]
+[ext_resource type="Script" uid="uid://rtr2gjey3d3n" path="res://Scenes/World/tree_3_axe.gd" id="6_de5vp"]
+[ext_resource type="Script" uid="uid://coepildsrjist" path="res://Scenes/World/super_saiyan_axe.gd" id="7_ug3ty"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wla72"]
 bg_color = Color(1, 1, 1, 1)
@@ -43,6 +46,15 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh8m4"]
 bg_color = Color(0.5587861, 0.08547773, 0.15488276, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_de5vp"]
+bg_color = Color(0.8563691, 0.50175077, 0.05562032, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ug3ty"]
+bg_color = Color(0.77549595, 0.7740388, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ardup"]
+bg_color = Color(0.28414398, 0.5476296, 0.08405908, 1)
+
 [node name="UI" type="CanvasLayer" unique_id=480595847]
 script = ExtResource("1_l88uj")
 
@@ -69,7 +81,7 @@ autowrap_mode = 2
 
 [node name="InventoryPanel" type="Panel" parent="." unique_id=78205363]
 offset_right = 116.0
-offset_bottom = 77.0
+offset_bottom = 108.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kjd5s")
 script = ExtResource("2_m6ews")
 
@@ -84,9 +96,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="SkillsPanel" type="Panel" parent="." unique_id=1478144087]
-offset_top = 99.0
+offset_top = 131.0
 offset_right = 116.0
-offset_bottom = 107.0
+offset_bottom = 139.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kuxid")
 script = ExtResource("3_wh8m4")
 
@@ -108,7 +120,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CraftButton" type="Button" parent="." unique_id=2128830562]
+[node name="Wooden Axe" type="Button" parent="." unique_id=2128830562]
 offset_left = 116.0
 offset_right = 264.0
 offset_bottom = 43.0
@@ -117,4 +129,34 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_wh8m4")
 text = "Text: Craft Wooden Axe "
 script = ExtResource("4_m6ews")
 
-[connection signal="pressed" from="CraftButton" to="." method="_on_craft_button_pressed"]
+[node name="Tree2Axe" type="Button" parent="." unique_id=1714046561]
+offset_left = 116.0
+offset_right = 264.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_de5vp")
+text = "Text: Craft Tree2 Axe
+"
+script = ExtResource("5_wh8m4")
+
+[node name="Tree3Axe" type="Button" parent="." unique_id=441536118]
+offset_left = 116.0
+offset_right = 264.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_ug3ty")
+text = "Text: Craft Tree3 Axe 
+"
+script = ExtResource("6_de5vp")
+
+[node name="SuperSaiyanAxe" type="Button" parent="." unique_id=39731456]
+offset_left = 116.0
+offset_right = 279.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_ardup")
+text = "Text: Craft Super Saiyan Axe
+"
+script = ExtResource("7_ug3ty")
+
+[connection signal="pressed" from="Wooden Axe" to="." method="_on_craft_button_pressed"]
