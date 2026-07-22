@@ -32,6 +32,7 @@ stump_scene = ExtResource("2_nm08u")
 log_scene = ExtResource("3_ii8u4")
 
 [node name="TreeModified" type="Sprite2D" parent="." unique_id=573872850]
+z_index = 1
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_8mq3t")
 
