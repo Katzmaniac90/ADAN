@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://dmhtpoija66wm" path="res://Scenes/Flowers/flowers.tscn" id="4_kjd5s"]
 [ext_resource type="PackedScene" uid="uid://cuhcopyrnd8by" path="res://Scenes/Bushes/bush.tscn" id="5_p7pgw"]
 [ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="6_kuxid"]
-[ext_resource type="PackedScene" uid="uid://yibi3d0w56cc" path="res://Scenes/World/ui.tscn" id="7_kjd5s"]
 [ext_resource type="PackedScene" uid="uid://p7irvj1ita47" path="res://Scenes/Doors/WorldtoAdamMap1.tscn" id="8_kjd5s"]
 [ext_resource type="PackedScene" uid="uid://cuwv8wcr01n0c" path="res://Scenes/Doors/WorldtoBarkBreaker.tscn" id="8_kuxid"]
 [ext_resource type="PackedScene" uid="uid://cc5ycu1xk87ga" path="res://Scenes/Signs/worldSign1.tscn" id="9_kuxid"]
@@ -312,8 +311,6 @@ position = Vector2(20, 233)
 
 [node name="Bush4" parent="." unique_id=899067017 instance=ExtResource("5_p7pgw")]
 position = Vector2(73, 246)
-
-[node name="UI" parent="." unique_id=480595847 instance=ExtResource("7_kjd5s")]
 
 [node name="PlayerSpawnPoints" type="Node2D" parent="." unique_id=674744226]
 

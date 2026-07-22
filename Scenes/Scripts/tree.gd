@@ -70,13 +70,11 @@ func chop_tree():
 	var player = get_tree().get_first_node_in_group("player")
 	player.is_busy = false
 	player.add_barkbreaking_xp(25)
-	print("CHOPPING TREE!")
-	print("LOG SCENE:", log_scene)
+
 
 
 	var log = log_scene.instantiate()
 
-	print("LOG CREATED:", log)
 
 	var offset = Vector2(
 		randf_range(-20, 20),
