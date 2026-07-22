@@ -2,7 +2,6 @@
 
 [ext_resource type="Texture2D" uid="uid://dsfkjv1b23nxy" path="res://tree-modified.png" id="1_8mq3t"]
 [ext_resource type="Script" uid="uid://djewqdd4jj3j1" path="res://Scenes/Scripts/tree.gd" id="1_m636k"]
-[ext_resource type="PackedScene" uid="uid://en1v3li7f35r" path="res://Scenes/Trees/stump.tscn" id="2_nm08u"]
 [ext_resource type="PackedScene" uid="uid://cxabfcb3e2cij" path="res://Scenes/Trees/log.tscn" id="3_ii8u4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wla72"]
@@ -28,7 +27,6 @@ corner_radius_bottom_left = 3
 [node name="Tree" type="StaticBody2D" unique_id=2000084765]
 z_index = 5
 script = ExtResource("1_m636k")
-stump_scene = ExtResource("2_nm08u")
 log_scene = ExtResource("3_ii8u4")
 
 [node name="TreeModified" type="Sprite2D" parent="." unique_id=573872850]

@@ -70,10 +70,11 @@ func chop_tree():
 	var player = get_tree().get_first_node_in_group("player")
 	player.is_busy = false
 	player.add_barkbreaking_xp(25)
-	print("CHOPPING TREE!")
+
 
 
 	var log = log_scene.instantiate()
+
 
 	var offset = Vector2(
 		randf_range(-20, 20),
@@ -81,9 +82,6 @@ func chop_tree():
 	)
 
 	log.global_position = global_position + offset
-
-	log.global_position.x = clamp(log.global_position.x, -324, -295)
-	log.global_position.y = clamp(log.global_position.y, -61, -46)
 
 	get_parent().add_child(log)
 

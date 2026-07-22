@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bw3n5vymx3k7j"]
 
 [ext_resource type="Script" uid="uid://bkl16wifepnpl" path="res://Scenes/Scripts/door.gd" id="1_ahrv6"]
-[ext_resource type="Texture2D" uid="uid://mch4hr3v00x2" path="res://Tiles/door.png" id="2_ssfdv"]
+[ext_resource type="Texture2D" uid="uid://died7tphjduab" path="res://trees/PNG/Assets_separately/Trees/Broken_tree1.png" id="2_ahrv6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sd12v"]
 size = Vector2(11, 10)
@@ -18,7 +18,7 @@ shape = SubResource("RectangleShape2D_sd12v")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1169292139]
 texture_filter = 1
-texture = ExtResource("2_ssfdv")
+texture = ExtResource("2_ahrv6")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

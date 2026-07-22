@@ -291,9 +291,6 @@ texture = ExtResource("1_edkeh")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_edkeh")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_22gus"]
-size = Vector2(364, 359)
-
 [node name="Barkbreakingarea" type="Node2D" unique_id=1463702270]
 
 [node name="baselayer" type="TileMapLayer" parent="." unique_id=769381019]
@@ -319,13 +316,6 @@ position = Vector2(193, 97)
 
 [node name="Tree3" parent="Trees" unique_id=1460744988 instance=ExtResource("3_wsbuy")]
 position = Vector2(267, 173)
-
-[node name="ResourceBoundary" type="Area2D" parent="." unique_id=702241660]
-position = Vector2(202, 203)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ResourceBoundary" unique_id=1432960438]
-position = Vector2(-3, 2)
-shape = SubResource("RectangleShape2D_22gus")
 
 [node name="BarkBreakertoWorld" parent="." unique_id=1895642603 instance=ExtResource("4_bws3g")]
 position = Vector2(40, 32)
