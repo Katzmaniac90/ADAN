@@ -28,7 +28,8 @@ corner_radius_bottom_left = 3
 z_index = 5
 script = ExtResource("1_m636k")
 log_scene = ExtResource("3_ii8u4")
-min_respawn_time = 5.0
+min_respawn_time = 10.0
+max_respawn_time = 60.0
 
 [node name="TreeModified" type="Sprite2D" parent="." unique_id=573872850]
 z_index = 1

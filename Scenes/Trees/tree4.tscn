@@ -29,6 +29,7 @@ z_index = 5
 script = ExtResource("1_oq1sf")
 log_scene = ExtResource("2_oq1sf")
 min_respawn_time = 40.0
+max_respawn_time = 160.0
 required_axe_tier = 3
 barkbreaking_xp = 100
 tree_difficulty = 4
