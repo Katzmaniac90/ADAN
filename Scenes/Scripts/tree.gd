@@ -4,15 +4,13 @@ var player_near = false
 var chopping = false
 var shake_amount = 3.0
 var original_position: Vector2
-var spawn_position: Vector2
+
 
 @export var stump_scene: PackedScene
 @export var log_scene: PackedScene
 @export var respawn_time: float = 5.0
-@export var min_x := -324.0
-@export var max_x := -295.0
-@export var min_y := -61.0
-@export var max_y := -46.0
+
+@export var resource_boundary: Area2D
 
 
 func _ready():
@@ -24,11 +22,9 @@ func _ready():
 	$RespawnTimer.timeout.connect(_on_respawn_timer_timeout)
 
 	$ChopProgress.visible = false
-	spawn_position = global_position
-	var angle = randf_range(0.0, TAU)
-	
 
-	
+	if not is_inside_barkbreaking_area():
+		print("Tree outside area!")
 
 func _on_body_entered(body):
 	if body.name == "Player":
@@ -85,6 +81,10 @@ func chop_tree():
 	)
 
 	log.global_position = global_position + offset
+
+	log.global_position.x = clamp(log.global_position.x, -324, -295)
+	log.global_position.y = clamp(log.global_position.y, -61, -46)
+
 	get_parent().add_child(log)
 
 	chopping = false
@@ -103,10 +103,6 @@ func shake_tree():
 
 
 func _on_respawn_timer_timeout():
-	global_position = Vector2(
-		randf_range(min_x, max_x),
-		randf_range(min_y, max_y)
-	)
 
 	show()
 	$CollisionShape2D.disabled = false
@@ -131,3 +127,19 @@ func get_chop_time():
 			return 0.9
 		_:
 			return 5.0
+
+func is_inside_barkbreaking_area():
+	if resource_boundary == null:
+		return true
+
+	var shape = resource_boundary.get_node("CollisionShape2D").shape as RectangleShape2D
+
+	var area_position = resource_boundary.global_position
+	var half_size = shape.size / 2
+
+	return (
+		global_position.x > area_position.x - half_size.x and
+		global_position.x < area_position.x + half_size.x and
+		global_position.y > area_position.y - half_size.y and
+		global_position.y < area_position.y + half_size.y
+	)
