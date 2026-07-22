@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://jquypphb3tdc" path="res://tilemap_packed.png" id="1_edkeh"]
 [ext_resource type="PackedScene" uid="uid://banexdacv6htb" path="res://Scenes/Trees/tree.tscn" id="3_wsbuy"]
 [ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="4_awbjw"]
+[ext_resource type="PackedScene" uid="uid://bw3n5vymx3k7j" path="res://Scenes/Doors/BarkBreakertoWorld.tscn" id="4_bws3g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0cx3a"]
 texture = ExtResource("1_edkeh")
@@ -324,3 +325,11 @@ position = Vector2(202, 203)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ResourceBoundary" unique_id=1432960438]
 position = Vector2(-3, 2)
 shape = SubResource("RectangleShape2D_22gus")
+
+[node name="BarkBreakertoWorld" parent="." unique_id=1895642603 instance=ExtResource("4_bws3g")]
+position = Vector2(40, 32)
+
+[node name="PlayerSpawnPoints" type="Node2D" parent="." unique_id=2116221669]
+
+[node name="BarkBreakerfromWorld" type="Marker2D" parent="PlayerSpawnPoints" unique_id=1924236416]
+position = Vector2(40, 56)

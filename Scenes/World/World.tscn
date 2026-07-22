@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="6_kuxid"]
 [ext_resource type="PackedScene" uid="uid://yibi3d0w56cc" path="res://Scenes/World/ui.tscn" id="7_kjd5s"]
 [ext_resource type="PackedScene" uid="uid://p7irvj1ita47" path="res://Scenes/Doors/WorldtoAdamMap1.tscn" id="8_kjd5s"]
+[ext_resource type="PackedScene" uid="uid://cuwv8wcr01n0c" path="res://Scenes/Doors/WorldtoBarkBreaker.tscn" id="8_kuxid"]
 [ext_resource type="PackedScene" uid="uid://cc5ycu1xk87ga" path="res://Scenes/Signs/worldSign1.tscn" id="9_kuxid"]
 [ext_resource type="PackedScene" uid="uid://vp2kwubidkxn" path="res://Scenes/Signs/dialogue_ui.tscn" id="10_ng1ea"]
 
@@ -318,8 +319,14 @@ position = Vector2(73, 246)
 [node name="WorldfromAdamMap1" type="Marker2D" parent="PlayerSpawnPoints" unique_id=1136726849]
 position = Vector2(176, 227)
 
+[node name="WorldfromBarkBreaker" type="Marker2D" parent="PlayerSpawnPoints" unique_id=1507424864]
+position = Vector2(294, 93)
+
 [node name="WorldtoAdamMap1" parent="." unique_id=1895642603 instance=ExtResource("8_kjd5s")]
 position = Vector2(176, 248)
+
+[node name="WorldtoBarkBreaker" parent="." unique_id=1320790186 instance=ExtResource("8_kuxid")]
+position = Vector2(294, 70)
 
 [node name="worldSign1" parent="." unique_id=431273787 instance=ExtResource("9_kuxid")]
 position = Vector2(365, 117)
