@@ -15,8 +15,8 @@ var original_position: Vector2
 @export var required_axe_tier: int = 0
 
 # Tree settings
-@export var chop_time: float = 5.0
 @export var barkbreaking_xp: int = 25
+@export var tree_difficulty: int = 1
 
 
 func _ready():
@@ -156,22 +156,26 @@ func _on_respawn_timer_timeout():
 
 func get_chop_time():
 
+	var axe_speed = 1.0
+
 	match GameManager.current_axe:
 
 		"Hands":
-			return 10.0
+			axe_speed = 1.0
 
 		"Wood Axe":
-			return 5.0
+			axe_speed = 0.5
 
 		"Tree2 Axe":
-			return 3.5
+			axe_speed = 0.35
 
 		"Tree3 Axe":
-			return 2.5
+			axe_speed = 0.25
 
 		"Super Saiyan Axe":
-			return 1.0
+			axe_speed = 0.1
 
-		_:
-			return 10.0
+
+	var base_time = tree_difficulty * 10.0
+
+	return base_time * axe_speed
