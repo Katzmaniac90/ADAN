@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://c2menfxklumdi"]
+
+[ext_resource type="Script" uid="uid://cohns0vu7xftv" path="res://Scenes/Scripts/sign.gd" id="1_dbwn7"]
+[ext_resource type="Texture2D" uid="uid://dt42q2msdrre2" path="res://Tiles/sign_adam.png" id="2_fd00g"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sd12v"]
+size = Vector2(25.5, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_po1pm"]
+size = Vector2(14, 7.5)
+
+[node name="sign" type="Area2D" unique_id=431273787]
+y_sort_enabled = true
+texture_filter = 1
+script = ExtResource("1_dbwn7")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1196799763]
+y_sort_enabled = true
+texture_filter = 1
+texture = ExtResource("2_fd00g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=986234630]
+texture_filter = 1
+shape = SubResource("RectangleShape2D_sd12v")
+
+[node name="Label" type="Label" parent="." unique_id=1750671623]
+visible = false
+texture_filter = 1
+offset_left = 8.0
+offset_right = 24.0
+offset_bottom = 16.0
+theme_override_colors/font_color = Color(0.8117647, 0.72156864, 0.5803922, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 11
+text = "[E]"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1207821136]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1671283922]
+position = Vector2(0, -0.75)
+shape = SubResource("RectangleShape2D_po1pm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

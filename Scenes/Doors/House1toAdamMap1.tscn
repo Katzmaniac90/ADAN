@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dq5mcxoi5gle7"]
+
+[ext_resource type="Script" uid="uid://bkl16wifepnpl" path="res://Scenes/Scripts/door.gd" id="1_eda70"]
+[ext_resource type="Texture2D" uid="uid://mch4hr3v00x2" path="res://Tiles/door.png" id="2_hkm3r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sd12v"]
+size = Vector2(11, 10)
+
+[node name="Door" type="Node2D" unique_id=1895642603]
+
+[node name="Area2D" type="Area2D" parent="." unique_id=813423999]
+script = ExtResource("1_eda70")
+destination_scene = "uid://cadmeeeodj7xi"
+destination_spawn = "AdamMap1fromHouse1"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=375078275]
+shape = SubResource("RectangleShape2D_sd12v")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1169292139]
+texture_filter = 1
+texture = ExtResource("2_hkm3r")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

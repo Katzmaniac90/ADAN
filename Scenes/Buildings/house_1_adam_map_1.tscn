@@ -1,0 +1,30 @@
+[gd_scene format=4 uid="uid://cyn7nq75vgcqw"]
+
+[ext_resource type="TileSet" uid="uid://dp2g4d1evg5j5" path="res://Scenes/Buildings/townBaseLayer.tres" id="1_w7wwd"]
+[ext_resource type="TileSet" uid="uid://b8wgbmsxd77ab" path="res://Scenes/Buildings/townCollisionTileSet.tres" id="2_jqvt2"]
+[ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="3_73by4"]
+[ext_resource type="PackedScene" uid="uid://dq5mcxoi5gle7" path="res://Scenes/Doors/House1toAdamMap1.tscn" id="4_sqj2r"]
+
+[node name="House1AdamMap1" type="Node2D" unique_id=1546954522]
+texture_filter = 1
+
+[node name="baseLayer" type="TileMapLayer" parent="." unique_id=331038533]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAABAAEAAAABAAkAAAACAAEAAAABAAkAAAACAAIAAAABAAkAAAADAAIAAAABAAkAAAAEAAIAAAABAAkAAAAEAAMAAAABAAkAAAAFAAMAAAABAAkAAAABAAIAAAABAAkAAAABAAMAAAABAAkAAAABAAQAAAABAAkAAAACAAMAAAABAAkAAAACAAQAAAABAAkAAAADAAEAAAABAAkAAAADAAMAAAABAAkAAAADAAQAAAABAAkAAAAEAAEAAAABAAkAAAAEAAQAAAABAAkAAAAFAAEAAAABAAkAAAAFAAIAAAABAAkAAAAFAAQAAAABAAkAAAAGAAEAAAABAAkAAAAGAAIAAAABAAkAAAAGAAMAAAABAAkAAAAGAAQAAAABAAkAAAA=")
+tile_set = ExtResource("1_w7wwd")
+
+[node name="collisionLayer" type="TileMapLayer" parent="." unique_id=2086283368]
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAAAAEAAAAAAAkAAAAAAAIAAAAAAAkAAAAAAAMAAAAAAAkAAAAAAAQAAAAAAAkAAAAAAAAAAAAAAAgAAAABAAAAAAABAAgAAAACAAAAAAABAAgAAAADAAAAAAABAAgAAAAEAAAAAAACAAgAAAAFAAAAAAAAAAgAAAAGAAAAAAABAAgAAAAHAAAAAAACAAgAAAAHAAEAAAACAAkAAAAHAAIAAAACAAkAAAAHAAMAAAACAAkAAAAHAAQAAAACAAkAAAAHAAUAAAACAAoAAAABAAUAAAABAAoAAAACAAUAAAABAAoAAAADAAUAAAABAAoAAAAEAAUAAAABAAoAAAAFAAUAAAABAAoAAAAGAAUAAAABAAoAAAAAAAUAAAAAAAoAAAAFAAIAAAAGAAgAAAAFAAEAAAAAAAkAAAAEAAEAAAACAAkAAAAEAAIAAAAGAAgAAAAGAAEAAAAHAAgAAAA=")
+tile_set = ExtResource("2_jqvt2")
+
+[node name="Player" parent="." unique_id=226938582 instance=ExtResource("3_73by4")]
+position = Vector2(64, 72)
+
+[node name="PlayerSpawnPoints" type="Node2D" parent="." unique_id=1073191777]
+
+[node name="house1fromAdamMap" type="Marker2D" parent="PlayerSpawnPoints" unique_id=1878060306]
+position = Vector2(64, 72)
+
+[node name="House1toAdamMap1" parent="." unique_id=1895642603 instance=ExtResource("4_sqj2r")]
+position = Vector2(64, 88)
