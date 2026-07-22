@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://banexdacv6htb" path="res://Scenes/Trees/tree.tscn" id="3_wsbuy"]
 [ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="4_awbjw"]
 [ext_resource type="PackedScene" uid="uid://bw3n5vymx3k7j" path="res://Scenes/Doors/BarkBreakertoWorld.tscn" id="4_bws3g"]
+[ext_resource type="PackedScene" uid="uid://vp2kwubidkxn" path="res://Scenes/Signs/dialogue_ui.tscn" id="5_bws3g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0cx3a"]
 texture = ExtResource("1_edkeh")
@@ -333,3 +334,5 @@ position = Vector2(40, 32)
 
 [node name="BarkBreakerfromWorld" type="Marker2D" parent="PlayerSpawnPoints" unique_id=1924236416]
 position = Vector2(40, 56)
+
+[node name="DialogueUI" parent="." unique_id=353898798 instance=ExtResource("5_bws3g")]
