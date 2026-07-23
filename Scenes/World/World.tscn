@@ -345,59 +345,61 @@ sign_text = "To Bark Breaker World"
 
 [node name="DialogueUI" parent="." unique_id=353898798 instance=ExtResource("10_ng1ea")]
 
-[node name="Tree" parent="." unique_id=2000084765 instance=ExtResource("11_ng1ea")]
+[node name="Trees" type="Node" parent="." unique_id=1393102347]
+
+[node name="Tree" parent="Trees" unique_id=2000084765 instance=ExtResource("11_ng1ea")]
 position = Vector2(-301, -201)
 
-[node name="Tree2" parent="." unique_id=1297851036 instance=ExtResource("11_ng1ea")]
+[node name="Tree2" parent="Trees" unique_id=1297851036 instance=ExtResource("11_ng1ea")]
 position = Vector2(-119, -50)
 
-[node name="Tree3" parent="." unique_id=634171149 instance=ExtResource("11_ng1ea")]
+[node name="Tree3" parent="Trees" unique_id=634171149 instance=ExtResource("11_ng1ea")]
 position = Vector2(50, -229)
 
-[node name="Tree4" parent="." unique_id=1316784290 instance=ExtResource("11_ng1ea")]
+[node name="Tree4" parent="Trees" unique_id=1316784290 instance=ExtResource("11_ng1ea")]
 position = Vector2(210, -109)
 
-[node name="Tree5" parent="." unique_id=167460662 instance=ExtResource("11_ng1ea")]
+[node name="Tree5" parent="Trees" unique_id=167460662 instance=ExtResource("11_ng1ea")]
 position = Vector2(493, -84)
 
-[node name="Tree6" parent="." unique_id=494572857 instance=ExtResource("11_ng1ea")]
+[node name="Tree6" parent="Trees" unique_id=494572857 instance=ExtResource("11_ng1ea")]
 position = Vector2(-340, 159)
 
-[node name="Tree7" parent="." unique_id=793625302 instance=ExtResource("11_ng1ea")]
+[node name="Tree7" parent="Trees" unique_id=793625302 instance=ExtResource("11_ng1ea")]
 position = Vector2(391, -252)
 
-[node name="Tree8" parent="." unique_id=1916588674 instance=ExtResource("11_ng1ea")]
+[node name="Tree8" parent="Trees" unique_id=1916588674 instance=ExtResource("11_ng1ea")]
 position = Vector2(672, -187)
 
-[node name="Tree9" parent="." unique_id=176695347 instance=ExtResource("11_ng1ea")]
+[node name="Tree9" parent="Trees" unique_id=176695347 instance=ExtResource("11_ng1ea")]
 position = Vector2(949, -115)
 
-[node name="Tree10" parent="." unique_id=128625898 instance=ExtResource("11_ng1ea")]
+[node name="Tree10" parent="Trees" unique_id=128625898 instance=ExtResource("11_ng1ea")]
 position = Vector2(814, 180)
 
-[node name="Tree11" parent="." unique_id=1948329604 instance=ExtResource("12_lp0bp")]
+[node name="Tree11" parent="Trees" unique_id=1948329604 instance=ExtResource("12_lp0bp")]
 position = Vector2(67, 14)
 
-[node name="Tree12" parent="." unique_id=324136400 instance=ExtResource("12_lp0bp")]
+[node name="Tree12" parent="Trees" unique_id=324136400 instance=ExtResource("12_lp0bp")]
 position = Vector2(-338, -57)
 
-[node name="Tree13" parent="." unique_id=682130701 instance=ExtResource("12_lp0bp")]
+[node name="Tree13" parent="Trees" unique_id=682130701 instance=ExtResource("12_lp0bp")]
 position = Vector2(223, -249)
 
-[node name="Tree14" parent="." unique_id=1901552899 instance=ExtResource("12_lp0bp")]
+[node name="Tree14" parent="Trees" unique_id=1901552899 instance=ExtResource("12_lp0bp")]
 position = Vector2(932, -255)
 
-[node name="Tree15" parent="." unique_id=1613341280 instance=ExtResource("12_lp0bp")]
+[node name="Tree15" parent="Trees" unique_id=1613341280 instance=ExtResource("12_lp0bp")]
 position = Vector2(801, -20)
 
-[node name="Tree16" parent="." unique_id=1753083318 instance=ExtResource("13_0phyg")]
+[node name="Tree16" parent="Trees" unique_id=1753083318 instance=ExtResource("13_0phyg")]
 position = Vector2(-123, -229)
 
-[node name="Tree17" parent="." unique_id=251052036 instance=ExtResource("13_0phyg")]
+[node name="Tree17" parent="Trees" unique_id=251052036 instance=ExtResource("13_0phyg")]
 position = Vector2(344, -127)
 
-[node name="Tree18" parent="." unique_id=151549165 instance=ExtResource("13_0phyg")]
+[node name="Tree18" parent="Trees" unique_id=151549165 instance=ExtResource("13_0phyg")]
 position = Vector2(659, 66)
 
-[node name="Tree19" parent="." unique_id=632768214 instance=ExtResource("14_30wmc")]
+[node name="Tree19" parent="Trees" unique_id=632768214 instance=ExtResource("14_30wmc")]
 position = Vector2(368, 11)

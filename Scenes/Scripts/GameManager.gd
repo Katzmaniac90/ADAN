@@ -131,12 +131,12 @@ func craft_super_saiyan_axe():
 		print("Need Tree3 Axe first!")
 		return false
 
-	if inventory.get("Tree4 Log", 0) < 100:
+	if inventory.get("Tree4 Log", 0) < 1:
 		print("Need 100 Tree4 Logs")
 		return false
 
 
-	inventory["Tree4 Log"] -= 100
+	inventory["Tree4 Log"] -= 1
 
 	current_axe = "Super Saiyan Axe"
 
