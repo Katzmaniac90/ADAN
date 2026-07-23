@@ -32,7 +32,7 @@ min_respawn_time = 20.0
 max_respawn_time = 80.0
 required_axe_tier = 2
 required_barkbreaking_level = 10
-barkbreaking_xp = 75
+barkbreaking_xp = 100
 tree_difficulty = 3
 
 [node name="TreeModified" type="Sprite2D" parent="." unique_id=573872850]

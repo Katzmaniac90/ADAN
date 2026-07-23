@@ -132,7 +132,7 @@ func craft_super_saiyan_axe():
 		return false
 
 	if inventory.get("Tree4 Log", 0) < 1:
-		print("Need 100 Tree4 Logs")
+		print("Need 1 Tree4 Logs")
 		return false
 
 

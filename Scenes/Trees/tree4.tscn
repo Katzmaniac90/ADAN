@@ -31,8 +31,8 @@ log_scene = ExtResource("2_oq1sf")
 min_respawn_time = 40.0
 max_respawn_time = 160.0
 required_axe_tier = 3
-required_barkbreaking_level = 20
-barkbreaking_xp = 100
+required_barkbreaking_level = 15
+barkbreaking_xp = 200
 tree_difficulty = 4
 
 [node name="TreeModified" type="Sprite2D" parent="." unique_id=573872850]

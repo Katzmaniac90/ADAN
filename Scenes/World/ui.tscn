@@ -46,14 +46,26 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh8m4"]
 bg_color = Color(0.5587861, 0.08547773, 0.15488276, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d7t7b"]
+bg_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_de5vp"]
 bg_color = Color(0.8563691, 0.50175077, 0.05562032, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lccpl"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ug3ty"]
 bg_color = Color(0.77549595, 0.7740388, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5qpw"]
+bg_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ardup"]
 bg_color = Color(0.28414398, 0.5476296, 0.08405908, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iikbr"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="UI" type="CanvasLayer" unique_id=480595847]
 script = ExtResource("1_l88uj")
@@ -124,8 +136,11 @@ vertical_alignment = 1
 offset_left = 116.0
 offset_right = 264.0
 offset_bottom = 43.0
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_wh8m4")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_d7t7b")
 text = "Text: Craft Wooden Axe "
 script = ExtResource("4_m6ews")
 
@@ -133,18 +148,23 @@ script = ExtResource("4_m6ews")
 offset_left = 116.0
 offset_right = 264.0
 offset_bottom = 43.0
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_de5vp")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_lccpl")
 text = "Text: Craft Tree2 Axe
 "
 script = ExtResource("5_wh8m4")
 
 [node name="Tree3Axe" type="Button" parent="." unique_id=441536118]
-offset_left = 116.0
-offset_right = 264.0
+offset_left = 117.0
+offset_right = 265.0
 offset_bottom = 43.0
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_ug3ty")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_y5qpw")
 text = "Text: Craft Tree3 Axe 
 "
 script = ExtResource("6_de5vp")
@@ -153,8 +173,10 @@ script = ExtResource("6_de5vp")
 offset_left = 116.0
 offset_right = 279.0
 offset_bottom = 43.0
+theme_override_colors/font_disabled_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_ardup")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_iikbr")
 text = "Text: Craft Super Saiyan Axe
 "
 script = ExtResource("7_ug3ty")
