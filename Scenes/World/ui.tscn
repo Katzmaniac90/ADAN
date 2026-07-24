@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://coepildsrjist" path="res://Scenes/World/super_saiyan_axe.gd" id="7_ug3ty"]
 [ext_resource type="Script" uid="uid://dp5ytejonv6bk" path="res://Scenes/World/equipment_panel.gd" id="8_ardup"]
 [ext_resource type="Texture2D" uid="uid://dvg332p32ekv5" path="res://Items/Axes/Hands.png" id="9_d7t7b"]
+[ext_resource type="Script" uid="uid://bl1a2ul4wqiqx" path="res://Scenes/World/crafting_panel.gd" id="11_iikbr"]
 [ext_resource type="Script" uid="uid://bxe4faow6o12k" path="res://Scenes/World/bag_panel.gd" id="11_y5qpw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wla72"]
@@ -82,6 +83,9 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfpjy"]
+bg_color = Color(0.23137255, 0.23137255, 0.23137255, 1)
+
 [node name="UI" type="CanvasLayer" unique_id=480595847]
 script = ExtResource("1_l88uj")
 
@@ -141,6 +145,14 @@ offset_left = 26.0
 offset_top = 85.0
 offset_right = 96.0
 offset_bottom = 108.0
+
+[node name="Skills" type="Label" parent="SkillsPanel" unique_id=895436978]
+layout_mode = 0
+offset_left = 517.0
+offset_top = 4.0
+offset_right = 561.0
+offset_bottom = 27.0
+text = "Skills "
 
 [node name="Wooden Axe" type="Button" parent="." unique_id=2128830562]
 offset_left = 116.0
@@ -253,16 +265,111 @@ script = ExtResource("11_y5qpw")
 
 [node name="Title" type="Label" parent="BagPanel" unique_id=1310490504]
 layout_mode = 0
-offset_left = 38.0
-offset_top = 22.0
-offset_right = 78.0
-offset_bottom = 45.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 120.0
+offset_bottom = 27.0
+text = "Bag"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="InventoryGrid" type="GridContainer" parent="BagPanel" unique_id=1951881799]
 layout_mode = 0
-offset_left = 8.0
-offset_top = 11.0
-offset_right = 117.0
-offset_bottom = 600.0
+offset_left = 7.0
+offset_top = 27.0
+offset_right = 116.0
+offset_bottom = 602.0
+
+[node name="CraftingPanel" type="Panel" parent="." unique_id=354939772]
+offset_left = 441.0
+offset_top = 100.0
+offset_right = 666.0
+offset_bottom = 323.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_cfpjy")
+script = ExtResource("11_iikbr")
+
+[node name="Title" type="Label" parent="CraftingPanel" unique_id=896528218]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="RecipeContainer" type="VBoxContainer" parent="CraftingPanel" unique_id=1541397835]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 1.0
+offset_right = 44.0
+offset_bottom = 213.0
+
+[node name="WoodAxeRecipe" type="HBoxContainer" parent="CraftingPanel/RecipeContainer" unique_id=1965000639]
+layout_mode = 2
+
+[node name="AxeIcon" type="TextureRect" parent="CraftingPanel/RecipeContainer/WoodAxeRecipe" unique_id=1176707271]
+layout_mode = 2
+
+[node name="Info" type="VBoxContainer" parent="CraftingPanel/RecipeContainer/WoodAxeRecipe" unique_id=774661544]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="CraftingPanel/RecipeContainer/WoodAxeRecipe/Info" unique_id=864367908]
+layout_mode = 2
+
+[node name="Requirements" type="Label" parent="CraftingPanel/RecipeContainer/WoodAxeRecipe/Info" unique_id=960818762]
+layout_mode = 2
+
+[node name="CraftButton" type="Button" parent="CraftingPanel/RecipeContainer/WoodAxeRecipe" unique_id=2097782314]
+layout_mode = 2
+
+[node name="Tree2AxeRecipe" type="HBoxContainer" parent="CraftingPanel/RecipeContainer" unique_id=1557421291]
+layout_mode = 2
+
+[node name="AxeIcon" type="TextureRect" parent="CraftingPanel/RecipeContainer/Tree2AxeRecipe" unique_id=1569159458]
+layout_mode = 2
+
+[node name="Info" type="VBoxContainer" parent="CraftingPanel/RecipeContainer/Tree2AxeRecipe" unique_id=259902368]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="CraftingPanel/RecipeContainer/Tree2AxeRecipe/Info" unique_id=396896780]
+layout_mode = 2
+
+[node name="Requirements" type="Label" parent="CraftingPanel/RecipeContainer/Tree2AxeRecipe/Info" unique_id=1897737955]
+layout_mode = 2
+
+[node name="CraftButton" type="Button" parent="CraftingPanel/RecipeContainer/Tree2AxeRecipe" unique_id=2057967199]
+layout_mode = 2
+
+[node name="Tree3AxeRecipe" type="HBoxContainer" parent="CraftingPanel/RecipeContainer" unique_id=2012757702]
+layout_mode = 2
+
+[node name="AxeIcon" type="TextureRect" parent="CraftingPanel/RecipeContainer/Tree3AxeRecipe" unique_id=1821961222]
+layout_mode = 2
+
+[node name="Info" type="VBoxContainer" parent="CraftingPanel/RecipeContainer/Tree3AxeRecipe" unique_id=1530286736]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="CraftingPanel/RecipeContainer/Tree3AxeRecipe/Info" unique_id=620021127]
+layout_mode = 2
+
+[node name="Requirements" type="Label" parent="CraftingPanel/RecipeContainer/Tree3AxeRecipe/Info" unique_id=117338294]
+layout_mode = 2
+
+[node name="CraftButton" type="Button" parent="CraftingPanel/RecipeContainer/Tree3AxeRecipe" unique_id=2045654660]
+layout_mode = 2
+
+[node name="SuperSaiyanAxeRecipe" type="HBoxContainer" parent="CraftingPanel/RecipeContainer" unique_id=1122015807]
+layout_mode = 2
+
+[node name="AxeIcon" type="TextureRect" parent="CraftingPanel/RecipeContainer/SuperSaiyanAxeRecipe" unique_id=762751003]
+layout_mode = 2
+
+[node name="Info" type="VBoxContainer" parent="CraftingPanel/RecipeContainer/SuperSaiyanAxeRecipe" unique_id=1525795812]
+layout_mode = 2
+
+[node name="Name" type="Label" parent="CraftingPanel/RecipeContainer/SuperSaiyanAxeRecipe/Info" unique_id=102534336]
+layout_mode = 2
+
+[node name="Requirements" type="Label" parent="CraftingPanel/RecipeContainer/SuperSaiyanAxeRecipe/Info" unique_id=378993780]
+layout_mode = 2
+
+[node name="CraftButton" type="Button" parent="CraftingPanel/RecipeContainer/SuperSaiyanAxeRecipe" unique_id=1653542213]
+layout_mode = 2
 
 [connection signal="pressed" from="Wooden Axe" to="." method="_on_craft_button_pressed"]
