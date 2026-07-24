@@ -163,3 +163,24 @@ func add_barkbreaking_xp(amount):
 		print("Barkbreaking Level:", barkbreaking_level)
 
 	barkbreaking_changed.emit()
+func get_next_axe():
+
+	match current_axe:
+
+		"Hands":
+			return "Wood Axe"
+
+		"Wood Axe":
+			return "Tree2 Axe"
+
+		"Tree2 Axe":
+			return "Tree3 Axe"
+
+		"Tree3 Axe":
+			return "Super Saiyan Axe"
+
+		"Super Saiyan Axe":
+			return "MAX"
+
+		_:
+			return "MAX"
