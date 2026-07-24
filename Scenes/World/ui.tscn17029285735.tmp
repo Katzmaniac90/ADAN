@@ -1,15 +1,13 @@
 [gd_scene format=3 uid="uid://yibi3d0w56cc"]
 
 [ext_resource type="Script" uid="uid://cuc4uu3psb7a7" path="res://Scenes/Scripts/ui.gd" id="1_l88uj"]
+[ext_resource type="Script" uid="uid://d37j66gxov6ra" path="res://Scenes/Scripts/inventory_panel.gd" id="2_m6ews"]
 [ext_resource type="Script" uid="uid://b486xt56rg72o" path="res://Scenes/Scripts/skills_panel.gd" id="3_wh8m4"]
-[ext_resource type="Texture2D" uid="uid://dsfkjv1b23nxy" path="res://tree-modified.png" id="4_lccpl"]
 [ext_resource type="Script" uid="uid://b6n45mrs26udf" path="res://Scenes/Scripts/craft_button.gd" id="4_m6ews"]
 [ext_resource type="Script" uid="uid://b2oj6f7d561uu" path="res://Scenes/World/tree_2_axe.gd" id="5_wh8m4"]
 [ext_resource type="Script" uid="uid://rtr2gjey3d3n" path="res://Scenes/World/tree_3_axe.gd" id="6_de5vp"]
 [ext_resource type="Script" uid="uid://coepildsrjist" path="res://Scenes/World/super_saiyan_axe.gd" id="7_ug3ty"]
 [ext_resource type="Script" uid="uid://dp5ytejonv6bk" path="res://Scenes/World/equipment_panel.gd" id="8_ardup"]
-[ext_resource type="Texture2D" uid="uid://dvg332p32ekv5" path="res://Items/Axes/Hands.png" id="9_d7t7b"]
-[ext_resource type="Script" uid="uid://bxe4faow6o12k" path="res://Scenes/World/bag_panel.gd" id="11_y5qpw"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wla72"]
 bg_color = Color(1, 1, 1, 1)
@@ -19,20 +17,32 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjd5s"]
+bg_color = Color(0, 0, 0, 1)
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuxid"]
-bg_color = Color(0.23137255, 0.23137255, 0.23137255, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
+bg_color = Color(0.2347951, 0.90982777, 0.35912356, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0d0er"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ng1ea"]
+bg_color = Color(0.44248194, 0.9934606, 0.27661282, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l88uj"]
-bg_color = Color(0.23137255, 0.23137255, 0.23137255, 1)
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wh8m4"]
 bg_color = Color(0.5587861, 0.08547773, 0.15488276, 1)
@@ -58,30 +68,6 @@ bg_color = Color(0.28414398, 0.5476296, 0.08405908, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iikbr"]
 bg_color = Color(0, 0, 0, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eooha"]
-bg_color = Color(0.23137255, 0.23137255, 0.23137255, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0.06666667, 0.06666667, 0.06666667, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_caeob"]
-bg_color = Color(0.23137255, 0.23137255, 0.23137255, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
 [node name="UI" type="CanvasLayer" unique_id=480595847]
 script = ExtResource("1_l88uj")
 
@@ -106,41 +92,46 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="InventoryPanel" type="Panel" parent="." unique_id=78205363]
+offset_right = 116.0
+offset_bottom = 108.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_kjd5s")
+script = ExtResource("2_m6ews")
+
+[node name="InventoryLabel" type="Label" parent="InventoryPanel" unique_id=2091477444]
+layout_mode = 0
+offset_right = 116.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 12
+text = "Inventory
+Wood Log: 0 "
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="SkillsPanel" type="Panel" parent="." unique_id=1478144087]
-offset_left = 180.0
-offset_top = 609.0
-offset_right = 1280.0
-offset_bottom = 720.0
+offset_top = 131.0
+offset_right = 116.0
+offset_bottom = 139.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kuxid")
 script = ExtResource("3_wh8m4")
 
-[node name="LevelLabel" type="Label" parent="SkillsPanel" unique_id=649127536]
+[node name="ProgressBar" type="ProgressBar" parent="SkillsPanel" unique_id=588890411]
 layout_mode = 0
-offset_left = 46.0
-offset_top = 8.0
-offset_right = 76.0
-offset_bottom = 31.0
+offset_right = 116.0
+offset_bottom = 9.0
+theme_override_styles/background = SubResource("StyleBoxFlat_0d0er")
+theme_override_styles/fill = SubResource("StyleBoxFlat_ng1ea")
+show_percentage = false
+
+[node name="Label" type="Label" parent="SkillsPanel" unique_id=649127536]
+layout_mode = 0
+offset_top = -23.0
+offset_right = 116.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="TreeIcon" type="TextureRect" parent="SkillsPanel" unique_id=1332288513]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 29.0
-offset_right = 92.0
-offset_bottom = 89.0
-texture = ExtResource("4_lccpl")
-expand_mode = 1
-
-[node name="XPLabel" type="Label" parent="SkillsPanel" unique_id=547583055]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 85.0
-offset_right = 96.0
-offset_bottom = 108.0
 
 [node name="Wooden Axe" type="Button" parent="." unique_id=2128830562]
 offset_left = 116.0
@@ -192,77 +183,43 @@ text = "Text: Craft Super Saiyan Axe
 script = ExtResource("7_ug3ty")
 
 [node name="EquipmentPanel" type="Panel" parent="." unique_id=2065187319]
-custom_minimum_size = Vector2(100, 100)
-offset_top = 609.0
-offset_right = 182.0
-offset_bottom = 720.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_eooha")
+visible = false
+custom_minimum_size = Vector2(300, 400)
+offset_left = 199.0
+offset_top = 43.0
+offset_right = 499.0
+offset_bottom = 443.0
 script = ExtResource("8_ardup")
-
-[node name="Axe" type="Label" parent="EquipmentPanel" unique_id=341998437]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 70.0
-offset_right = 34.0
-offset_bottom = 93.0
-text = "Axe"
 
 [node name="Title" type="Label" parent="EquipmentPanel" unique_id=758111878]
 layout_mode = 0
-offset_left = 49.0
-offset_top = 9.0
-offset_right = 134.0
-offset_bottom = 32.0
+offset_left = 96.0
+offset_top = 11.0
+offset_right = 136.0
+offset_bottom = 34.0
 text = "Equipment"
 
-[node name="AxeSlot" type="Panel" parent="EquipmentPanel" unique_id=384346411]
-custom_minimum_size = Vector2(100, 80)
+[node name="Axeslot" type="Panel" parent="EquipmentPanel" unique_id=384346411]
+custom_minimum_size = Vector2(200, 80)
 layout_mode = 0
-offset_left = 62.0
-offset_top = 35.0
-offset_right = 386.99997
-offset_bottom = 360.0
-scale = Vector2(0.2, 0.2)
+offset_left = 42.0
+offset_top = 41.0
+offset_right = 242.0
+offset_bottom = 121.0
 
-[node name="AxeIcon" type="TextureRect" parent="EquipmentPanel/AxeSlot" unique_id=807347165]
-custom_minimum_size = Vector2(1, 1)
+[node name="Axeicon" type="TextureRect" parent="EquipmentPanel/Axeslot" unique_id=807347165]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 4.999878
-offset_right = 3160.0
-offset_bottom = 3155.0
-scale = Vector2(0.1, 0.1)
-tooltip_text = "Hands"
-texture = ExtResource("9_d7t7b")
+offset_left = 159.0
+offset_top = 81.0
+offset_right = 199.0
+offset_bottom = 121.0
 
-[node name="AxeName" type="Label" parent="EquipmentPanel/AxeSlot" unique_id=69051135]
-visible = false
+[node name="Axename" type="Label" parent="EquipmentPanel/Axeslot" unique_id=69051135]
 layout_mode = 0
 offset_left = 75.0
 offset_top = 26.0
 offset_right = 125.0
 offset_bottom = 49.0
 text = "Hands"
-
-[node name="BagPanel" type="Panel" parent="." unique_id=215952738]
-offset_left = 1156.0
-offset_right = 1280.0
-offset_bottom = 611.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_caeob")
-script = ExtResource("11_y5qpw")
-
-[node name="Title" type="Label" parent="BagPanel" unique_id=1310490504]
-layout_mode = 0
-offset_left = 38.0
-offset_top = 22.0
-offset_right = 78.0
-offset_bottom = 45.0
-
-[node name="InventoryGrid" type="GridContainer" parent="BagPanel" unique_id=1951881799]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 11.0
-offset_right = 117.0
-offset_bottom = 600.0
 
 [connection signal="pressed" from="Wooden Axe" to="." method="_on_craft_button_pressed"]

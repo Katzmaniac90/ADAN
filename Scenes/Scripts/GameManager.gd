@@ -30,6 +30,7 @@ func get_axe_tier():
 			return 0
 var inventory = {}
 signal inventory_changed
+signal barkbreaking_changed
 
 
 #========================
@@ -160,3 +161,5 @@ func add_barkbreaking_xp(amount):
 
 		print("LEVEL UP!")
 		print("Barkbreaking Level:", barkbreaking_level)
+
+	barkbreaking_changed.emit()

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ct5tbhe0mmo1l"]
+
+[ext_resource type="Script" uid="uid://cnr875gxqcngb" path="res://Scenes/Scripts/item_slot.gd" id="1_ufccq"]
+
+[node name="ItemSlot" type="Control" unique_id=1480038782]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1216.0
+offset_bottom = -300.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ufccq")
+
+[node name="ItemIcon" type="TextureRect" parent="." unique_id=221748323]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 0
+offset_right = 113.0
+offset_bottom = 72.0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Quantity" type="Label" parent="." unique_id=1255845022]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 14

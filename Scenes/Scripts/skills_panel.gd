@@ -1,19 +1,30 @@
 extends Panel
 
-@onready var level_label = $Label
-@onready var xp_bar = $ProgressBar
+@onready var level_label = $LevelLabel
+@onready var xp_label = $XPLabel
 
 
 func _ready():
-	update_skill()
+
+	show()
+
+	GameManager.barkbreaking_changed.connect(update_barkbreaking)
+
+	update_barkbreaking()
 
 
-func _process(delta):
-	update_skill()
+
+func _unhandled_input(event):
+
+	if event.is_action_pressed("skills"):
+		visible = !visible
 
 
-func update_skill():
-	level_label.text = "Barkbreaking Lv. " + str(GameManager.barkbreaking_level)
 
-	xp_bar.max_value = GameManager.barkbreaking_level * 100
-	xp_bar.value = GameManager.barkbreaking_xp
+func update_barkbreaking():
+
+	level_label.text = "Lv. " + str(GameManager.barkbreaking_level)
+
+	var required_xp = GameManager.barkbreaking_level * 100
+
+	xp_label.text = str(GameManager.barkbreaking_xp) + " / " + str(required_xp) + " XP"

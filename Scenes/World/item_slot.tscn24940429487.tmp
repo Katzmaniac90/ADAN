@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://ct5tbhe0mmo1l"]
+
+[ext_resource type="Script" uid="uid://cnr875gxqcngb" path="res://Scenes/Scripts/item_slot.gd" id="1_ufccq"]
+[ext_resource type="Texture2D" uid="uid://b0etjitcoro52" path="res://Items/Logs/Tree1Log.png" id="2_6g2mt"]
+
+[node name="ItemSlot" type="Control" unique_id=1480038782]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ufccq")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=221748323]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_right = 48.0
+offset_bottom = 48.0
+texture = ExtResource("2_6g2mt")
