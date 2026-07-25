@@ -6,9 +6,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_613su"]
 size = Vector2(35, 33)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_wla72"]
-size = Vector2(41, 38)
-
 [node name="Enemy" type="CharacterBody2D" unique_id=557316632]
 script = ExtResource("1_613su")
 
@@ -17,13 +14,8 @@ scale = Vector2(2, 2)
 texture = ExtResource("2_jcvw6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=104976923]
+visible = false
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_613su")
-
-[node name="Area2D" type="Area2D" parent="." unique_id=1448833910]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2033273704]
-position = Vector2(-0.5, 1)
-shape = SubResource("RectangleShape2D_wla72")
 
 [node name="RespawnTimer" type="Timer" parent="." unique_id=157706372]
