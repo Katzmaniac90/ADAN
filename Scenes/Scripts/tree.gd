@@ -1,23 +1,29 @@
 extends StaticBody2D
 
+
 var player_near = false
 var chopping = false
 var shake_amount = 3.0
 var original_position: Vector2
 
 
-@export var stump_scene: PackedScene
-
 @export var min_respawn_time: float = 4.0
 @export var max_respawn_time: float = 8.0
 
+
+# Axe requirements
 @export var required_axe_tier: int = 0
+
+# Barkbreaking requirements
 @export var required_barkbreaking_level: int = 1
 
+# Tree settings
 @export var barkbreaking_xp: int = 25
 @export var tree_difficulty: int = 1
 
+# Different tree drops
 @export var log_name: String = "Tree1 Log"
+
 
 
 func _ready():
@@ -37,6 +43,7 @@ func _ready():
 func _on_body_entered(body):
 
 	if body.name == "Player":
+
 		player_near = true
 		$InteractionLabel.visible = true
 
@@ -45,6 +52,7 @@ func _on_body_entered(body):
 func _on_body_exited(body):
 
 	if body.name == "Player":
+
 		player_near = false
 		$InteractionLabel.visible = false
 
@@ -55,6 +63,7 @@ func _process(delta):
 	if chopping:
 
 		$ChopProgress.value += (100.0 / get_chop_time()) * delta
+
 		shake_tree()
 
 	else:
@@ -71,21 +80,31 @@ func _process(delta):
 func start_chopping():
 
 	if GameManager.get_axe_tier() < required_axe_tier:
+
 		print("Your axe is too weak!")
+
 		return
+
+
 	if GameManager.barkbreaking_level < required_barkbreaking_level:
+
 		print("Your Barkbreaking level is too low!")
+
 		return
+
 
 	chopping = true
 
 
 	var player = get_tree().get_first_node_in_group("player")
+
 	player.is_busy = true
 
 
 	$InteractionLabel.visible = false
+
 	$ChopProgress.visible = true
+
 	$ChopProgress.value = 0
 
 
@@ -103,32 +122,53 @@ func chop_tree():
 
 	var player = get_tree().get_first_node_in_group("player")
 
+
 	player.is_busy = false
 
+
+	# Give skill XP
 	player.add_barkbreaking_xp(barkbreaking_xp)
 
-	# Add the log directly to inventory
+
+	# Add log directly to inventory
 	GameManager.add_item(log_name, 1)
+
+
+	print("Received:", log_name)
+
 
 	chopping = false
 
+
 	$ChopProgress.visible = false
+
 
 	hide()
 
 	$CollisionShape2D.disabled = true
 
+
 	var r = randf()
 
-	var random_respawn = lerp(min_respawn_time, max_respawn_time, sqrt(r))
+	var random_respawn = lerp(
+		min_respawn_time,
+		max_respawn_time,
+		sqrt(r)
+	)
+
 
 	$RespawnTimer.start(random_respawn)
+
+
 
 func shake_tree():
 
 	if chopping:
 
-		$TreeModified.position.x = original_position.x + randf_range(-shake_amount, shake_amount)
+		$TreeModified.position.x = original_position.x + randf_range(
+			-shake_amount,
+			shake_amount
+		)
 
 	else:
 
@@ -148,24 +188,35 @@ func get_chop_time():
 
 	var axe_speed = 1.0
 
+
 	match GameManager.current_axe:
 
 		"Hands":
+
 			axe_speed = 1.0
 
+
 		"Wood Axe":
+
 			axe_speed = 0.5
 
+
 		"Tree2 Axe":
+
 			axe_speed = 0.35
 
+
 		"Tree3 Axe":
+
 			axe_speed = 0.25
 
+
 		"Super Saiyan Axe":
+
 			axe_speed = 0.1
 
 
 	var base_time = tree_difficulty * 10.0
+
 
 	return base_time * axe_speed

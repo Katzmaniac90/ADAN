@@ -26,6 +26,8 @@ corner_radius_bottom_left = 3
 [node name="Rock" type="StaticBody2D" unique_id=2000084765]
 z_index = 5
 script = ExtResource("1_3iop0")
+min_respawn_time = 5.0
+max_respawn_time = 20.0
 
 [node name="RockModified" type="Sprite2D" parent="." unique_id=573872850]
 z_index = 1
@@ -58,11 +60,7 @@ text = "[E] Chop Tree"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SmashTimer" type="Timer" parent="." unique_id=1715468972]
-wait_time = 3.0
-one_shot = true
-
-[node name="SmashProgress" type="ProgressBar" parent="." unique_id=1614617401]
+[node name="PunchProgress" type="ProgressBar" parent="." unique_id=1614617401]
 visible = false
 offset_left = -12.0
 offset_top = -38.0
@@ -72,7 +70,9 @@ theme_override_styles/background = SubResource("StyleBoxFlat_jq0y2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_y5hao")
 show_percentage = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1024194447]
+[node name="PunchTimer" type="Timer" parent="." unique_id=1715468972]
+wait_time = 3.0
+one_shot = true
 
 [node name="RespawnTimer" type="Timer" parent="." unique_id=354760686]
 wait_time = 5.0

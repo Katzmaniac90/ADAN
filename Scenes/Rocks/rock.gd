@@ -2,14 +2,18 @@ extends StaticBody2D
 
 
 var player_near = false
-var mining = false
+var punching = false
 
-
-@export var rockpunching_xp: int = 25
-@export var required_rockpunching_level: int = 1
 
 @export var min_respawn_time: float = 4.0
 @export var max_respawn_time: float = 8.0
+
+# Rock settings
+@export var rockpunching_xp: int = 25
+@export var required_rockpunching_level: int = 1
+@export var rock_difficulty: int = 1
+
+@export var punch_time: float = 10.0
 
 
 
@@ -18,7 +22,10 @@ func _ready():
 	$Area2D.body_entered.connect(_on_body_entered)
 	$Area2D.body_exited.connect(_on_body_exited)
 
+	$PunchTimer.timeout.connect(_on_punch_timer_timeout)
 	$RespawnTimer.timeout.connect(_on_respawn_timer_timeout)
+
+	$PunchProgress.visible = false
 
 
 
@@ -42,19 +49,26 @@ func _on_body_exited(body):
 
 func _process(delta):
 
-	if player_near and Input.is_action_just_pressed("interact") and not mining:
+	if punching:
 
-		punch_rock()
+		$PunchProgress.value += (100.0 / punch_time) * delta
+
+
+	if player_near and Input.is_action_just_pressed("interact") and not punching:
+
+		start_punching()
 
 
 
-func punch_rock():
+func start_punching():
 
 	if GameManager.rockpunching_level < required_rockpunching_level:
 
 		print("Your Rockpunching level is too low!")
-
 		return
+
+
+	punching = true
 
 
 	var player = get_tree().get_first_node_in_group("player")
@@ -62,14 +76,41 @@ func punch_rock():
 	player.is_busy = true
 
 
+	$InteractionLabel.visible = false
+
+	$PunchProgress.visible = true
+
+	$PunchProgress.value = 0
+
+
+	$PunchTimer.start(punch_time)
+
+
+
+func _on_punch_timer_timeout():
+
+	punch_rock()
+
+
+
+func punch_rock():
+
+	var player = get_tree().get_first_node_in_group("player")
+
+	player.is_busy = false
+
+
 	GameManager.add_rockpunching_xp(rockpunching_xp)
 
 
-	print("Rock punched!")
+	print("ROCK PUNCHED!")
 	print("Rockpunching XP +", rockpunching_xp)
 
 
-	player.is_busy = false
+	punching = false
+
+
+	$PunchProgress.visible = false
 
 
 	hide()
