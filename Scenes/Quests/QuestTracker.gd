@@ -10,6 +10,13 @@ func _ready():
 	QuestManager.quest_started.connect(show_tracker)
 	QuestManager.inventory_changed.connect(update_tracker)
 	QuestManager.quest_completed.connect(hide_tracker)
+	
+	# Restore previous state
+	if QuestManager.state == QuestManager.QuestState.ACTIVE:
+		show_tracker()
+
+	elif QuestManager.state == QuestManager.QuestState.READY_TO_COMPLETE:
+		show_tracker()
 
 
 func show_tracker():

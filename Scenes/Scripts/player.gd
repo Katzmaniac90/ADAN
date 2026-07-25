@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 var direction: Vector2 = Vector2(1,1)
-var speed: int = 100
+var speed: int = 50
 var is_busy = false
+var speedSwitch = false
 
 var zoom_speed = 0.1
 var min_zoom = 0.5
@@ -30,6 +31,16 @@ func _physics_process(delta):
 	velocity = direction * speed
 
 	playerAnimationsAdam()
+	
+	#press Space to toggle between going fast and slow!
+	if speedSwitch == false:
+		speed = 50
+	else:
+		speed = 200
+		
+	if Input.is_action_just_pressed("running"):
+		speedSwitch = !speedSwitch
+		print("speedSwitch =", speedSwitch)
 
 	# Camera zoom controls
 	if Input.is_action_just_pressed("zoom_in"):
