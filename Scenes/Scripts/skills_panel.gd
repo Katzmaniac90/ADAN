@@ -28,3 +28,23 @@ func update_barkbreaking():
 	var required_xp = GameManager.barkbreaking_level * 100
 
 	xp_label.text = str(GameManager.barkbreaking_xp) + " / " + str(required_xp) + " XP"
+var dragging := false
+var drag_offset := Vector2.ZERO
+
+
+func _gui_input(event):
+
+	if event is InputEventMouseButton:
+
+		if event.button_index == MOUSE_BUTTON_LEFT:
+
+			if event.pressed:
+				dragging = true
+				drag_offset = get_global_mouse_position() - global_position
+			else:
+				dragging = false
+
+
+	if event is InputEventMouseMotion and dragging:
+
+		global_position = get_global_mouse_position() - drag_offset
