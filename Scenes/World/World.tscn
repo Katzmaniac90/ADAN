@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://bgwiao8n0t2wo"]
 
 [ext_resource type="Texture2D" uid="uid://jquypphb3tdc" path="res://tilemap_packed.png" id="1_hveh7"]
-[ext_resource type="PackedScene" uid="uid://cqt5rjjga564r" path="res://Scenes/Rocks/rock.tscn" id="3_87yka"]
+[ext_resource type="PackedScene" uid="uid://d1gyjxghia60g" path="res://Scenes/Rocks/rock.tscn" id="3_87yka"]
 [ext_resource type="PackedScene" uid="uid://dmhtpoija66wm" path="res://Scenes/Flowers/flowers.tscn" id="4_kjd5s"]
 [ext_resource type="PackedScene" uid="uid://cuhcopyrnd8by" path="res://Scenes/Bushes/bush.tscn" id="5_p7pgw"]
 [ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="6_kuxid"]
@@ -311,7 +311,7 @@ z_index = 1
 position = Vector2(364, 137)
 
 [node name="Rock2" parent="." unique_id=265874353 instance=ExtResource("3_87yka")]
-position = Vector2(481, 229)
+position = Vector2(482, 43)
 
 [node name="Bush4" parent="." unique_id=899067017 instance=ExtResource("5_p7pgw")]
 position = Vector2(474, 167)

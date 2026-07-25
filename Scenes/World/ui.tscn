@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cuc4uu3psb7a7" path="res://Scenes/Scripts/ui.gd" id="1_l88uj"]
 [ext_resource type="Script" uid="uid://b486xt56rg72o" path="res://Scenes/Scripts/skills_panel.gd" id="3_wh8m4"]
+[ext_resource type="Texture2D" uid="uid://c75h2wgdoc8di" path="res://rocks_and_stones/PNG/Objects_separately/Rock1_1.png" id="4_ardup"]
 [ext_resource type="Texture2D" uid="uid://dsfkjv1b23nxy" path="res://tree-modified.png" id="4_lccpl"]
 [ext_resource type="Script" uid="uid://dp5ytejonv6bk" path="res://Scenes/World/equipment_panel.gd" id="8_ardup"]
 [ext_resource type="Texture2D" uid="uid://dvg332p32ekv5" path="res://Items/Axes/Hands.png" id="9_d7t7b"]
@@ -99,34 +100,6 @@ offset_bottom = 720.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kuxid")
 script = ExtResource("3_wh8m4")
 
-[node name="LevelLabel" type="Label" parent="SkillsPanel" unique_id=649127536]
-layout_mode = 0
-offset_left = 46.0
-offset_top = 8.0
-offset_right = 76.0
-offset_bottom = 31.0
-theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 12
-theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="TreeIcon" type="TextureRect" parent="SkillsPanel" unique_id=1332288513]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 29.0
-offset_right = 92.0
-offset_bottom = 89.0
-texture = ExtResource("4_lccpl")
-expand_mode = 1
-
-[node name="XPLabel" type="Label" parent="SkillsPanel" unique_id=547583055]
-layout_mode = 0
-offset_left = 26.0
-offset_top = 85.0
-offset_right = 96.0
-offset_bottom = 108.0
-
 [node name="Skills" type="Label" parent="SkillsPanel" unique_id=895436978]
 layout_mode = 0
 offset_left = 517.0
@@ -134,6 +107,65 @@ offset_top = 4.0
 offset_right = 561.0
 offset_bottom = 27.0
 text = "Skills "
+
+[node name="Barkbreaking" type="Node" parent="SkillsPanel" unique_id=2076382960]
+
+[node name="LevelLabel" type="Label" parent="SkillsPanel/Barkbreaking" unique_id=649127536]
+offset_left = 226.0
+offset_top = 617.0
+offset_right = 256.0
+offset_bottom = 640.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TreeIcon" type="TextureRect" parent="SkillsPanel/Barkbreaking" unique_id=1332288513]
+offset_left = 212.0
+offset_top = 638.0
+offset_right = 272.0
+offset_bottom = 698.0
+tooltip_text = "Barkbreaking"
+texture = ExtResource("4_lccpl")
+expand_mode = 1
+
+[node name="XPLabel" type="Label" parent="SkillsPanel/Barkbreaking" unique_id=547583055]
+offset_left = 206.0
+offset_top = 694.0
+offset_right = 276.0
+offset_bottom = 717.0
+
+[node name="Rockpunching" type="Node" parent="SkillsPanel" unique_id=179709323]
+
+[node name="LevelLabel" type="Label" parent="SkillsPanel/Rockpunching" unique_id=2014218258]
+offset_left = 326.0
+offset_top = 617.0
+offset_right = 356.0
+offset_bottom = 640.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="TreeIcon" type="TextureRect" parent="SkillsPanel/Rockpunching" unique_id=1503261047]
+offset_left = 312.0
+offset_top = 638.0
+offset_right = 372.0
+offset_bottom = 698.0
+tooltip_text = "Rockpunching"
+texture = ExtResource("4_ardup")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="XPLabel" type="Label" parent="SkillsPanel/Rockpunching" unique_id=80361586]
+offset_left = 306.0
+offset_top = 694.0
+offset_right = 376.0
+offset_bottom = 717.0
+metadata/_edit_use_anchors_ = true
 
 [node name="EquipmentPanel" type="Panel" parent="." unique_id=2065187319]
 custom_minimum_size = Vector2(100, 100)
@@ -222,42 +254,71 @@ script = ExtResource("11_iikbr")
 
 [node name="Title" type="Label" parent="CraftingPanel" unique_id=896528218]
 layout_mode = 0
-offset_left = 13.0
+offset_left = 11.0
 offset_top = 5.0
-offset_right = 437.0
+offset_right = 435.0
 offset_bottom = 28.0
 text = "Crafting Menu"
 horizontal_alignment = 1
 
-[node name="RecipeContainer" type="VBoxContainer" parent="CraftingPanel" unique_id=1541397835]
+[node name="RecipeContainer" type="Label" parent="CraftingPanel" unique_id=456602793]
 layout_mode = 0
 offset_left = 3.0
 offset_top = 28.0
 offset_right = 440.0
 offset_bottom = 320.0
 
-[node name="RecipeCard" type="HBoxContainer" parent="CraftingPanel/RecipeContainer" unique_id=1965000639]
+[node name="RecipeCard" type="Label" parent="CraftingPanel/RecipeContainer" unique_id=1256317740]
 custom_minimum_size = Vector2(50, 200)
-layout_mode = 2
+layout_mode = 0
+offset_left = 3.0
+offset_top = 6.0
+offset_right = 440.0
+offset_bottom = 296.0
 
 [node name="AxeIcon" type="TextureRect" parent="CraftingPanel/RecipeContainer/RecipeCard" unique_id=1176707271]
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
+layout_mode = 0
+offset_left = 4.0
+offset_top = 94.0
+offset_right = 88.0
+offset_bottom = 178.0
 
-[node name="Info" type="VBoxContainer" parent="CraftingPanel/RecipeContainer/RecipeCard" unique_id=774661544]
+[node name="Info" type="Label" parent="CraftingPanel/RecipeContainer/RecipeCard" unique_id=703990330]
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
+layout_mode = 0
+offset_left = 82.0
+offset_top = 117.0
+offset_right = 220.0
+offset_bottom = 184.0
 
 [node name="Name" type="Label" parent="CraftingPanel/RecipeContainer/RecipeCard/Info" unique_id=864367908]
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
+layout_mode = 0
+offset_left = 6.0
+offset_top = -29.0
+offset_right = 141.0
+offset_bottom = 65.0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Requirements" type="Label" parent="CraftingPanel/RecipeContainer/RecipeCard/Info" unique_id=960818762]
 custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
+layout_mode = 0
+offset_left = -67.0
+offset_top = 84.0
+offset_right = 343.0
+offset_bottom = 165.0
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CraftButton" type="Button" parent="CraftingPanel/RecipeContainer/RecipeCard" unique_id=2097782314]
-custom_minimum_size = Vector2(200, 10)
-layout_mode = 2
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 0
+offset_left = 227.0
+offset_top = 86.0
+offset_right = 427.0
+offset_bottom = 186.0
+text = "CRAFT"
 
 [connection signal="pressed" from="CraftingPanel/RecipeContainer/RecipeCard/CraftButton" to="CraftingPanel" method="_on_craft_button_pressed"]

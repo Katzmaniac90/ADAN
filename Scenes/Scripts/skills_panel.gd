@@ -1,7 +1,15 @@
 extends Panel
 
-@onready var level_label = $LevelLabel
-@onready var xp_label = $XPLabel
+
+@onready var level_label = $Barkbreaking/LevelLabel
+@onready var xp_label = $Barkbreaking/XPLabel
+
+@onready var rockpunching_level_label = $Rockpunching/LevelLabel
+@onready var rockpunching_xp_label = $Rockpunching/XPLabel
+
+
+var dragging := false
+var drag_offset := Vector2.ZERO
 
 
 func _ready():
@@ -9,14 +17,17 @@ func _ready():
 	show()
 
 	GameManager.barkbreaking_changed.connect(update_barkbreaking)
+	GameManager.rockpunching_changed.connect(update_rockpunching)
 
 	update_barkbreaking()
+	update_rockpunching()
 
 
 
 func _unhandled_input(event):
 
 	if event.is_action_pressed("skills"):
+
 		visible = !visible
 
 
@@ -28,3 +39,35 @@ func update_barkbreaking():
 	var required_xp = GameManager.barkbreaking_level * 100
 
 	xp_label.text = str(GameManager.barkbreaking_xp) + " / " + str(required_xp) + " XP"
+
+
+
+func update_rockpunching():
+
+	rockpunching_level_label.text = "Lv. " + str(GameManager.rockpunching_level)
+
+	var required_xp = GameManager.rockpunching_level * 100
+
+	rockpunching_xp_label.text = str(GameManager.rockpunching_xp) + " / " + str(required_xp) + " XP"
+
+
+
+func _gui_input(event):
+
+	if event is InputEventMouseButton:
+
+		if event.button_index == MOUSE_BUTTON_LEFT:
+
+			if event.pressed:
+
+				dragging = true
+				drag_offset = get_global_mouse_position() - global_position
+
+			else:
+
+				dragging = false
+
+
+	if event is InputEventMouseMotion and dragging:
+
+		global_position = get_global_mouse_position() - drag_offset

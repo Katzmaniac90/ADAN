@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://b06qc3ulpvb7a"]
 
 [ext_resource type="Script" uid="uid://djewqdd4jj3j1" path="res://Scenes/Scripts/tree.gd" id="1_q4htd"]
-[ext_resource type="PackedScene" uid="uid://cj548iwbf6wjm" path="res://Scenes/Trees/log3.tscn" id="2_q4htd"]
 [ext_resource type="Texture2D" uid="uid://daw87wmb7iv84" path="res://trees/PNG/Assets_separately/Trees/Autumn_tree2.png" id="3_q4htd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wla72"]
@@ -27,13 +26,13 @@ corner_radius_bottom_left = 3
 [node name="Tree" type="StaticBody2D" unique_id=2000084765]
 z_index = 5
 script = ExtResource("1_q4htd")
-log_scene = ExtResource("2_q4htd")
 min_respawn_time = 20.0
 max_respawn_time = 80.0
 required_axe_tier = 2
 required_barkbreaking_level = 10
 barkbreaking_xp = 100
 tree_difficulty = 3
+log_name = "Tree3 Log"
 
 [node name="TreeModified" type="Sprite2D" parent="." unique_id=573872850]
 z_index = 1
