@@ -31,6 +31,7 @@ func get_axe_tier():
 var inventory = {}
 signal inventory_changed
 signal barkbreaking_changed
+signal rockpunching_changed
 
 
 #========================
@@ -39,7 +40,8 @@ signal barkbreaking_changed
 
 var barkbreaking_level = 1
 var barkbreaking_xp = 0
-
+var rockpunching_level = 1
+var rockpunching_xp = 0
 
 #========================
 # PLAYER DATA
@@ -184,3 +186,16 @@ func get_next_axe():
 
 		_:
 			return "MAX"
+#========================
+# ROCKPUNCHING
+#========================
+func add_rockpunching_xp(amount):
+
+	rockpunching_xp += amount
+
+	while rockpunching_xp >= rockpunching_level * 100:
+
+		rockpunching_xp -= rockpunching_level * 100
+		rockpunching_level += 1
+
+	rockpunching_changed.emit()

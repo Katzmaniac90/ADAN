@@ -7,17 +7,17 @@ var original_position: Vector2
 
 
 @export var stump_scene: PackedScene
-@export var log_scene: PackedScene
 
 @export var min_respawn_time: float = 4.0
 @export var max_respawn_time: float = 8.0
 
-# Axe progression
 @export var required_axe_tier: int = 0
 @export var required_barkbreaking_level: int = 1
-# Tree settings
+
 @export var barkbreaking_xp: int = 25
 @export var tree_difficulty: int = 1
+
+@export var log_name: String = "Tree1 Log"
 
 
 func _ready():
@@ -107,39 +107,22 @@ func chop_tree():
 
 	player.add_barkbreaking_xp(barkbreaking_xp)
 
-
-	var log = log_scene.instantiate()
-
-
-	var offset = Vector2(
-		randf_range(-20,20),
-		randf_range(25,45)
-	)
-
-
-	log.global_position = global_position + offset
-
-	get_parent().add_child(log)
-
+	# Add the log directly to inventory
+	GameManager.add_item(log_name, 1)
 
 	chopping = false
 
 	$ChopProgress.visible = false
 
-
 	hide()
 
 	$CollisionShape2D.disabled = true
 
-
 	var r = randf()
 
-# Bias toward the maximum respawn time
 	var random_respawn = lerp(min_respawn_time, max_respawn_time, sqrt(r))
 
 	$RespawnTimer.start(random_respawn)
-
-
 
 func shake_tree():
 

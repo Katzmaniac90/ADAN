@@ -1,19 +1,79 @@
-[gd_scene format=3 uid="uid://cqt5rjjga564r"]
+[gd_scene format=3 uid="uid://d1gyjxghia60g"]
 
-[ext_resource type="Texture2D" uid="uid://dnq6lxwkkxlnf" path="res://Tiles/6c48beb9be3726603ca14a29f835642b_t-modified.png" id="1_m68cv"]
+[ext_resource type="Script" uid="uid://byaidobuu438e" path="res://Scenes/Rocks/rock.gd" id="1_3iop0"]
+[ext_resource type="Texture2D" uid="uid://c75h2wgdoc8di" path="res://rocks_and_stones/PNG/Objects_separately/Rock1_1.png" id="2_3iop0"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wla72"]
-radius = 18.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wla72"]
+size = Vector2(32, 23)
 
-[node name="Rock" type="StaticBody2D" unique_id=265874353]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22gus"]
+size = Vector2(36, 39)
 
-[node name="6c48Beb9Be3726603Ca14a29f835642bTModified" type="Sprite2D" parent="." unique_id=1877923005]
-position = Vector2(-4.9999695, 5.0000305)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_m68cv")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq0y2"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=392878537]
-visible = false
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5hao"]
+bg_color = Color(0.11772732, 0.4863708, 0.7360337, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Rock" type="StaticBody2D" unique_id=2000084765]
 z_index = 5
-position = Vector2(-5, 5)
-shape = SubResource("CircleShape2D_wla72")
+script = ExtResource("1_3iop0")
+
+[node name="RockModified" type="Sprite2D" parent="." unique_id=573872850]
+z_index = 1
+position = Vector2(-3.0000057, 4.999998)
+scale = Vector2(0.8937499, 0.78437495)
+texture = ExtResource("2_3iop0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141913667]
+position = Vector2(-1, 20.5)
+shape = SubResource("RectangleShape2D_wla72")
+debug_color = Color(0.34128827, 0.5011388, 0.9447065, 0.5254902)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=860053328]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=552153863]
+position = Vector2(-1, 14.5)
+shape = SubResource("RectangleShape2D_22gus")
+
+[node name="InteractionLabel" type="Label" parent="." unique_id=278786865]
+visible = false
+offset_left = -52.0
+offset_top = -43.0
+offset_right = 51.0
+offset_bottom = -20.0
+theme_override_colors/font_color = Color(0.38039216, 0.2509804, 0.31764707, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 10
+text = "[E] Chop Tree"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SmashTimer" type="Timer" parent="." unique_id=1715468972]
+wait_time = 3.0
+one_shot = true
+
+[node name="SmashProgress" type="ProgressBar" parent="." unique_id=1614617401]
+visible = false
+offset_left = -12.0
+offset_top = -38.0
+offset_right = 12.0
+offset_bottom = -32.0
+theme_override_styles/background = SubResource("StyleBoxFlat_jq0y2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_y5hao")
+show_percentage = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1024194447]
+
+[node name="RespawnTimer" type="Timer" parent="." unique_id=354760686]
+wait_time = 5.0
+one_shot = true
