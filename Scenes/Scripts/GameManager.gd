@@ -29,10 +29,14 @@ func get_axe_tier():
 		_:
 			return 0
 var inventory = {}
+
 signal inventory_changed
+
+# Skills
 signal barkbreaking_changed
 signal rockpunching_changed
-
+signal attack_changed
+signal agility_changed
 
 #========================
 # SKILLS
@@ -42,6 +46,10 @@ var barkbreaking_level = 1
 var barkbreaking_xp = 0
 var rockpunching_level = 1
 var rockpunching_xp = 0
+var attack_level = 1
+var attack_xp = 0
+var agility_level = 1
+var agility_xp = 0
 
 #========================
 # PLAYER DATA
@@ -199,3 +207,33 @@ func add_rockpunching_xp(amount):
 		rockpunching_level += 1
 
 	rockpunching_changed.emit()
+#========================
+# ATTACK
+#========================
+func add_attack_xp(amount):
+
+	attack_xp += amount
+
+	while attack_xp >= attack_level * 100:
+
+		attack_xp -= attack_level * 100
+		attack_level += 1
+
+		print("Attack Level:", attack_level)
+
+	attack_changed.emit()
+#========================
+# AGILITY
+#========================
+func add_agility_xp(amount):
+
+	agility_xp += amount
+
+	while agility_xp >= agility_level * 100:
+
+		agility_xp -= agility_level * 100
+		agility_level += 1
+
+		print("Agility Level:", agility_level)
+
+	agility_changed.emit()

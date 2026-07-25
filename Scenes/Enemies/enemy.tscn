@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://ce8gy64gmymef"]
+
+[ext_resource type="Script" uid="uid://daow2ka6nmq32" path="res://enemy.gd" id="1_613su"]
+[ext_resource type="Texture2D" uid="uid://i0p7dcnidlnt" path="res://Tiles/TownAssets/tile_0108.png" id="2_jcvw6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_613su"]
+size = Vector2(35, 33)
+
+[node name="Enemy" type="CharacterBody2D" unique_id=557316632]
+script = ExtResource("1_613su")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1866949601]
+scale = Vector2(2, 2)
+texture = ExtResource("2_jcvw6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=104976923]
+visible = false
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_613su")
+
+[node name="RespawnTimer" type="Timer" parent="." unique_id=157706372]

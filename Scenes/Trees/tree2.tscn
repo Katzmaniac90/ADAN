@@ -28,6 +28,7 @@ z_index = 5
 script = ExtResource("1_8e6qr")
 min_respawn_time = 10.0
 max_respawn_time = 40.0
+respawn_radius = 20.0
 required_axe_tier = 1
 required_barkbreaking_level = 5
 barkbreaking_xp = 50

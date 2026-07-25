@@ -4,13 +4,15 @@ var direction: Vector2 = Vector2(1,1)
 var speed: int = 50
 var is_busy = false
 var speedSwitch = false
-
+var last_position: Vector2
+var agility_distance: float = 0.0
 var zoom_speed = 0.1
 var min_zoom = 0.5
 var max_zoom = 5.0
 
 #This positions the player automatically when going into doors
 func _ready():
+	last_position = global_position
 	if SceneManager.spawn_id != "":
 		var spawn = get_tree().current_scene.find_child(
 			SceneManager.spawn_id,
@@ -54,6 +56,8 @@ func _physics_process(delta):
 
 	move_and_slide()
 
+	track_agility()
+
 
 func playerAnimationsAdam(): 
 	if direction:
@@ -75,3 +79,18 @@ func add_item(item_name, amount):
 
 func add_barkbreaking_xp(amount):
 	GameManager.add_barkbreaking_xp(amount)
+
+func track_agility():
+
+	var distance = global_position.distance_to(last_position)
+
+	agility_distance += distance
+
+	if agility_distance >= 100:
+
+		GameManager.add_agility_xp(1)
+
+		agility_distance = 0
+
+
+	last_position = global_position

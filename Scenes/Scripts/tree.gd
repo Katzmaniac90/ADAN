@@ -1,15 +1,17 @@
 extends StaticBody2D
 
 
+
 var player_near = false
 var chopping = false
 var shake_amount = 3.0
 var original_position: Vector2
+var spawn_position: Vector2
 
 
 @export var min_respawn_time: float = 4.0
 @export var max_respawn_time: float = 8.0
-
+@export var respawn_radius: float = 10.0
 
 # Axe requirements
 @export var required_axe_tier: int = 0
@@ -29,6 +31,7 @@ var original_position: Vector2
 func _ready():
 
 	original_position = $TreeModified.position
+	spawn_position = global_position
 
 	$Area2D.body_entered.connect(_on_body_entered)
 	$Area2D.body_exited.connect(_on_body_exited)
@@ -56,6 +59,9 @@ func _on_body_exited(body):
 		player_near = false
 		$InteractionLabel.visible = false
 
+		if chopping:
+			cancel_chopping()
+
 
 
 func _process(delta):
@@ -71,9 +77,15 @@ func _process(delta):
 		$TreeModified.position = original_position
 
 
-	if player_near and Input.is_action_just_pressed("interact") and not chopping:
+	if player_near and Input.is_action_just_pressed("interact"):
 
-		start_chopping()
+		if chopping:
+
+			cancel_chopping()
+
+		else:
+
+			start_chopping()
 
 
 
@@ -95,12 +107,6 @@ func start_chopping():
 
 	chopping = true
 
-
-	var player = get_tree().get_first_node_in_group("player")
-
-	player.is_busy = true
-
-
 	$InteractionLabel.visible = false
 
 	$ChopProgress.visible = true
@@ -121,10 +127,6 @@ func _on_chop_timer_timeout():
 func chop_tree():
 
 	var player = get_tree().get_first_node_in_group("player")
-
-
-	player.is_busy = false
-
 
 	# Give skill XP
 	player.add_barkbreaking_xp(barkbreaking_xp)
@@ -178,6 +180,11 @@ func shake_tree():
 
 func _on_respawn_timer_timeout():
 
+	global_position = spawn_position + Vector2(
+	randf_range(-respawn_radius, respawn_radius),
+	randf_range(-respawn_radius, respawn_radius)
+)
+
 	show()
 
 	$CollisionShape2D.disabled = false
@@ -220,3 +227,16 @@ func get_chop_time():
 
 
 	return base_time * axe_speed
+
+func cancel_chopping():
+
+	print("Stopped chopping")
+
+	chopping = false
+
+	$ChopTimer.stop()
+
+	$ChopProgress.value = 0
+	$ChopProgress.visible = false
+
+	$InteractionLabel.visible = true

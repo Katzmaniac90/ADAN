@@ -7,6 +7,11 @@ extends Panel
 @onready var rockpunching_level_label = $Rockpunching/LevelLabel
 @onready var rockpunching_xp_label = $Rockpunching/XPLabel
 
+@onready var attack_level_label = $Attack/LevelLabel
+@onready var attack_xp_label = $Attack/XPLabel
+
+@onready var agility_level_label = $Agility/LevelLabel
+@onready var agility_xp_label = $Agility/XPLabel
 
 var dragging := false
 var drag_offset := Vector2.ZERO
@@ -18,9 +23,13 @@ func _ready():
 
 	GameManager.barkbreaking_changed.connect(update_barkbreaking)
 	GameManager.rockpunching_changed.connect(update_rockpunching)
+	GameManager.attack_changed.connect(update_attack)
+	GameManager.agility_changed.connect(update_agility)
 
 	update_barkbreaking()
 	update_rockpunching()
+	update_attack()
+	update_agility()
 
 
 
@@ -71,3 +80,18 @@ func _gui_input(event):
 	if event is InputEventMouseMotion and dragging:
 
 		global_position = get_global_mouse_position() - drag_offset
+func update_attack():
+
+	attack_level_label.text = "Lv. " + str(GameManager.attack_level)
+
+	var required_xp = GameManager.attack_level * 100
+
+	attack_xp_label.text = str(GameManager.attack_xp) + " / " + str(required_xp) + " XP"
+
+func update_agility():
+
+	agility_level_label.text = "Lv. " + str(GameManager.agility_level)
+
+	var required_xp = GameManager.agility_level * 100
+
+	agility_xp_label.text = str(GameManager.agility_xp) + " / " + str(required_xp) + " XP"
