@@ -31,7 +31,7 @@ var drag_offset := Vector2.ZERO
 
 func _ready():
 
-	hide()
+	show()
 
 	GameManager.barkbreaking_changed.connect(update_barkbreaking)
 	GameManager.rockpunching_changed.connect(update_rockpunching)
