@@ -31,7 +31,7 @@ var drag_offset := Vector2.ZERO
 
 func _ready():
 
-	show()
+	hide()
 
 	GameManager.barkbreaking_changed.connect(update_barkbreaking)
 	GameManager.rockpunching_changed.connect(update_rockpunching)
@@ -44,6 +44,9 @@ func _ready():
 	update_footwork()
 
 	update_coming_soon_skills()
+	
+	print("SkillsPanel:", self)
+	print("Children:", get_children())
 
 func _unhandled_input(event):
 

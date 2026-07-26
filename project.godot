@@ -20,7 +20,6 @@ GameManager="*uid://bm2tlcpyg8agy"
 SceneManager="*uid://d0hg17v0mvo7g"
 Ui="*uid://yibi3d0w56cc"
 QuestManager="*uid://0ccuamh0gc4c"
-TutorialManager="*uid://65rd2jou1qon"
 
 [display]
 

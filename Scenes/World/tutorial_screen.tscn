@@ -38,7 +38,7 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = -3.0
 offset_top = 105.0
-offset_right = 955.0
+offset_right = 446.0
 offset_bottom = 466.0
 text = "Move Around
 Use WASD  to explore the world.
@@ -57,12 +57,33 @@ Discover new areas and see what ADAN has to offer!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Instructions2" type="Label" parent="." unique_id=845467941]
+layout_mode = 0
+offset_left = 507.0
+offset_top = 108.0
+offset_right = 956.0
+offset_bottom = 648.0
+text = "[E] - Chop Trees or Punch Rocks
+[G] - Smack NPCs
+[T] - Equipment Page
+[B] - Bag
+[K] - Skills Page
+[L] - Crafting Menu
+
+Four working skills to gain xp in, and four on the way
+
+Barkbreaking - Collect Logs to craft new axes to chop
+down better trees
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="ContinueButton" type="Button" parent="." unique_id=979372684]
 layout_mode = 0
-offset_left = 409.0
-offset_top = 494.0
-offset_right = 552.0
-offset_bottom = 646.0
+offset_left = 151.0
+offset_top = 478.0
+offset_right = 294.0
+offset_bottom = 630.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_j3ab1")
