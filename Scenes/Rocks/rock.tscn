@@ -28,6 +28,7 @@ z_index = 5
 script = ExtResource("1_3iop0")
 min_respawn_time = 5.0
 max_respawn_time = 20.0
+interaction_text = "[E] Punch Rock"
 
 [node name="RockModified" type="Sprite2D" parent="." unique_id=573872850]
 z_index = 1
@@ -48,6 +49,7 @@ shape = SubResource("RectangleShape2D_22gus")
 
 [node name="InteractionLabel" type="Label" parent="." unique_id=278786865]
 visible = false
+z_index = 100
 offset_left = -52.0
 offset_top = -43.0
 offset_right = 51.0

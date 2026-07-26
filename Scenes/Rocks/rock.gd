@@ -14,7 +14,7 @@ var punching = false
 @export var rock_difficulty: int = 1
 
 @export var punch_time: float = 10.0
-
+@export var interaction_text: String = "Chop Tree"
 
 
 func _ready():
@@ -34,6 +34,7 @@ func _on_body_entered(body):
 	if body.name == "Player":
 
 		player_near = true
+		$InteractionLabel.text = interaction_text
 		$InteractionLabel.visible = true
 
 

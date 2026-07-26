@@ -12,6 +12,7 @@ var spawn_position: Vector2
 @export var min_respawn_time: float = 4.0
 @export var max_respawn_time: float = 8.0
 @export var respawn_radius: float = 10.0
+@export var interaction_height: float = -50
 
 # Axe requirements
 @export var required_axe_tier: int = 0
@@ -25,13 +26,15 @@ var spawn_position: Vector2
 
 # Different tree drops
 @export var log_name: String = "Tree1 Log"
-
+@export var interaction_text: String = "Chop Tree"
 
 
 func _ready():
 
 	original_position = $TreeModified.position
 	spawn_position = global_position
+
+	$InteractionLabel.position = Vector2(0, interaction_height)
 
 	$Area2D.body_entered.connect(_on_body_entered)
 	$Area2D.body_exited.connect(_on_body_exited)
@@ -48,6 +51,7 @@ func _on_body_entered(body):
 	if body.name == "Player":
 
 		player_near = true
+		$InteractionLabel.position = Vector2(-$InteractionLabel.size.x / 2, interaction_height)
 		$InteractionLabel.visible = true
 
 

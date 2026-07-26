@@ -169,9 +169,9 @@ offset_right = 376.0
 offset_bottom = 717.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Attack" type="Node" parent="SkillsPanel" unique_id=922384664]
+[node name="Smacking" type="Node" parent="SkillsPanel" unique_id=922384664]
 
-[node name="LevelLabel" type="Label" parent="SkillsPanel/Attack" unique_id=1959774141]
+[node name="LevelLabel" type="Label" parent="SkillsPanel/Smacking" unique_id=1959774141]
 offset_left = 436.0
 offset_top = 617.0
 offset_right = 466.0
@@ -183,26 +183,26 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="AttackIcon" type="TextureRect" parent="SkillsPanel/Attack" unique_id=1136193052]
+[node name="SmackingIcon" type="TextureRect" parent="SkillsPanel/Smacking" unique_id=1136193052]
 offset_left = 422.0
 offset_top = 638.0
 offset_right = 482.0
 offset_bottom = 698.0
-tooltip_text = "Rockpunching"
+tooltip_text = "Smacking"
 texture = ExtResource("5_d7t7b")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="XPLabel" type="Label" parent="SkillsPanel/Attack" unique_id=977249800]
+[node name="XPLabel" type="Label" parent="SkillsPanel/Smacking" unique_id=977249800]
 offset_left = 416.0
 offset_top = 694.0
 offset_right = 486.0
 offset_bottom = 717.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Agility" type="Node" parent="SkillsPanel" unique_id=1635819808]
+[node name="Footwork" type="Node" parent="SkillsPanel" unique_id=1635819808]
 
-[node name="LevelLabel" type="Label" parent="SkillsPanel/Agility" unique_id=2082246985]
+[node name="LevelLabel" type="Label" parent="SkillsPanel/Footwork" unique_id=2082246985]
 offset_left = 558.0
 offset_top = 617.0
 offset_right = 588.0
@@ -214,17 +214,17 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="AgilityIcon" type="TextureRect" parent="SkillsPanel/Agility" unique_id=1024322273]
+[node name="FootworkIcon" type="TextureRect" parent="SkillsPanel/Footwork" unique_id=1024322273]
 offset_left = 544.0
 offset_top = 638.0
 offset_right = 604.0
 offset_bottom = 698.0
-tooltip_text = "Rockpunching"
+tooltip_text = "Footwork"
 texture = ExtResource("6_lccpl")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="XPLabel" type="Label" parent="SkillsPanel/Agility" unique_id=1368240177]
+[node name="XPLabel" type="Label" parent="SkillsPanel/Footwork" unique_id=1368240177]
 offset_left = 538.0
 offset_top = 694.0
 offset_right = 608.0

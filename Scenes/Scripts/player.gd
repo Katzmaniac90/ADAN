@@ -5,7 +5,7 @@ var speed: int = 100
 var is_busy = false
 var speedSwitch = false
 var last_position: Vector2
-var agility_distance: float = 0.0
+var footwork_distance: float = 0.0
 var zoom_speed = 0.1
 var min_zoom = 0.5
 var max_zoom = 5.0
@@ -56,7 +56,7 @@ func _physics_process(delta):
 
 	move_and_slide()
 
-	track_agility()
+	track_footwork()
 
 
 func playerAnimationsAdam(): 
@@ -80,17 +80,10 @@ func add_item(item_name, amount):
 func add_barkbreaking_xp(amount):
 	GameManager.add_barkbreaking_xp(amount)
 
-func track_agility():
+func track_footwork():
 
 	var distance = global_position.distance_to(last_position)
 
-	agility_distance += distance
-
-	if agility_distance >= 100:
-
-		GameManager.add_agility_xp(1)
-
-		agility_distance = 0
-
+	GameManager.add_footwork_steps(distance)
 
 	last_position = global_position

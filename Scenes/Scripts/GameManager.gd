@@ -32,24 +32,33 @@ var inventory = {}
 
 signal inventory_changed
 
-# Skills
-signal barkbreaking_changed
-signal rockpunching_changed
-signal attack_changed
-signal agility_changed
-
 #========================
 # SKILLS
 #========================
 
+# Barkbreaking
+signal barkbreaking_changed
 var barkbreaking_level = 1
 var barkbreaking_xp = 0
+
+
+# Rockpunching
+signal rockpunching_changed
 var rockpunching_level = 1
 var rockpunching_xp = 0
-var attack_level = 1
-var attack_xp = 0
-var agility_level = 1
-var agility_xp = 0
+
+
+# Smacking
+signal smacking_changed
+var smacking_level = 1
+var smacking_xp = 0
+
+
+# Footwork
+signal footwork_changed
+var footwork_level = 1
+var footwork_xp = 0
+var footwork_steps = 0
 
 #========================
 # PLAYER DATA
@@ -163,13 +172,12 @@ func add_barkbreaking_xp(amount):
 
 	barkbreaking_xp += amount
 
-	while barkbreaking_xp >= barkbreaking_level * 100:
+	while barkbreaking_xp >= get_required_xp(barkbreaking_level):
 
-		barkbreaking_xp -= barkbreaking_level * 100
+		barkbreaking_xp -= get_required_xp(barkbreaking_level)
 
 		barkbreaking_level += 1
 
-		print("LEVEL UP!")
 		print("Barkbreaking Level:", barkbreaking_level)
 
 	barkbreaking_changed.emit()
@@ -201,39 +209,57 @@ func add_rockpunching_xp(amount):
 
 	rockpunching_xp += amount
 
-	while rockpunching_xp >= rockpunching_level * 100:
+	while rockpunching_xp >= get_required_xp(rockpunching_level):
 
-		rockpunching_xp -= rockpunching_level * 100
+		rockpunching_xp -= get_required_xp(rockpunching_level)
+
 		rockpunching_level += 1
+
+		print("Rockpunching Level:", rockpunching_level)
 
 	rockpunching_changed.emit()
 #========================
-# ATTACK
+# SMACKING
 #========================
-func add_attack_xp(amount):
+func add_smacking_xp(amount):
 
-	attack_xp += amount
+	smacking_xp += amount
 
-	while attack_xp >= attack_level * 100:
+	while smacking_xp >= get_required_xp(smacking_level):
 
-		attack_xp -= attack_level * 100
-		attack_level += 1
+		smacking_xp -= get_required_xp(smacking_level)
 
-		print("Attack Level:", attack_level)
+		smacking_level += 1
 
-	attack_changed.emit()
+		print("Smacking Level:", smacking_level)
+
+	smacking_changed.emit()
 #========================
-# AGILITY
+# FOOTWORK
 #========================
-func add_agility_xp(amount):
 
-	agility_xp += amount
+func add_footwork_steps(amount):
 
-	while agility_xp >= agility_level * 100:
+	footwork_steps += amount
 
-		agility_xp -= agility_level * 100
-		agility_level += 1
+	# Every 1000 pixels walked = 10 XP
+	if footwork_steps >= 1000:
 
-		print("Agility Level:", agility_level)
+		footwork_xp += 10
 
-	agility_changed.emit()
+		footwork_steps -= 1000
+
+		print("Gained Footwork XP: 10")
+
+		while footwork_xp >= get_required_xp(footwork_level):
+
+			footwork_xp -= get_required_xp(footwork_level)
+
+			footwork_level += 1
+
+			print("Footwork Level:", footwork_level)
+
+		footwork_changed.emit()
+func get_required_xp(level):
+
+	return level * 100
