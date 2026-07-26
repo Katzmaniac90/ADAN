@@ -15,8 +15,6 @@ func _on_play_button_pressed():
 
 func _on_tutorial_button_pressed():
 
-	get_tree().paused = false
-
 	hide()
 
-	TutorialManager.start_tutorial()
+	$"../TutorialScreen".show_tutorial()

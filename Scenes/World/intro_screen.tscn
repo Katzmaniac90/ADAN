@@ -2,13 +2,19 @@
 
 [ext_resource type="Script" uid="uid://bonkbopwtbdwy" path="res://intro_screen.gd" id="1_j3ab1"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3ab1"]
+bg_color = Color(0.4143264, 0.6799305, 0.3332595, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuqyl"]
+bg_color = Color(0.82657695, 0.5193685, 0.19087246, 1)
+
 [node name="IntroScreen" type="Control" unique_id=635973048]
 process_mode = 2
 layout_mode = 3
 anchors_preset = 0
-offset_left = 36.0
+offset_left = 157.0
 offset_top = 34.0
-offset_right = 1247.0
+offset_right = 1114.0
 offset_bottom = 692.0
 script = ExtResource("1_j3ab1")
 
@@ -16,38 +22,55 @@ script = ExtResource("1_j3ab1")
 layout_mode = 0
 offset_left = 8.0
 offset_top = -1.0
-offset_right = 1219.0
+offset_right = 965.0
 offset_bottom = 657.0
+color = Color(0, 0, 0, 1)
 
 [node name="Title" type="Label" parent="." unique_id=538725658]
 layout_mode = 0
 offset_left = 14.0
-offset_right = 1219.0
+offset_right = 964.0
 offset_bottom = 166.0
-text = "What are your wishes?"
+theme_override_font_sizes/font_size = 50
+text = "Welcome to ADAN"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Subtitle" type="Label" parent="." unique_id=514199631]
 layout_mode = 0
-offset_left = 465.0
-offset_top = 144.0
-offset_right = 772.0
-offset_bottom = 280.0
+offset_left = 10.0
+offset_top = 140.0
+offset_right = 961.0
+offset_bottom = 357.0
+theme_override_font_sizes/font_size = 40
+text = "Play freely or follow a quick 
+introduction to learn the basics."
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PlayButton" type="Button" parent="." unique_id=2039717904]
 layout_mode = 0
-offset_left = 344.0
-offset_top = 400.0
-offset_right = 544.0
-offset_bottom = 600.0
+offset_left = 203.0
+offset_top = 387.0
+offset_right = 403.0
+offset_bottom = 587.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_j3ab1")
+text = "Enter the
+World"
 
 [node name="TutorialButton" type="Button" parent="." unique_id=1684991818]
 layout_mode = 0
-offset_left = 796.0
-offset_top = 400.0
-offset_right = 996.0
-offset_bottom = 600.0
+offset_left = 603.0
+offset_top = 389.0
+offset_right = 803.0
+offset_bottom = 589.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_kuqyl")
+text = "Learn the
+Basics"
 
 [connection signal="pressed" from="PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]

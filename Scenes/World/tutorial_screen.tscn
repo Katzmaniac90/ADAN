@@ -1,0 +1,71 @@
+[gd_scene format=3 uid="uid://dd3837fddspuv"]
+
+[ext_resource type="Script" uid="uid://cqetb60dged4j" path="res://Scenes/World/tutorial_screen.gd" id="1_o0gnv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3ab1"]
+bg_color = Color(0.41568628, 0.6784314, 0.33333334, 1)
+
+[node name="TutorialScreen" type="Control" unique_id=1548300584]
+process_mode = 2
+layout_mode = 3
+anchors_preset = 0
+offset_left = 157.0
+offset_top = 34.0
+offset_right = 1114.0
+offset_bottom = 692.0
+script = ExtResource("1_o0gnv")
+
+[node name="Background" type="ColorRect" parent="." unique_id=556619055]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 5.0
+offset_right = 958.0
+offset_bottom = 649.0
+color = Color(0, 0, 0, 1)
+
+[node name="Title" type="Label" parent="." unique_id=1356290337]
+layout_mode = 0
+offset_left = 2.0
+offset_top = -27.0
+offset_right = 959.0
+offset_bottom = 134.0
+theme_override_font_sizes/font_size = 50
+text = "The Basics"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Instructions" type="Label" parent="." unique_id=208737965]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 105.0
+offset_right = 955.0
+offset_bottom = 466.0
+text = "Move Around
+Use WASD  to explore the world.
+
+Gather Resources
+Chop trees and collect materials to build your supplies.
+
+Improve Your Skills
+Actions you perform will increase your skills over time.
+
+Craft New Tools
+Use gathered resources to create better equipment.
+
+Explore
+Discover new areas and see what ADAN has to offer!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="." unique_id=979372684]
+layout_mode = 0
+offset_left = 409.0
+offset_top = 494.0
+offset_right = 552.0
+offset_bottom = 646.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_j3ab1")
+text = "Continue"
+
+[connection signal="pressed" from="ContinueButton" to="." method="_on_continue_button_pressed"]

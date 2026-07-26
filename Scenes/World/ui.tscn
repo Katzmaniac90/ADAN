@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://bl1a2ul4wqiqx" path="res://Scenes/Scripts/crafting_panel.gd" id="11_iikbr"]
 [ext_resource type="Script" uid="uid://bxe4faow6o12k" path="res://Scenes/Scripts/bag_panel.gd" id="11_y5qpw"]
 [ext_resource type="PackedScene" uid="uid://dbv5srempllnu" path="res://Scenes/World/intro_screen.tscn" id="15_cfpjy"]
+[ext_resource type="PackedScene" uid="uid://dd3837fddspuv" path="res://Scenes/World/tutorial_screen.tscn" id="16_cq0k0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuxid"]
 bg_color = Color(0.23137255, 0.23137255, 0.23137255, 1)
@@ -489,6 +490,9 @@ text = "CRAFT"
 
 [node name="IntroScreen" parent="." unique_id=635973048 instance=ExtResource("15_cfpjy")]
 
+[node name="TutorialScreen" parent="." unique_id=1548300584 instance=ExtResource("16_cq0k0")]
+
 [connection signal="pressed" from="CraftingPanel/RecipeContainer/RecipeCard/CraftButton" to="CraftingPanel" method="_on_craft_button_pressed"]
 
 [editable path="IntroScreen"]
+[editable path="TutorialScreen"]
