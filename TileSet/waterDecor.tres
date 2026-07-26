@@ -1,0 +1,21 @@
+[gd_resource type="TileSet" format=3 uid="uid://7aibtft27ajk"]
+
+[ext_resource type="Texture2D" uid="uid://c2ibx2c1t63fy" path="res://New Assets/mystic_woods_2.2_PREMIUM/sprites/tilesets/mainTileset/water_decorations.png" id="1_yswfd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lrxny"]
+texture = ExtResource("1_yswfd")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_lrxny")
