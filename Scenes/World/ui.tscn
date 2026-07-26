@@ -79,13 +79,12 @@ offset_bottom = 720.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kuxid")
 script = ExtResource("3_wh8m4")
 
-[node name="Skills" type="Label" parent="SkillsPanel" unique_id=895436978]
-layout_mode = 0
+[node name="Skills" type="Control" parent="SkillsPanel" unique_id=262059742]
+anchors_preset = 0
 offset_left = 481.0
 offset_top = 3.0
 offset_right = 525.0
 offset_bottom = 26.0
-text = "Skills "
 
 [node name="Barkbreaking" type="Node" parent="SkillsPanel" unique_id=2076382960]
 

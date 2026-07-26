@@ -31,22 +31,15 @@ var drag_offset := Vector2.ZERO
 
 func _ready():
 
-	show()
+	visible = true
 
-	GameManager.barkbreaking_changed.connect(update_barkbreaking)
-	GameManager.rockpunching_changed.connect(update_rockpunching)
-	GameManager.smacking_changed.connect(update_smacking)
-	GameManager.footwork_changed.connect(update_footwork)
+	show_all_skills()
 
 	update_barkbreaking()
 	update_rockpunching()
 	update_smacking()
 	update_footwork()
-
 	update_coming_soon_skills()
-	
-	print("SkillsPanel:", self)
-	print("Children:", get_children())
 
 func _unhandled_input(event):
 
@@ -54,6 +47,10 @@ func _unhandled_input(event):
 
 		visible = !visible
 
+		if visible:
+			show_all_skills()
+		else:
+			hide_all_skills()
 
 
 func update_barkbreaking():
@@ -124,3 +121,31 @@ func update_coming_soon_skills():
 
 	heatworking_level_label.text = "Coming Soon"
 	heatworking_xp_label.text = ""
+func hide_skill(skill_node):
+
+	for child in skill_node.get_children():
+
+		if child is CanvasItem:
+
+			child.hide()
+func hide_all_skills():
+
+	for skill in get_children():
+
+		for child in skill.get_children():
+
+			if child is CanvasItem:
+
+				child.hide()
+
+
+
+func show_all_skills():
+
+	for skill in get_children():
+
+		for child in skill.get_children():
+
+			if child is CanvasItem:
+
+				child.show()
