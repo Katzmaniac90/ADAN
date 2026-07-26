@@ -6,8 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://dsfkjv1b23nxy" path="res://tree-modified.png" id="4_lccpl"]
 [ext_resource type="Texture2D" uid="uid://dqxxsr30py8lu" path="res://Items/Weapons/sword.png" id="5_d7t7b"]
 [ext_resource type="Texture2D" uid="uid://bvvk1b1f6fts6" path="res://Scenes/World/running.png" id="6_lccpl"]
+[ext_resource type="Texture2D" uid="uid://kkiupyopba0o" path="res://Scenes/World/Creation.png" id="7_y5qpw"]
 [ext_resource type="Script" uid="uid://dp5ytejonv6bk" path="res://Scenes/World/equipment_panel.gd" id="8_ardup"]
+[ext_resource type="Texture2D" uid="uid://hbnby33ljwu1" path="res://Scenes/World/growcraft-modified.png" id="8_caeob"]
+[ext_resource type="Texture2D" uid="uid://downni7fa8j0n" path="res://Scenes/World/fish-modified.png" id="9_cfpjy"]
 [ext_resource type="Texture2D" uid="uid://dvg332p32ekv5" path="res://Items/Axes/Hands.png" id="9_d7t7b"]
+[ext_resource type="Texture2D" uid="uid://dvm5l6ageepmd" path="res://Scenes/World/smelter-modified.png" id="10_cq0k0"]
 [ext_resource type="Script" uid="uid://bl1a2ul4wqiqx" path="res://Scenes/World/crafting_panel.gd" id="11_iikbr"]
 [ext_resource type="Script" uid="uid://bxe4faow6o12k" path="res://Scenes/World/bag_panel.gd" id="11_y5qpw"]
 
@@ -104,10 +108,10 @@ script = ExtResource("3_wh8m4")
 
 [node name="Skills" type="Label" parent="SkillsPanel" unique_id=895436978]
 layout_mode = 0
-offset_left = 517.0
-offset_top = 4.0
-offset_right = 561.0
-offset_bottom = 27.0
+offset_left = 481.0
+offset_top = 3.0
+offset_right = 525.0
+offset_bottom = 26.0
 text = "Skills "
 
 [node name="Barkbreaking" type="Node" parent="SkillsPanel" unique_id=2076382960]
@@ -229,6 +233,132 @@ offset_left = 538.0
 offset_top = 694.0
 offset_right = 608.0
 offset_bottom = 717.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Creation" type="Node" parent="SkillsPanel" unique_id=1534187698]
+
+[node name="LevelLabel" type="Label" parent="SkillsPanel/Creation" unique_id=1804299256]
+offset_left = 773.0
+offset_top = 615.0
+offset_right = 803.0
+offset_bottom = 638.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="CreationIcon" type="TextureRect" parent="SkillsPanel/Creation" unique_id=975763004]
+offset_left = 759.0
+offset_top = 636.0
+offset_right = 819.0
+offset_bottom = 696.0
+tooltip_text = "Creation
+"
+texture = ExtResource("7_y5qpw")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="XPLabel" type="Label" parent="SkillsPanel/Creation" unique_id=94235907]
+offset_left = 753.0
+offset_top = 692.0
+offset_right = 823.0
+offset_bottom = 715.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Growcraft" type="Node" parent="SkillsPanel" unique_id=1017901518]
+
+[node name="LevelLabel" type="Label" parent="SkillsPanel/Growcraft" unique_id=1007625592]
+offset_left = 925.0
+offset_top = 618.0
+offset_right = 955.0
+offset_bottom = 641.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="GrowcraftIcon" type="TextureRect" parent="SkillsPanel/Growcraft" unique_id=182924715]
+offset_left = 911.0
+offset_top = 639.0
+offset_right = 971.0
+offset_bottom = 699.0
+tooltip_text = "Growcraft
+"
+texture = ExtResource("8_caeob")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="XPLabel" type="Label" parent="SkillsPanel/Growcraft" unique_id=1503115917]
+offset_left = 905.0
+offset_top = 695.0
+offset_right = 975.0
+offset_bottom = 718.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Angling" type="Node" parent="SkillsPanel" unique_id=1473319168]
+
+[node name="LevelLabel" type="Label" parent="SkillsPanel/Angling" unique_id=139726218]
+offset_left = 1073.0
+offset_top = 615.0
+offset_right = 1103.0
+offset_bottom = 638.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="AnglingIcon" type="TextureRect" parent="SkillsPanel/Angling" unique_id=550535233]
+offset_left = 1059.0
+offset_top = 636.0
+offset_right = 1119.0
+offset_bottom = 696.0
+tooltip_text = "Angling"
+texture = ExtResource("9_cfpjy")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="XPLabel" type="Label" parent="SkillsPanel/Angling" unique_id=666928137]
+offset_left = 1053.0
+offset_top = 692.0
+offset_right = 1123.0
+offset_bottom = 715.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Heatworking" type="Node" parent="SkillsPanel" unique_id=1297237049]
+
+[node name="LevelLabel" type="Label" parent="SkillsPanel/Heatworking" unique_id=117876587]
+offset_left = 1219.0
+offset_top = 615.0
+offset_right = 1249.0
+offset_bottom = 638.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="HeatworkingIcon" type="TextureRect" parent="SkillsPanel/Heatworking" unique_id=1462216577]
+offset_left = 1205.0
+offset_top = 636.0
+offset_right = 1265.0
+offset_bottom = 696.0
+tooltip_text = "Heatworking"
+texture = ExtResource("10_cq0k0")
+expand_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="XPLabel" type="Label" parent="SkillsPanel/Heatworking" unique_id=1438181454]
+offset_left = 1199.0
+offset_top = 692.0
+offset_right = 1269.0
+offset_bottom = 715.0
 metadata/_edit_use_anchors_ = true
 
 [node name="EquipmentPanel" type="Panel" parent="." unique_id=2065187319]
