@@ -1,12 +1,9 @@
 extends CanvasLayer
 
-@onready var welcome_panel = $WelcomePanel
+
+@onready var intro_screen = $IntroScreen
 
 
 func _ready():
 
-	welcome_panel.visible = true
-	
-	await get_tree().create_timer(5.0).timeout
-	
-	welcome_panel.visible = false
+	intro_screen.visible = true

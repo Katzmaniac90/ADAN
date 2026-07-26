@@ -4,26 +4,28 @@
 [ext_resource type="Texture2D" uid="uid://i0p7dcnidlnt" path="res://Tiles/TownAssets/tile_0108.png" id="2_jcvw6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_613su"]
-size = Vector2(35, 33)
+size = Vector2(24, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wla72"]
-size = Vector2(41, 38)
+size = Vector2(33, 31)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=557316632]
 script = ExtResource("1_613su")
+smacking_xp_reward = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1866949601]
-scale = Vector2(2, 2)
+scale = Vector2(1.5, 1.5)
 texture = ExtResource("2_jcvw6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=104976923]
-position = Vector2(-0.5, 0.5)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_613su")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1448833910]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2033273704]
-position = Vector2(-0.5, 1)
+position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_wla72")
 
 [node name="RespawnTimer" type="Timer" parent="." unique_id=157706372]
+wait_time = 60.0

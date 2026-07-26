@@ -13,6 +13,18 @@ extends Panel
 @onready var footwork_level_label = $Footwork/LevelLabel
 @onready var footwork_xp_label = $Footwork/XPLabel
 
+@onready var creation_level_label = $Creation/LevelLabel
+@onready var creation_xp_label = $Creation/XPLabel
+
+@onready var growcraft_level_label = $Growcraft/LevelLabel
+@onready var growcraft_xp_label = $Growcraft/XPLabel
+
+@onready var angling_level_label = $Angling/LevelLabel
+@onready var angling_xp_label = $Angling/XPLabel
+
+@onready var heatworking_level_label = $Heatworking/LevelLabel
+@onready var heatworking_xp_label = $Heatworking/XPLabel
+
 var dragging := false
 var drag_offset := Vector2.ZERO
 
@@ -31,7 +43,7 @@ func _ready():
 	update_smacking()
 	update_footwork()
 
-
+	update_coming_soon_skills()
 
 func _unhandled_input(event):
 
@@ -95,3 +107,17 @@ func update_footwork():
 	var required_xp = GameManager.footwork_level * 100
 
 	footwork_xp_label.text = str(GameManager.footwork_xp) + " / " + str(required_xp) + " XP"
+
+func update_coming_soon_skills():
+
+	creation_level_label.text = "Coming Soon"
+	creation_xp_label.text = ""
+
+	growcraft_level_label.text = "Coming Soon"
+	growcraft_xp_label.text = ""
+
+	angling_level_label.text = "Coming Soon"
+	angling_xp_label.text = ""
+
+	heatworking_level_label.text = "Coming Soon"
+	heatworking_xp_label.text = ""

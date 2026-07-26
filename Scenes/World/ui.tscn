@@ -7,21 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://dqxxsr30py8lu" path="res://Items/Weapons/sword.png" id="5_d7t7b"]
 [ext_resource type="Texture2D" uid="uid://bvvk1b1f6fts6" path="res://Scenes/World/running.png" id="6_lccpl"]
 [ext_resource type="Texture2D" uid="uid://kkiupyopba0o" path="res://Scenes/World/Creation.png" id="7_y5qpw"]
-[ext_resource type="Script" uid="uid://dp5ytejonv6bk" path="res://Scenes/World/equipment_panel.gd" id="8_ardup"]
+[ext_resource type="Script" uid="uid://dp5ytejonv6bk" path="res://Scenes/Scripts/equipment_panel.gd" id="8_ardup"]
 [ext_resource type="Texture2D" uid="uid://hbnby33ljwu1" path="res://Scenes/World/growcraft-modified.png" id="8_caeob"]
 [ext_resource type="Texture2D" uid="uid://downni7fa8j0n" path="res://Scenes/World/fish-modified.png" id="9_cfpjy"]
 [ext_resource type="Texture2D" uid="uid://dvg332p32ekv5" path="res://Items/Axes/Hands.png" id="9_d7t7b"]
 [ext_resource type="Texture2D" uid="uid://dvm5l6ageepmd" path="res://Scenes/World/smelter-modified.png" id="10_cq0k0"]
-[ext_resource type="Script" uid="uid://bl1a2ul4wqiqx" path="res://Scenes/World/crafting_panel.gd" id="11_iikbr"]
-[ext_resource type="Script" uid="uid://bxe4faow6o12k" path="res://Scenes/World/bag_panel.gd" id="11_y5qpw"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wla72"]
-bg_color = Color(1, 1, 1, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
+[ext_resource type="Script" uid="uid://bl1a2ul4wqiqx" path="res://Scenes/Scripts/crafting_panel.gd" id="11_iikbr"]
+[ext_resource type="Script" uid="uid://bxe4faow6o12k" path="res://Scenes/Scripts/bag_panel.gd" id="11_y5qpw"]
+[ext_resource type="PackedScene" uid="uid://dbv5srempllnu" path="res://Scenes/World/intro_screen.tscn" id="15_cfpjy"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuxid"]
 bg_color = Color(0.23137255, 0.23137255, 0.23137255, 1)
@@ -76,27 +69,6 @@ corner_radius_bottom_left = 8
 
 [node name="UI" type="CanvasLayer" unique_id=480595847]
 script = ExtResource("1_l88uj")
-
-[node name="WelcomePanel" type="Panel" parent="." unique_id=91816730]
-offset_left = 2.0
-offset_top = 168.0
-offset_right = 148.0
-offset_bottom = 285.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_wla72")
-
-[node name="WelcomeMessage" type="Label" parent="WelcomePanel" unique_id=1254765993]
-layout_mode = 0
-offset_left = 8.0
-offset_top = 7.0
-offset_right = 136.0
-offset_bottom = 111.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 0
-theme_override_font_sizes/font_size = 10
-text = "Do you even like butts? Or can you not lie?"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 2
 
 [node name="SkillsPanel" type="Panel" parent="." unique_id=1478144087]
 offset_left = 180.0
@@ -238,10 +210,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Creation" type="Node" parent="SkillsPanel" unique_id=1534187698]
 
 [node name="LevelLabel" type="Label" parent="SkillsPanel/Creation" unique_id=1804299256]
-offset_left = 773.0
-offset_top = 615.0
-offset_right = 803.0
-offset_bottom = 638.0
+offset_left = 744.0
+offset_top = 614.0
+offset_right = 774.0
+offset_bottom = 637.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
@@ -270,10 +242,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Growcraft" type="Node" parent="SkillsPanel" unique_id=1017901518]
 
 [node name="LevelLabel" type="Label" parent="SkillsPanel/Growcraft" unique_id=1007625592]
-offset_left = 925.0
-offset_top = 618.0
-offset_right = 955.0
-offset_bottom = 641.0
+offset_left = 896.0
+offset_top = 617.0
+offset_right = 926.0
+offset_bottom = 640.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
@@ -302,10 +274,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Angling" type="Node" parent="SkillsPanel" unique_id=1473319168]
 
 [node name="LevelLabel" type="Label" parent="SkillsPanel/Angling" unique_id=139726218]
-offset_left = 1073.0
-offset_top = 615.0
-offset_right = 1103.0
-offset_bottom = 638.0
+offset_left = 1044.0
+offset_top = 614.0
+offset_right = 1074.0
+offset_bottom = 637.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
@@ -333,10 +305,10 @@ metadata/_edit_use_anchors_ = true
 [node name="Heatworking" type="Node" parent="SkillsPanel" unique_id=1297237049]
 
 [node name="LevelLabel" type="Label" parent="SkillsPanel/Heatworking" unique_id=117876587]
-offset_left = 1219.0
-offset_top = 615.0
-offset_right = 1249.0
-offset_bottom = 638.0
+offset_left = 1190.0
+offset_top = 614.0
+offset_right = 1220.0
+offset_bottom = 637.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
@@ -515,4 +487,8 @@ offset_right = 427.0
 offset_bottom = 186.0
 text = "CRAFT"
 
+[node name="IntroScreen" parent="." unique_id=635973048 instance=ExtResource("15_cfpjy")]
+
 [connection signal="pressed" from="CraftingPanel/RecipeContainer/RecipeCard/CraftButton" to="CraftingPanel" method="_on_craft_button_pressed"]
+
+[editable path="IntroScreen"]
