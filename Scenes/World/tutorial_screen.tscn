@@ -38,19 +38,21 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = -3.0
 offset_top = 105.0
-offset_right = 446.0
-offset_bottom = 466.0
+offset_right = 519.0
+offset_bottom = 518.0
 text = "Move Around
-Use WASD  to explore the world.
+Use WASD to explore the world
 
 Gather Resources
 Chop trees and collect materials to build your supplies.
 
 Improve Your Skills
-Actions you perform will increase your skills over time.
+The actions you perform will increase your 
+skills over time.
 
 Craft New Tools
-Use gathered resources to create better equipment.
+Use gathered resources to create better equipment 
+and unlock new possibilities.
 
 Explore
 Discover new areas and see what ADAN has to offer!"
@@ -74,16 +76,26 @@ Four working skills to gain xp in, and four on the way
 
 Barkbreaking - Collect Logs to craft new axes to chop
 down better trees
+
+Rockpunching -Punch rocks for xp
+
+Smacking - Smack humanoids for xp 
+(Some are hidden)
+
+Footwork - Play the game, run around
+gain xp
+
+HOW TO BEAT THE GAME - Collect all Achievements
 "
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ContinueButton" type="Button" parent="." unique_id=979372684]
 layout_mode = 0
-offset_left = 151.0
-offset_top = 478.0
-offset_right = 294.0
-offset_bottom = 630.0
+offset_left = 182.0
+offset_top = 559.0
+offset_right = 314.0
+offset_bottom = 613.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_j3ab1")
