@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://c4ytd5tix7y1q" path="res://Scenes/Scripts/achievement_popup.tscn" id="15_hl8in"]
 [ext_resource type="PackedScene" uid="uid://02f6emyifowe" path="res://Scenes/Scripts/achievement_card.tscn" id="16_4vasu"]
 [ext_resource type="PackedScene" uid="uid://dd3837fddspuv" path="res://Scenes/World/tutorial_screen.tscn" id="16_cq0k0"]
+[ext_resource type="AudioStream" uid="uid://c3rcpdxbyywxa" path="res://Scenes/World/Track12_Promise of Dawn.wav" id="18_hmhsi"]
+[ext_resource type="Script" uid="uid://7d8ltti72h2u" path="res://Scenes/World/music_player.gd" id="19_4rgu2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuxid"]
 bg_color = Color(0.23137255, 0.23137255, 0.23137255, 1)
@@ -82,6 +84,9 @@ corner_radius_top_left = 8
 corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hl8in"]
+bg_color = Color(0, 0, 0, 1)
 
 [node name="UI" type="CanvasLayer" unique_id=480595847]
 script = ExtResource("1_l88uj")
@@ -503,8 +508,6 @@ offset_right = 427.0
 offset_bottom = 186.0
 text = "CRAFT"
 
-[node name="AchievementPopup" parent="." unique_id=385434931 instance=ExtResource("15_hl8in")]
-
 [node name="AchievementPanel" type="Panel" parent="." unique_id=2109892220]
 offset_right = 453.0
 offset_bottom = 610.0
@@ -539,6 +542,21 @@ mouse_filter = 0
 custom_minimum_size = Vector2(450, 3000)
 layout_mode = 2
 
+[node name="AchievementPopup" parent="." unique_id=385434931 instance=ExtResource("15_hl8in")]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=174675881 groups=["music"]]
+stream = ExtResource("18_hmhsi")
+volume_db = -20.0
+autoplay = true
+script = ExtResource("19_4rgu2")
+
+[node name="MusicButton" type="Button" parent="MusicPlayer" unique_id=1864501538]
+offset_top = -1.0
+offset_right = 87.0
+offset_bottom = 30.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_hl8in")
+text = "Music: ON"
+
 [node name="IntroScreen" parent="." unique_id=635973048 instance=ExtResource("15_cfpjy")]
 visible = false
 
@@ -546,6 +564,7 @@ visible = false
 visible = false
 
 [connection signal="pressed" from="CraftingPanel/RecipeContainer/RecipeCard/CraftButton" to="CraftingPanel" method="_on_craft_button_pressed"]
+[connection signal="pressed" from="MusicPlayer/MusicButton" to="MusicPlayer" method="_on_music_button_pressed"]
 
 [editable path="AchievementPopup"]
 [editable path="IntroScreen"]

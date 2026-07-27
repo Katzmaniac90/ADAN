@@ -344,6 +344,14 @@ position = Vector2(855, -249)
 [node name="Rock13" parent="Rocks" unique_id=727781340 instance=ExtResource("3_87yka")]
 position = Vector2(846, -7)
 
+[node name="Doors" type="Node" parent="." unique_id=437048383]
+
+[node name="WorldtoAdamMap1" parent="Doors" unique_id=1895642603 instance=ExtResource("8_kjd5s")]
+position = Vector2(176, 248)
+
+[node name="WorldtoBarkBreaker" parent="Doors" unique_id=1320790186 instance=ExtResource("8_kuxid")]
+position = Vector2(294, 70)
+
 [node name="Signs" type="Node" parent="." unique_id=1669402876]
 
 [node name="worldSign1" parent="Signs" unique_id=431273787 instance=ExtResource("9_kuxid")]
@@ -370,12 +378,6 @@ position = Vector2(176, 227)
 
 [node name="WorldfromBarkBreaker" type="Marker2D" parent="PlayerSpawnPoints" unique_id=1507424864]
 position = Vector2(294, 93)
-
-[node name="WorldtoAdamMap1" parent="." unique_id=1895642603 instance=ExtResource("8_kjd5s")]
-position = Vector2(176, 248)
-
-[node name="WorldtoBarkBreaker" parent="." unique_id=1320790186 instance=ExtResource("8_kuxid")]
-position = Vector2(294, 70)
 
 [node name="DialogueUI" parent="." unique_id=353898798 instance=ExtResource("10_ng1ea")]
 
