@@ -46,6 +46,10 @@ func _on_body_exited(body):
 		player_near = false
 		$InteractionLabel.visible = false
 
+		if punching:
+
+			cancel_punching()
+
 
 
 func _process(delta):
@@ -55,7 +59,14 @@ func _process(delta):
 		$PunchProgress.value += (100.0 / punch_time) * delta
 
 
-	if player_near and Input.is_action_just_pressed("interact") and not punching:
+		if Input.is_action_just_pressed("interact"):
+
+			cancel_punching()
+
+			return
+
+
+	if player_near and Input.is_action_just_pressed("interact"):
 
 		start_punching()
 
@@ -71,18 +82,11 @@ func start_punching():
 
 	punching = true
 
-
-	var player = get_tree().get_first_node_in_group("player")
-
-	player.is_busy = true
-
-
 	$InteractionLabel.visible = false
 
 	$PunchProgress.visible = true
 
 	$PunchProgress.value = 0
-
 
 	$PunchTimer.start(punch_time)
 
@@ -97,9 +101,6 @@ func _on_punch_timer_timeout():
 func punch_rock():
 
 	var player = get_tree().get_first_node_in_group("player")
-
-	player.is_busy = false
-
 
 	GameManager.add_rockpunching_xp(rockpunching_xp)
 
@@ -137,3 +138,22 @@ func _on_respawn_timer_timeout():
 	show()
 
 	$CollisionShape2D.disabled = false
+	
+func cancel_punching():
+
+	print("Stopped punching")
+
+	punching = false
+
+	$PunchTimer.stop()
+
+	$PunchProgress.value = 0
+	$PunchProgress.visible = false
+
+	var player = get_tree().get_first_node_in_group("player")
+
+	if player:
+
+		player.is_busy = false
+
+	$InteractionLabel.visible = true

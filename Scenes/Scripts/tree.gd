@@ -130,29 +130,21 @@ func _on_chop_timer_timeout():
 
 func chop_tree():
 
-	var player = get_tree().get_first_node_in_group("player")
-
 	# Give skill XP
-	player.add_barkbreaking_xp(barkbreaking_xp)
-
+	GameManager.add_barkbreaking_xp(barkbreaking_xp)
 
 	# Add log directly to inventory
 	GameManager.add_item(log_name, 1)
 
-
 	print("Received:", log_name)
-
 
 	chopping = false
 
-
 	$ChopProgress.visible = false
-
 
 	hide()
 
 	$CollisionShape2D.disabled = true
-
 
 	var r = randf()
 
@@ -161,7 +153,6 @@ func chop_tree():
 		max_respawn_time,
 		sqrt(r)
 	)
-
 
 	$RespawnTimer.start(random_respawn)
 

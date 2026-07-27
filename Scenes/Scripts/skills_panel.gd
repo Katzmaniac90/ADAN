@@ -35,6 +35,10 @@ func _ready():
 
 	show_all_skills()
 
+	GameManager.barkbreaking_changed.connect(update_barkbreaking)
+	GameManager.rockpunching_changed.connect(update_rockpunching)
+	GameManager.smacking_changed.connect(update_smacking)
+	GameManager.footwork_changed.connect(update_footwork)
 	update_barkbreaking()
 	update_rockpunching()
 	update_smacking()

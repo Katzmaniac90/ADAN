@@ -23,23 +23,13 @@ offset_right = 958.0
 offset_bottom = 649.0
 color = Color(0, 0, 0, 1)
 
-[node name="Title" type="Label" parent="." unique_id=1356290337]
-layout_mode = 0
-offset_left = 2.0
-offset_top = -27.0
-offset_right = 959.0
-offset_bottom = 134.0
-theme_override_font_sizes/font_size = 50
-text = "The Basics"
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="Instructions" type="Label" parent="." unique_id=208737965]
 layout_mode = 0
-offset_left = -3.0
-offset_top = 105.0
-offset_right = 519.0
-offset_bottom = 518.0
+offset_left = -4.0
+offset_top = -35.0
+offset_right = 518.0
+offset_bottom = 558.0
+theme_override_font_sizes/font_size = 14
 text = "Move Around
 Use WASD to explore the world
 
@@ -55,37 +45,48 @@ Use gathered resources to create better equipment
 and unlock new possibilities.
 
 Explore
-Discover new areas and see what ADAN has to offer!"
+Discover new areas and see what ADAN has to offer!
+
+Your Goal
+Collect achievements, improve your skills, discover new areas, 
+and become the best ADAN player possible!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Instructions2" type="Label" parent="." unique_id=845467941]
 layout_mode = 0
-offset_left = 507.0
-offset_top = 108.0
-offset_right = 956.0
-offset_bottom = 648.0
-text = "[E] - Chop Trees or Punch Rocks
+offset_left = 502.0
+offset_top = 3.0
+offset_right = 959.0
+offset_bottom = 729.0
+theme_override_font_sizes/font_size = 14
+text = "Controls
+[E] - Chop Trees or Punch Rocks
 [G] - Smack NPCs
 [T] - Equipment Page
-[B] - Bag
+[B] - Bag / Inventory
 [K] - Skills Page
 [L] - Crafting Menu
 
-Four working skills to gain xp in, and four on the way
+Skills
+ADAN currently has 
+four available skills with four more coming soon!
 
-Barkbreaking - Collect Logs to craft new axes to chop
-down better trees
+🌳Barkbreaking🌳
+Collect logs and craft better axes to chop stronger trees.
 
-Rockpunching -Punch rocks for xp
+Rockpunching
+Punch rocks to gain experience and improve your strength.
 
-Smacking - Smack humanoids for xp 
-(Some are hidden)
+👊Smacking👊
+Smack humanoids to gain experience.
+(Some NPCs are hidden throughout the world)
 
-Footwork - Play the game, run around
+🏃Footwork🏃
+Simply playing the game and moving around will 
+improve your Footwork skill.
 gain xp
 
-HOW TO BEAT THE GAME - Collect all Achievements
 "
 horizontal_alignment = 1
 vertical_alignment = 1

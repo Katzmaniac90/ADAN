@@ -45,11 +45,12 @@ func _physics_process(delta):
 		print("speedSwitch =", speedSwitch)
 
 	# Camera zoom controls
-	if Input.is_action_just_pressed("zoom_in"):
-		$Camera2D.zoom += Vector2(zoom_speed, zoom_speed)
+	if not get_viewport().gui_get_hovered_control():
+		if Input.is_action_just_pressed("zoom_in"):
+			$Camera2D.zoom += Vector2(zoom_speed, zoom_speed)
 
-	if Input.is_action_just_pressed("zoom_out"):
-		$Camera2D.zoom -= Vector2(zoom_speed, zoom_speed)
+		if Input.is_action_just_pressed("zoom_out"):
+			$Camera2D.zoom -= Vector2(zoom_speed, zoom_speed)
 
 	$Camera2D.zoom.x = clamp($Camera2D.zoom.x, min_zoom, max_zoom)
 	$Camera2D.zoom.y = clamp($Camera2D.zoom.y, min_zoom, max_zoom)

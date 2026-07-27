@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://02f6emyifowe"]
+
+[sub_resource type="GDScript" id="GDScript_t4rsj"]
+script/source = "extends Control
+
+
+@onready var name_label = $NameLabel
+@onready var description_label = $DescriptionLabel
+@onready var progress_label = $ProgressLabel
+
+
+func setup_achievement(title, description, progress):
+
+	name_label.text = title
+	description_label.text = description
+	progress_label.text = progress
+"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_22gus"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="AchievementCard" type="Control" unique_id=159313407]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_t4rsj")
+
+[node name="Background" type="Panel" parent="." unique_id=1583620692]
+layout_mode = 0
+offset_right = 450.0
+offset_bottom = 100.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_22gus")
+
+[node name="Icon" type="TextureRect" parent="." unique_id=1115185401]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NameLabel" type="Label" parent="." unique_id=834060543]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 17.0
+offset_right = 449.0
+offset_bottom = 40.0
+text = "First Harvest"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="." unique_id=696559967]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 40.0
+offset_right = 450.0
+offset_bottom = 63.0
+text = "Collect your first log."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressLabel" type="Label" parent="." unique_id=36121316]
+layout_mode = 0
+offset_top = 60.0
+offset_right = 449.0
+offset_bottom = 83.0
+text = "Progress: 0 / 1"
+horizontal_alignment = 1
+vertical_alignment = 1

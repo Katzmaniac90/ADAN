@@ -14,7 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://dvm5l6ageepmd" path="res://Scenes/World/smelter-modified.png" id="10_cq0k0"]
 [ext_resource type="Script" uid="uid://bl1a2ul4wqiqx" path="res://Scenes/Scripts/crafting_panel.gd" id="11_iikbr"]
 [ext_resource type="Script" uid="uid://bxe4faow6o12k" path="res://Scenes/Scripts/bag_panel.gd" id="11_y5qpw"]
+[ext_resource type="Script" uid="uid://cbiwu06aksnm5" path="res://Scenes/World/achievement_panel.gd" id="15_04dqr"]
 [ext_resource type="PackedScene" uid="uid://dbv5srempllnu" path="res://Scenes/World/intro_screen.tscn" id="15_cfpjy"]
+[ext_resource type="PackedScene" uid="uid://02f6emyifowe" path="res://Scenes/Scripts/achievement_card.tscn" id="16_4vasu"]
 [ext_resource type="PackedScene" uid="uid://dd3837fddspuv" path="res://Scenes/World/tutorial_screen.tscn" id="16_cq0k0"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuxid"]
@@ -57,6 +59,18 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfpjy"]
+bg_color = Color(0.23137255, 0.23137255, 0.23137255, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4vasu"]
 bg_color = Color(0.23137255, 0.23137255, 0.23137255, 1)
 border_width_left = 2
 border_width_top = 2
@@ -411,6 +425,7 @@ offset_right = 116.0
 offset_bottom = 602.0
 
 [node name="CraftingPanel" type="Panel" parent="." unique_id=354939772]
+visible = false
 offset_left = 379.0
 offset_top = 168.0
 offset_right = 825.0
@@ -487,9 +502,45 @@ offset_right = 427.0
 offset_bottom = 186.0
 text = "CRAFT"
 
+[node name="AchievementPanel" type="Panel" parent="." unique_id=2109892220]
+offset_right = 453.0
+offset_bottom = 610.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4vasu")
+script = ExtResource("15_04dqr")
+achievement_card_scene = ExtResource("16_4vasu")
+
+[node name="Title" type="Label" parent="AchievementPanel" unique_id=1179897917]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 10.0
+offset_right = 441.0
+offset_bottom = 54.0
+theme_override_font_sizes/font_size = 30
+text = "Achievements"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="AchievementPanel" unique_id=1784803721]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AchievementPanel" unique_id=137453853]
+layout_mode = 0
+offset_top = 62.0
+offset_right = 450.0
+offset_bottom = 604.0
+mouse_filter = 0
+
+[node name="AchievementContainer" type="Control" parent="AchievementPanel/ScrollContainer" unique_id=1421864220]
+custom_minimum_size = Vector2(450, 3000)
+layout_mode = 2
+
 [node name="IntroScreen" parent="." unique_id=635973048 instance=ExtResource("15_cfpjy")]
+visible = false
 
 [node name="TutorialScreen" parent="." unique_id=1548300584 instance=ExtResource("16_cq0k0")]
+visible = false
 
 [connection signal="pressed" from="CraftingPanel/RecipeContainer/RecipeCard/CraftButton" to="CraftingPanel" method="_on_craft_button_pressed"]
 
