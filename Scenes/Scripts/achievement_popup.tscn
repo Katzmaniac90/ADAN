@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://c4ytd5tix7y1q"]
+
+[ext_resource type="Script" uid="uid://p573esv7u8vm" path="res://achievement_popup.gd" id="1_dfgww"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wla72"]
+bg_color = Color(0.17821202, 0.17821208, 0.17821193, 1)
+border_color = Color(0.5323256, 0.44275913, 0.1269238, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="AchievementPopup" type="Control" unique_id=385434931]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_dfgww")
+
+[node name="Panel" type="Panel" parent="." unique_id=429789104]
+layout_mode = 0
+offset_left = 600.0
+offset_top = 50.0
+offset_right = 823.0
+offset_bottom = 129.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wla72")
+
+[node name="TitlePanel" type="Label" parent="Panel" unique_id=884682775]
+layout_mode = 0
+offset_right = 222.0
+offset_bottom = 23.0
+text = "🏆 Achievement Unlocked!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AchievementNameLabel" type="Label" parent="Panel" unique_id=1406564844]
+layout_mode = 0
+offset_top = 27.0
+offset_right = 223.0
+offset_bottom = 50.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="Panel" unique_id=598746265]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 52.0
+offset_right = 222.0
+offset_bottom = 75.0
+horizontal_alignment = 1
+vertical_alignment = 1

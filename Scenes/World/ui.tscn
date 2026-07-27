@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://bxe4faow6o12k" path="res://Scenes/Scripts/bag_panel.gd" id="11_y5qpw"]
 [ext_resource type="Script" uid="uid://cbiwu06aksnm5" path="res://Scenes/Scripts/achievement_panel.gd" id="15_04dqr"]
 [ext_resource type="PackedScene" uid="uid://dbv5srempllnu" path="res://Scenes/World/intro_screen.tscn" id="15_cfpjy"]
+[ext_resource type="PackedScene" uid="uid://c4ytd5tix7y1q" path="res://Scenes/Scripts/achievement_popup.tscn" id="15_hl8in"]
 [ext_resource type="PackedScene" uid="uid://02f6emyifowe" path="res://Scenes/Scripts/achievement_card.tscn" id="16_4vasu"]
 [ext_resource type="PackedScene" uid="uid://dd3837fddspuv" path="res://Scenes/World/tutorial_screen.tscn" id="16_cq0k0"]
 
@@ -502,6 +503,8 @@ offset_right = 427.0
 offset_bottom = 186.0
 text = "CRAFT"
 
+[node name="AchievementPopup" parent="." unique_id=385434931 instance=ExtResource("15_hl8in")]
+
 [node name="AchievementPanel" type="Panel" parent="." unique_id=2109892220]
 offset_right = 453.0
 offset_bottom = 610.0
@@ -544,5 +547,6 @@ visible = false
 
 [connection signal="pressed" from="CraftingPanel/RecipeContainer/RecipeCard/CraftButton" to="CraftingPanel" method="_on_craft_button_pressed"]
 
+[editable path="AchievementPopup"]
 [editable path="IntroScreen"]
 [editable path="TutorialScreen"]
