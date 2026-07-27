@@ -209,10 +209,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ppdxs"]
 size = Vector2(5, 5)
 
-[sub_resource type="GDScript" id="GDScript_37lpg"]
-script/source = "extends Camera2D
-"
-
 [node name="Player" type="CharacterBody2D" unique_id=226938582 groups=["player"]]
 script = ExtResource("1_37lpg")
 
@@ -228,4 +224,5 @@ shape = SubResource("RectangleShape2D_ppdxs")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1702949]
 zoom = Vector2(2.5, 2.5)
-script = SubResource("GDScript_37lpg")
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0

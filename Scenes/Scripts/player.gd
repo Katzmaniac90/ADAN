@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 var direction: Vector2 = Vector2(1,1)
-var speed: int = 100
+var speed: int = 70
 var is_busy = false
 var speedSwitch = false
 var last_position: Vector2
@@ -36,9 +36,9 @@ func _physics_process(delta):
 	
 	#press Space to toggle between going fast and slow!
 	if speedSwitch == false:
-		speed = 100
+		speed = 70
 	else:
-		speed = 200
+		speed = 150
 		
 	if Input.is_action_just_pressed("running"):
 		speedSwitch = !speedSwitch

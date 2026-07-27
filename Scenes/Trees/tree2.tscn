@@ -25,6 +25,7 @@ corner_radius_bottom_left = 3
 
 [node name="Tree" type="StaticBody2D" unique_id=2000084765]
 z_index = 100
+texture_filter = 1
 script = ExtResource("1_8e6qr")
 min_respawn_time = 10.0
 max_respawn_time = 40.0
@@ -38,6 +39,7 @@ interaction_text = "[E] Chop Tree"
 
 [node name="TreeModified" type="Sprite2D" parent="." unique_id=573872850]
 z_index = 1
+texture_filter = 1
 position = Vector2(-2, 1)
 scale = Vector2(0.74999994, 0.87500006)
 texture = ExtResource("3_8e6qr")
