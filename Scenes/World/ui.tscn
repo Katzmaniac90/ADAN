@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://dvm5l6ageepmd" path="res://Scenes/World/smelter-modified.png" id="10_cq0k0"]
 [ext_resource type="Script" uid="uid://bl1a2ul4wqiqx" path="res://Scenes/Scripts/crafting_panel.gd" id="11_iikbr"]
 [ext_resource type="Script" uid="uid://bxe4faow6o12k" path="res://Scenes/Scripts/bag_panel.gd" id="11_y5qpw"]
-[ext_resource type="Script" uid="uid://cbiwu06aksnm5" path="res://Scenes/World/achievement_panel.gd" id="15_04dqr"]
+[ext_resource type="Script" uid="uid://cbiwu06aksnm5" path="res://Scenes/Scripts/achievement_panel.gd" id="15_04dqr"]
 [ext_resource type="PackedScene" uid="uid://dbv5srempllnu" path="res://Scenes/World/intro_screen.tscn" id="15_cfpjy"]
 [ext_resource type="PackedScene" uid="uid://02f6emyifowe" path="res://Scenes/Scripts/achievement_card.tscn" id="16_4vasu"]
 [ext_resource type="PackedScene" uid="uid://dd3837fddspuv" path="res://Scenes/World/tutorial_screen.tscn" id="16_cq0k0"]

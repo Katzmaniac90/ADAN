@@ -4,45 +4,26 @@ extends Panel
 @export var achievement_card_scene: PackedScene
 @onready var achievement_container = $ScrollContainer/AchievementContainer
 
+
 var dragging := false
 var drag_offset := Vector2.ZERO
 
-var achievements = [
-	{
-		"name": "First Harvest",
-		"description": "Collect your first log.",
-		"progress": "0 / 1"
-	},
-	{
-		"name": "Tool Upgrade",
-		"description": "Craft your first axe.",
-		"progress": "0 / 1"
-	},
-	{
-		"name": "Rocky Start",
-		"description": "Punch your first rock.",
-		"progress": "0 / 1"
-	},
-	{
-		"name": "First Contact",
-		"description": "Smack your first NPC.",
-		"progress": "0 / 1"
-	}
-]
 
 
 func _ready():
 
 	create_achievements()
 	hide()
+	AchievementManager.achievement_unlocked.connect(_on_achievement_unlocked)
 
 
 func create_achievements():
 
 	var y_position = 0
 
+	for id in AchievementManager.get_all():
 
-	for achievement in achievements:
+		var achievement = AchievementManager.get_all()[id]
 
 		var card = achievement_card_scene.instantiate()
 
@@ -51,12 +32,26 @@ func create_achievements():
 		card.position.y = y_position
 
 		card.setup_achievement(
-			achievement.name,
-			achievement.description,
-			achievement.progress
+			achievement["name"],
+			achievement["description"],
+			achievement["unlocked"]
 		)
 
 		y_position += 120
+
+	achievement_container.custom_minimum_size.y = y_position
+
+func get_progress_text(achievement):
+
+	if achievement["unlocked"]:
+
+		return "Completed ✓"
+
+	else:
+
+		return "Locked"
+
+
 
 func _gui_input(event):
 
@@ -66,7 +61,6 @@ func _gui_input(event):
 
 			get_viewport().set_input_as_handled()
 
-	if event is InputEventMouseButton:
 
 		if event.button_index == MOUSE_BUTTON_LEFT:
 
@@ -80,15 +74,29 @@ func _gui_input(event):
 				dragging = false
 
 
+
 	if event is InputEventMouseMotion and dragging:
 
 		global_position = get_global_mouse_position() - drag_offset
+
+
 
 func _unhandled_input(event):
 
 	if event.is_action_pressed("achievements"):
 
 		visible = !visible
+
+
+
 func _on_close_button_pressed():
 
 	hide()
+func _on_achievement_unlocked(id):
+
+	# Remove the old cards
+	for child in achievement_container.get_children():
+		child.queue_free()
+
+	# Rebuild the list
+	create_achievements()

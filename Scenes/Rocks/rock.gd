@@ -103,7 +103,7 @@ func punch_rock():
 	var player = get_tree().get_first_node_in_group("player")
 
 	GameManager.add_rockpunching_xp(rockpunching_xp)
-
+	AchievementManager.unlock_if_locked("FIRST_ROCK")
 
 	print("ROCK PUNCHED!")
 	print("Rockpunching XP +", rockpunching_xp)

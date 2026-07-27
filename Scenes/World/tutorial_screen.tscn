@@ -55,10 +55,10 @@ vertical_alignment = 1
 
 [node name="Instructions2" type="Label" parent="." unique_id=845467941]
 layout_mode = 0
-offset_left = 502.0
-offset_top = 3.0
-offset_right = 959.0
-offset_bottom = 729.0
+offset_left = 497.0
+offset_top = 8.0
+offset_right = 954.0
+offset_bottom = 672.0
 theme_override_font_sizes/font_size = 14
 text = "Controls
 [E] - Chop Trees or Punch Rocks
@@ -67,6 +67,7 @@ text = "Controls
 [B] - Bag / Inventory
 [K] - Skills Page
 [L] - Crafting Menu
+[Y] - Achievements
 
 Skills
 ADAN currently has 
@@ -95,7 +96,7 @@ vertical_alignment = 1
 layout_mode = 0
 offset_left = 182.0
 offset_top = 559.0
-offset_right = 314.0
+offset_right = 343.0
 offset_bottom = 613.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30

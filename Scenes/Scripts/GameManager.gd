@@ -256,7 +256,7 @@ func craft_wooden_axe():
 
 	inventory["Tree1 Log"] -= 10
 	current_axe = "Wood Axe"
-
+	AchievementManager.unlock_if_locked("FIRST_AXE")
 	inventory_changed.emit()
 
 	return true
@@ -313,7 +313,7 @@ func craft_super_saiyan_axe():
 	inventory["Tree4 Log"] -= 1
 
 	current_axe = "Super Saiyan Axe"
-
+	AchievementManager.unlock_if_locked("ALL_AXES")
 	inventory_changed.emit()
 
 	return true
@@ -337,6 +337,17 @@ func add_barkbreaking_xp(amount):
 
 		barkbreaking_xp -= get_required_xp(barkbreaking_level)
 		barkbreaking_level += 1
+	if barkbreaking_level >= 5:
+		AchievementManager.unlock_if_locked("BARKBREAKING_5")
+
+	if barkbreaking_level >= 10:
+		AchievementManager.unlock_if_locked("BARKBREAKING_10")
+
+	if barkbreaking_level >= 15:
+		AchievementManager.unlock_if_locked("BARKBREAKING_15")
+
+	if barkbreaking_level >= 20:
+		AchievementManager.unlock_if_locked("BARKBREAKING_20")
 
 		print("Barkbreaking Level:", barkbreaking_level)
 
@@ -354,13 +365,14 @@ func add_rockpunching_xp(amount):
 		rockpunching_level += 1
 
 		print("Rockpunching Level:", rockpunching_level)
-
+	if rockpunching_level >= 5:
+		AchievementManager.unlock_if_locked("ROCKPUNCHING_5")
 	rockpunching_changed.emit()
 
 
 
 func add_smacking_xp(amount):
-
+	AchievementManager.unlock_if_locked("FIRST_ENEMY")
 	smacking_xp += amount
 
 	while smacking_xp >= get_required_xp(smacking_level):
@@ -369,7 +381,11 @@ func add_smacking_xp(amount):
 		smacking_level += 1
 
 		print("Smacking Level:", smacking_level)
+	if smacking_level >= 5:
+		AchievementManager.unlock_if_locked("SMACKING_5")
 
+	if smacking_level >= 10:
+		AchievementManager.unlock_if_locked("SMACKING_10")
 	smacking_changed.emit()
 
 
@@ -389,14 +405,18 @@ func add_footwork_steps(amount):
 func add_footwork_xp(amount):
 
 	footwork_xp += amount
-
+	AchievementManager.unlock_if_locked("FOOTWORK_1")
 	while footwork_xp >= get_required_xp(footwork_level):
 
 		footwork_xp -= get_required_xp(footwork_level)
 		footwork_level += 1
 
 		print("Footwork Level:", footwork_level)
+	if footwork_level >= 5:
+		AchievementManager.unlock_if_locked("FOOTWORK_5")
 
+	if footwork_level >= 10:
+		AchievementManager.unlock_if_locked("FOOTWORK_10")
 	footwork_changed.emit()
 
 

@@ -135,6 +135,7 @@ func chop_tree():
 
 	# Add log directly to inventory
 	GameManager.add_item(log_name, 1)
+	AchievementManager.unlock_if_locked("FIRST_TREE")
 
 	print("Received:", log_name)
 

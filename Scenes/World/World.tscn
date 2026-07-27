@@ -351,7 +351,11 @@ position = Vector2(365, 117)
 sign_text = "[E] - Chop Trees or Punch Rocks
 [G] - Smack NPCs
 [T] - Equipment Page
-[B] - Bag / Inventory
+"
+
+[node name="worldSign2" parent="Signs" unique_id=1266481847 instance=ExtResource("9_kuxid")]
+position = Vector2(390, 117)
+sign_text = "[B] - Bag / Inventory
 [K] - Skills Page
 [L] - Crafting Menu"
 
