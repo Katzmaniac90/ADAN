@@ -21,6 +21,7 @@ func _ready():
 		)
 		if spawn:
 			global_position = spawn.global_position
+			$Camera2D.reset_smoothing()
 
 func _physics_process(delta):
 
