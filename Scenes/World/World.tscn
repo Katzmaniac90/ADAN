@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b06qc3ulpvb7a" path="res://Scenes/Trees/tree3.tscn" id="13_0phyg"]
 [ext_resource type="PackedScene" uid="uid://cfg8g5u244mmw" path="res://Scenes/Trees/tree4.tscn" id="14_30wmc"]
 [ext_resource type="PackedScene" uid="uid://ce8gy64gmymef" path="res://Scenes/Enemies/enemy.tscn" id="15_0phyg"]
+[ext_resource type="Script" uid="uid://dl80aw7icg1va" path="res://Scenes/World/EndScreen.gd" id="16_30wmc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87yka"]
 texture = ExtResource("1_hveh7")
@@ -300,6 +301,9 @@ texture = ExtResource("1_hveh7")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_kuxid")
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_30wmc"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="World" type="Node2D" unique_id=376901186]
 y_sort_enabled = true
 
@@ -498,3 +502,35 @@ position = Vector2(-345, -144)
 
 [node name="Enemy4" parent="Enemies" unique_id=77053351 instance=ExtResource("15_0phyg")]
 position = Vector2(512, -142)
+
+[node name="EndScreen" type="CanvasLayer" parent="." unique_id=1377314632 groups=["end-screen"]]
+script = ExtResource("16_30wmc")
+
+[node name="Panel" type="Panel" parent="EndScreen" unique_id=252814034]
+visible = false
+offset_left = 106.0
+offset_top = -1.0
+offset_right = 620.0
+offset_bottom = 280.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_30wmc")
+
+[node name="ThanksLabel" type="Label" parent="EndScreen/Panel" unique_id=1619261221]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 514.0
+offset_bottom = 96.0
+theme_override_font_sizes/font_size = 30
+text = "Thanks for Playing =)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeLabel" type="Label" parent="EndScreen/Panel" unique_id=712449873]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 113.0
+offset_right = 509.0
+offset_bottom = 277.0
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+vertical_alignment = 1

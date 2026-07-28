@@ -117,29 +117,27 @@ func unlock(id:String):
 		print("Achievement does not exist:", id)
 		return
 
-
 	if achievements[id]["unlocked"]:
 		return
 
-
 	achievements[id]["unlocked"] = true
-
 
 	print("Achievement unlocked:", achievements[id]["name"])
 
-
 	achievement_unlocked.emit(id)
 
+	if id == "ALL_ACHIEVEMENTS":
 
-	check_all_achievements()
+		GameTimer.stop_timer()
 
-
+	get_tree().call_group(
+		"end_screen",
+		"show_end_screen"
+	)
 
 func is_unlocked(id:String):
 
 	return achievements[id]["unlocked"]
-
-
 
 func get_all():
 
@@ -158,6 +156,5 @@ func check_all_achievements():
 
 		if not achievements[id]["unlocked"]:
 			return
-
 
 	unlock_if_locked("ALL_ACHIEVEMENTS")

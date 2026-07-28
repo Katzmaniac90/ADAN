@@ -22,7 +22,6 @@ func _ready():
 
 func _on_area_2d_body_entered(body):
 
-	print("Entered:", body.name)
 	if body.is_in_group("player"):
 
 		player_near = true
