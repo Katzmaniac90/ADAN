@@ -1,31 +1,69 @@
 [gd_scene format=3 uid="uid://ce8gy64gmymef"]
 
 [ext_resource type="Script" uid="uid://daow2ka6nmq32" path="res://enemy.gd" id="1_613su"]
-[ext_resource type="Texture2D" uid="uid://i0p7dcnidlnt" path="res://Tiles/TownAssets/tile_0108.png" id="2_jcvw6"]
+[ext_resource type="Texture2D" uid="uid://kccxle0a3hj3" path="res://Scenes/Enemies/enemy-modified.png" id="2_jcvw6"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_613su"]
-size = Vector2(24, 23)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ubio8"]
+bg_color = Color(0.84283847, 0.15594886, 0.11207495, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wla72"]
-size = Vector2(33, 31)
+size = Vector2(48, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_613su"]
+size = Vector2(44, 51)
 
 [node name="Enemy" type="CharacterBody2D" unique_id=557316632]
 script = ExtResource("1_613su")
 smacking_xp_reward = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1866949601]
-scale = Vector2(1.5, 1.5)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_jcvw6")
+
+[node name="EnemyNameLabel" type="Label" parent="." unique_id=2047353239]
+z_index = 6
+offset_left = -24.0
+offset_top = -40.0
+offset_right = 24.0
+offset_bottom = -32.0
+theme_override_font_sizes/font_size = 5
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthBar" type="ProgressBar" parent="." unique_id=1119891201]
+offset_left = -24.0
+offset_top = -32.0
+offset_right = 24.0
+offset_bottom = -28.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_ubio8")
+show_percentage = false
+
+[node name="HealthLabel" type="Label" parent="." unique_id=796674923]
+offset_left = -24.0
+offset_top = -33.0
+offset_right = 24.0
+offset_bottom = -26.0
+theme_override_font_sizes/font_size = 4
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1448833910]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2033273704]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_wla72")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=104976923]
 position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_613su")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1448833910]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2033273704]
-position = Vector2(-0.5, 0.5)
-shape = SubResource("RectangleShape2D_wla72")
+[node name="HealthBarTimer" type="Timer" parent="." unique_id=1696682448]
+wait_time = 3.0
+one_shot = true
 
 [node name="RespawnTimer" type="Timer" parent="." unique_id=157706372]
 wait_time = 60.0
