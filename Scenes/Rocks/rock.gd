@@ -51,18 +51,22 @@ func _on_body_exited(body):
 			cancel_punching()
 
 
-
 func _process(delta):
 
 	if punching:
 
-		$PunchProgress.value += (100.0 / punch_time) * delta
+		var player = get_tree().get_first_node_in_group("player")
 
+		if player and player.global_position.distance_to(global_position) > 60:
+
+			cancel_punching()
+			return
+
+		$PunchProgress.value += (100.0 / punch_time) * delta
 
 		if Input.is_action_just_pressed("interact"):
 
 			cancel_punching()
-
 			return
 
 
@@ -150,10 +154,4 @@ func cancel_punching():
 	$PunchProgress.value = 0
 	$PunchProgress.visible = false
 
-	var player = get_tree().get_first_node_in_group("player")
-
-	if player:
-
-		player.is_busy = false
-
-	$InteractionLabel.visible = true
+	$InteractionLabel.visible = player_near
