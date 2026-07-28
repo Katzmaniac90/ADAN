@@ -8,6 +8,7 @@
 [ext_resource type="TileSet" uid="uid://c1h01xwhckm4f" path="res://TileSet/objects.tres" id="5_lrxny"]
 [ext_resource type="TileSet" uid="uid://btky0o1nr415d" path="res://TileSet/cliffs.tres" id="6_kc6q2"]
 [ext_resource type="PackedScene" uid="uid://cqxs2o3n4gjdm" path="res://Scenes/Doors/Forest1toWorld.tscn" id="8_6y77e"]
+[ext_resource type="PackedScene" uid="uid://binxo1pyow7er" path="res://Scenes/Doors/Forest1toSecret1.tscn" id="9_6f124"]
 [ext_resource type="PackedScene" uid="uid://by3b0yppv7qf0" path="res://Scenes/Signs/woodrestVillage.tscn" id="9_86gjr"]
 [ext_resource type="PackedScene" uid="uid://banexdacv6htb" path="res://Scenes/Trees/tree.tscn" id="9_gi1og"]
 [ext_resource type="PackedScene" uid="uid://s3i4g5abig5i" path="res://Scenes/Signs/woodrestShop.tscn" id="10_51jwm"]
@@ -69,10 +70,16 @@ position = Vector2(624, 240)
 [node name="Forest1fromWorld" type="Marker2D" parent="PlayerSpawnPoints" unique_id=1088812373]
 position = Vector2(296, 32)
 
+[node name="Forest1fromSecret1" type="Marker2D" parent="PlayerSpawnPoints" unique_id=855347476]
+position = Vector2(968, 720)
+
 [node name="Doors" type="Node" parent="." unique_id=1308578506]
 
 [node name="Forest1toWorld" parent="Doors" unique_id=1895642603 instance=ExtResource("8_6y77e")]
 position = Vector2(296, 8)
+
+[node name="Forest1toSecret1" parent="Doors" unique_id=1784733420 instance=ExtResource("9_6f124")]
+position = Vector2(968, 736)
 
 [node name="Signs" type="Node" parent="." unique_id=928791062]
 

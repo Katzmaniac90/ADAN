@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://banexdacv6htb"]
 
-[ext_resource type="Texture2D" uid="uid://dsfkjv1b23nxy" path="res://tree-modified.png" id="1_8mq3t"]
 [ext_resource type="Script" uid="uid://djewqdd4jj3j1" path="res://Scenes/Scripts/tree.gd" id="1_m636k"]
+[ext_resource type="Texture2D" uid="uid://c0qqiel6tf2ej" path="res://trees/PNG/Assets_separately/Trees/Tree1.png" id="2_m636k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wla72"]
 size = Vector2(32, 23)
@@ -35,8 +35,8 @@ interaction_text = "[E] Chop Tree"
 [node name="TreeModified" type="Sprite2D" parent="." unique_id=573872850]
 z_index = 1
 texture_filter = 1
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("1_8mq3t")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_m636k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141913667]
 position = Vector2(-1, 20.5)
@@ -52,12 +52,12 @@ shape = SubResource("RectangleShape2D_22gus")
 [node name="InteractionLabel" type="Label" parent="." unique_id=278786865]
 visible = false
 offset_left = -52.0
-offset_top = -43.0
+offset_top = -46.0
 offset_right = 51.0
-offset_bottom = -20.0
-theme_override_colors/font_color = Color(0.38039216, 0.2509804, 0.31764707, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 1
+offset_bottom = -23.0
+theme_override_colors/font_color = Color(0.9638633, 0.76686096, 0.6448714, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 10
 text = "[E] Chop Tree"
 horizontal_alignment = 1

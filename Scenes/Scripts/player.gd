@@ -60,16 +60,16 @@ func _physics_process(delta):
 	track_footwork()
 
 
-func playerAnimationsAdam(): 
-	if direction:
-		if direction.x > 0:
-			$AnimatedSprite2D.animation = "rightWalking"
-		if direction.x < 0:
-			$AnimatedSprite2D.animation = "leftWalking"
+func playerAnimationsAdam():
+	if direction != Vector2.ZERO:
 		if direction.y > 0:
 			$AnimatedSprite2D.animation = "downWalking"
-		if direction.y < 0:
+		elif direction.y < 0:
 			$AnimatedSprite2D.animation = "upWalking"
+		elif direction.x > 0:
+			$AnimatedSprite2D.animation = "rightWalking"
+		elif direction.x < 0:
+			$AnimatedSprite2D.animation = "leftWalking"
 	else:
 		$AnimatedSprite2D.animation = "idle"
 
