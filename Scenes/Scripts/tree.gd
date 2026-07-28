@@ -235,4 +235,4 @@ func cancel_chopping():
 	$ChopProgress.value = 0
 	$ChopProgress.visible = false
 
-	$InteractionLabel.visible = true
+	$InteractionLabel.visible = player_near

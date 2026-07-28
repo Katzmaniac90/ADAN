@@ -398,7 +398,7 @@ func add_footwork_steps(amount):
 
 		footwork_steps -= 1000
 
-		add_footwork_xp(10)
+		add_footwork_xp(25)
 
 
 
