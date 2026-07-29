@@ -63,7 +63,7 @@ tile_set = ExtResource("6_f5fi0")
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
-position = Vector2(616, 752)
+position = Vector2(136, 104)
 
 [node name="DialogueUI" parent="." unique_id=353898798 instance=ExtResource("8_en4w3")]
 
