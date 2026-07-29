@@ -1,8 +1,16 @@
 [gd_resource type="TileSet" format=3 uid="uid://c1h01xwhckm4f"]
 
 [ext_resource type="Texture2D" uid="uid://cbgih14j1kcs4" path="res://New Assets/mystic_woods_2.2_PREMIUM/sprites/tilesets/mainTileset/fences.png" id="1_6ra8l"]
+[ext_resource type="Texture2D" uid="uid://d3pl1a0vm3ce4" path="res://New Assets/mystic_woods_2.2_PREMIUM/sprites/objects/chest_01.png" id="1_10a0g"]
 [ext_resource type="Texture2D" uid="uid://jquypphb3tdc" path="res://tilemap_packed.png" id="1_q8tj2"]
 [ext_resource type="Texture2D" uid="uid://drr1g56my0jy4" path="res://New Assets/mystic_woods_2.2_PREMIUM/sprites/objects/objects.png" id="2_afubd"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_72wrc"]
+texture = ExtResource("1_10a0g")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_10a0g"]
 texture = ExtResource("1_6ra8l")
@@ -461,3 +469,4 @@ terrain_set_1/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/2 = SubResource("TileSetAtlasSource_6ra8l")
 sources/3 = SubResource("TileSetAtlasSource_afubd")
 sources/1 = SubResource("TileSetAtlasSource_10a0g")
+sources/0 = SubResource("TileSetAtlasSource_72wrc")
