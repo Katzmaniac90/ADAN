@@ -23,6 +23,8 @@
 [ext_resource type="PackedScene" uid="uid://df7ndx52e7u1y" path="res://Scenes/Doors/SkytreeHouse3In.tscn" id="16_mntly"]
 [ext_resource type="PackedScene" uid="uid://bqnttmg24i51d" path="res://Scenes/Doors/SkytreeHouse4In.tscn" id="17_a3qd8"]
 [ext_resource type="PackedScene" uid="uid://dc7x5ke5cpop2" path="res://Scenes/Doors/SkytreeHouse5In.tscn" id="18_wnbwl"]
+[ext_resource type="PackedScene" uid="uid://d17l6vgyrx37p" path="res://Scenes/Signs/SkytreeSign1.tscn" id="19_m0cql"]
+[ext_resource type="PackedScene" uid="uid://dxx1g3k0iej6p" path="res://Scenes/Signs/SkytreeSign2.tscn" id="20_46umo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgwvv"]
 size = Vector2(240, 5)
@@ -213,6 +215,19 @@ position = Vector2(1232, 504)
 shape = SubResource("RectangleShape2D_jpemb")
 
 [node name="Signs" type="Node" parent="." unique_id=376708143]
+
+[node name="SkytreeSign1" parent="Signs" unique_id=431273787 instance=ExtResource("19_m0cql")]
+z_index = 1
+position = Vector2(368, 968)
+sign_text = "Skytree Village --->
+?????
+|
+v"
+
+[node name="SkytreeSign2" parent="Signs" unique_id=573640038 instance=ExtResource("20_46umo")]
+z_index = 1
+position = Vector2(792, 800)
+sign_text = "Welcome to Skytree Village!"
 
 [node name="tree" type="Node" parent="." unique_id=1414093296]
 
