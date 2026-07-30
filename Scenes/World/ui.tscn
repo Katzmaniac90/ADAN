@@ -565,9 +565,9 @@ autoplay = true
 script = ExtResource("19_4rgu2")
 
 [node name="MusicButton" type="Button" parent="MusicPlayer" unique_id=1864501538]
-offset_top = -1.0
-offset_right = 87.0
-offset_bottom = 30.0
+offset_left = 196.0
+offset_right = 283.0
+offset_bottom = 32.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_hl8in")
 text = "Music: ON"
 
