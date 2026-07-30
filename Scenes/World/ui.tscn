@@ -97,7 +97,7 @@ script = ExtResource("1_l88uj")
 [node name="SkillsPanel" type="Panel" parent="." unique_id=1478144087]
 offset_left = 180.0
 offset_top = 609.0
-offset_right = 1280.0
+offset_right = 606.0
 offset_bottom = 720.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_kuxid")
 script = ExtResource("3_wh8m4")
@@ -109,13 +109,16 @@ offset_top = 3.0
 offset_right = 525.0
 offset_bottom = 26.0
 
-[node name="Barkbreaking" type="Node" parent="SkillsPanel" unique_id=2076382960]
+[node name="Barkbreaking" type="HBoxContainer" parent="SkillsPanel" unique_id=744718900]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 14.0
+offset_right = 60.0
+offset_bottom = 54.0
+scale = Vector2(2, 2)
 
 [node name="LevelLabel" type="Label" parent="SkillsPanel/Barkbreaking" unique_id=649127536]
-offset_left = 226.0
-offset_top = 617.0
-offset_right = 256.0
-offset_bottom = 640.0
+layout_mode = 2
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
@@ -123,27 +126,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TreeIcon" type="TextureRect" parent="SkillsPanel/Barkbreaking" unique_id=1332288513]
-offset_left = 212.0
-offset_top = 638.0
-offset_right = 272.0
-offset_bottom = 698.0
+layout_mode = 2
 tooltip_text = "Barkbreaking"
 texture = ExtResource("4_lccpl")
 expand_mode = 1
 
 [node name="XPLabel" type="Label" parent="SkillsPanel/Barkbreaking" unique_id=547583055]
-offset_left = 206.0
-offset_top = 694.0
-offset_right = 276.0
-offset_bottom = 717.0
+layout_mode = 2
 
-[node name="Rockpunching" type="Node" parent="SkillsPanel" unique_id=179709323]
+[node name="Rockpunching" type="HBoxContainer" parent="SkillsPanel" unique_id=2001350508]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 14.0
+offset_right = 160.0
+offset_bottom = 54.0
+scale = Vector2(2, 2)
 
 [node name="LevelLabel" type="Label" parent="SkillsPanel/Rockpunching" unique_id=2014218258]
-offset_left = 326.0
-offset_top = 617.0
-offset_right = 356.0
-offset_bottom = 640.0
+layout_mode = 2
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
@@ -152,29 +152,26 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="RockIcon" type="TextureRect" parent="SkillsPanel/Rockpunching" unique_id=1503261047]
-offset_left = 312.0
-offset_top = 638.0
-offset_right = 372.0
-offset_bottom = 698.0
+layout_mode = 2
 tooltip_text = "Rockpunching"
 texture = ExtResource("4_ardup")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="XPLabel" type="Label" parent="SkillsPanel/Rockpunching" unique_id=80361586]
-offset_left = 306.0
-offset_top = 694.0
-offset_right = 376.0
-offset_bottom = 717.0
+layout_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Smacking" type="Node" parent="SkillsPanel" unique_id=922384664]
+[node name="Smacking" type="HBoxContainer" parent="SkillsPanel" unique_id=143856081]
+layout_mode = 0
+offset_left = 220.0
+offset_top = 14.0
+offset_right = 260.0
+offset_bottom = 54.0
+scale = Vector2(2, 2)
 
 [node name="LevelLabel" type="Label" parent="SkillsPanel/Smacking" unique_id=1959774141]
-offset_left = 436.0
-offset_top = 617.0
-offset_right = 466.0
-offset_bottom = 640.0
+layout_mode = 2
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
@@ -183,29 +180,26 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="SmackingIcon" type="TextureRect" parent="SkillsPanel/Smacking" unique_id=1136193052]
-offset_left = 422.0
-offset_top = 638.0
-offset_right = 482.0
-offset_bottom = 698.0
+layout_mode = 2
 tooltip_text = "Smacking"
 texture = ExtResource("5_d7t7b")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="XPLabel" type="Label" parent="SkillsPanel/Smacking" unique_id=977249800]
-offset_left = 416.0
-offset_top = 694.0
-offset_right = 486.0
-offset_bottom = 717.0
+layout_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Footwork" type="Node" parent="SkillsPanel" unique_id=1635819808]
+[node name="Footwork" type="HBoxContainer" parent="SkillsPanel" unique_id=1342552885]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 14.0
+offset_right = 360.0
+offset_bottom = 54.0
+scale = Vector2(2, 2)
 
 [node name="LevelLabel" type="Label" parent="SkillsPanel/Footwork" unique_id=2082246985]
-offset_left = 558.0
-offset_top = 617.0
-offset_right = 588.0
-offset_bottom = 640.0
+layout_mode = 2
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
@@ -214,20 +208,14 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="FootworkIcon" type="TextureRect" parent="SkillsPanel/Footwork" unique_id=1024322273]
-offset_left = 544.0
-offset_top = 638.0
-offset_right = 604.0
-offset_bottom = 698.0
+layout_mode = 2
 tooltip_text = "Footwork"
 texture = ExtResource("6_lccpl")
 expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="XPLabel" type="Label" parent="SkillsPanel/Footwork" unique_id=1368240177]
-offset_left = 538.0
-offset_top = 694.0
-offset_right = 608.0
-offset_bottom = 717.0
+layout_mode = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="Creation" type="Node" parent="SkillsPanel" unique_id=1534187698]
@@ -422,9 +410,9 @@ offset_bottom = 49.0
 text = "Hands"
 
 [node name="BagPanel" type="Panel" parent="." unique_id=215952738]
-offset_left = 1156.0
+offset_left = 992.0
 offset_right = 1280.0
-offset_bottom = 611.0
+offset_bottom = 224.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_caeob")
 script = ExtResource("11_y5qpw")
 
@@ -432,8 +420,8 @@ script = ExtResource("11_y5qpw")
 layout_mode = 0
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 120.0
-offset_bottom = 27.0
+offset_right = 282.0
+offset_bottom = 40.0
 text = "Bag"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -446,10 +434,10 @@ offset_right = 116.0
 offset_bottom = 602.0
 
 [node name="CraftingPanel" type="Panel" parent="." unique_id=354939772]
-offset_left = 379.0
-offset_top = 168.0
-offset_right = 825.0
-offset_bottom = 499.0
+offset_left = 832.0
+offset_top = 392.0
+offset_right = 1278.0
+offset_bottom = 723.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_cfpjy")
 script = ExtResource("11_iikbr")
 
@@ -523,8 +511,10 @@ offset_bottom = 186.0
 text = "CRAFT"
 
 [node name="AchievementPanel" type="Panel" parent="." unique_id=2109892220]
+visible = false
+offset_top = -2.0
 offset_right = 453.0
-offset_bottom = 610.0
+offset_bottom = 608.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4vasu")
 script = ExtResource("15_04dqr")
 achievement_card_scene = ExtResource("16_4vasu")

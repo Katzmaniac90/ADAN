@@ -21,7 +21,7 @@ var item_textures = {
 func _ready():
 
 	# Bag is open when game starts
-	show()
+	hide()
 
 	GameManager.inventory_changed.connect(update_inventory)
 

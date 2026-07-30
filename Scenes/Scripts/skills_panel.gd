@@ -31,9 +31,7 @@ var drag_offset := Vector2.ZERO
 
 func _ready():
 
-	visible = true
-
-	show_all_skills()
+	visible = false
 
 	GameManager.barkbreaking_changed.connect(update_barkbreaking)
 	GameManager.rockpunching_changed.connect(update_rockpunching)
@@ -51,10 +49,7 @@ func _unhandled_input(event):
 
 		visible = !visible
 
-		if visible:
-			show_all_skills()
-		else:
-			hide_all_skills()
+		
 
 
 func update_barkbreaking():
@@ -132,24 +127,3 @@ func hide_skill(skill_node):
 		if child is CanvasItem:
 
 			child.hide()
-func hide_all_skills():
-
-	for skill in get_children():
-
-		for child in skill.get_children():
-
-			if child is CanvasItem:
-
-				child.hide()
-
-
-
-func show_all_skills():
-
-	for skill in get_children():
-
-		for child in skill.get_children():
-
-			if child is CanvasItem:
-
-				child.show()

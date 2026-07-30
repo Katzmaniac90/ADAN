@@ -17,7 +17,7 @@ var super_axe_icon = preload("res://Items/Axes/SuperSaiyanAxe.png")
 
 func _ready():
 
-	show()
+	hide()
 
 	GameManager.inventory_changed.connect(update_equipment)
 
