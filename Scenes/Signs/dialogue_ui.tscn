@@ -32,5 +32,5 @@ offset_right = 773.0
 offset_bottom = 237.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 1
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 30
 autowrap_mode = 2
