@@ -88,6 +88,9 @@ corner_radius_bottom_left = 8
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hl8in"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hmhsi"]
+bg_color = Color(0, 0, 0, 1)
+
 [node name="UI" type="CanvasLayer" unique_id=480595847]
 script = ExtResource("1_l88uj")
 
@@ -230,6 +233,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Creation" type="Node" parent="SkillsPanel" unique_id=1534187698]
 
 [node name="LevelLabel" type="Label" parent="SkillsPanel/Creation" unique_id=1804299256]
+visible = false
 offset_left = 744.0
 offset_top = 614.0
 offset_right = 774.0
@@ -242,6 +246,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="CreationIcon" type="TextureRect" parent="SkillsPanel/Creation" unique_id=975763004]
+visible = false
 offset_left = 759.0
 offset_top = 636.0
 offset_right = 819.0
@@ -253,6 +258,7 @@ expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="XPLabel" type="Label" parent="SkillsPanel/Creation" unique_id=94235907]
+visible = false
 offset_left = 753.0
 offset_top = 692.0
 offset_right = 823.0
@@ -262,6 +268,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Growcraft" type="Node" parent="SkillsPanel" unique_id=1017901518]
 
 [node name="LevelLabel" type="Label" parent="SkillsPanel/Growcraft" unique_id=1007625592]
+visible = false
 offset_left = 896.0
 offset_top = 617.0
 offset_right = 926.0
@@ -274,6 +281,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="GrowcraftIcon" type="TextureRect" parent="SkillsPanel/Growcraft" unique_id=182924715]
+visible = false
 offset_left = 911.0
 offset_top = 639.0
 offset_right = 971.0
@@ -285,6 +293,7 @@ expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="XPLabel" type="Label" parent="SkillsPanel/Growcraft" unique_id=1503115917]
+visible = false
 offset_left = 905.0
 offset_top = 695.0
 offset_right = 975.0
@@ -294,6 +303,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Angling" type="Node" parent="SkillsPanel" unique_id=1473319168]
 
 [node name="LevelLabel" type="Label" parent="SkillsPanel/Angling" unique_id=139726218]
+visible = false
 offset_left = 1044.0
 offset_top = 614.0
 offset_right = 1074.0
@@ -306,6 +316,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="AnglingIcon" type="TextureRect" parent="SkillsPanel/Angling" unique_id=550535233]
+visible = false
 offset_left = 1059.0
 offset_top = 636.0
 offset_right = 1119.0
@@ -316,6 +327,7 @@ expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="XPLabel" type="Label" parent="SkillsPanel/Angling" unique_id=666928137]
+visible = false
 offset_left = 1053.0
 offset_top = 692.0
 offset_right = 1123.0
@@ -325,6 +337,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Heatworking" type="Node" parent="SkillsPanel" unique_id=1297237049]
 
 [node name="LevelLabel" type="Label" parent="SkillsPanel/Heatworking" unique_id=117876587]
+visible = false
 offset_left = 1190.0
 offset_top = 614.0
 offset_right = 1220.0
@@ -337,6 +350,7 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="HeatworkingIcon" type="TextureRect" parent="SkillsPanel/Heatworking" unique_id=1462216577]
+visible = false
 offset_left = 1205.0
 offset_top = 636.0
 offset_right = 1265.0
@@ -347,6 +361,7 @@ expand_mode = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="XPLabel" type="Label" parent="SkillsPanel/Heatworking" unique_id=1438181454]
+visible = false
 offset_left = 1199.0
 offset_top = 692.0
 offset_right = 1269.0
@@ -354,6 +369,7 @@ offset_bottom = 715.0
 metadata/_edit_use_anchors_ = true
 
 [node name="EquipmentPanel" type="Panel" parent="." unique_id=2065187319]
+visible = false
 custom_minimum_size = Vector2(100, 100)
 offset_top = 609.0
 offset_right = 182.0
@@ -407,6 +423,7 @@ offset_bottom = 49.0
 text = "Hands"
 
 [node name="BagPanel" type="Panel" parent="." unique_id=215952738]
+visible = false
 offset_left = 1156.0
 offset_right = 1280.0
 offset_bottom = 611.0
@@ -509,6 +526,7 @@ offset_bottom = 186.0
 text = "CRAFT"
 
 [node name="AchievementPanel" type="Panel" parent="." unique_id=2109892220]
+visible = false
 offset_right = 453.0
 offset_bottom = 610.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4vasu")
@@ -543,6 +561,7 @@ custom_minimum_size = Vector2(450, 3000)
 layout_mode = 2
 
 [node name="AchievementPopup" parent="." unique_id=385434931 instance=ExtResource("15_hl8in")]
+visible = false
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=174675881 groups=["music"]]
 stream = ExtResource("18_hmhsi")
@@ -551,6 +570,7 @@ autoplay = true
 script = ExtResource("19_4rgu2")
 
 [node name="MusicButton" type="Button" parent="MusicPlayer" unique_id=1864501538]
+visible = false
 offset_top = -1.0
 offset_right = 87.0
 offset_bottom = 30.0
@@ -562,6 +582,28 @@ visible = false
 
 [node name="TutorialScreen" parent="." unique_id=1548300584 instance=ExtResource("16_cq0k0")]
 visible = false
+
+[node name="AdventureLog" type="Panel" parent="." unique_id=1889737243]
+offset_right = 196.0
+offset_bottom = 99.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_hmhsi")
+
+[node name="Panel" type="Panel" parent="AdventureLog" unique_id=839764385]
+layout_mode = 0
+offset_right = 196.0
+offset_bottom = 99.0
+
+[node name="MessageLog" type="RichTextLabel" parent="AdventureLog" unique_id=1678899212]
+layout_mode = 0
+offset_right = 197.0
+offset_bottom = 99.0
+theme_override_font_sizes/normal_font_size = 10
+bbcode_enabled = true
+metadata/_edit_use_anchors_ = true
+
+[node name="MessageFadeTimer" type="Timer" parent="." unique_id=1064082425]
+wait_time = 5.0
+one_shot = true
 
 [connection signal="pressed" from="CraftingPanel/RecipeContainer/RecipeCard/CraftButton" to="CraftingPanel" method="_on_craft_button_pressed"]
 [connection signal="pressed" from="MusicPlayer/MusicButton" to="MusicPlayer" method="_on_music_button_pressed"]

@@ -23,6 +23,7 @@ QuestManager="*uid://0ccuamh0gc4c"
 AchievementManager="*uid://bmvuru4yv1on2"
 GameTimer="*uid://bl3bgnssd7jol"
 Transition="*uid://c8itbu3p5bidn"
+MessageManager="*uid://did52kuas82ye"
 
 [display]
 

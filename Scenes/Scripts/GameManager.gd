@@ -209,6 +209,11 @@ func add_item(item_name:String, amount:int):
 	else:
 		inventory[item_name] = amount
 
+	MessageManager.loot_message(
+		item_name,
+		amount
+	)
+
 	inventory_changed.emit()
 
 
@@ -333,10 +338,20 @@ func add_barkbreaking_xp(amount):
 
 	barkbreaking_xp += amount
 
+	MessageManager.xp_message(
+		amount,
+		"Barkbreaking"
+	)
+
 	while barkbreaking_xp >= get_required_xp(barkbreaking_level):
 
 		barkbreaking_xp -= get_required_xp(barkbreaking_level)
 		barkbreaking_level += 1
+
+	MessageManager.level_up_message(
+		"Barkbreaking",
+		barkbreaking_level
+	)
 	if barkbreaking_level >= 5:
 		AchievementManager.unlock_if_locked("BARKBREAKING_5")
 
@@ -359,12 +374,22 @@ func add_rockpunching_xp(amount):
 
 	rockpunching_xp += amount
 
+	MessageManager.xp_message(
+	amount,
+	"Rockpunching"
+)
+
 	while rockpunching_xp >= get_required_xp(rockpunching_level):
 
 		rockpunching_xp -= get_required_xp(rockpunching_level)
 		rockpunching_level += 1
 
-		print("Rockpunching Level:", rockpunching_level)
+	MessageManager.level_up_message(
+	"Rockpunching",
+	rockpunching_level
+)
+
+	print("Rockpunching Level:", rockpunching_level)
 	if rockpunching_level >= 5:
 		AchievementManager.unlock_if_locked("ROCKPUNCHING_5")
 	rockpunching_changed.emit()
@@ -372,20 +397,34 @@ func add_rockpunching_xp(amount):
 
 
 func add_smacking_xp(amount):
+
 	AchievementManager.unlock_if_locked("FIRST_ENEMY")
+
 	smacking_xp += amount
+
+	MessageManager.xp_message(
+		amount,
+		"Smacking"
+	)
 
 	while smacking_xp >= get_required_xp(smacking_level):
 
 		smacking_xp -= get_required_xp(smacking_level)
 		smacking_level += 1
 
+		MessageManager.level_up_message(
+			"Smacking",
+			smacking_level
+		)
+
 		print("Smacking Level:", smacking_level)
+
 	if smacking_level >= 5:
 		AchievementManager.unlock_if_locked("SMACKING_5")
 
 	if smacking_level >= 10:
 		AchievementManager.unlock_if_locked("SMACKING_10")
+
 	smacking_changed.emit()
 
 
@@ -405,18 +444,32 @@ func add_footwork_steps(amount):
 func add_footwork_xp(amount):
 
 	footwork_xp += amount
+
+	MessageManager.xp_message(
+		amount,
+		"Footwork"
+	)
+
 	AchievementManager.unlock_if_locked("FOOTWORK_1")
+
 	while footwork_xp >= get_required_xp(footwork_level):
 
 		footwork_xp -= get_required_xp(footwork_level)
 		footwork_level += 1
 
+		MessageManager.level_up_message(
+			"Footwork",
+			footwork_level
+		)
+
 		print("Footwork Level:", footwork_level)
+
 	if footwork_level >= 5:
 		AchievementManager.unlock_if_locked("FOOTWORK_5")
 
 	if footwork_level >= 10:
 		AchievementManager.unlock_if_locked("FOOTWORK_10")
+
 	footwork_changed.emit()
 
 

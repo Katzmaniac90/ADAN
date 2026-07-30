@@ -27,8 +27,8 @@ corner_radius_bottom_left = 3
 z_index = 100
 texture_filter = 1
 script = ExtResource("1_m636k")
-min_respawn_time = 5.0
-max_respawn_time = 20.0
+min_respawn_time = 60.0
+max_respawn_time = 120.0
 respawn_radius = 1.0
 interaction_text = "[E] Chop Tree"
 
