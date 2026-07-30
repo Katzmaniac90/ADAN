@@ -369,7 +369,6 @@ offset_bottom = 715.0
 metadata/_edit_use_anchors_ = true
 
 [node name="EquipmentPanel" type="Panel" parent="." unique_id=2065187319]
-visible = false
 custom_minimum_size = Vector2(100, 100)
 offset_top = 609.0
 offset_right = 182.0
@@ -423,7 +422,6 @@ offset_bottom = 49.0
 text = "Hands"
 
 [node name="BagPanel" type="Panel" parent="." unique_id=215952738]
-visible = false
 offset_left = 1156.0
 offset_right = 1280.0
 offset_bottom = 611.0
@@ -448,7 +446,6 @@ offset_right = 116.0
 offset_bottom = 602.0
 
 [node name="CraftingPanel" type="Panel" parent="." unique_id=354939772]
-visible = false
 offset_left = 379.0
 offset_top = 168.0
 offset_right = 825.0
@@ -526,7 +523,6 @@ offset_bottom = 186.0
 text = "CRAFT"
 
 [node name="AchievementPanel" type="Panel" parent="." unique_id=2109892220]
-visible = false
 offset_right = 453.0
 offset_bottom = 610.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_4vasu")
@@ -561,7 +557,6 @@ custom_minimum_size = Vector2(450, 3000)
 layout_mode = 2
 
 [node name="AchievementPopup" parent="." unique_id=385434931 instance=ExtResource("15_hl8in")]
-visible = false
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=174675881 groups=["music"]]
 stream = ExtResource("18_hmhsi")
@@ -570,7 +565,6 @@ autoplay = true
 script = ExtResource("19_4rgu2")
 
 [node name="MusicButton" type="Button" parent="MusicPlayer" unique_id=1864501538]
-visible = false
 offset_top = -1.0
 offset_right = 87.0
 offset_bottom = 30.0

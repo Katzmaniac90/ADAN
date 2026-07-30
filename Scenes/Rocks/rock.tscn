@@ -4,10 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://c75h2wgdoc8di" path="res://rocks_and_stones/PNG/Objects_separately/Rock1_1.png" id="2_3iop0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wla72"]
-size = Vector2(32, 23)
+size = Vector2(23, 25.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22gus"]
-size = Vector2(36, 39)
+size = Vector2(23, 27)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq0y2"]
 bg_color = Color(0, 0, 0, 1)
@@ -33,18 +33,18 @@ interaction_text = "[E] Punch Rock"
 [node name="RockModified" type="Sprite2D" parent="." unique_id=573872850]
 z_index = 1
 position = Vector2(-3.0000057, 4.999998)
-scale = Vector2(0.8937499, 0.78437495)
+scale = Vector2(0.5, 0.438)
 texture = ExtResource("2_3iop0")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141913667]
-position = Vector2(-1, 20.5)
+position = Vector2(-2.5, 4.75)
 shape = SubResource("RectangleShape2D_wla72")
 debug_color = Color(0.34128827, 0.5011388, 0.9447065, 0.5254902)
 
 [node name="Area2D" type="Area2D" parent="." unique_id=860053328]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=552153863]
-position = Vector2(-1, 14.5)
+position = Vector2(-2.5, 5.5)
 shape = SubResource("RectangleShape2D_22gus")
 
 [node name="InteractionLabel" type="Label" parent="." unique_id=278786865]
