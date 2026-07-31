@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://c1h01xwhckm4f" path="res://TileSet/objects.tres" id="2_luw0s"]
 [ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="3_a6re4"]
 [ext_resource type="PackedScene" uid="uid://bpxllwik2wein" path="res://Scenes/Doors/SkytreeHouse4Out.tscn" id="4_le8kf"]
+[ext_resource type="PackedScene" uid="uid://gbogljrht8uf" path="res://Scenes/NPCs/SkytreeNPC2.tscn" id="5_luw0s"]
 
 [node name="SkytreeHouse4" type="Node2D" unique_id=831733760]
 y_sort_enabled = true
@@ -40,3 +41,8 @@ position = Vector2(80, 112)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1784567652]
 polygon = PackedVector2Array(64, 96, 24, 96, 24, 0, 152, 0, 152, 96, 88, 96, 88, 104, 160, 104, 160, -8, 16, -8, 16, 104, 64, 104)
+
+[node name="NPCs" type="Node" parent="." unique_id=1622670278]
+
+[node name="SKytreeNPC2" parent="NPCs" unique_id=1646254127 instance=ExtResource("5_luw0s")]
+position = Vector2(88, 48)

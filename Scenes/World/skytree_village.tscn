@@ -25,6 +25,7 @@
 [ext_resource type="PackedScene" uid="uid://dc7x5ke5cpop2" path="res://Scenes/Doors/SkytreeHouse5In.tscn" id="18_wnbwl"]
 [ext_resource type="PackedScene" uid="uid://d17l6vgyrx37p" path="res://Scenes/Signs/SkytreeSign1.tscn" id="19_m0cql"]
 [ext_resource type="PackedScene" uid="uid://dxx1g3k0iej6p" path="res://Scenes/Signs/SkytreeSign2.tscn" id="20_46umo"]
+[ext_resource type="PackedScene" uid="uid://b0ivigp80axxj" path="res://Scenes/NPCs/SkytreeNPC1.tscn" id="26_5w68m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgwvv"]
 size = Vector2(240, 5)
@@ -270,7 +271,7 @@ position = Vector2(88, 1112)
 position = Vector2(1280, 160)
 
 [node name="Tree6" parent="tree2" unique_id=55115121 instance=ExtResource("13_kpd8o")]
-position = Vector2(480, 592)
+position = Vector2(480, 584)
 
 [node name="tree3" type="Node" parent="." unique_id=68547817]
 
@@ -307,3 +308,14 @@ position = Vector2(1016, 96)
 
 [node name="Rock5" parent="rock" unique_id=1067017184 instance=ExtResource("16_cgjli")]
 position = Vector2(912, 1264)
+
+[node name="NPCs" type="Node" parent="." unique_id=444232542]
+
+[node name="SkytreeNPC1" parent="NPCs" unique_id=1646254127 instance=ExtResource("26_5w68m")]
+position = Vector2(320, 992)
+npc_name = "Amy the Adventurous"
+dialogue_text = "Well hi there! Always fun to see new faces in the forest :)
+
+Take care not to get lost though, it can be pretty easy to get caught up in trees, especially just south of Skytree Village. The woods down there are as dense as any I've ever seen! I almost couldn't find a way back out myself.. 
+
+I did stumble upon a cool looking path towards the back of the woods, but there was a big tree in the way and I couldn't get through :/  I wonder what's back there..."

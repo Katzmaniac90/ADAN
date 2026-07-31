@@ -16,8 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://bb0am1iwej6q7" path="res://Scenes/Doors/Forest1toSkytree.tscn" id="10_rjbrm"]
 [ext_resource type="PackedScene" uid="uid://vp2kwubidkxn" path="res://Scenes/Signs/dialogue_ui.tscn" id="11_3cbse"]
 [ext_resource type="PackedScene" uid="uid://b06qc3ulpvb7a" path="res://Scenes/Trees/tree3.tscn" id="11_86gjr"]
+[ext_resource type="PackedScene" uid="uid://1b26hxqxknf8" path="res://Scenes/Doors/Forest1House1Out.tscn" id="11_mppiu"]
 [ext_resource type="PackedScene" uid="uid://cfg8g5u244mmw" path="res://Scenes/Trees/tree4.tscn" id="12_51jwm"]
+[ext_resource type="PackedScene" uid="uid://o1e6lm0qj3ed" path="res://Scenes/Doors/Forest1House2Out.tscn" id="12_86fx8"]
 [ext_resource type="PackedScene" uid="uid://d1gyjxghia60g" path="res://Scenes/Rocks/rock.tscn" id="13_a0upg"]
+[ext_resource type="PackedScene" uid="uid://cc0ksii5lcrh3" path="res://Scenes/Doors/Forest1House3Out.tscn" id="13_jaerj"]
 
 [node name="ForestMap1" type="Node2D" unique_id=782872810]
 y_sort_enabled = true
@@ -78,6 +81,15 @@ position = Vector2(968, 720)
 z_index = 1
 position = Vector2(1248, 168)
 
+[node name="Forest1House1Out" type="Marker2D" parent="PlayerSpawnPoints" unique_id=287802690]
+position = Vector2(520, 584)
+
+[node name="Forest1House2Out" type="Marker2D" parent="PlayerSpawnPoints" unique_id=154335916]
+position = Vector2(664, 520)
+
+[node name="Forest1House3Out" type="Marker2D" parent="PlayerSpawnPoints" unique_id=156035537]
+position = Vector2(824, 600)
+
 [node name="Doors" type="Node" parent="." unique_id=1308578506]
 
 [node name="Forest1toWorld" parent="Doors" unique_id=1895642603 instance=ExtResource("8_6y77e")]
@@ -88,6 +100,18 @@ position = Vector2(968, 736)
 
 [node name="Forest1toSkytree" parent="Doors" unique_id=721457533 instance=ExtResource("10_rjbrm")]
 position = Vector2(1272, 168)
+
+[node name="Forest1House1Out" parent="Doors" unique_id=1680831253 instance=ExtResource("11_mppiu")]
+z_index = 1
+position = Vector2(520, 568)
+
+[node name="Forest1House2Out" parent="Doors" unique_id=1376673713 instance=ExtResource("12_86fx8")]
+z_index = 1
+position = Vector2(664, 504)
+
+[node name="Forest1House3Out" parent="Doors" unique_id=789122877 instance=ExtResource("13_jaerj")]
+z_index = 1
+position = Vector2(824, 584)
 
 [node name="Signs" type="Node" parent="." unique_id=928791062]
 
