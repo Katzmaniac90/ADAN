@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://b06qc3ulpvb7a" path="res://Scenes/Trees/tree3.tscn" id="13_0phyg"]
 [ext_resource type="PackedScene" uid="uid://cfg8g5u244mmw" path="res://Scenes/Trees/tree4.tscn" id="14_30wmc"]
 [ext_resource type="PackedScene" uid="uid://ce8gy64gmymef" path="res://Scenes/Enemies/enemy.tscn" id="15_0phyg"]
-[ext_resource type="PackedScene" uid="uid://bpeeaey03ajr" path="res://Scenes/NPCs/npc.tscn" id="15_nfd2q"]
+[ext_resource type="PackedScene" uid="uid://btjvocx2a7boe" path="res://Scenes/NPCs/WorldNPC1.tscn" id="15_nfd2q"]
 [ext_resource type="Script" uid="uid://dl80aw7icg1va" path="res://Scenes/World/EndScreen.gd" id="16_30wmc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87yka"]
@@ -486,8 +486,8 @@ position = Vector2(940, 149)
 
 [node name="NPCs" type="Node" parent="." unique_id=1978484275]
 
-[node name="NPC" parent="NPCs" unique_id=1646254127 instance=ExtResource("15_nfd2q")]
-position = Vector2(492, 131)
+[node name="WorldNPC1" parent="NPCs" unique_id=1646254127 instance=ExtResource("15_nfd2q")]
+position = Vector2(469, 139)
 npc_name = "Gary the Guide"
 dialogue_text = "Hello there! I'm the first NPC ever created! Wow.. actually kinda weird to think about.. Anyway! I'm here to provide some basic controls for your journey into ADAN!
 

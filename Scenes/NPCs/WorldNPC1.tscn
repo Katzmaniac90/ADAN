@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://bpeeaey03ajr"]
+[gd_scene format=3 uid="uid://btjvocx2a7boe"]
 
-[ext_resource type="SpriteFrames" uid="uid://2tav1dq1arn6" path="res://Scenes/NPCs/new_npc_frames.tres" id="1_7lr2c"]
-[ext_resource type="Script" uid="uid://cxlqoq6xe5rpb" path="res://Scenes/NPCs/NPC.gd" id="1_n58mx"]
-[ext_resource type="Texture2D" uid="uid://c6r7k86u618ao" path="res://npc-chat-box1.png" id="3_q0ilr"]
+[ext_resource type="Script" uid="uid://cxlqoq6xe5rpb" path="res://Scenes/NPCs/NPC.gd" id="1_3qaxg"]
+[ext_resource type="SpriteFrames" uid="uid://2tav1dq1arn6" path="res://Scenes/NPCs/new_npc_frames.tres" id="2_chyk6"]
+[ext_resource type="Texture2D" uid="uid://c6r7k86u618ao" path="res://npc-chat-box1.png" id="3_x5i2m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lr2c"]
 size = Vector2(5.25, 10.625)
@@ -25,12 +25,12 @@ bg_color = Color(0.42745098, 0.29411766, 0.15294118, 1)
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
-script = ExtResource("1_n58mx")
+script = ExtResource("1_3qaxg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=338081268]
 texture_filter = 1
 scale = Vector2(0.06, 0.06)
-sprite_frames = ExtResource("1_7lr2c")
+sprite_frames = ExtResource("2_chyk6")
 animation = &"idle"
 autoplay = "idle"
 
@@ -60,7 +60,7 @@ offset_top = -100.0
 offset_right = 600.0
 offset_bottom = 100.0
 grow_vertical = 2
-texture = ExtResource("3_q0ilr")
+texture = ExtResource("3_x5i2m")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="DialogueUI/TextureRect" unique_id=1656080848]
 custom_minimum_size = Vector2(500, 300)
