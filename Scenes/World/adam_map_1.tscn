@@ -69,7 +69,22 @@ position = Vector2(272, 40)
 dialogue = NodePath("../QuestText/QuestDialogue1")
 
 [node name="Parsnip1" parent="." unique_id=68760205 instance=ExtResource("10_f86ax")]
-position = Vector2(368, 152)
+position = Vector2(370, 155)
+
+[node name="Parsnip3" parent="." unique_id=851029622 instance=ExtResource("10_f86ax")]
+position = Vector2(355, 177)
+
+[node name="Parsnip4" parent="." unique_id=694256646 instance=ExtResource("10_f86ax")]
+position = Vector2(460, 161)
+
+[node name="Parsnip5" parent="." unique_id=416886898 instance=ExtResource("10_f86ax")]
+position = Vector2(356, 127)
+
+[node name="Parsnip6" parent="." unique_id=1121247923 instance=ExtResource("10_f86ax")]
+position = Vector2(425, 120)
+
+[node name="Parsnip7" parent="." unique_id=350194288 instance=ExtResource("10_f86ax")]
+position = Vector2(427, 180)
 
 [node name="Parsnip2" parent="." unique_id=2010317654 instance=ExtResource("10_f86ax")]
 position = Vector2(520, 112)
