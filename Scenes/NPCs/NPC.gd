@@ -5,9 +5,9 @@ extends CharacterBody2D
 @export_multiline var dialogue_text: String = "Hello there!"
 
 @export_category("Movement")
-@export var wander_radius_blocks: float = 10.0
-@export var tile_size: float = 16.0
-@export var walk_speed: float = 50.0
+@export var wander_radius_blocks: float = 5.0
+@export var tile_size: float = 8.0
+@export var walk_speed: float = 40.0
 @export var min_wait_time: float = 1.5
 @export var max_wait_time: float = 4.0
 @export_category("Interaction")
@@ -17,10 +17,10 @@ extends CharacterBody2D
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var wander_timer: Timer = $WanderTimer
 @onready var dialogue_ui: CanvasLayer = $DialogueUI
-@onready var dialogue_panel: Panel = $DialogueUI/Panel
-@onready var name_label: Label = $DialogueUI/Panel/VBoxContainer/NameLabel
-@onready var dialogue_text_label: RichTextLabel = $DialogueUI/Panel/VBoxContainer/DialogueText
-@onready var close_button: Button = $DialogueUI/Panel/VBoxContainer/CloseButton
+@onready var dialogue_panel: TextureRect = $DialogueUI/TextureRect
+@onready var name_label: Label = $DialogueUI/TextureRect/VBoxContainer/NameLabel
+@onready var dialogue_text_label: RichTextLabel = $DialogueUI/TextureRect/VBoxContainer/DialogueText
+@onready var close_button: Button = $DialogueUI/TextureRect/VBoxContainer/CloseButton
 
 var home_position: Vector2
 var target_position: Vector2
