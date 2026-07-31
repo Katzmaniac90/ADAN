@@ -8,10 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://vp2kwubidkxn" path="res://Scenes/Signs/dialogue_ui.tscn" id="5_0gwv0"]
 [ext_resource type="PackedScene" uid="uid://b0071ri87g4lv" path="res://Scenes/Doors/AdamMap1toHouse1.tscn" id="5_31asl"]
 [ext_resource type="PackedScene" uid="uid://c2menfxklumdi" path="res://Scenes/Signs/house1Sign.tscn" id="7_2jaum"]
-[ext_resource type="PackedScene" uid="uid://bo0a82okygrfy" path="res://Scenes/Quests/QuestGiver.tscn" id="9_pg7p7"]
-[ext_resource type="PackedScene" uid="uid://b1d0qlsk8p6ao" path="res://Scenes/Quests/QuestItem.tscn" id="10_f86ax"]
-[ext_resource type="PackedScene" uid="uid://dg42cwlnwptkx" path="res://Scenes/Quests/QuestDialogue.tscn" id="11_okcx6"]
-[ext_resource type="PackedScene" uid="uid://gqyabn7uw224" path="res://Scenes/Quests/QuestTrackerUI.tscn" id="12_hkai7"]
 
 [node name="adamMap1" type="Node2D" unique_id=484409366]
 y_sort_enabled = true
@@ -63,34 +59,3 @@ position = Vector2(488, 128)
 sign_text = "This is House 1.. I don't know what it's going to do yet, but I like it :)"
 
 [node name="DialogueUI" parent="." unique_id=353898798 instance=ExtResource("5_0gwv0")]
-
-[node name="QuestGiver1" parent="." unique_id=221640980 node_paths=PackedStringArray("dialogue") instance=ExtResource("9_pg7p7")]
-position = Vector2(272, 40)
-dialogue = NodePath("../QuestText/QuestDialogue1")
-
-[node name="Parsnip1" parent="." unique_id=68760205 instance=ExtResource("10_f86ax")]
-position = Vector2(370, 155)
-
-[node name="Parsnip3" parent="." unique_id=851029622 instance=ExtResource("10_f86ax")]
-position = Vector2(355, 177)
-
-[node name="Parsnip4" parent="." unique_id=694256646 instance=ExtResource("10_f86ax")]
-position = Vector2(460, 161)
-
-[node name="Parsnip5" parent="." unique_id=416886898 instance=ExtResource("10_f86ax")]
-position = Vector2(356, 127)
-
-[node name="Parsnip6" parent="." unique_id=1121247923 instance=ExtResource("10_f86ax")]
-position = Vector2(425, 120)
-
-[node name="Parsnip7" parent="." unique_id=350194288 instance=ExtResource("10_f86ax")]
-position = Vector2(427, 180)
-
-[node name="Parsnip2" parent="." unique_id=2010317654 instance=ExtResource("10_f86ax")]
-position = Vector2(520, 112)
-
-[node name="QuestText" type="CanvasLayer" parent="." unique_id=409150193]
-
-[node name="QuestDialogue1" parent="QuestText" unique_id=913594179 instance=ExtResource("11_okcx6")]
-
-[node name="QuestTrackerUI1" parent="QuestText" unique_id=490471303 instance=ExtResource("12_hkai7")]
