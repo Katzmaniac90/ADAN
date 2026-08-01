@@ -1,0 +1,35 @@
+[gd_scene format=4 uid="uid://c8kpw8ihh0uf2"]
+
+[ext_resource type="TileSet" uid="uid://bmr861guh1woo" path="res://TileSet/groundLayer.tres" id="1_rtvh0"]
+[ext_resource type="TileSet" uid="uid://c1h01xwhckm4f" path="res://TileSet/objects.tres" id="2_inevr"]
+[ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="3_gdoqp"]
+[ext_resource type="PackedScene" uid="uid://vtuiivy7lh5n" path="res://Scenes/Doors/ForestHole1In.tscn" id="4_inevr"]
+
+[node name="ForestHole1" type="Node2D" unique_id=1355025807]
+y_sort_enabled = true
+texture_filter = 1
+
+[node name="GroundLayer" type="TileMapLayer" parent="." unique_id=1870358754]
+tile_map_data = PackedByteArray("AAAGAAUAAgADAAIAAAAGAAQAAgADAAEAAAAGAAMAAgADAAEAAAAGAAIAAgADAAEAAAAGAAEAAgADAAEAAAAGAAAAAgADAAAAAAAFAAUAAgACAAIAAAAFAAQAAgACAAEAAAAFAAMAAgACAAEAAAAFAAIAAgACAAEAAAAFAAEAAgACAAEAAAAFAAAAAgACAAAAAAAEAAUAAgACAAIAAAAEAAQAAgACAAEAAAAEAAMAAgACAAEAAAAEAAIAAgACAAEAAAAEAAEAAgACAAEAAAAEAAAAAgACAAAAAAADAAUAAgACAAIAAAADAAQAAgACAAEAAAADAAMAAgACAAEAAAADAAIAAgACAAEAAAADAAEAAgACAAEAAAADAAAAAgACAAAAAAACAAUAAgACAAIAAAACAAQAAgACAAEAAAACAAMAAgACAAEAAAACAAIAAgACAAEAAAACAAEAAgACAAEAAAACAAAAAgACAAAAAAABAAUAAgACAAIAAAABAAQAAgACAAEAAAABAAMAAgACAAEAAAABAAIAAgACAAEAAAABAAEAAgACAAEAAAABAAAAAgACAAAAAAAAAAUAAgABAAIAAAAAAAQAAgABAAEAAAAAAAMAAgABAAEAAAAAAAIAAgABAAEAAAAAAAEAAgABAAEAAAAAAAAAAgABAAAAAAA=")
+tile_set = ExtResource("1_rtvh0")
+
+[node name="Objects" type="TileMapLayer" parent="." unique_id=642016299]
+z_index = 1
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAAAP//AgAAAAUAAAABAP//AgAAAAUAAAACAP//AgAAAAUAAAADAP//AgAAAAUAAAAEAP//AgAAAAUAAAAFAP//AgAAAAUAAAAGAP//AgAAAAUAAAAGAAAAAgAAAAUAAAAGAAEAAgAAAAUAAAAGAAIAAgAAAAUAAAAGAAMAAgAAAAUAAAD/////AgAAAAUAAAD//wAAAgAAAAUAAAD//wEAAgAAAAUAAAD//wIAAgAAAAUAAAD//wMAAgAAAAUAAAD//wQAAgAAAAUAAAAGAAQAAgAAAAUAAAAAAAUAAgAGAAcAAAABAAUAAgAGAAcAAAACAAUAAgAGAAcAAAADAAUAAgAGAAcAAAAEAAUAAgAGAAcAAAAFAAUAAgAGAAcAAAABAAEAAgAIAAEAAAADAAMAAAAAAAAAAAA=")
+tile_set = ExtResource("2_inevr")
+
+[node name="Player" parent="." unique_id=226938582 instance=ExtResource("3_gdoqp")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(72, 24)
+
+[node name="PlayerSpawnPoints" type="Node" parent="." unique_id=1889978129]
+
+[node name="ForestHole1In" type="Marker2D" parent="PlayerSpawnPoints" unique_id=133323738]
+position = Vector2(48, 24)
+
+[node name="Doors" type="Node" parent="." unique_id=338358956]
+
+[node name="ForestHole1In" parent="Doors" unique_id=1895642603 instance=ExtResource("4_inevr")]
+position = Vector2(24, 24)
