@@ -28,6 +28,8 @@ texture_filter = 1
 script = ExtResource("1_n58mx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=338081268]
+z_index = 1
+y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.06, 0.06)
 sprite_frames = ExtResource("1_7lr2c")
@@ -48,6 +50,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="DialogueUI" type="CanvasLayer" parent="." unique_id=676262171]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="DialogueUI" unique_id=2063723531]
 custom_minimum_size = Vector2(500, 300)
