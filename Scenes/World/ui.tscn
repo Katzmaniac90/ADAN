@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://yibi3d0w56cc"]
 
 [ext_resource type="Script" uid="uid://cuc4uu3psb7a7" path="res://Scenes/Scripts/ui.gd" id="1_l88uj"]
+[ext_resource type="Texture2D" uid="uid://c0qqiel6tf2ej" path="res://trees/PNG/Assets_separately/Trees/Tree1.png" id="3_hmhsi"]
 [ext_resource type="Script" uid="uid://b486xt56rg72o" path="res://Scenes/Scripts/skills_panel.gd" id="3_wh8m4"]
 [ext_resource type="Texture2D" uid="uid://c75h2wgdoc8di" path="res://rocks_and_stones/PNG/Objects_separately/Rock1_1.png" id="4_ardup"]
-[ext_resource type="Texture2D" uid="uid://dsfkjv1b23nxy" path="res://tree-modified.png" id="4_lccpl"]
 [ext_resource type="Texture2D" uid="uid://dqxxsr30py8lu" path="res://Items/Weapons/sword.png" id="5_d7t7b"]
 [ext_resource type="Texture2D" uid="uid://bvvk1b1f6fts6" path="res://Scenes/World/running.png" id="6_lccpl"]
 [ext_resource type="Texture2D" uid="uid://kkiupyopba0o" path="res://Scenes/World/Creation.png" id="7_y5qpw"]
@@ -22,7 +22,7 @@
 [ext_resource type="AudioStream" uid="uid://c3rcpdxbyywxa" path="res://Scenes/World/Track12_Promise of Dawn.wav" id="18_hmhsi"]
 [ext_resource type="Script" uid="uid://7d8ltti72h2u" path="res://Scenes/World/music_player.gd" id="19_4rgu2"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kuxid"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_apcou"]
 bg_color = Color(0.23137255, 0.23137255, 0.23137255, 1)
 border_width_left = 2
 border_width_top = 2
@@ -94,128 +94,181 @@ bg_color = Color(0, 0, 0, 1)
 [node name="UI" type="CanvasLayer" unique_id=480595847]
 script = ExtResource("1_l88uj")
 
-[node name="SkillsPanel" type="Panel" parent="." unique_id=1478144087]
+[node name="SkillsPanel" type="Panel" parent="." unique_id=717901510]
 offset_left = 180.0
 offset_top = 609.0
-offset_right = 606.0
+offset_right = 601.0
 offset_bottom = 720.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_kuxid")
+theme_override_styles/panel = SubResource("StyleBoxFlat_apcou")
 script = ExtResource("3_wh8m4")
 
 [node name="Skills" type="Control" parent="SkillsPanel" unique_id=262059742]
 anchors_preset = 0
-offset_left = 481.0
-offset_top = 3.0
-offset_right = 525.0
-offset_bottom = 26.0
+offset_right = 10.0
 
-[node name="Barkbreaking" type="HBoxContainer" parent="SkillsPanel" unique_id=744718900]
+[node name="Barkbreaking" type="Control" parent="SkillsPanel" unique_id=1883218026]
+anchors_preset = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 107.5
+offset_bottom = 110.0
+
+[node name="LevelLabel" type="Label" parent="SkillsPanel/Barkbreaking" unique_id=1894905299]
+custom_minimum_size = Vector2(20, 0)
 layout_mode = 0
-offset_left = 20.0
-offset_top = 14.0
-offset_right = 60.0
-offset_bottom = 54.0
-scale = Vector2(2, 2)
-
-[node name="LevelLabel" type="Label" parent="SkillsPanel/Barkbreaking" unique_id=649127536]
-layout_mode = 2
-theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 12
-theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 108.0
+offset_bottom = 27.0
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TreeIcon" type="TextureRect" parent="SkillsPanel/Barkbreaking" unique_id=1332288513]
-layout_mode = 2
-tooltip_text = "Barkbreaking"
-texture = ExtResource("4_lccpl")
-expand_mode = 1
-
-[node name="XPLabel" type="Label" parent="SkillsPanel/Barkbreaking" unique_id=547583055]
-layout_mode = 2
-
-[node name="Rockpunching" type="HBoxContainer" parent="SkillsPanel" unique_id=2001350508]
+[node name="TreeIcon" type="TextureRect" parent="SkillsPanel/Barkbreaking" unique_id=155882568]
+custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
-offset_left = 120.0
-offset_top = 14.0
-offset_right = 160.0
-offset_bottom = 54.0
-scale = Vector2(2, 2)
+offset_left = 21.0
+offset_top = 23.0
+offset_right = 149.0
+offset_bottom = 151.0
+scale = Vector2(0.5, 0.5)
+tooltip_text = "Barkbreaking"
+texture = ExtResource("3_hmhsi")
+
+[node name="XPLabel" type="Label" parent="SkillsPanel/Barkbreaking" unique_id=748818647]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 85.0
+offset_right = 106.0
+offset_bottom = 109.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rockpunching" type="Control" parent="SkillsPanel" unique_id=899466521]
+layout_mode = 1
+anchor_right = 0.15100001
+anchor_bottom = 0.17600001
+offset_left = 105.0
+offset_top = -1.0
+offset_right = 146.674
+offset_bottom = 90.464
 
 [node name="LevelLabel" type="Label" parent="SkillsPanel/Rockpunching" unique_id=2014218258]
-layout_mode = 2
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 108.0
+offset_bottom = 27.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="RockIcon" type="TextureRect" parent="SkillsPanel/Rockpunching" unique_id=1503261047]
-layout_mode = 2
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 35.0
+offset_top = 34.0
+offset_right = 135.0
+offset_bottom = 134.0
+scale = Vector2(0.4, 0.4)
 tooltip_text = "Rockpunching"
 texture = ExtResource("4_ardup")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="XPLabel" type="Label" parent="SkillsPanel/Rockpunching" unique_id=80361586]
-layout_mode = 2
+layout_mode = 0
+offset_left = 5.0
+offset_top = 85.0
+offset_right = 106.0
+offset_bottom = 109.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Smacking" type="HBoxContainer" parent="SkillsPanel" unique_id=143856081]
-layout_mode = 0
-offset_left = 220.0
-offset_top = 14.0
-offset_right = 260.0
-offset_bottom = 54.0
-scale = Vector2(2, 2)
+[node name="Smacking" type="Control" parent="SkillsPanel" unique_id=431181941]
+anchors_preset = 0
+offset_left = 210.0
+offset_top = -1.0
+offset_right = 316.0
+offset_bottom = 110.0
 
 [node name="LevelLabel" type="Label" parent="SkillsPanel/Smacking" unique_id=1959774141]
-layout_mode = 2
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 108.0
+offset_bottom = 27.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="SmackingIcon" type="TextureRect" parent="SkillsPanel/Smacking" unique_id=1136193052]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16037735
+anchor_top = 0.054054055
+anchor_right = -0.10377359
+anchor_bottom = -0.10810811
+offset_left = 21.0
+offset_top = 34.0
+offset_right = 144.0
+offset_bottom = 147.0
+scale = Vector2(0.5, 0.5)
 tooltip_text = "Smacking"
 texture = ExtResource("5_d7t7b")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="XPLabel" type="Label" parent="SkillsPanel/Smacking" unique_id=977249800]
-layout_mode = 2
+layout_mode = 0
+offset_left = 5.0
+offset_top = 85.0
+offset_right = 106.0
+offset_bottom = 109.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Footwork" type="HBoxContainer" parent="SkillsPanel" unique_id=1342552885]
-layout_mode = 0
-offset_left = 320.0
-offset_top = 14.0
-offset_right = 360.0
-offset_bottom = 54.0
-scale = Vector2(2, 2)
+[node name="Footwork" type="Control" parent="SkillsPanel" unique_id=413918987]
+anchors_preset = 0
+offset_left = 315.0
+offset_top = -1.0
+offset_right = 421.0
+offset_bottom = 110.0
 
 [node name="LevelLabel" type="Label" parent="SkillsPanel/Footwork" unique_id=2082246985]
-layout_mode = 2
+layout_mode = 0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = 102.0
+offset_bottom = 27.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
 horizontal_alignment = 1
 vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="FootworkIcon" type="TextureRect" parent="SkillsPanel/Footwork" unique_id=1024322273]
-layout_mode = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.009433962
+anchor_top = 0.009009009
+anchor_right = 0.009433962
+anchor_bottom = 0.009009009
+offset_left = 24.0
+offset_top = 27.0
+offset_right = 124.0
+offset_bottom = 127.0
+scale = Vector2(0.5, 0.5)
 tooltip_text = "Footwork"
 texture = ExtResource("6_lccpl")
 expand_mode = 1
-metadata/_edit_use_anchors_ = true
 
 [node name="XPLabel" type="Label" parent="SkillsPanel/Footwork" unique_id=1368240177]
-layout_mode = 2
+layout_mode = 0
+offset_left = 5.0
+offset_top = 85.0
+offset_right = 106.0
+offset_bottom = 109.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Creation" type="Node" parent="SkillsPanel" unique_id=1534187698]
