@@ -25,6 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://dgogndu07p8vk" path="res://Scenes/NPCs/Forest1_NPC1.tscn" id="23_jaerj"]
 [ext_resource type="PackedScene" uid="uid://ccimvymae6vd7" path="res://Scenes/NPCs/Forest1_NPC2.tscn" id="24_min6c"]
 [ext_resource type="PackedScene" uid="uid://d3w17myaps70v" path="res://Scenes/NPCs/Forest1_NPC3.tscn" id="25_xmhxr"]
+[ext_resource type="PackedScene" uid="uid://cufrklsiro65x" path="res://Scenes/NPCs/Forest1_NPC4.tscn" id="26_46f6s"]
+[ext_resource type="PackedScene" uid="uid://bf1esea0mf3pf" path="res://Scenes/NPCs/Forest1_NPC5.tscn" id="27_qnspf"]
 
 [node name="ForestMap1" type="Node2D" unique_id=782872810]
 y_sort_enabled = true
@@ -127,12 +129,14 @@ position = Vector2(600, 584)
 
 [node name="woodrestVillage" parent="Signs" unique_id=431273787 instance=ExtResource("9_86gjr")]
 position = Vector2(376, 616)
-sign_text = "Welcome to Woodrest Village!"
+sign_text = "Welcome to Woodrest Post!"
 
 [node name="woodrestShop" parent="Signs" unique_id=1488484255 instance=ExtResource("10_51jwm")]
 z_index = 1
 position = Vector2(648, 512)
-sign_text = "Shop???"
+sign_text = "Woodrest Post Shop!
+
+Buy some supplies and sell your loot here!"
 
 [node name="DialogueUI" parent="." unique_id=353898798 instance=ExtResource("11_3cbse")]
 
@@ -240,3 +244,31 @@ dialogue_text = "URGH, this is so frustrating! I've been trying to break the bar
 NO, I CAN'T GIVE UP! I will stand here for the rest of my life if I have to! These barks will be broken!!"
 wander_radius_blocks = 2.0
 walk_speed = 30.0
+
+[node name="Forest1_NPC4" parent="NPCs" unique_id=36496115 instance=ExtResource("26_46f6s")]
+position = Vector2(832, 112)
+npc_name = "Peter the Paranoid"
+dialogue_text = "GAH, don't sneak up on me like that! What am I doing here? Well..
+
+Someone once told me that I can level up my footworking by simply moving my feet. At first I thought it was a pretty far-fetched idea, but it turns out they were right! Only problem is, now that I've started, I can't stop!
+
+What's that you say? Other skills? Yeah but what if others figure out how Footworking.. you know.. works? What if someone passes my Footworking level?! OMG!!
+
+Sorry stranger but I can't let that happen, I gotta keep going!"
+wander_radius_blocks = 2.0
+tile_size = 4.0
+walk_speed = 100.0
+min_wait_time = 0.0
+max_wait_time = 0.5
+
+[node name="Forest1_NPC5" parent="NPCs" unique_id=1146582362 instance=ExtResource("27_qnspf")]
+position = Vector2(632, 576)
+npc_name = "Farrah the Fascinated"
+dialogue_text = "Oh hey newcomer, didn't see you there! 
+
+I've just been admiring our special tree here in Woodrest. Apparently it's been here for ages, far before our little town here even existed. So much history.. so many stories this tree could tell if it could talk like us. 
+
+Anyway, I'm just glad it's still here. Barkbreakers from all over the forest have tried to cut it down in the past, but all have failed. Even Barry couln't do anything to it haha. Barry's a nice guy but he just can't help himself sometimes!
+
+Still.. I find it odd how many have come to try to cut this specific tree down. I mean, there are others out there just like it, within other parts of the forest. So why this one.. "
+wander_radius_blocks = 0.0
