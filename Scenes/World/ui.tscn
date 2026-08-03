@@ -207,8 +207,8 @@ vertical_alignment = 1
 [node name="SmackingIcon" type="TextureRect" parent="SkillsPanel/Smacking" unique_id=1136193052]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.16037735
-anchor_top = 0.054054055
+anchor_left = -0.10377359
+anchor_top = -0.10810811
 anchor_right = -0.10377359
 anchor_bottom = -0.10810811
 offset_left = 21.0
@@ -465,7 +465,7 @@ text = "Hands"
 [node name="BagPanel" type="Panel" parent="." unique_id=215952738]
 offset_left = 992.0
 offset_right = 1280.0
-offset_bottom = 224.0
+offset_bottom = 268.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_caeob")
 script = ExtResource("11_y5qpw")
 
@@ -482,9 +482,10 @@ vertical_alignment = 1
 [node name="InventoryGrid" type="GridContainer" parent="BagPanel" unique_id=1951881799]
 layout_mode = 0
 offset_left = 7.0
-offset_top = 27.0
-offset_right = 116.0
-offset_bottom = 602.0
+offset_top = 43.0
+offset_right = 280.0
+offset_bottom = 258.0
+columns = 3
 
 [node name="CraftingPanel" type="Panel" parent="." unique_id=354939772]
 offset_left = 832.0

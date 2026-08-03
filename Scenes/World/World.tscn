@@ -17,6 +17,10 @@
 [ext_resource type="PackedScene" uid="uid://ce8gy64gmymef" path="res://Scenes/Enemies/enemy.tscn" id="15_0phyg"]
 [ext_resource type="PackedScene" uid="uid://btjvocx2a7boe" path="res://Scenes/NPCs/WorldNPC1.tscn" id="15_nfd2q"]
 [ext_resource type="Script" uid="uid://dl80aw7icg1va" path="res://Scenes/World/EndScreen.gd" id="16_30wmc"]
+[ext_resource type="PackedScene" uid="uid://cxabfcb3e2cij" path="res://Scenes/Trees/log.tscn" id="18_jclsg"]
+[ext_resource type="PackedScene" uid="uid://c053m8saay2h7" path="res://Scenes/Trees/log4.tscn" id="19_lqys3"]
+[ext_resource type="PackedScene" uid="uid://cj548iwbf6wjm" path="res://Scenes/Trees/log3.tscn" id="20_qs546"]
+[ext_resource type="PackedScene" uid="uid://dvxhdf0tddk8" path="res://Scenes/Trees/log2.tscn" id="21_41ig8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_87yka"]
 texture = ExtResource("1_hveh7")
@@ -554,3 +558,78 @@ offset_bottom = 277.0
 theme_override_font_sizes/font_size = 40
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Log" parent="." unique_id=1450102656 instance=ExtResource("18_jclsg")]
+position = Vector2(305, 172)
+
+[node name="Log2" parent="." unique_id=473327210 instance=ExtResource("18_jclsg")]
+position = Vector2(305, 172)
+
+[node name="Log3" parent="." unique_id=887636144 instance=ExtResource("18_jclsg")]
+position = Vector2(305, 172)
+
+[node name="Log4" parent="." unique_id=1911175889 instance=ExtResource("18_jclsg")]
+position = Vector2(305, 172)
+
+[node name="Log5" parent="." unique_id=1171743687 instance=ExtResource("18_jclsg")]
+position = Vector2(305, 172)
+
+[node name="Log6" parent="." unique_id=215727545 instance=ExtResource("18_jclsg")]
+position = Vector2(305, 172)
+
+[node name="Log7" parent="." unique_id=735155905 instance=ExtResource("19_lqys3")]
+position = Vector2(326, 172)
+
+[node name="Log8" parent="." unique_id=1972683564 instance=ExtResource("19_lqys3")]
+position = Vector2(326, 172)
+
+[node name="Log9" parent="." unique_id=424520440 instance=ExtResource("19_lqys3")]
+position = Vector2(326, 172)
+
+[node name="Log10" parent="." unique_id=411803501 instance=ExtResource("19_lqys3")]
+position = Vector2(326, 172)
+
+[node name="Log11" parent="." unique_id=637590875 instance=ExtResource("19_lqys3")]
+position = Vector2(326, 172)
+
+[node name="Log12" parent="." unique_id=219402523 instance=ExtResource("19_lqys3")]
+position = Vector2(326, 172)
+
+[node name="Log13" parent="." unique_id=1676205073 instance=ExtResource("20_qs546")]
+position = Vector2(342, 173)
+
+[node name="Log14" parent="." unique_id=1497236754 instance=ExtResource("20_qs546")]
+position = Vector2(342, 173)
+
+[node name="Log15" parent="." unique_id=2095660180 instance=ExtResource("20_qs546")]
+position = Vector2(342, 173)
+
+[node name="Log16" parent="." unique_id=1799941565 instance=ExtResource("20_qs546")]
+position = Vector2(342, 173)
+
+[node name="Log17" parent="." unique_id=2137836327 instance=ExtResource("20_qs546")]
+position = Vector2(342, 173)
+
+[node name="Log18" parent="." unique_id=368434274 instance=ExtResource("20_qs546")]
+position = Vector2(342, 173)
+
+[node name="Log19" parent="." unique_id=1184316573 instance=ExtResource("20_qs546")]
+position = Vector2(342, 173)
+
+[node name="Log20" parent="." unique_id=115843499 instance=ExtResource("21_41ig8")]
+position = Vector2(366, 174)
+
+[node name="Log21" parent="." unique_id=1634214529 instance=ExtResource("21_41ig8")]
+position = Vector2(366, 174)
+
+[node name="Log22" parent="." unique_id=239644821 instance=ExtResource("21_41ig8")]
+position = Vector2(366, 174)
+
+[node name="Log23" parent="." unique_id=1303423248 instance=ExtResource("21_41ig8")]
+position = Vector2(366, 174)
+
+[node name="Log24" parent="." unique_id=2075878817 instance=ExtResource("21_41ig8")]
+position = Vector2(366, 174)
+
+[node name="Log25" parent="." unique_id=1928198372 instance=ExtResource("21_41ig8")]
+position = Vector2(366, 174)
