@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://c1h01xwhckm4f" path="res://TileSet/objects.tres" id="2_47e4k"]
 [ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="3_5pcx5"]
 [ext_resource type="PackedScene" uid="uid://l42tqoeqoaul" path="res://Scenes/Doors/Forest1House3In.tscn" id="4_7sbdj"]
+[ext_resource type="PackedScene" uid="uid://btjvocx2a7boe" path="res://Scenes/NPCs/WorldNPC1.tscn" id="5_47e4k"]
 
 [node name="Forest1House3" type="Node2D" unique_id=1626562383]
 y_sort_enabled = true
@@ -22,7 +23,7 @@ tile_set = ExtResource("2_47e4k")
 [node name="Player" parent="." unique_id=226938582 instance=ExtResource("3_5pcx5")]
 z_index = 1
 y_sort_enabled = true
-position = Vector2(88, 64)
+position = Vector2(16, 96)
 
 [node name="PlayerSpawnPoints" type="Node" parent="." unique_id=1938350761]
 
@@ -33,3 +34,14 @@ position = Vector2(104, 96)
 
 [node name="Forest1House3In" parent="Doors" unique_id=1895642603 instance=ExtResource("4_7sbdj")]
 position = Vector2(104, 112)
+
+[node name="WorldNPC1" parent="." unique_id=1646254127 instance=ExtResource("5_47e4k")]
+position = Vector2(96, 64)
+npc_name = "Gary the Guide"
+dialogue_text = "Oh hey there bud! How's your time in ADAN been so far? Getting yourself aquainted with the world and everything?.. What's that?.. The graves and skulls behind me? Yeah.. it's pretty weird right? ha... 
+
+Anyway! 
+
+Houses and other buildings like this can be super helpful! Always check every house you see. There's always something cool to find! Treasure, secrets, shops and other objects like us that you can talk to! Pretty cool, right?!"
+wander_radius_blocks = 0.0
+tile_size = 16.0
