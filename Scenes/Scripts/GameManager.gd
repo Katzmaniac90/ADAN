@@ -60,7 +60,99 @@ var heatworking_xp := 0
 
 var player_position := Vector2.ZERO
 
+#=================================================
+# STAMINA
+#=================================================
 
+signal stamina_changed
+
+
+var max_stamina := 5.0
+var current_stamina := 5.0
+
+var stamina_regen := 0.5
+var stamina_drain := 1.0
+
+var stamina_recovery_delay := 3.0
+var stamina_recovery_timer := 0.0
+
+var can_sprint := true
+var stamina_bar_visible := false
+
+#=================================================
+# STAMINA FUNCTIONS
+#=================================================
+
+func update_stamina(delta):
+
+	if stamina_recovery_timer > 0:
+
+		stamina_recovery_timer -= delta
+
+	else:
+
+		current_stamina += stamina_regen * delta
+
+		current_stamina = min(
+			current_stamina,
+			max_stamina
+		)
+
+
+	# Allow sprint again once fully recovered
+	if current_stamina >= max_stamina * 0.25:
+
+		can_sprint = true
+
+
+	stamina_changed.emit()
+
+
+
+func drain_stamina(delta):
+
+	current_stamina -= stamina_drain * delta
+
+	current_stamina = max(
+		current_stamina,
+		0
+	)
+
+
+	# Start recovery delay
+	stamina_recovery_timer = stamina_recovery_delay
+
+
+	# Disable sprint when empty
+	if current_stamina <= 0:
+
+		can_sprint = false
+
+
+	stamina_changed.emit()
+
+
+
+func increase_max_stamina(amount):
+
+	max_stamina += amount
+
+	current_stamina = max_stamina
+
+	stamina_changed.emit()
+
+func should_show_stamina_bar(sprinting: bool) -> bool:
+
+	if sprinting:
+		return false
+
+	if current_stamina >= max_stamina:
+		return false
+
+	if current_stamina < max_stamina * 0.25:
+		return false
+
+	return true
 #=================================================
 # XP SYSTEM
 #=================================================
@@ -456,7 +548,8 @@ func add_footwork_xp(amount):
 
 		footwork_xp -= get_required_xp(footwork_level)
 		footwork_level += 1
-
+		increase_max_stamina(1)
+		
 		MessageManager.level_up_message(
 			"Footwork",
 			footwork_level

@@ -1,18 +1,17 @@
 extends CharacterBody2D
 
 
+#=========================
+# Movement
+#=========================
+
 @export var walk_speed := 50
 @export var sprint_speed := 150
 
-@export var max_stamina := 5.0
-@export var stamina_regen := 0.5
-@export var stamina_drain := 1.0
 
-
-var can_sprint := true
-
-var stamina_bar
-var stamina := max_stamina
+#=========================
+# Player State
+#=========================
 
 var direction: Vector2 = Vector2.ZERO
 var velocity_speed := walk_speed
@@ -23,10 +22,11 @@ var is_sprinting := false
 var last_position: Vector2
 
 
-var zoom_speed := 0.1
-var min_zoom := 0.8
-var max_zoom := 2.0
+#=========================
+# UI
+#=========================
 
+var stamina_bar
 
 
 func _ready():
@@ -54,14 +54,35 @@ func _ready():
 func _physics_process(delta):
 
 
-	# Update stamina UI
+	#=========================
+	# Update Stamina
+	#=========================
+
+	GameManager.update_stamina(delta)
+
 
 	if stamina_bar:
 
-		stamina_bar.max_value = max_stamina
-		stamina_bar.value = stamina
+		stamina_bar.max_value = GameManager.max_stamina
+		stamina_bar.value = GameManager.current_stamina
+
+	if GameManager.current_stamina >= GameManager.max_stamina:
+
+		stamina_bar.hide()
+
+	elif GameManager.current_stamina < GameManager.max_stamina * 0.25:
+
+		stamina_bar.hide()
+
+	else:
+
+		stamina_bar.show()
 
 
+
+	#=========================
+	# Busy Check
+	#=========================
 
 	if is_busy:
 
@@ -70,6 +91,10 @@ func _physics_process(delta):
 		return
 
 
+
+	#=========================
+	# Movement Input
+	#=========================
 
 	direction = Input.get_vector(
 		"left",
@@ -81,47 +106,25 @@ func _physics_process(delta):
 
 
 	#=========================
-	# Sprint / Stamina
+	# Sprint
 	#=========================
 
 	is_sprinting = (
 		Input.is_action_pressed("running")
-		and can_sprint
+		and GameManager.can_sprint
 		and direction != Vector2.ZERO
 	)
 
 
-
 	if is_sprinting:
-
 
 		velocity_speed = sprint_speed
 
-		stamina -= stamina_drain * delta
-
-		if stamina <= 0:
-
-			stamina = 0
-			can_sprint = false
-
-
+		GameManager.drain_stamina(delta)
 
 	else:
 
-
 		velocity_speed = walk_speed
-
-		stamina += stamina_regen * delta
-
-		stamina = min(
-			stamina,
-			max_stamina
-		)
-
-
-		if stamina >= max_stamina:
-
-			can_sprint = true
 
 
 
@@ -130,60 +133,20 @@ func _physics_process(delta):
 
 	playerAnimationsAdam()
 
-
-
-	#=========================
-	# Camera Zoom
-	#=========================
-
-	if not get_viewport().gui_get_hovered_control():
-
-
-		if Input.is_action_just_pressed("zoom_in"):
-
-			$Camera2D.zoom += Vector2(
-				zoom_speed,
-				zoom_speed
-			)
-
-
-
-		if Input.is_action_just_pressed("zoom_out"):
-
-			$Camera2D.zoom -= Vector2(
-				zoom_speed,
-				zoom_speed
-			)
-
-
-
-	$Camera2D.zoom.x = clamp(
-		$Camera2D.zoom.x,
-		min_zoom,
-		max_zoom
-	)
-
-	$Camera2D.zoom.y = clamp(
-		$Camera2D.zoom.y,
-		min_zoom,
-		max_zoom
-	)
-
-
-
 	move_and_slide()
 
 
 
-	# Footwork XP only while sprinting
+	#=========================
+	# Footwork XP
+	#=========================
 
-	var distance = global_position.distance_to(last_position)
+	var sprint_distance = global_position.distance_to(last_position)
 
 
 	if is_sprinting:
 
-		GameManager.add_footwork_steps(distance)
-
+		GameManager.add_footwork_steps(sprint_distance)
 
 
 	last_position = global_position
@@ -215,7 +178,6 @@ func playerAnimationsAdam():
 		elif direction.x < 0:
 
 			$AnimatedSprite2D.animation = "leftWalking"
-
 
 
 	else:
