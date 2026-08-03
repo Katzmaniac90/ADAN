@@ -1,23 +1,23 @@
-[gd_scene format=3 uid="uid://cqobii0pk60jo"]
+[gd_scene format=3 uid="uid://d0pe5h3yyc8oj"]
 
-[ext_resource type="Script" uid="uid://cohns0vu7xftv" path="res://Scenes/Scripts/sign.gd" id="1_3gqdc"]
-[ext_resource type="Texture2D" uid="uid://dt42q2msdrre2" path="res://Tiles/sign_adam.png" id="1_h0xn3"]
+[ext_resource type="Script" uid="uid://cohns0vu7xftv" path="res://Scenes/Scripts/sign.gd" id="1_jl0k5"]
+[ext_resource type="Texture2D" uid="uid://dt42q2msdrre2" path="res://Tiles/sign_adam.png" id="2_y6b7h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sd12v"]
 size = Vector2(25.5, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_po1pm"]
-size = Vector2(14, 19.25)
+size = Vector2(14, 20.5)
 
 [node name="sign" type="Area2D" unique_id=431273787]
 y_sort_enabled = true
 texture_filter = 1
-script = ExtResource("1_3gqdc")
+script = ExtResource("1_jl0k5")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1196799763]
 y_sort_enabled = true
 texture_filter = 1
-texture = ExtResource("1_h0xn3")
+texture = ExtResource("2_y6b7h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=986234630]
 texture_filter = 1
