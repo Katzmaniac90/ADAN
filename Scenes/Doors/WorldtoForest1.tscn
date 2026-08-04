@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://mch4hr3v00x2" path="res://Tiles/door.png" id="2_mvn47"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sd12v"]
-size = Vector2(26.75, 10)
+size = Vector2(53.375, 10)
 
 [node name="Door" type="Node2D" unique_id=1895642603]
 

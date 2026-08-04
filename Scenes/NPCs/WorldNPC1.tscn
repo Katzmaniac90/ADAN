@@ -48,6 +48,7 @@ wait_time = 2.0
 one_shot = true
 
 [node name="DialogueUI" type="CanvasLayer" parent="." unique_id=676262171]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="DialogueUI" unique_id=2063723531]
 custom_minimum_size = Vector2(500, 300)
