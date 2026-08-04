@@ -32,10 +32,10 @@ var stamina_bar
 func _ready():
 
 	stamina_bar = get_tree().get_first_node_in_group("stamina_bar")
-
+	
 	last_position = global_position
 
-
+	GameManager.xp_gained.connect(show_floating_xp)
 	if SceneManager.spawn_id != "":
 
 		var spawn = get_tree().current_scene.find_child(
@@ -200,3 +200,17 @@ func add_item(item_name, amount):
 func add_barkbreaking_xp(amount):
 
 	GameManager.add_barkbreaking_xp(amount)
+
+func show_floating_xp(amount:int, skill_name:String):
+
+	var floating_scene = preload("res://Scenes/UI/floating_text.tscn")
+
+	var floating = floating_scene.instantiate()
+
+	get_tree().current_scene.add_child(floating)
+
+	floating.global_position = global_position + Vector2(0, -50)
+
+	floating.set_text(
+		"+" + str(amount) + " " + skill_name + " XP"
+	)

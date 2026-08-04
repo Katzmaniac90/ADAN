@@ -22,11 +22,13 @@ signal creation_changed
 signal growcraft_changed
 signal angling_changed
 signal heatworking_changed
-
+signal xp_gained(amount, skill_name)
 
 #=================================================
 # SKILL DATA
 #=================================================
+
+const MAX_SKILL_LEVEL := 25
 
 var barkbreaking_level := 1
 var barkbreaking_xp := 0
@@ -156,7 +158,9 @@ func should_show_stamina_bar(sprinting: bool) -> bool:
 #=================================================
 # XP SYSTEM
 #=================================================
+func is_skill_maxed(level:int) -> bool:
 
+	return level >= MAX_SKILL_LEVEL
 func get_required_xp(level:int) -> int:
 	return level * 100
 
@@ -239,7 +243,7 @@ func check_level_up(skill:String):
 			xp = heatworking_xp
 
 
-	while xp >= get_required_xp(level):
+	while xp >= get_required_xp(level) and level < MAX_SKILL_LEVEL:
 
 		xp -= get_required_xp(level)
 		level += 1
@@ -441,15 +445,14 @@ func craft_super_saiyan_axe():
 #=================================================
 
 func add_barkbreaking_xp(amount):
-
+	
+	if barkbreaking_level >= MAX_SKILL_LEVEL:
+		return
 	barkbreaking_xp += amount
 
-	MessageManager.xp_message(
-		amount,
-		"Barkbreaking"
-	)
+	xp_gained.emit(amount, "Barkbreaking")
 
-	while barkbreaking_xp >= get_required_xp(barkbreaking_level):
+	while barkbreaking_xp >= get_required_xp(barkbreaking_level) and barkbreaking_level < MAX_SKILL_LEVEL:
 
 		barkbreaking_xp -= get_required_xp(barkbreaking_level)
 		barkbreaking_level += 1
@@ -477,15 +480,17 @@ func add_barkbreaking_xp(amount):
 
 
 func add_rockpunching_xp(amount):
-
+	
+	if rockpunching_level >= MAX_SKILL_LEVEL:
+		return
 	rockpunching_xp += amount
 
-	MessageManager.xp_message(
+	xp_gained.emit(
 	amount,
 	"Rockpunching"
 )
 
-	while rockpunching_xp >= get_required_xp(rockpunching_level):
+	while rockpunching_xp >= get_required_xp(rockpunching_level) and rockpunching_level < MAX_SKILL_LEVEL:
 
 		rockpunching_xp -= get_required_xp(rockpunching_level)
 		rockpunching_level += 1
@@ -505,15 +510,17 @@ func add_rockpunching_xp(amount):
 func add_smacking_xp(amount):
 
 	AchievementManager.unlock_if_locked("FIRST_ENEMY")
-
+	
+	if smacking_level >= MAX_SKILL_LEVEL:
+		return
 	smacking_xp += amount
 
-	MessageManager.xp_message(
+	xp_gained.emit(
 		amount,
 		"Smacking"
 	)
 
-	while smacking_xp >= get_required_xp(smacking_level):
+	while smacking_xp >= get_required_xp(smacking_level)and smacking_level < MAX_SKILL_LEVEL:
 
 		smacking_xp -= get_required_xp(smacking_level)
 		smacking_level += 1
@@ -536,7 +543,9 @@ func add_smacking_xp(amount):
 
 
 func add_footwork_steps(amount):
-
+	
+	if footwork_level >= MAX_SKILL_LEVEL:
+		return
 	footwork_steps += amount
 
 	if footwork_steps >= 1000:
@@ -551,14 +560,14 @@ func add_footwork_xp(amount):
 
 	footwork_xp += amount
 
-	MessageManager.xp_message(
+	xp_gained.emit(
 		amount,
 		"Footwork"
 	)
 
 	AchievementManager.unlock_if_locked("FOOTWORK_1")
 
-	while footwork_xp >= get_required_xp(footwork_level):
+	while footwork_xp >= get_required_xp(footwork_level)and footwork_level < MAX_SKILL_LEVEL:
 
 		footwork_xp -= get_required_xp(footwork_level)
 		footwork_level += 1
@@ -656,3 +665,168 @@ func get_next_axe():
 
 		_:
 			return "MAX"
+
+func xp_message(amount:int, skill_name:String):
+
+	MessageManager.send_message(
+		"+" + str(amount) + " " + skill_name + " XP"
+	)
+
+#=================================================
+# SAVE SYSTEM
+#=================================================
+
+const SAVE_PATH = "user://savegame.json"
+
+
+func save_game():
+
+	var save_data = {
+
+		# Inventory
+		"inventory": inventory,
+		"current_axe": current_axe,
+
+
+		# Skills
+		"skills": {
+
+			"barkbreaking_level": barkbreaking_level,
+			"barkbreaking_xp": barkbreaking_xp,
+
+			"rockpunching_level": rockpunching_level,
+			"rockpunching_xp": rockpunching_xp,
+
+			"smacking_level": smacking_level,
+			"smacking_xp": smacking_xp,
+
+			"footwork_level": footwork_level,
+			"footwork_xp": footwork_xp,
+			"footwork_steps": footwork_steps,
+
+			"creation_level": creation_level,
+			"creation_xp": creation_xp,
+
+			"growcraft_level": growcraft_level,
+			"growcraft_xp": growcraft_xp,
+
+			"angling_level": angling_level,
+			"angling_xp": angling_xp,
+
+			"heatworking_level": heatworking_level,
+			"heatworking_xp": heatworking_xp
+		},
+
+
+		# Stamina
+		"max_stamina": max_stamina,
+
+
+		# Player
+		"player_position": {
+			"x": player_position.x,
+			"y": player_position.y
+		}
+	}
+
+
+	var file = FileAccess.open(
+		SAVE_PATH,
+		FileAccess.WRITE
+	)
+
+	file.store_string(
+		JSON.stringify(save_data)
+	)
+
+	file.close()
+
+
+	print("Game Saved!")
+
+func load_game():
+
+	if not FileAccess.file_exists(SAVE_PATH):
+
+		print("No save found")
+
+		return
+
+
+	var file = FileAccess.open(
+		SAVE_PATH,
+		FileAccess.READ
+	)
+
+
+	var data = JSON.parse_string(
+		file.get_as_text()
+	)
+
+	file.close()
+
+
+	if data == null:
+		return
+
+
+
+	# Inventory
+
+	inventory = data["inventory"]
+
+	current_axe = data["current_axe"]
+
+
+
+	# Skills
+
+	var skills = data["skills"]
+
+
+	barkbreaking_level = skills["barkbreaking_level"]
+	barkbreaking_xp = skills["barkbreaking_xp"]
+
+	rockpunching_level = skills["rockpunching_level"]
+	rockpunching_xp = skills["rockpunching_xp"]
+
+	smacking_level = skills["smacking_level"]
+	smacking_xp = skills["smacking_xp"]
+
+	footwork_level = skills["footwork_level"]
+	footwork_xp = skills["footwork_xp"]
+	footwork_steps = skills["footwork_steps"]
+
+
+	creation_level = skills["creation_level"]
+	creation_xp = skills["creation_xp"]
+
+	growcraft_level = skills["growcraft_level"]
+	growcraft_xp = skills["growcraft_xp"]
+
+	angling_level = skills["angling_level"]
+	angling_xp = skills["angling_xp"]
+
+	heatworking_level = skills["heatworking_level"]
+	heatworking_xp = skills["heatworking_xp"]
+
+
+
+	# Stamina
+
+	max_stamina = data["max_stamina"]
+
+
+	print("Game Loaded!")
+
+func _notification(what):
+
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+
+		save_game()
+
+		get_tree().quit()
+
+func _ready():
+
+	GameManager.load_game()
