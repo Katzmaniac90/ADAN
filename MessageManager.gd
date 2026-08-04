@@ -14,3 +14,6 @@ func loot_message(item_name: String, amount: int):
 
 func level_up_message(skill_name: String, level: int):
 	send_message(skill_name + " Level " + str(level) + "!")
+
+func chat_message(text: String):
+	send_message(text)

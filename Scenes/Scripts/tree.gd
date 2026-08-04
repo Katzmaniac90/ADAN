@@ -95,16 +95,23 @@ func _process(delta):
 
 func start_chopping():
 
+	var requirements := []
+
 	if GameManager.get_axe_tier() < required_axe_tier:
-
-		print("Your axe is too weak!")
-
-		return
-
+		requirements.append(
+			"Requires " + GameManager.get_axe_name(required_axe_tier)
+		)
 
 	if GameManager.barkbreaking_level < required_barkbreaking_level:
+		requirements.append(
+			"Requires Barkbreaking Lv. %d" % required_barkbreaking_level
+		)
 
-		print("Your Barkbreaking level is too low!")
+	if requirements.size() > 0:
+
+		MessageManager.chat_message(
+			"\n".join(requirements)
+		)
 
 		return
 
@@ -112,11 +119,8 @@ func start_chopping():
 	chopping = true
 
 	$InteractionLabel.visible = false
-
 	$ChopProgress.visible = true
-
 	$ChopProgress.value = 0
-
 
 	$ChopTimer.start(get_chop_time())
 

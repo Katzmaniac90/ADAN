@@ -340,7 +340,21 @@ func get_axe_tier():
 
 	return 0
 
+func get_axe_name(tier:int) -> String:
 
+	match tier:
+		0:
+			return "Hands"
+		1:
+			return "Wood Axe"
+		2:
+			return "Tree2 Axe"
+		3:
+			return "Tree3 Axe"
+		4:
+			return "Super Saiyan Axe"
+
+	return "Unknown Axe"
 
 
 
