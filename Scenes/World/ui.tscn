@@ -672,7 +672,7 @@ show_percentage = false
 
 [node name="StaminaBar" type="ProgressBar" parent="." unique_id=18294515 groups=["stamina_bar"]]
 offset_left = 520.0
-offset_top = 697.0
+offset_top = 709.0
 offset_right = 747.0
 offset_bottom = 717.0
 theme_override_styles/background = SubResource("StyleBoxFlat_4rgu2")
