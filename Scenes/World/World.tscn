@@ -14,7 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://d3i08ssc8a7rl" path="res://Scenes/Trees/tree2.tscn" id="12_lp0bp"]
 [ext_resource type="PackedScene" uid="uid://b06qc3ulpvb7a" path="res://Scenes/Trees/tree3.tscn" id="13_0phyg"]
 [ext_resource type="PackedScene" uid="uid://cfg8g5u244mmw" path="res://Scenes/Trees/tree4.tscn" id="14_30wmc"]
-[ext_resource type="PackedScene" uid="uid://ce8gy64gmymef" path="res://Scenes/Enemies/enemy.tscn" id="15_0phyg"]
 [ext_resource type="PackedScene" uid="uid://btjvocx2a7boe" path="res://Scenes/NPCs/WorldNPC1.tscn" id="15_nfd2q"]
 [ext_resource type="Script" uid="uid://dl80aw7icg1va" path="res://Scenes/World/EndScreen.gd" id="16_30wmc"]
 
@@ -502,26 +501,6 @@ dialogue_text = "Hello there! I'm the first NPC ever created! Wow.. actually kin
 Now I know the signs over there tell you the same thing, but I mean come on.. let's be honest.. signs are dumb! They can't even move! Look at me, I can actually wander around like a REAL object!! 
 
 Okay.. maybe I'm being too harsh.. Signs are okay for some stuff, but don't hesitate to speak with objects that look like me, they'll tell you some really cool stuff! "
-
-[node name="Enemies" type="Node" parent="." unique_id=2017073717]
-
-[node name="Enemy" parent="Enemies" unique_id=557316632 instance=ExtResource("15_0phyg")]
-position = Vector2(434, 56)
-
-[node name="Enemy6" parent="Enemies" unique_id=1768641188 instance=ExtResource("15_0phyg")]
-position = Vector2(939, 140)
-
-[node name="Enemy5" parent="Enemies" unique_id=1838282183 instance=ExtResource("15_0phyg")]
-position = Vector2(326, -136)
-
-[node name="Enemy2" parent="Enemies" unique_id=717966427 instance=ExtResource("15_0phyg")]
-position = Vector2(-148, -139)
-
-[node name="Enemy3" parent="Enemies" unique_id=1587869650 instance=ExtResource("15_0phyg")]
-position = Vector2(-345, -144)
-
-[node name="Enemy4" parent="Enemies" unique_id=77053351 instance=ExtResource("15_0phyg")]
-position = Vector2(512, -142)
 
 [node name="EndScreen" type="CanvasLayer" parent="." unique_id=1377314632 groups=["end-screen"]]
 script = ExtResource("16_30wmc")

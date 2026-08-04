@@ -116,7 +116,7 @@ script = ExtResource("1_l88uj")
 [node name="SkillsPanel" type="Panel" parent="." unique_id=717901510]
 offset_left = 180.0
 offset_top = 609.0
-offset_right = 601.0
+offset_right = 506.0
 offset_bottom = 720.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_apcou")
 script = ExtResource("3_wh8m4")
@@ -205,6 +205,7 @@ offset_bottom = 109.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Smacking" type="Control" parent="SkillsPanel" unique_id=431181941]
+visible = false
 anchors_preset = 0
 offset_left = 210.0
 offset_top = -1.0
@@ -249,10 +250,9 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Footwork" type="Control" parent="SkillsPanel" unique_id=413918987]
 anchors_preset = 0
-offset_left = 315.0
-offset_top = -1.0
-offset_right = 421.0
-offset_bottom = 110.0
+offset_left = 213.0
+offset_right = 319.0
+offset_bottom = 111.0
 
 [node name="LevelLabel" type="Label" parent="SkillsPanel/Footwork" unique_id=2082246985]
 layout_mode = 0
@@ -671,10 +671,10 @@ offset_bottom = 697.0
 show_percentage = false
 
 [node name="StaminaBar" type="ProgressBar" parent="." unique_id=18294515 groups=["stamina_bar"]]
-offset_left = 603.0
-offset_top = 698.0
-offset_right = 830.0
-offset_bottom = 718.0
+offset_left = 520.0
+offset_top = 697.0
+offset_right = 747.0
+offset_bottom = 717.0
 theme_override_styles/background = SubResource("StyleBoxFlat_4rgu2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_sv26c")
 max_value = 5.0
