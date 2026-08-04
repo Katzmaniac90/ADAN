@@ -95,26 +95,11 @@ func _process(delta):
 
 func start_chopping():
 
-	var requirements := []
+	if GameManager.get_axe_tier() < required_axe_tier \
+	or GameManager.barkbreaking_level < required_barkbreaking_level:
 
-	if GameManager.get_axe_tier() < required_axe_tier:
-		requirements.append(
-			"Requires " + GameManager.get_axe_name(required_axe_tier)
-		)
-
-	if GameManager.barkbreaking_level < required_barkbreaking_level:
-		requirements.append(
-			"Requires Barkbreaking Lv. %d" % required_barkbreaking_level
-		)
-
-	if requirements.size() > 0:
-
-		MessageManager.chat_message(
-			"\n".join(requirements)
-		)
-
+		MessageManager.send_message("You're not a high enough level yet.")
 		return
-
 
 	chopping = true
 
