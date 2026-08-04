@@ -35,13 +35,10 @@ func _ready():
 
 	GameManager.barkbreaking_changed.connect(update_barkbreaking)
 	GameManager.rockpunching_changed.connect(update_rockpunching)
-	GameManager.smacking_changed.connect(update_smacking)
 	GameManager.footwork_changed.connect(update_footwork)
 	update_barkbreaking()
 	update_rockpunching()
-	update_smacking()
 	update_footwork()
-	update_coming_soon_skills()
 
 func _unhandled_input(event):
 

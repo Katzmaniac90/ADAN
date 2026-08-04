@@ -16,12 +16,7 @@ signal inventory_changed
 
 signal barkbreaking_changed
 signal rockpunching_changed
-signal smacking_changed
 signal footwork_changed
-signal creation_changed
-signal growcraft_changed
-signal angling_changed
-signal heatworking_changed
 signal xp_gained(amount, skill_name)
 
 #=================================================
@@ -36,25 +31,9 @@ var barkbreaking_xp := 0
 var rockpunching_level := 1
 var rockpunching_xp := 0
 
-var smacking_level := 1
-var smacking_xp := 0
-
 var footwork_level := 1
 var footwork_xp := 0
 var footwork_steps := 0
-
-var creation_level := 1
-var creation_xp := 0
-
-var growcraft_level := 1
-var growcraft_xp := 0
-
-var angling_level := 1
-var angling_xp := 0
-
-var heatworking_level := 1
-var heatworking_xp := 0
-
 
 #=================================================
 # PLAYER DATA
@@ -163,137 +142,88 @@ func is_skill_maxed(level:int) -> bool:
 	return level >= MAX_SKILL_LEVEL
 func get_required_xp(level:int) -> int:
 	return level * 100
+func reached_max_level(skill_name:String):
+
+	MessageManager.send_message(
+		skill_name + " has reached MAX LEVEL!"
+	)
+
+func process_skill_xp(skill_name:String, xp_amount:int):
+
+	match skill_name:
 
 
-func add_skill_xp(skill:String, amount:int):
+		"Barkbreaking":
 
-	match skill:
+			barkbreaking_xp += xp_amount
 
-		"barkbreaking":
-			barkbreaking_xp += amount
-			check_level_up("barkbreaking")
+			while barkbreaking_xp >= get_required_xp(barkbreaking_level) and barkbreaking_level < MAX_SKILL_LEVEL:
 
-		"rockpunching":
-			rockpunching_xp += amount
-			check_level_up("rockpunching")
+				barkbreaking_xp -= get_required_xp(barkbreaking_level)
+				barkbreaking_level += 1
 
-		"smacking":
-			smacking_xp += amount
-			check_level_up("smacking")
-
-		"footwork":
-			footwork_xp += amount
-			check_level_up("footwork")
-
-		"creation":
-			creation_xp += amount
-			check_level_up("creation")
-
-		"growcraft":
-			growcraft_xp += amount
-			check_level_up("growcraft")
-
-		"angling":
-			angling_xp += amount
-			check_level_up("angling")
-
-		"heatworking":
-			heatworking_xp += amount
-			check_level_up("heatworking")
+				MessageManager.level_up_message(
+					"Barkbreaking",
+					barkbreaking_level
+				)
 
 
+			if barkbreaking_level == MAX_SKILL_LEVEL:
 
-func check_level_up(skill:String):
-
-	var level
-	var xp
-
-	match skill:
-
-		"barkbreaking":
-			level = barkbreaking_level
-			xp = barkbreaking_xp
-
-		"rockpunching":
-			level = rockpunching_level
-			xp = rockpunching_xp
-
-		"smacking":
-			level = smacking_level
-			xp = smacking_xp
-
-		"footwork":
-			level = footwork_level
-			xp = footwork_xp
-
-		"creation":
-			level = creation_level
-			xp = creation_xp
-
-		"growcraft":
-			level = growcraft_level
-			xp = growcraft_xp
-
-		"angling":
-			level = angling_level
-			xp = angling_xp
-
-		"heatworking":
-			level = heatworking_level
-			xp = heatworking_xp
+				reached_max_level("Barkbreaking")
 
 
-	while xp >= get_required_xp(level) and level < MAX_SKILL_LEVEL:
-
-		xp -= get_required_xp(level)
-		level += 1
-
-	print(skill, "Level:", level)
-
-
-	match skill:
-
-		"barkbreaking":
-			barkbreaking_level = level
-			barkbreaking_xp = xp
 			barkbreaking_changed.emit()
 
-		"rockpunching":
-			rockpunching_level = level
-			rockpunching_xp = xp
+
+
+		"Rockpunching":
+
+			rockpunching_xp += xp_amount
+
+			while rockpunching_xp >= get_required_xp(rockpunching_level) and rockpunching_level < MAX_SKILL_LEVEL:
+
+				rockpunching_xp -= get_required_xp(rockpunching_level)
+				rockpunching_level += 1
+
+				MessageManager.level_up_message(
+					"Rockpunching",
+					rockpunching_level
+				)
+
+
+			if rockpunching_level == MAX_SKILL_LEVEL:
+
+				reached_max_level("Rockpunching")
+
+
 			rockpunching_changed.emit()
 
-		"smacking":
-			smacking_level = level
-			smacking_xp = xp
-			smacking_changed.emit()
 
-		"footwork":
-			footwork_level = level
-			footwork_xp = xp
+
+		"Footwork":
+
+			footwork_xp += xp_amount
+
+			while footwork_xp >= get_required_xp(footwork_level) and footwork_level < MAX_SKILL_LEVEL:
+
+				footwork_xp -= get_required_xp(footwork_level)
+				footwork_level += 1
+
+				increase_max_stamina(1)
+
+				MessageManager.level_up_message(
+					"Footwork",
+					footwork_level
+				)
+
+
+			if footwork_level == MAX_SKILL_LEVEL:
+
+				reached_max_level("Footwork")
+
+
 			footwork_changed.emit()
-
-		"creation":
-			creation_level = level
-			creation_xp = xp
-			creation_changed.emit()
-
-		"growcraft":
-			growcraft_level = level
-			growcraft_xp = xp
-			growcraft_changed.emit()
-
-		"angling":
-			angling_level = level
-			angling_xp = xp
-			angling_changed.emit()
-
-		"heatworking":
-			heatworking_level = level
-			heatworking_xp = xp
-			heatworking_changed.emit()
-
-
 #=================================================
 # INVENTORY FUNCTIONS
 #=================================================
@@ -438,108 +368,35 @@ func craft_super_saiyan_axe():
 # FOOTWORK
 #=================================================
 
-
-
 #=================================================
 # SKILL XP FUNCTIONS
 #=================================================
 
 func add_barkbreaking_xp(amount):
-	
-	if barkbreaking_level >= MAX_SKILL_LEVEL:
-		return
-	barkbreaking_xp += amount
 
-	xp_gained.emit(amount, "Barkbreaking")
-
-	while barkbreaking_xp >= get_required_xp(barkbreaking_level) and barkbreaking_level < MAX_SKILL_LEVEL:
-
-		barkbreaking_xp -= get_required_xp(barkbreaking_level)
-		barkbreaking_level += 1
-
-	MessageManager.level_up_message(
-		"Barkbreaking",
-		barkbreaking_level
+	xp_gained.emit(
+		amount,
+		"Barkbreaking"
 	)
-	if barkbreaking_level >= 5:
-		AchievementManager.unlock_if_locked("BARKBREAKING_5")
 
-	if barkbreaking_level >= 10:
-		AchievementManager.unlock_if_locked("BARKBREAKING_10")
-
-	if barkbreaking_level >= 15:
-		AchievementManager.unlock_if_locked("BARKBREAKING_15")
-
-	if barkbreaking_level >= 20:
-		AchievementManager.unlock_if_locked("BARKBREAKING_20")
-
-		print("Barkbreaking Level:", barkbreaking_level)
-
-	barkbreaking_changed.emit()
+	process_skill_xp(
+		"Barkbreaking",
+		amount
+	)
 
 
 
 func add_rockpunching_xp(amount):
-	
-	if rockpunching_level >= MAX_SKILL_LEVEL:
-		return
-	rockpunching_xp += amount
-
-	xp_gained.emit(
-	amount,
-	"Rockpunching"
-)
-
-	while rockpunching_xp >= get_required_xp(rockpunching_level) and rockpunching_level < MAX_SKILL_LEVEL:
-
-		rockpunching_xp -= get_required_xp(rockpunching_level)
-		rockpunching_level += 1
-
-	MessageManager.level_up_message(
-	"Rockpunching",
-	rockpunching_level
-)
-
-	print("Rockpunching Level:", rockpunching_level)
-	if rockpunching_level >= 5:
-		AchievementManager.unlock_if_locked("ROCKPUNCHING_5")
-	rockpunching_changed.emit()
-
-
-
-func add_smacking_xp(amount):
-
-	AchievementManager.unlock_if_locked("FIRST_ENEMY")
-	
-	if smacking_level >= MAX_SKILL_LEVEL:
-		return
-	smacking_xp += amount
 
 	xp_gained.emit(
 		amount,
-		"Smacking"
+		"Rockpunching"
 	)
 
-	while smacking_xp >= get_required_xp(smacking_level)and smacking_level < MAX_SKILL_LEVEL:
-
-		smacking_xp -= get_required_xp(smacking_level)
-		smacking_level += 1
-
-		MessageManager.level_up_message(
-			"Smacking",
-			smacking_level
-		)
-
-		print("Smacking Level:", smacking_level)
-
-	if smacking_level >= 5:
-		AchievementManager.unlock_if_locked("SMACKING_5")
-
-	if smacking_level >= 10:
-		AchievementManager.unlock_if_locked("SMACKING_10")
-
-	smacking_changed.emit()
-
+	process_skill_xp(
+		"Rockpunching",
+		amount
+	)
 
 
 func add_footwork_steps(amount):
@@ -558,87 +415,15 @@ func add_footwork_steps(amount):
 
 func add_footwork_xp(amount):
 
-	footwork_xp += amount
-
 	xp_gained.emit(
 		amount,
 		"Footwork"
 	)
 
-	AchievementManager.unlock_if_locked("FOOTWORK_1")
-
-	while footwork_xp >= get_required_xp(footwork_level)and footwork_level < MAX_SKILL_LEVEL:
-
-		footwork_xp -= get_required_xp(footwork_level)
-		footwork_level += 1
-		increase_max_stamina(1)
-		
-		MessageManager.level_up_message(
-			"Footwork",
-			footwork_level
-		)
-
-		print("Footwork Level:", footwork_level)
-
-	if footwork_level >= 5:
-		AchievementManager.unlock_if_locked("FOOTWORK_5")
-
-	if footwork_level >= 10:
-		AchievementManager.unlock_if_locked("FOOTWORK_10")
-
-	footwork_changed.emit()
-
-
-
-func add_creation_xp(amount):
-
-	creation_xp += amount
-
-	while creation_xp >= get_required_xp(creation_level):
-
-		creation_xp -= get_required_xp(creation_level)
-		creation_level += 1
-
-	creation_changed.emit()
-
-
-
-func add_growcraft_xp(amount):
-
-	growcraft_xp += amount
-
-	while growcraft_xp >= get_required_xp(growcraft_level):
-
-		growcraft_xp -= get_required_xp(growcraft_level)
-		growcraft_level += 1
-
-	growcraft_changed.emit()
-
-
-
-func add_angling_xp(amount):
-
-	angling_xp += amount
-
-	while angling_xp >= get_required_xp(angling_level):
-
-		angling_xp -= get_required_xp(angling_level)
-		angling_level += 1
-
-	angling_changed.emit()
-
-
-
-func add_heatworking_xp(amount):
-
-	heatworking_xp += amount
-
-	while heatworking_xp >= get_required_xp(heatworking_level):
-
-		heatworking_xp -= get_required_xp(heatworking_level)
-		heatworking_level += 1
-
-	heatworking_changed.emit()
+	process_skill_xp(
+		"Footwork",
+		amount
+	)
 
 #=================================================
 # AXE PROGRESSION
@@ -697,24 +482,14 @@ func save_game():
 			"rockpunching_level": rockpunching_level,
 			"rockpunching_xp": rockpunching_xp,
 
-			"smacking_level": smacking_level,
-			"smacking_xp": smacking_xp,
 
 			"footwork_level": footwork_level,
 			"footwork_xp": footwork_xp,
 			"footwork_steps": footwork_steps,
 
-			"creation_level": creation_level,
-			"creation_xp": creation_xp,
 
-			"growcraft_level": growcraft_level,
-			"growcraft_xp": growcraft_xp,
 
-			"angling_level": angling_level,
-			"angling_xp": angling_xp,
 
-			"heatworking_level": heatworking_level,
-			"heatworking_xp": heatworking_xp
 		},
 
 
@@ -790,26 +565,10 @@ func load_game():
 	rockpunching_level = skills["rockpunching_level"]
 	rockpunching_xp = skills["rockpunching_xp"]
 
-	smacking_level = skills["smacking_level"]
-	smacking_xp = skills["smacking_xp"]
 
 	footwork_level = skills["footwork_level"]
 	footwork_xp = skills["footwork_xp"]
 	footwork_steps = skills["footwork_steps"]
-
-
-	creation_level = skills["creation_level"]
-	creation_xp = skills["creation_xp"]
-
-	growcraft_level = skills["growcraft_level"]
-	growcraft_xp = skills["growcraft_xp"]
-
-	angling_level = skills["angling_level"]
-	angling_xp = skills["angling_xp"]
-
-	heatworking_level = skills["heatworking_level"]
-	heatworking_xp = skills["heatworking_xp"]
-
 
 
 	# Stamina

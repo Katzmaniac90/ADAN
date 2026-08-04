@@ -4,7 +4,13 @@ extends Node
 signal achievement_unlocked(achievement_id)
 
 
+
+
 var achievements = {
+
+	#=================================================
+	# BARKBREAKING
+	#=================================================
 
 	"FIRST_TREE": {
 		"name": "First Cut",
@@ -36,6 +42,17 @@ var achievements = {
 		"unlocked": false
 	},
 
+	"BARKBREAKING_25": {
+		"name": "Tree Whisperer",
+		"description": "Reach Barkbreaking Level 25",
+		"unlocked": false
+	},
+
+
+
+	#=================================================
+	# AXES
+	#=================================================
 
 	"FIRST_AXE": {
 		"name": "First Tool",
@@ -50,6 +67,11 @@ var achievements = {
 	},
 
 
+
+	#=================================================
+	# ROCKPUNCHING
+	#=================================================
+
 	"FIRST_ROCK": {
 		"name": "Rock Breaker",
 		"description": "Punch your first rock",
@@ -62,25 +84,35 @@ var achievements = {
 		"unlocked": false
 	},
 
-
-	"FIRST_ENEMY": {
-		"name": "First Strike",
-		"description": "Smack your first enemy",
+	"ROCKPUNCHING_10": {
+		"name": "Stone Worker",
+		"description": "Reach Rockpunching Level 10",
 		"unlocked": false
 	},
 
-	"SMACKING_5": {
-		"name": "Street Fighter",
-		"description": "Reach Smacking Level 5",
+	"ROCKPUNCHING_15": {
+		"name": "Stone Master",
+		"description": "Reach Rockpunching Level 15",
 		"unlocked": false
 	},
 
-	"SMACKING_10": {
-		"name": "Brawler",
-		"description": "Reach Smacking Level 10",
+	"ROCKPUNCHING_20": {
+		"name": "Mountain Breaker",
+		"description": "Reach Rockpunching Level 20",
 		"unlocked": false
 	},
 
+	"ROCKPUNCHING_25": {
+		"name": "Earth Shatterer",
+		"description": "Reach Rockpunching Level 25",
+		"unlocked": false
+	},
+
+
+
+	#=================================================
+	# FOOTWORK
+	#=================================================
 
 	"FOOTWORK_1": {
 		"name": "First Steps",
@@ -100,13 +132,35 @@ var achievements = {
 		"unlocked": false
 	},
 
+	"FOOTWORK_15": {
+		"name": "Path Finder",
+		"description": "Reach Footwork Level 15",
+		"unlocked": false
+	},
+
+	"FOOTWORK_20": {
+		"name": "Wind Walker",
+		"description": "Reach Footwork Level 20",
+		"unlocked": false
+	},
+
+	"FOOTWORK_25": {
+		"name": "Lightning Feet",
+		"description": "Reach Footwork Level 25",
+		"unlocked": false
+	},
+
+
+
+	#=================================================
+	# COMPLETION
+	#=================================================
 
 	"ALL_ACHIEVEMENTS": {
 		"name": "ADAN Legend",
 		"description": "Obtain all achievements",
 		"unlocked": false
 	}
-
 }
 
 
