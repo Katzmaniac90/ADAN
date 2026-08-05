@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://cqobii0pk60jo"]
+[gd_scene format=3 uid="uid://cnx45dn83518p"]
 
-[ext_resource type="Script" uid="uid://cohns0vu7xftv" path="res://Scenes/Scripts/sign.gd" id="1_3gqdc"]
-[ext_resource type="Texture2D" uid="uid://dt42q2msdrre2" path="res://Tiles/sign_adam.png" id="1_h0xn3"]
+[ext_resource type="Script" uid="uid://cohns0vu7xftv" path="res://Scenes/Scripts/sign.gd" id="1_b8wya"]
+[ext_resource type="Texture2D" uid="uid://dt42q2msdrre2" path="res://Tiles/sign_adam.png" id="2_p2nru"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sd12v"]
 size = Vector2(25.5, 21)
@@ -13,12 +13,12 @@ size = Vector2(14, 19.25)
 z_index = 1
 y_sort_enabled = true
 texture_filter = 1
-script = ExtResource("1_3gqdc")
+script = ExtResource("1_b8wya")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1196799763]
 y_sort_enabled = true
 texture_filter = 1
-texture = ExtResource("1_h0xn3")
+texture = ExtResource("2_p2nru")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=986234630]
 texture_filter = 1
@@ -27,10 +27,10 @@ shape = SubResource("RectangleShape2D_sd12v")
 [node name="Label" type="Label" parent="." unique_id=1750671623]
 visible = false
 texture_filter = 1
-offset_left = -7.0
-offset_top = -26.0
-offset_right = 7.0
-offset_bottom = -10.0
+offset_left = 10.0
+offset_top = -9.0
+offset_right = 24.0
+offset_bottom = 7.0
 theme_override_colors/font_color = Color(0.8117647, 0.72156864, 0.5803922, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 2
