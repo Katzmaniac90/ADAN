@@ -1,6 +1,5 @@
 extends Panel
 
-
 @export var achievement_card_scene: PackedScene
 @onready var achievement_container = $ScrollContainer/AchievementContainer
 
@@ -12,9 +11,14 @@ var drag_offset := Vector2.ZERO
 
 func _ready():
 
+	UIManager.register_window(self)
+
 	create_achievements()
 	hide()
-	AchievementManager.achievement_unlocked.connect(_on_achievement_unlocked)
+
+	AchievementManager.achievement_unlocked.connect(
+		_on_achievement_unlocked
+	)
 
 
 func create_achievements():
@@ -57,11 +61,6 @@ func _gui_input(event):
 
 	if event is InputEventMouseButton:
 
-		if event.button_index == MOUSE_BUTTON_WHEEL_UP or event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
-
-			get_viewport().set_input_as_handled()
-
-
 		if event.button_index == MOUSE_BUTTON_LEFT:
 
 			if event.pressed:
@@ -73,11 +72,23 @@ func _gui_input(event):
 
 				dragging = false
 
-
-
 	if event is InputEventMouseMotion and dragging:
 
 		global_position = get_global_mouse_position() - drag_offset
+
+		var viewport_size = get_viewport_rect().size
+
+		global_position.x = clamp(
+			global_position.x,
+			0,
+			viewport_size.x - size.x
+		)
+
+		global_position.y = clamp(
+			global_position.y,
+			0,
+			viewport_size.y - size.y
+		)
 
 
 

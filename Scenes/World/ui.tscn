@@ -631,6 +631,7 @@ script = ExtResource("19_4rgu2")
 offset_left = 196.0
 offset_right = 283.0
 offset_bottom = 32.0
+focus_mode = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_hl8in")
 text = "Music: ON"
 

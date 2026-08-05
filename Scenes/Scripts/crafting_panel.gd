@@ -8,6 +8,7 @@ extends Panel
 
 func _ready():
 
+	UIManager.register_window(self)
 	hide()
 
 	GameManager.inventory_changed.connect(update_recipe)
@@ -98,12 +99,28 @@ func _gui_input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT:
 
 			if event.pressed:
+
 				dragging = true
 				drag_offset = get_global_mouse_position() - global_position
-			else:
-				dragging = false
 
+			else:
+
+				dragging = false
 
 	if event is InputEventMouseMotion and dragging:
 
 		global_position = get_global_mouse_position() - drag_offset
+
+		var viewport_size = get_viewport_rect().size
+
+		global_position.x = clamp(
+			global_position.x,
+			0,
+			viewport_size.x - size.x
+		)
+
+		global_position.y = clamp(
+			global_position.y,
+			0,
+			viewport_size.y - size.y
+		)
