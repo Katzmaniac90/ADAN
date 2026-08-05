@@ -13,14 +13,17 @@ extends CharacterBody2D
 @export_category("Interaction")
 @export var interaction_action: String = "interact"
 
+@export_category("Dialogue")
+@export var has_dialogue: bool = true
+
 @onready var interaction_area: Area2D = $InteractionArea
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var wander_timer: Timer = $WanderTimer
-@onready var dialogue_ui: CanvasLayer = $DialogueUI
-@onready var dialogue_panel: TextureRect = $DialogueUI/TextureRect
-@onready var name_label: Label = $DialogueUI/TextureRect/VBoxContainer/NameLabel
-@onready var dialogue_text_label: RichTextLabel = $DialogueUI/TextureRect/VBoxContainer/DialogueText
-@onready var close_button: Button = $DialogueUI/TextureRect/VBoxContainer/CloseButton
+@onready var dialogue_ui: CanvasLayer = get_node_or_null("DialogueUI")
+@onready var dialogue_panel: TextureRect = get_node_or_null("DialogueUI/TextureRect")
+@onready var name_label: Label = get_node_or_null("DialogueUI/TextureRect/VBoxContainer/NameLabel")
+@onready var dialogue_text_label: RichTextLabel = get_node_or_null("DialogueUI/TextureRect/VBoxContainer/DialogueText")
+@onready var close_button: Button = get_node_or_null("DialogueUI/TextureRect/VBoxContainer/CloseButton")
 
 var home_position: Vector2
 var target_position: Vector2
@@ -31,8 +34,12 @@ var dialogue_open: bool = false
 
 func _ready() -> void:
 	home_position = global_position
-	dialogue_ui.visible = false
-	close_button.pressed.connect(close_dialogue)
+	
+	if has_dialogue and dialogue_ui:
+		dialogue_ui.visible = false
+	
+		if close_button:
+			close_button.pressed.connect(close_dialogue)
 	
 	choose_new_wander_target()
 	start_wander_timer()
@@ -73,7 +80,8 @@ func _physics_process(_delta: float) -> void:
 func _process(_delta: float) -> void:
 	if player_in_range and not dialogue_open:
 		if Input.is_action_just_pressed(interaction_action):
-			open_dialogue()
+			if has_dialogue:
+				open_dialogue()
 
 func choose_new_wander_target() -> void:
 
@@ -136,6 +144,9 @@ func get_idle_animation() -> String:
 
 
 func open_dialogue() -> void:
+	if not dialogue_ui:
+		return
+		
 	dialogue_open = true
 
 	name_label.text = npc_name
@@ -148,7 +159,9 @@ func open_dialogue() -> void:
 
 func close_dialogue() -> void:
 	dialogue_open = false
-	dialogue_ui.visible = false
+	
+	if dialogue_ui:
+		dialogue_ui.visible = false
 
 
 func _safe_move() -> void:
