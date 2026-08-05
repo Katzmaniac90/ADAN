@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://c1h01xwhckm4f" path="res://TileSet/objects.tres" id="2_pxqje"]
 [ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="3_l6xnb"]
 [ext_resource type="PackedScene" uid="uid://cl083f38u8edk" path="res://Scenes/Doors/myHouseIn.tscn" id="4_s72mp"]
+[ext_resource type="PackedScene" uid="uid://c1tpmfi2llge8" path="res://Scenes/NPCs/houseJournal.tscn" id="5_sbfyk"]
 
 [node name="myHouse" type="Node2D" unique_id=1626562383]
 texture_filter = 1
@@ -13,7 +14,7 @@ tile_map_data = PackedByteArray("AAAAAAAABgAEAAkAAAAAAAEABgAEAAoAAAAAAAIABgAEAAk
 tile_set = ExtResource("1_sbfyk")
 
 [node name="Objects" type="TileMapLayer" parent="." unique_id=987264578]
-tile_map_data = PackedByteArray("AAALAAYABgAEAAQAAAAAAAYABgADAAQAAAABAAYABgABAAAAAAACAAYABgABAAAAAAADAAYABgABAAAAAAAEAAYABgABAAAAAAAFAAYABgAHAAwAAAAHAAYABgAJAAwAAAAIAAYABgABAAAAAAAJAAYABgABAAAAAAAKAAYABgABAAAAAAAGAAYABAABAAAAAAALAAEABgAAAAEAAAALAAIABgAAAAEAAAALAAMABgAAAAEAAAALAAQABgAAAAEAAAALAAUABgAAAAEAAAALAAAABgAEAAEAAAAAAAAABgADAAEAAAAAAAEABgACAAEAAAAAAAIABgACAAEAAAAAAAMABgACAAEAAAAAAAQABgACAAEAAAAAAAUABgACAAEAAAABAAAABgABAAIAAAACAAAABgABAAIAAAADAAAABgABAAIAAAAEAAAABgABAAIAAAAFAAAABgABAAIAAAAGAAAABgABAAIAAAAHAAAABgABAAIAAAAIAAAABgABAAIAAAAJAAAABgABAAIAAAAKAAAABgABAAIAAAAFAAEAAgAJAAEAAAAFAAIAAgALAAQAAAAGAAEAAgAKAAQAAAAHAAEAAgAMAAIAAAABAAEAAgALAAIAAAADAAEAAgAMAAIAAAA=")
+tile_map_data = PackedByteArray("AAALAAYABgAEAAQAAAAAAAYABgADAAQAAAABAAYABgABAAAAAAACAAYABgABAAAAAAADAAYABgABAAAAAAAEAAYABgABAAAAAAAFAAYABgAHAAwAAAAHAAYABgAJAAwAAAAIAAYABgABAAAAAAAJAAYABgABAAAAAAAKAAYABgABAAAAAAAGAAYABAABAAAAAAALAAEABgAAAAEAAAALAAIABgAAAAEAAAALAAMABgAAAAEAAAALAAQABgAAAAEAAAALAAUABgAAAAEAAAALAAAABgAEAAEAAAAAAAAABgADAAEAAAAAAAEABgACAAEAAAAAAAIABgACAAEAAAAAAAMABgACAAEAAAAAAAQABgACAAEAAAAAAAUABgACAAEAAAABAAAABgABAAIAAAACAAAABgABAAIAAAADAAAABgABAAIAAAAEAAAABgABAAIAAAAFAAAABgABAAIAAAAGAAAABgABAAIAAAAHAAAABgABAAIAAAAIAAAABgABAAIAAAAJAAAABgABAAIAAAAKAAAABgABAAIAAAAFAAEAAgAJAAEAAAAFAAIAAgALAAQAAAAHAAEAAgAMAAIAAAABAAEAAgALAAIAAAADAAEAAgAMAAIAAAA=")
 tile_set = ExtResource("2_pxqje")
 
 [node name="Player" parent="." unique_id=226938582 instance=ExtResource("3_l6xnb")]
@@ -28,3 +29,12 @@ position = Vector2(104, 96)
 
 [node name="myHouseIn" parent="Doors" unique_id=1895642603 instance=ExtResource("4_s72mp")]
 position = Vector2(104, 112)
+
+[node name="NPC" parent="." unique_id=1646254127 instance=ExtResource("5_sbfyk")]
+position = Vector2(88, 21)
+npc_name = "Dad's Journal"
+dialogue_text = "I'm going to include a brief back-story for the game here. Explain why we are here and what our goal is. 
+
+The overall goals will be achievements and collecting \"badges\" (or something else, whatever it is) and bringing them back here to put into a special case or something that we'll put within this house. 
+
+I'll revisist this journal later! "
