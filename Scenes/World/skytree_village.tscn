@@ -100,6 +100,35 @@ y_sort_enabled = true
 texture_filter = 1
 position = Vector2(984, 464)
 
+[node name="sign1" parent="." unique_id=431273787 instance=ExtResource("19_m0cql")]
+z_index = 1
+position = Vector2(368, 968)
+sign_text = "Skytree Village --->
+?????
+|
+v"
+
+[node name="sign2" parent="." unique_id=573640038 instance=ExtResource("20_46umo")]
+z_index = 1
+position = Vector2(792, 800)
+sign_text = "Welcome to Skytree Village!"
+
+[node name="sign3" parent="." unique_id=1269862815 instance=ExtResource("21_3ogje")]
+z_index = 1
+position = Vector2(568, 224)
+sign_text = "<>Barkbreakers Guild<>
+
+Learn more about trees, axes and the sacred art of Barkbreaking! "
+
+[node name="npc1" parent="." unique_id=1646254127 instance=ExtResource("26_5w68m")]
+position = Vector2(320, 992)
+npc_name = "Amy the Adventurous"
+dialogue_text = "Well hi there! Always fun to see new faces in the forest :)
+
+Take care not to get lost though, it can be pretty easy to get caught up in the trees, especially just south of Skytree Village. The woods down there are as dense as any I've ever seen! I almost couldn't find a way back out myself.. 
+
+I did stumble upon a cool looking path towards the back of the woods, but there was a big tree in the way and I couldn't get through :/  I wonder what's back there..."
+
 [node name="DialogueUI" parent="." unique_id=353898798 instance=ExtResource("8_en4w3")]
 
 [node name="PlayerSpawnPoints" type="Node" parent="." unique_id=397987243]
@@ -216,28 +245,6 @@ shape = SubResource("RectangleShape2D_jpemb")
 position = Vector2(1232, 504)
 shape = SubResource("RectangleShape2D_jpemb")
 
-[node name="Signs" type="Node" parent="." unique_id=376708143]
-
-[node name="SkytreeSign1" parent="Signs" unique_id=431273787 instance=ExtResource("19_m0cql")]
-z_index = 1
-position = Vector2(368, 968)
-sign_text = "Skytree Village --->
-?????
-|
-v"
-
-[node name="SkytreeSign2" parent="Signs" unique_id=573640038 instance=ExtResource("20_46umo")]
-z_index = 1
-position = Vector2(792, 800)
-sign_text = "Welcome to Skytree Village!"
-
-[node name="SkytreeSign3" parent="Signs" unique_id=1269862815 instance=ExtResource("21_3ogje")]
-z_index = 1
-position = Vector2(568, 224)
-sign_text = "<>Barkbreakers Guild<>
-
-Learn more about trees, axes and the sacred art of Barkbreaking! "
-
 [node name="tree" type="Node" parent="." unique_id=1414093296]
 
 [node name="Tree" parent="tree" unique_id=2000084765 instance=ExtResource("12_cgwvv")]
@@ -316,14 +323,3 @@ position = Vector2(1016, 96)
 
 [node name="Rock5" parent="rock" unique_id=1067017184 instance=ExtResource("16_cgjli")]
 position = Vector2(912, 1264)
-
-[node name="NPCs" type="Node" parent="." unique_id=444232542]
-
-[node name="SkytreeNPC1" parent="NPCs" unique_id=1646254127 instance=ExtResource("26_5w68m")]
-position = Vector2(320, 992)
-npc_name = "Amy the Adventurous"
-dialogue_text = "Well hi there! Always fun to see new faces in the forest :)
-
-Take care not to get lost though, it can be pretty easy to get caught up in the trees, especially just south of Skytree Village. The woods down there are as dense as any I've ever seen! I almost couldn't find a way back out myself.. 
-
-I did stumble upon a cool looking path towards the back of the woods, but there was a big tree in the way and I couldn't get through :/  I wonder what's back there..."

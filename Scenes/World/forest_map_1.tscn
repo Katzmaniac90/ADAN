@@ -30,6 +30,7 @@
 
 [node name="ForestMap1" type="Node2D" unique_id=782872810]
 y_sort_enabled = true
+texture_filter = 1
 
 [node name="GroundLayer" type="TileMapLayer" parent="." unique_id=1210800058]
 texture_filter = 1
@@ -74,6 +75,78 @@ z_index = 1
 y_sort_enabled = true
 texture_filter = 1
 position = Vector2(576, 272)
+
+[node name="sign1" parent="." unique_id=431273787 instance=ExtResource("9_86gjr")]
+position = Vector2(376, 616)
+sign_text = "Welcome to Woodrest Post!"
+
+[node name="sign2" parent="." unique_id=1488484255 instance=ExtResource("10_51jwm")]
+z_index = 1
+position = Vector2(648, 512)
+sign_text = "Woodrest Post Shop!
+
+Buy some supplies and sell your loot here!"
+
+[node name="npc1" parent="." unique_id=1646254127 instance=ExtResource("23_jaerj")]
+position = Vector2(384, 160)
+npc_name = "Barry the Barkbreaker"
+dialogue_text = "Hey kid, welcome to the forest! There's a ton of stuff  to do here, but if you're looking to break some bark, there's some things you should probably know..
+
+Take all these dang trees and bushes for example.. Most of 'em aren't worth a darn thing unfortunately. They just sit around and look pretty.. which aint a terrible thing I suppose, but it sure as hell don't help us break bigger bark or provide us with anything worth crafting! 
+
+You see this tree behind me though right? Looks a bit different than the rest, don't it? This is the kinda thing you want to look out for when your out in these woods. Chop that puppy down and you'll have something you can actually use! 
+
+There be all types of bark out there to break, so get choppin! And if you come across somethin a bit too tough, make a note and come back later. Aint no rush! "
+
+[node name="npc2" parent="." unique_id=328006261 instance=ExtResource("24_min6c")]
+z_index = 1
+position = Vector2(368, 400)
+npc_name = "Rhonda the Rockpuncher"
+dialogue_text = "Yooo! You ever stop and think just for a second, what it would feel like to smash those fragile, dainty little knuckles into something as hard as a rock! Like I don't know.. A ROCK!!
+
+Well you don't have to wonder any longer because I can get you started on the path of purposeful promontory pebble punching with this bad boy right next to me! 
+
+Oh and don't you even think about punching those smaller, wimpy rocks lying around, that's not gonna cut it! GO BIG OR JUST QUIT, anyone worth their rocks doesn't have the time to waste on anything softer than the bedrock we stand on! 
+
+Huh? What's the point of all of this?! WHAT KIND OF QUESTION IS THAT?!! IT'S TO PUNCH BIGGER AND HARDER ROCKS DUMMY! HOW COULD WE POSSIBLY SPEND OUR TIME BETTER THAN THAT! "
+wander_radius_blocks = 2.0
+walk_speed = 50.0
+max_wait_time = 2.5
+
+[node name="npc3" parent="." unique_id=1631721764 instance=ExtResource("25_xmhxr")]
+position = Vector2(1040, 320)
+npc_name = "Nate the Nearly"
+dialogue_text = "URGH, this is so frustrating! I've been trying to break the bark off of these pink trees for weeks and they just won't budge! My Barkbreaking is level 4.99 after all, that should be waaay more than enough for these trees... *sigh* 
+
+NO, I CAN'T GIVE UP! I will stand here for the rest of my life if I have to! These barks will be broken!!"
+walk_speed = 30.0
+
+[node name="npc4" parent="." unique_id=36496115 instance=ExtResource("26_46f6s")]
+position = Vector2(832, 112)
+npc_name = "Peter the Paranoid"
+dialogue_text = "GAH, don't sneak up on me like that! What am I doing here? Well..
+
+Someone once told me that I can level up my footworking by simply moving my feet. At first I thought it was a pretty far-fetched idea, but it turns out they were right! Only problem is, now that I've started, I can't stop!
+
+What's that you say? Other skills? Yeah but what if others figure out how Footworking.. you know.. works? What if someone passes my Footworking level?! OMG!!
+
+Sorry stranger but I can't let that happen, I gotta keep going!"
+tile_size = 4.0
+walk_speed = 100.0
+min_wait_time = 0.0
+max_wait_time = 0.5
+
+[node name="npc5" parent="." unique_id=1146582362 instance=ExtResource("27_qnspf")]
+position = Vector2(632, 576)
+npc_name = "Farrah the Fascinated"
+dialogue_text = "Oh hey newcomer, didn't see you there! 
+
+I've just been admiring our special tree here in Woodrest. Apparently it's been here for ages, far before our little town here even existed. So much history.. so many stories this tree could tell if it could talk like us. 
+
+Anyway, I'm just glad it's still here. Barkbreakers from all over the forest have tried to cut it down in the past, but all have failed. Even Barry couldn't do anything to it haha. Barry's a nice guy but he just can't help himself sometimes!
+
+Still.. I find it odd how many have come to try to cut this specific tree down. I mean, there are others out there just like it, within other parts of the forest. So why this one.. "
+wander_radius_blocks = 0.0
 
 [node name="PlayerSpawnPoints" type="Node" parent="." unique_id=1771682807]
 
@@ -124,19 +197,6 @@ position = Vector2(824, 584)
 
 [node name="ForestHole1Out" parent="Doors" unique_id=1649444560 instance=ExtResource("14_86fx8")]
 position = Vector2(600, 584)
-
-[node name="Signs" type="Node" parent="." unique_id=928791062]
-
-[node name="woodrestVillage" parent="Signs" unique_id=431273787 instance=ExtResource("9_86gjr")]
-position = Vector2(376, 616)
-sign_text = "Welcome to Woodrest Post!"
-
-[node name="woodrestShop" parent="Signs" unique_id=1488484255 instance=ExtResource("10_51jwm")]
-z_index = 1
-position = Vector2(648, 512)
-sign_text = "Woodrest Post Shop!
-
-Buy some supplies and sell your loot here!"
 
 [node name="DialogueUI" parent="." unique_id=353898798 instance=ExtResource("11_3cbse")]
 
@@ -206,69 +266,3 @@ position = Vector2(1264, 96)
 
 [node name="Rock3" parent="rock" unique_id=697637087 instance=ExtResource("13_a0upg")]
 position = Vector2(440, 112)
-
-[node name="NPCs" type="Node" parent="." unique_id=843528692]
-
-[node name="Forest1_NPC1" parent="NPCs" unique_id=1646254127 instance=ExtResource("23_jaerj")]
-position = Vector2(384, 160)
-npc_name = "Barry the Barkbreaker"
-dialogue_text = "Hey kid, welcome to the forest! There's a ton of stuff  to do here, but if you're looking to break some bark, there's some things you should probably know..
-
-Take all these dang trees and bushes for example.. Most of 'em aren't worth a darn thing unfortunately. They just sit around and look pretty.. which aint a terrible thing I suppose, but it sure as hell don't help us break bigger bark or provide us with anything worth crafting! 
-
-You see this tree behind me though right? Looks a bit different than the rest, don't it? This is the kinda thing you want to look out for when your out in these woods. Chop that puppy down and you'll have something you can actually use! 
-
-There be all types of bark out there to break, so get choppin! And if you come across somethin a bit too tough, make a note and come back later. Aint no rush! "
-wander_radius_blocks = 3.0
-
-[node name="Forest1_NPC2" parent="NPCs" unique_id=328006261 instance=ExtResource("24_min6c")]
-z_index = 1
-position = Vector2(368, 400)
-npc_name = "Rhonda the Rockpuncher"
-dialogue_text = "Yooo! You ever stop and think just for a second, what it would feel like to smash those fragile, dainty little knuckles into something as hard as a rock! Like I don't know.. A ROCK!!
-
-Well you don't have to wonder any longer because I can get you started on the path of purposeful promontory pebble punching with this bad boy right next to me! 
-
-Oh and don't you even think about punching those smaller, wimpy rocks lying around, that's not gonna cut it! GO BIG OR JUST QUIT, anyone worth their rocks doesn't have the time to waste on anything softer than the bedrock we stand on! 
-
-Huh? What's the point of all of this?! WHAT KIND OF QUESTION IS THAT?!! IT'S TO PUNCH BIGGER AND HARDER ROCKS DUMMY! HOW COULD WE POSSIBLY SPEND OUR TIME BETTER THAN THAT! "
-wander_radius_blocks = 2.0
-walk_speed = 50.0
-max_wait_time = 2.5
-
-[node name="Forest1_NPC3" parent="NPCs" unique_id=1631721764 instance=ExtResource("25_xmhxr")]
-position = Vector2(1056, 304)
-npc_name = "Nate the Nearly"
-dialogue_text = "URGH, this is so frustrating! I've been trying to break the bark off of these pink trees for weeks and they just won't budge! My Barkbreaking is level 4.99 after all, that should be waaay more than enough for these trees... *sigh* 
-
-NO, I CAN'T GIVE UP! I will stand here for the rest of my life if I have to! These barks will be broken!!"
-wander_radius_blocks = 2.0
-walk_speed = 30.0
-
-[node name="Forest1_NPC4" parent="NPCs" unique_id=36496115 instance=ExtResource("26_46f6s")]
-position = Vector2(832, 112)
-npc_name = "Peter the Paranoid"
-dialogue_text = "GAH, don't sneak up on me like that! What am I doing here? Well..
-
-Someone once told me that I can level up my footworking by simply moving my feet. At first I thought it was a pretty far-fetched idea, but it turns out they were right! Only problem is, now that I've started, I can't stop!
-
-What's that you say? Other skills? Yeah but what if others figure out how Footworking.. you know.. works? What if someone passes my Footworking level?! OMG!!
-
-Sorry stranger but I can't let that happen, I gotta keep going!"
-wander_radius_blocks = 2.0
-tile_size = 4.0
-walk_speed = 100.0
-min_wait_time = 0.0
-max_wait_time = 0.5
-
-[node name="Forest1_NPC5" parent="NPCs" unique_id=1146582362 instance=ExtResource("27_qnspf")]
-position = Vector2(632, 576)
-npc_name = "Farrah the Fascinated"
-dialogue_text = "Oh hey newcomer, didn't see you there! 
-
-I've just been admiring our special tree here in Woodrest. Apparently it's been here for ages, far before our little town here even existed. So much history.. so many stories this tree could tell if it could talk like us. 
-
-Anyway, I'm just glad it's still here. Barkbreakers from all over the forest have tried to cut it down in the past, but all have failed. Even Barry couldn't do anything to it haha. Barry's a nice guy but he just can't help himself sometimes!
-
-Still.. I find it odd how many have come to try to cut this specific tree down. I mean, there are others out there just like it, within other parts of the forest. So why this one.. "
-wander_radius_blocks = 0.0

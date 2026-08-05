@@ -81,7 +81,6 @@ dialogue_text = "Hello there! I'm the first NPC ever created! Wow.. actually kin
 Now I know the sign over there tells you the same thing, but I mean come on.. let's be honest.. signs are dumb! They can't even move! Look at me, I can actually wander around like a REAL object!! 
 
 Okay.. maybe I'm being too harsh.. Signs are okay for some stuff, but don't hesitate to speak with objects that look like me, they'll tell you some really cool stuff! "
-wander_radius_blocks = 3.0
 
 [node name="PlayerSpawnPoints" type="Node" parent="." unique_id=956556452]
 

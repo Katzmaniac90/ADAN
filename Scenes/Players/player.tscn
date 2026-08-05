@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bxq3cpm5yg7yy" path="res://Scenes/Scripts/player.gd" id="1_37lpg"]
 [ext_resource type="SpriteFrames" uid="uid://bpjrdi6b8n57t" path="res://Scenes/NPCs/new_sprite_frames.tres" id="2_37lpg"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppdxs"]
-size = Vector2(5, 5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_w63wb"]
+radius = 4.0
 
 [node name="Player" type="CharacterBody2D" unique_id=226938582 groups=["player"]]
 script = ExtResource("1_37lpg")
@@ -19,7 +19,7 @@ frame_progress = 0.7397504
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=411845142]
 z_index = 1
-shape = SubResource("RectangleShape2D_ppdxs")
+shape = SubResource("CircleShape2D_w63wb")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1702949]
 zoom = Vector2(3, 3)

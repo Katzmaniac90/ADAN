@@ -62,6 +62,13 @@ func _physics_process(_delta: float) -> void:
 	update_animation(direction)
 
 	move_and_slide()
+	
+	# If we bumped into something, stop and choose a new destination later.
+	if get_slide_collision_count() > 0:
+		velocity = Vector2.ZERO
+		waiting = true
+		animated_sprite.play(get_idle_animation())
+		start_wander_timer()
 
 func _process(_delta: float) -> void:
 	if player_in_range and not dialogue_open:
@@ -100,7 +107,7 @@ func _on_wander_timer_timeout() -> void:
 # ANIMATION
 # ============================================================
 func update_animation(direction: Vector2) -> void:
-	if abs(direction.x) > abs(direction.y):
+	if abs(direction.x) < abs(direction.y):
 		if direction.y > 0:
 			animated_sprite.play("downWalking")
 		else:

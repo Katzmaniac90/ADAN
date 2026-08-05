@@ -39,8 +39,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lr2c"]
-size = Vector2(5.25, 10.625)
+[sub_resource type="CircleShape2D" id="CircleShape2D_c0jvo"]
+radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7lr2c"]
 radius = 16.0
@@ -63,8 +63,6 @@ texture_filter = 1
 script = ExtResource("1_oiui0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=338081268]
-z_index = 1
-y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.06, 0.06)
 sprite_frames = SubResource("SpriteFrames_r44mt")
@@ -72,8 +70,8 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=96441533]
-position = Vector2(0, 2.6875)
-shape = SubResource("RectangleShape2D_7lr2c")
+position = Vector2(0, 0.6875)
+shape = SubResource("CircleShape2D_c0jvo")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1820771731]
 

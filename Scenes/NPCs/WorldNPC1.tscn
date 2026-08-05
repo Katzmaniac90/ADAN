@@ -4,8 +4,8 @@
 [ext_resource type="SpriteFrames" uid="uid://2tav1dq1arn6" path="res://Scenes/NPCs/new_npc_frames.tres" id="2_chyk6"]
 [ext_resource type="Texture2D" uid="uid://c6r7k86u618ao" path="res://npc-chat-box1.png" id="3_x5i2m"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lr2c"]
-size = Vector2(5.25, 10.625)
+[sub_resource type="CircleShape2D" id="CircleShape2D_q0ilr"]
+radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7lr2c"]
 radius = 16.0
@@ -35,8 +35,8 @@ animation = &"idle"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=96441533]
-position = Vector2(0, 2.6875)
-shape = SubResource("RectangleShape2D_7lr2c")
+position = Vector2(0, 0.6875)
+shape = SubResource("CircleShape2D_q0ilr")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1820771731]
 

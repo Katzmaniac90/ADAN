@@ -25,6 +25,9 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(48, 32)
 
+[node name="SKytreeNPC2" parent="." unique_id=1646254127 instance=ExtResource("5_luw0s")]
+position = Vector2(88, 48)
+
 [node name="PlayerSpawnPoints" type="Node" parent="." unique_id=845506424]
 
 [node name="SkytreeHouse4In" type="Marker2D" parent="PlayerSpawnPoints" unique_id=759272967]
@@ -41,8 +44,3 @@ position = Vector2(80, 112)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1784567652]
 polygon = PackedVector2Array(64, 96, 24, 96, 24, 0, 152, 0, 152, 96, 88, 96, 88, 104, 160, 104, 160, -8, 16, -8, 16, 104, 64, 104)
-
-[node name="NPCs" type="Node" parent="." unique_id=1622670278]
-
-[node name="SKytreeNPC2" parent="NPCs" unique_id=1646254127 instance=ExtResource("5_luw0s")]
-position = Vector2(88, 48)

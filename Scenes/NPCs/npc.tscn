@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://cxlqoq6xe5rpb" path="res://Scenes/NPCs/NPC.gd" id="1_n58mx"]
 [ext_resource type="Texture2D" uid="uid://c6r7k86u618ao" path="res://npc-chat-box1.png" id="3_q0ilr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lr2c"]
-size = Vector2(5.25, 10.625)
+[sub_resource type="CircleShape2D" id="CircleShape2D_3ogje"]
+radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7lr2c"]
 radius = 16.0
@@ -28,8 +28,6 @@ texture_filter = 1
 script = ExtResource("1_n58mx")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=338081268]
-z_index = 1
-y_sort_enabled = true
 texture_filter = 1
 scale = Vector2(0.06, 0.06)
 sprite_frames = ExtResource("1_7lr2c")
@@ -37,8 +35,9 @@ animation = &"downWalking"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=96441533]
-position = Vector2(0, 2.6875)
-shape = SubResource("RectangleShape2D_7lr2c")
+z_index = 1
+position = Vector2(0, 0.6875)
+shape = SubResource("CircleShape2D_3ogje")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=1820771731]
 
