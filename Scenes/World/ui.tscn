@@ -116,7 +116,7 @@ script = ExtResource("1_l88uj")
 [node name="SkillsPanel" type="Panel" parent="." unique_id=717901510]
 offset_left = 180.0
 offset_top = 609.0
-offset_right = 506.0
+offset_right = 643.0
 offset_bottom = 720.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_apcou")
 script = ExtResource("3_wh8m4")
@@ -198,6 +198,52 @@ expand_mode = 1
 
 [node name="XPLabel" type="Label" parent="SkillsPanel/Rockpunching" unique_id=80361586]
 layout_mode = 0
+offset_left = 5.0
+offset_top = 85.0
+offset_right = 106.0
+offset_bottom = 109.0
+metadata/_edit_use_anchors_ = true
+
+[node name="Fishsnatching" type="Control" parent="SkillsPanel" unique_id=1798099923]
+layout_mode = 1
+anchor_right = 0.15100001
+anchor_bottom = 0.17600001
+offset_left = 331.0
+offset_right = 372.674
+offset_bottom = 91.464
+
+[node name="LevelLabel" type="Label" parent="SkillsPanel/Fishsnatching" unique_id=805242406]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 0
+offset_left = 10.0
+offset_top = 3.0
+offset_right = 114.0
+offset_bottom = 26.0
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 12
+theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FishIcon" type="TextureRect" parent="SkillsPanel/Fishsnatching" unique_id=993352819]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 0
+offset_left = 33.0
+offset_top = 29.0
+offset_right = 155.5
+offset_bottom = 146.5
+scale = Vector2(0.4, 0.4)
+tooltip_text = "Rockpunching"
+texture = ExtResource("9_cfpjy")
+expand_mode = 1
+
+[node name="XPLabel" type="Label" parent="SkillsPanel/Fishsnatching" unique_id=1451934851]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0537697
+anchor_top = -0.018018018
+anchor_right = 0.0537697
+anchor_bottom = -0.018018018
 offset_left = 5.0
 offset_top = 85.0
 offset_right = 106.0
@@ -358,40 +404,6 @@ offset_left = 905.0
 offset_top = 695.0
 offset_right = 975.0
 offset_bottom = 718.0
-metadata/_edit_use_anchors_ = true
-
-[node name="Angling" type="Node" parent="SkillsPanel" unique_id=1473319168]
-
-[node name="LevelLabel" type="Label" parent="SkillsPanel/Angling" unique_id=139726218]
-visible = false
-offset_left = 1044.0
-offset_top = 614.0
-offset_right = 1074.0
-offset_bottom = 637.0
-theme_override_constants/outline_size = 1
-theme_override_font_sizes/font_size = 12
-theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="AnglingIcon" type="TextureRect" parent="SkillsPanel/Angling" unique_id=550535233]
-visible = false
-offset_left = 1059.0
-offset_top = 636.0
-offset_right = 1119.0
-offset_bottom = 696.0
-tooltip_text = "Angling"
-texture = ExtResource("9_cfpjy")
-expand_mode = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="XPLabel" type="Label" parent="SkillsPanel/Angling" unique_id=666928137]
-visible = false
-offset_left = 1053.0
-offset_top = 692.0
-offset_right = 1123.0
-offset_bottom = 715.0
 metadata/_edit_use_anchors_ = true
 
 [node name="Heatworking" type="Node" parent="SkillsPanel" unique_id=1297237049]
@@ -672,10 +684,10 @@ offset_bottom = 697.0
 show_percentage = false
 
 [node name="StaminaBar" type="ProgressBar" parent="." unique_id=18294515 groups=["stamina_bar"]]
-offset_left = 520.0
-offset_top = 709.0
-offset_right = 747.0
-offset_bottom = 717.0
+offset_left = 553.0
+offset_top = 6.0
+offset_right = 780.0
+offset_bottom = 14.0
 theme_override_styles/background = SubResource("StyleBoxFlat_4rgu2")
 theme_override_styles/fill = SubResource("StyleBoxFlat_sv26c")
 max_value = 5.0

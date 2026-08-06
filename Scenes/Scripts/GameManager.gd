@@ -17,6 +17,7 @@ signal inventory_changed
 signal barkbreaking_changed
 signal rockpunching_changed
 signal footwork_changed
+signal fishsnatching_changed
 signal xp_gained(amount, skill_name)
 
 #=================================================
@@ -35,6 +36,8 @@ var footwork_level := 1
 var footwork_xp := 0
 var footwork_steps := 0
 
+var fishsnatching_level := 1
+var fishsnatching_xp := 0
 #=================================================
 # PLAYER DATA
 #=================================================
@@ -224,23 +227,36 @@ func process_skill_xp(skill_name:String, xp_amount:int):
 
 
 			footwork_changed.emit()
-#=================================================
-# INVENTORY FUNCTIONS
-#=================================================
+			
+		"Fishsnatching":
 
-func add_item(item_name:String, amount:int):
+			fishsnatching_xp += xp_amount
 
-	if inventory.has(item_name):
-		inventory[item_name] += amount
-	else:
-		inventory[item_name] = amount
+			while fishsnatching_xp >= get_required_xp(fishsnatching_level) and fishsnatching_level < MAX_SKILL_LEVEL:
 
-	MessageManager.loot_message(
-		item_name,
-		amount
-	)
+				fishsnatching_xp -= get_required_xp(fishsnatching_level)
+				fishsnatching_level += 1
 
-	inventory_changed.emit()
+				MessageManager.level_up_message(
+					"Fishsnatching",
+					fishsnatching_level
+				)
+				match fishsnatching_level:
+					5:
+						AchievementManager.unlock_if_locked("FISHSNATCHING_5")
+					10:
+						AchievementManager.unlock_if_locked("FISHSNATCHING_10")
+					15:
+						AchievementManager.unlock_if_locked("FISHSNATCHING_15")
+					20:
+						AchievementManager.unlock_if_locked("FISHSNATCHING_20")
+					25:
+						AchievementManager.unlock_if_locked("FISHSNATCHING_25")
+			if fishsnatching_level == MAX_SKILL_LEVEL:
+
+				reached_max_level("Fishsnatching")
+
+			fishsnatching_changed.emit()
 
 
 
@@ -425,6 +441,17 @@ func add_footwork_xp(amount):
 		amount
 	)
 
+func add_fishsnatching_xp(amount):
+
+	xp_gained.emit(
+		amount,
+		"Fishsnatching"
+	)
+
+	process_skill_xp(
+		"Fishsnatching",
+		amount
+	)
 #=================================================
 # AXE PROGRESSION
 #=================================================
@@ -487,7 +514,8 @@ func save_game():
 			"footwork_xp": footwork_xp,
 			"footwork_steps": footwork_steps,
 
-
+			"fishsnatching_level": fishsnatching_level,
+			"fishsnatching_xp": fishsnatching_xp,
 
 
 		},
@@ -570,6 +598,8 @@ func load_game():
 	footwork_xp = skills["footwork_xp"]
 	footwork_steps = skills["footwork_steps"]
 
+	fishsnatching_level = skills.get("fishsnatching_level", 1)
+	fishsnatching_xp = skills.get("fishsnatching_xp", 0)
 
 	# Stamina
 
