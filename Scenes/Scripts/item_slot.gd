@@ -11,13 +11,13 @@ func setup_item(name, quantity, texture):
 	var quantity_label = $Quantity
 
 	item_name = name
-	amount = quantity
+	amount = int(quantity)
 
 	item_icon.texture = texture
-	quantity_label.text = str(amount)
 
-	tooltip_text = item_name + "\nQuantity: " + str(amount)
 	if amount > 1:
 		quantity_label.text = str(amount)
 	else:
 		quantity_label.text = ""
+
+	tooltip_text = item_name + "\nQuantity: " + str(amount)
