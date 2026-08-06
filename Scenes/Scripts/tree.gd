@@ -106,6 +106,7 @@ func start_chopping():
 	$InteractionLabel.visible = false
 	$ChopProgress.visible = true
 	$ChopProgress.value = 0
+	$GPUParticles2D.emitting = true
 
 	$ChopTimer.start(get_chop_time())
 
@@ -154,10 +155,12 @@ func shake_tree():
 			-shake_amount,
 			shake_amount
 		)
+		
 
 	else:
 
 		$TreeModified.position = original_position
+		
 
 
 
@@ -221,5 +224,6 @@ func cancel_chopping():
 
 	$ChopProgress.value = 0
 	$ChopProgress.visible = false
+	$GPUParticles2D.emitting = false
 
 	$InteractionLabel.visible = player_near
