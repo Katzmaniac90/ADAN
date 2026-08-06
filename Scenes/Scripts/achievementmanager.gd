@@ -200,7 +200,6 @@ var achievements = {
 }
 
 
-
 func unlock(id:String):
 
 	if not achievements.has(id):
@@ -248,3 +247,14 @@ func check_all_achievements():
 			return
 
 	unlock_if_locked("ALL_ACHIEVEMENTS")
+
+func save_data() -> Dictionary:
+	return achievements
+
+
+func load_data(data: Dictionary):
+
+	for id in data:
+
+		if achievements.has(id):
+			achievements[id]["unlocked"] = data[id]["unlocked"]

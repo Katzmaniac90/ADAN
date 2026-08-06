@@ -509,16 +509,13 @@ func save_game():
 		"inventory": inventory,
 		"current_axe": current_axe,
 
-
 		# Skills
 		"skills": {
-
 			"barkbreaking_level": barkbreaking_level,
 			"barkbreaking_xp": barkbreaking_xp,
 
 			"rockpunching_level": rockpunching_level,
 			"rockpunching_xp": rockpunching_xp,
-
 
 			"footwork_level": footwork_level,
 			"footwork_xp": footwork_xp,
@@ -526,34 +523,28 @@ func save_game():
 
 			"fishsnatching_level": fishsnatching_level,
 			"fishsnatching_xp": fishsnatching_xp,
-
-
 		},
-
 
 		# Stamina
 		"max_stamina": max_stamina,
-
 
 		# Player
 		"player_position": {
 			"x": player_position.x,
 			"y": player_position.y
-		}
-	}
+		},
 
+		# Achievements
+		"achievements": AchievementManager.save_data()
+	}
 
 	var file = FileAccess.open(
 		SAVE_PATH,
 		FileAccess.WRITE
 	)
 
-	file.store_string(
-		JSON.stringify(save_data)
-	)
-
+	file.store_string(JSON.stringify(save_data))
 	file.close()
-
 
 	print("Game Saved!")
 
@@ -614,9 +605,11 @@ func load_game():
 	# Stamina
 
 	max_stamina = data["max_stamina"]
+	# Achievements
+	if data.has("achievements"):
+		AchievementManager.load_data(data["achievements"])
 
-
-	print("Game Loaded!")
+		print("Game Loaded!")
 
 func _notification(what):
 
