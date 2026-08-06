@@ -109,7 +109,6 @@ var achievements = {
 	},
 
 
-
 	#=================================================
 	# FOOTWORK
 	#=================================================
@@ -149,8 +148,45 @@ var achievements = {
 		"description": "Reach Footwork Level 25",
 		"unlocked": false
 	},
+	
+	#=================================================
+	# FOOTWORK
+	#=================================================
+	"FIRST_FISH": {
+		"name": "First Catch",
+		"description": "Snatch your first fish",
+		"unlocked": false
+	},
 
+	"FISHSNATCHING_5": {
+		"name": "River Rookie",
+		"description": "Reach Fishsnatching Level 5",
+		"unlocked": false
+	},
 
+	"FISHSNATCHING_10": {
+		"name": "Lake Hunter",
+		"description": "Reach Fishsnatching Level 10",
+		"unlocked": false
+	},
+
+	"FISHSNATCHING_15": {
+		"name": "Master Angler",
+		"description": "Reach Fishsnatching Level 15",
+		"unlocked": false
+	},
+
+	"FISHSNATCHING_20": {
+		"name": "Sea Stalker",
+		"description": "Reach Fishsnatching Level 20",
+		"unlocked": false
+	},
+
+	"FISHSNATCHING_25": {
+		"name": "Legend of the Deep",
+		"description": "Reach Fishsnatching Level 25",
+		"unlocked": false
+	},
 
 	#=================================================
 	# COMPLETION
