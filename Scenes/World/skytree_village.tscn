@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://n3sqhc3433es"]
 
 [ext_resource type="TileSet" uid="uid://bmr861guh1woo" path="res://TileSet/groundLayer.tres" id="1_ofure"]
+[ext_resource type="Script" uid="uid://ca3xmqciyqdkh" path="res://Scenes/World/skytree_village.gd" id="1_ondt5"]
 [ext_resource type="TileSet" uid="uid://clt4bbxr5tc2v" path="res://TileSet/decor_8x8.tres" id="2_0hpx3"]
 [ext_resource type="TileSet" uid="uid://br6x5w4eg5uum" path="res://TileSet/waterLayer.tres" id="3_q7mjt"]
 [ext_resource type="TileSet" uid="uid://7aibtft27ajk" path="res://TileSet/waterDecor.tres" id="4_f5fi0"]
@@ -46,6 +47,7 @@ size = Vector2(16, 304)
 [node name="SkytreeVillage" type="Node2D" unique_id=1888720771]
 y_sort_enabled = true
 texture_filter = 1
+script = ExtResource("1_ondt5")
 
 [node name="GroundLayer" type="TileMapLayer" parent="." unique_id=1224079573]
 texture_filter = 1

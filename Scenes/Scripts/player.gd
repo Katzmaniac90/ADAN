@@ -21,6 +21,8 @@ var is_sprinting := false
 
 var last_position: Vector2
 
+@onready var camera: Camera2D = $Camera2D
+
 
 #=========================
 # UI
@@ -214,3 +216,10 @@ func show_floating_xp(amount:int, skill_name:String):
 	floating.set_text(
 		"+" + str(amount) + " " + skill_name + " XP"
 	)
+
+
+func set_camera_limits(left: int, top: int, right: int, bottom: int):
+	camera.limit_left = left
+	camera.limit_top = top
+	camera.limit_right = right
+	camera.limit_bottom = bottom
