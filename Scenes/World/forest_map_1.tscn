@@ -31,8 +31,6 @@
 [ext_resource type="PackedScene" uid="uid://cufrklsiro65x" path="res://Scenes/NPCs/Forest1_NPC4.tscn" id="26_46f6s"]
 [ext_resource type="PackedScene" uid="uid://bf1esea0mf3pf" path="res://Scenes/NPCs/Forest1_NPC5.tscn" id="27_qnspf"]
 [ext_resource type="PackedScene" uid="uid://bq58ah507tic" path="res://Scenes/NPCs/rabbit.tscn" id="29_um4sv"]
-[ext_resource type="PackedScene" uid="uid://cjk6wkbjvi2gl" path="res://Scenes/Fish/fishSpot.tscn" id="32_iffg6"]
-[ext_resource type="PackedScene" uid="uid://b8ln147m4xaq4" path="res://Scenes/Fish/fishSpot2.tscn" id="33_6l7xl"]
 
 [node name="ForestMap1" type="Node2D" unique_id=782872810]
 y_sort_enabled = true
@@ -309,9 +307,3 @@ position = Vector2(1264, 96)
 
 [node name="Rock3" parent="rock" unique_id=697637087 instance=ExtResource("13_a0upg")]
 position = Vector2(440, 112)
-
-[node name="FishSpot" parent="." unique_id=1400355119 instance=ExtResource("32_iffg6")]
-position = Vector2(1088, 424)
-
-[node name="FishSpot2" parent="." unique_id=72345789 instance=ExtResource("33_6l7xl")]
-position = Vector2(1088, 392)
