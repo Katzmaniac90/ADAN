@@ -258,7 +258,16 @@ func process_skill_xp(skill_name:String, xp_amount:int):
 
 			fishsnatching_changed.emit()
 
+func add_item(item_name:String, amount:int):
 
+	if inventory.has(item_name):
+		inventory[item_name] += amount
+	else:
+		inventory[item_name] = amount
+
+	MessageManager.loot_message(item_name, amount)
+
+	inventory_changed.emit()
 
 func get_item_count(item_name:String) -> int:
 
@@ -483,6 +492,7 @@ func xp_message(amount:int, skill_name:String):
 	MessageManager.send_message(
 		"+" + str(amount) + " " + skill_name + " XP"
 	)
+
 
 #=================================================
 # SAVE SYSTEM
