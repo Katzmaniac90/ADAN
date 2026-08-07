@@ -1,7 +1,71 @@
 [gd_scene format=3 uid="uid://dej7fywpq3bbx"]
 
 [ext_resource type="Script" uid="uid://h1xd670sd8i3" path="res://Bubble.gd" id="1_2ykiy"]
-[ext_resource type="Texture2D" uid="uid://dw8xv5lpagjws" path="res://Scenes/Fish/fish3.png" id="2_g2hud"]
+[ext_resource type="Texture2D" uid="uid://bs4cd2r83andq" path="res://Scenes/Fish/bubble-sheet-1.png" id="2_xlgdi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fu81w"]
+atlas = ExtResource("2_xlgdi")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_76i8y"]
+atlas = ExtResource("2_xlgdi")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eefbn"]
+atlas = ExtResource("2_xlgdi")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m8xrs"]
+atlas = ExtResource("2_xlgdi")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4hjfs"]
+atlas = ExtResource("2_xlgdi")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k00wr"]
+atlas = ExtResource("2_xlgdi")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4aaqf"]
+atlas = ExtResource("2_xlgdi")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6xbx"]
+atlas = ExtResource("2_xlgdi")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sd12v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fu81w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_76i8y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eefbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m8xrs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4hjfs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k00wr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4aaqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6xbx")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.1
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_832ja"]
 size = Vector2(37.500015, 27.500015)
@@ -30,11 +94,34 @@ min_respawn_time = 30.0
 max_respawn_time = 60.0
 respawn_radius = 0.0
 
-[node name="Bubble" type="Sprite2D" parent="." unique_id=1856390075]
+[node name="Bubble" type="AnimatedSprite2D" parent="." unique_id=612862930]
 z_index = 1
 texture_filter = 1
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_g2hud")
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_sd12v")
+autoplay = "default"
+frame = 4
+frame_progress = 0.9809755
+
+[node name="Bubble2" type="AnimatedSprite2D" parent="." unique_id=938454153]
+z_index = 1
+texture_filter = 1
+position = Vector2(5, 5)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_sd12v")
+autoplay = "default"
+frame = 1
+frame_progress = 0.09975038
+
+[node name="Bubble3" type="AnimatedSprite2D" parent="." unique_id=1649752707]
+z_index = 1
+texture_filter = 1
+position = Vector2(-6, 6)
+scale = Vector2(1.75, 1.75)
+sprite_frames = SubResource("SpriteFrames_sd12v")
+autoplay = "default"
+frame = 5
+frame_progress = 0.8319098
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=583354737]
 position = Vector2(1.2499998, 1.2499998)
@@ -45,7 +132,6 @@ debug_color = Color(0.34128827, 0.5011388, 0.9447065, 0.5254902)
 [node name="Area2D" type="Area2D" parent="." unique_id=380008610]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=417175257]
-position = Vector2(-5.9604636e-06, 2.3841853e-06)
 scale = Vector2(0.99999976, 0.99999976)
 shape = SubResource("RectangleShape2D_kc0gn")
 
