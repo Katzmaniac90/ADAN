@@ -4,7 +4,7 @@ extends StaticBody2D
 
 var player_near = false
 var chopping = false
-var shake_amount = 3.0
+var shake_amount = 1.0
 var original_position: Vector2
 var spawn_position: Vector2
 
