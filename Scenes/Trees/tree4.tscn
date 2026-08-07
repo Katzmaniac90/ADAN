@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://djewqdd4jj3j1" path="res://Scenes/Scripts/tree.gd" id="1_oq1sf"]
 [ext_resource type="Texture2D" uid="uid://xe3bijci401g" path="res://trees/PNG/Assets_separately/Trees/Christmas_tree2.png" id="2_ikvf3"]
+[ext_resource type="Texture2D" uid="uid://dxil42rheenak" path="res://trees/PNG/Assets_separately/Leaves/leaf4.png" id="3_qql47"]
+[ext_resource type="Material" uid="uid://dbd0kn8eg18jl" path="res://Scenes/Trees/particle_process_trees.tres" id="4_v1lgh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wla72"]
 size = Vector2(32, 23)
@@ -49,6 +51,16 @@ texture = ExtResource("2_ikvf3")
 position = Vector2(-1, 20.5)
 shape = SubResource("RectangleShape2D_wla72")
 debug_color = Color(0.34128827, 0.5011388, 0.9447065, 0.5254902)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=2128292365]
+z_index = 200
+emitting = false
+amount = 30
+texture = ExtResource("3_qql47")
+lifetime = 5.0
+one_shot = true
+randomness = 0.5
+process_material = ExtResource("4_v1lgh")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=860053328]
 

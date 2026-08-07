@@ -3,32 +3,10 @@
 [ext_resource type="Script" uid="uid://djewqdd4jj3j1" path="res://Scenes/Scripts/tree.gd" id="1_m636k"]
 [ext_resource type="Texture2D" uid="uid://c0qqiel6tf2ej" path="res://trees/PNG/Assets_separately/Trees/Tree1.png" id="2_m636k"]
 [ext_resource type="Texture2D" uid="uid://b8xa63vdqao5r" path="res://trees/PNG/Assets_separately/Leaves/leaf.png" id="3_pfen2"]
+[ext_resource type="Material" uid="uid://dbd0kn8eg18jl" path="res://Scenes/Trees/particle_process_trees.tres" id="4_nm08u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wla72"]
 size = Vector2(32, 23)
-
-[sub_resource type="Curve" id="Curve_pfen2"]
-_limits = [-360.0, 360.0, 0.0, 1.0]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_pfen2"]
-curve = SubResource("Curve_pfen2")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_sd12v"]
-lifetime_randomness = 1.0
-particle_flag_disable_z = true
-angle_min = 180.00002
-angle_max = 180.00002
-initial_velocity_min = 20.0
-initial_velocity_max = 20.0
-angular_velocity_min = 119.999985
-angular_velocity_max = 119.999985
-angular_velocity_curve = SubResource("CurveTexture_pfen2")
-gravity = Vector3(0, 25, 0)
-damping_min = 5.0
-damping_max = 5.0
-scale_min = 0.79999995
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22gus"]
 size = Vector2(36, 39)
@@ -70,12 +48,13 @@ debug_color = Color(0.34128827, 0.5011388, 0.9447065, 0.5254902)
 [node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=1606189190]
 z_index = 200
 emitting = false
-amount = 25
+amount = 30
 texture = ExtResource("3_pfen2")
+lifetime = 5.0
 one_shot = true
-explosiveness = 1.0
-randomness = 1.0
-process_material = SubResource("ParticleProcessMaterial_sd12v")
+randomness = 0.5
+trail_lifetime = 0.5
+process_material = ExtResource("4_nm08u")
 
 [node name="Area2D" type="Area2D" parent="." unique_id=860053328]
 
