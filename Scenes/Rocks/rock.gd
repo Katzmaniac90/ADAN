@@ -3,7 +3,8 @@ extends StaticBody2D
 
 var player_near = false
 var punching = false
-
+var shake_amount := 1.0
+var original_position: Vector2
 
 @export var min_respawn_time: float = 4.0
 @export var max_respawn_time: float = 8.0
@@ -18,6 +19,8 @@ var punching = false
 
 
 func _ready():
+
+	original_position = $RockModified.position
 
 	$Area2D.body_entered.connect(_on_body_entered)
 	$Area2D.body_exited.connect(_on_body_exited)
@@ -63,6 +66,8 @@ func _process(delta):
 			return
 
 		$PunchProgress.value += (100.0 / punch_time) * delta
+		
+		shake_rock()
 
 		if Input.is_action_just_pressed("interact"):
 
@@ -155,3 +160,18 @@ func cancel_punching():
 	$PunchProgress.visible = false
 
 	$InteractionLabel.visible = player_near
+func shake_rock():
+
+	if punching:
+
+		$RockModified.position.x = (
+			original_position.x
+			+ randf_range(
+				-shake_amount,
+				shake_amount
+			)
+		)
+
+	else:
+
+		$RockModified.position = original_position

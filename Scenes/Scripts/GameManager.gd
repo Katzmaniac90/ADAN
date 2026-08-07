@@ -170,6 +170,17 @@ func process_skill_xp(skill_name:String, xp_amount:int):
 					barkbreaking_level
 				)
 
+			match barkbreaking_level:
+				5:
+					AchievementManager.unlock_if_locked("BARKBREAKING_5")
+				10:
+					AchievementManager.unlock_if_locked("BARKBREAKING_10")
+				15:
+					AchievementManager.unlock_if_locked("BARKBREAKING_15")
+				20:
+					AchievementManager.unlock_if_locked("BARKBREAKING_20")
+				25:
+					AchievementManager.unlock_if_locked("BARKBREAKING_25")
 
 			if barkbreaking_level == MAX_SKILL_LEVEL:
 
@@ -194,7 +205,17 @@ func process_skill_xp(skill_name:String, xp_amount:int):
 					rockpunching_level
 				)
 
-
+			match rockpunching_level:
+				5:
+					AchievementManager.unlock_if_locked("ROCKPUNCHING_5")
+				10:
+					AchievementManager.unlock_if_locked("ROCKPUNCHING_10")
+				15:
+					AchievementManager.unlock_if_locked("ROCKPUNCHING_15")
+				20:
+					AchievementManager.unlock_if_locked("ROCKPUNCHING_20")
+				25:
+					AchievementManager.unlock_if_locked("ROCKPUNCHING_25")
 			if rockpunching_level == MAX_SKILL_LEVEL:
 
 				reached_max_level("Rockpunching")
@@ -220,7 +241,17 @@ func process_skill_xp(skill_name:String, xp_amount:int):
 					footwork_level
 				)
 
-
+			match footwork_level:
+				5:
+					AchievementManager.unlock_if_locked("FOOTWORK_5")
+				10:
+					AchievementManager.unlock_if_locked("FOOTWORK_10")
+				15:
+					AchievementManager.unlock_if_locked("FOOTWORK_15")
+				20:
+					AchievementManager.unlock_if_locked("FOOTWORK_20")
+				25:
+					AchievementManager.unlock_if_locked("FOOTWORK_25")
 			if footwork_level == MAX_SKILL_LEVEL:
 
 				reached_max_level("Footwork")
@@ -272,6 +303,71 @@ func add_item(item_name:String, amount:int):
 func get_item_count(item_name:String) -> int:
 
 	return inventory.get(item_name,0)
+	
+func check_skill_achievements():
+
+	if barkbreaking_level >= 5:
+		AchievementManager.unlock_if_locked("BARKBREAKING_5")
+
+	if barkbreaking_level >= 10:
+		AchievementManager.unlock_if_locked("BARKBREAKING_10")
+
+	if barkbreaking_level >= 15:
+		AchievementManager.unlock_if_locked("BARKBREAKING_15")
+
+	if barkbreaking_level >= 20:
+		AchievementManager.unlock_if_locked("BARKBREAKING_20")
+
+	if barkbreaking_level >= 25:
+		AchievementManager.unlock_if_locked("BARKBREAKING_25")
+
+
+	if rockpunching_level >= 5:
+		AchievementManager.unlock_if_locked("ROCKPUNCHING_5")
+
+	if rockpunching_level >= 10:
+		AchievementManager.unlock_if_locked("ROCKPUNCHING_10")
+
+	if rockpunching_level >= 15:
+		AchievementManager.unlock_if_locked("ROCKPUNCHING_15")
+
+	if rockpunching_level >= 20:
+		AchievementManager.unlock_if_locked("ROCKPUNCHING_20")
+
+	if rockpunching_level >= 25:
+		AchievementManager.unlock_if_locked("ROCKPUNCHING_25")
+
+
+	if footwork_level >= 5:
+		AchievementManager.unlock_if_locked("FOOTWORK_5")
+
+	if footwork_level >= 10:
+		AchievementManager.unlock_if_locked("FOOTWORK_10")
+
+	if footwork_level >= 15:
+		AchievementManager.unlock_if_locked("FOOTWORK_15")
+
+	if footwork_level >= 20:
+		AchievementManager.unlock_if_locked("FOOTWORK_20")
+
+	if footwork_level >= 25:
+		AchievementManager.unlock_if_locked("FOOTWORK_25")
+
+
+	if fishsnatching_level >= 5:
+		AchievementManager.unlock_if_locked("FISHSNATCHING_5")
+
+	if fishsnatching_level >= 10:
+		AchievementManager.unlock_if_locked("FISHSNATCHING_10")
+
+	if fishsnatching_level >= 15:
+		AchievementManager.unlock_if_locked("FISHSNATCHING_15")
+
+	if fishsnatching_level >= 20:
+		AchievementManager.unlock_if_locked("FISHSNATCHING_20")
+
+	if fishsnatching_level >= 25:
+		AchievementManager.unlock_if_locked("FISHSNATCHING_25")
 
 
 #=================================================
@@ -608,8 +704,11 @@ func load_game():
 	# Achievements
 	if data.has("achievements"):
 		AchievementManager.load_data(data["achievements"])
+	
+	# Make sure achievements match current skill levels
 
-		print("Game Loaded!")
+	check_skill_achievements()
+	print("Game Loaded!")
 
 func _notification(what):
 
@@ -622,3 +721,4 @@ func _notification(what):
 func _ready():
 
 	GameManager.load_game()
+	

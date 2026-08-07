@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://dej7fywpq3bbx"]
+
+[ext_resource type="Script" uid="uid://h1xd670sd8i3" path="res://Bubble.gd" id="1_2ykiy"]
+[ext_resource type="Texture2D" uid="uid://dw8xv5lpagjws" path="res://Scenes/Fish/fish3.png" id="2_g2hud"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_832ja"]
+size = Vector2(37.500015, 27.500015)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kc0gn"]
+size = Vector2(105.000015, 100.000015)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u8wse"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2togt"]
+bg_color = Color(0.11772732, 0.4863708, 0.7360337, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Bubble" type="StaticBody2D" unique_id=1471351366]
+scale = Vector2(0.4, 0.4)
+script = ExtResource("1_2ykiy")
+min_respawn_time = 30.0
+max_respawn_time = 60.0
+respawn_radius = 0.0
+
+[node name="Bubble" type="Sprite2D" parent="." unique_id=1856390075]
+z_index = 1
+texture_filter = 1
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_g2hud")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=583354737]
+position = Vector2(1.2499998, 1.2499998)
+scale = Vector2(0.99999946, 0.99999946)
+shape = SubResource("RectangleShape2D_832ja")
+debug_color = Color(0.34128827, 0.5011388, 0.9447065, 0.5254902)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=380008610]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=417175257]
+position = Vector2(-5.9604636e-06, 2.3841853e-06)
+scale = Vector2(0.99999976, 0.99999976)
+shape = SubResource("RectangleShape2D_kc0gn")
+
+[node name="InteractionLabel" type="Label" parent="." unique_id=1876167556]
+visible = false
+offset_left = -52.0
+offset_top = -46.0
+offset_right = 51.0
+offset_bottom = -23.0
+theme_override_colors/font_color = Color(0.9638633, 0.76686096, 0.6448714, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "[E] Snatch Fish"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SnatchProgress" type="ProgressBar" parent="." unique_id=2010909467]
+visible = false
+offset_left = -12.0
+offset_top = -38.0
+offset_right = 12.0
+offset_bottom = -32.0
+theme_override_styles/background = SubResource("StyleBoxFlat_u8wse")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2togt")
+show_percentage = false
+
+[node name="SnatchTimer" type="Timer" parent="." unique_id=383417789]
+wait_time = 3.0
+one_shot = true
+
+[node name="RespawnTimer" type="Timer" parent="." unique_id=189337588]
+wait_time = 5.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1014456335]
