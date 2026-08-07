@@ -1,38 +1,38 @@
-[gd_scene format=3 uid="uid://dej7fywpq3bbx"]
+[gd_scene format=3 uid="uid://dw2e1hqoskjw8"]
 
-[ext_resource type="Script" uid="uid://h1xd670sd8i3" path="res://Bubble.gd" id="1_2ykiy"]
-[ext_resource type="Texture2D" uid="uid://bs4cd2r83andq" path="res://Scenes/Fish/bubble-sheet-1.png" id="2_xlgdi"]
+[ext_resource type="Script" uid="uid://h1xd670sd8i3" path="res://Bubble.gd" id="1_naxo8"]
+[ext_resource type="Texture2D" uid="uid://bs4cd2r83andq" path="res://Scenes/Fish/bubble-sheet-1.png" id="2_kr6ll"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fu81w"]
-atlas = ExtResource("2_xlgdi")
+atlas = ExtResource("2_kr6ll")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_76i8y"]
-atlas = ExtResource("2_xlgdi")
+atlas = ExtResource("2_kr6ll")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eefbn"]
-atlas = ExtResource("2_xlgdi")
+atlas = ExtResource("2_kr6ll")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m8xrs"]
-atlas = ExtResource("2_xlgdi")
+atlas = ExtResource("2_kr6ll")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4hjfs"]
-atlas = ExtResource("2_xlgdi")
+atlas = ExtResource("2_kr6ll")
 region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k00wr"]
-atlas = ExtResource("2_xlgdi")
+atlas = ExtResource("2_kr6ll")
 region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4aaqf"]
-atlas = ExtResource("2_xlgdi")
+atlas = ExtResource("2_kr6ll")
 region = Rect2(96, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a6xbx"]
-atlas = ExtResource("2_xlgdi")
+atlas = ExtResource("2_kr6ll")
 region = Rect2(112, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sd12v"]
@@ -89,11 +89,12 @@ corner_radius_bottom_left = 3
 
 [node name="Bubble" type="StaticBody2D" unique_id=1471351366]
 scale = Vector2(0.4, 0.4)
-script = ExtResource("1_2ykiy")
-min_respawn_time = 30.0
-max_respawn_time = 60.0
+script = ExtResource("1_naxo8")
+min_respawn_time = 50.0
+max_respawn_time = 100.0
 respawn_radius = 0.0
 interaction_text = "[E] Snatch Fish"
+fishsnatching_xp = 100
 
 [node name="Bubble" type="AnimatedSprite2D" parent="." unique_id=612862930]
 z_index = 1

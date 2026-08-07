@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://bklntpi1bp4vb"]
+
+[ext_resource type="Script" uid="uid://djewqdd4jj3j1" path="res://Scenes/Scripts/tree.gd" id="1_5285b"]
+[ext_resource type="Texture2D" uid="uid://bvsnrof4efi0v" path="res://trees/PNG/Assets_separately/Trees/Luminous_tree3.png" id="2_5285b"]
+[ext_resource type="Texture2D" uid="uid://dxil42rheenak" path="res://trees/PNG/Assets_separately/Leaves/leaf4.png" id="3_3tdig"]
+[ext_resource type="Material" uid="uid://dbd0kn8eg18jl" path="res://Scenes/Trees/particle_process_trees.tres" id="4_0npkh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wla72"]
+size = Vector2(32, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22gus"]
+size = Vector2(36, 39)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq0y2"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5hao"]
+bg_color = Color(0.11772732, 0.4863708, 0.7360337, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Tree" type="StaticBody2D" unique_id=2000084765]
+z_index = 100
+texture_filter = 1
+script = ExtResource("1_5285b")
+min_respawn_time = 80.0
+max_respawn_time = 160.0
+respawn_radius = 40.0
+interaction_height = -60.0
+required_axe_tier = 4
+required_barkbreaking_level = 20
+barkbreaking_xp = 400
+tree_difficulty = 5
+log_name = "Tree5 Log"
+interaction_text = "[E] Chop Tree"
+
+[node name="TreeModified" type="Sprite2D" parent="." unique_id=573872850]
+z_index = 1
+texture_filter = 1
+position = Vector2(-2, -2.9999995)
+scale = Vector2(1.1421876, 1.2359375)
+texture = ExtResource("2_5285b")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141913667]
+position = Vector2(-1, 20.5)
+shape = SubResource("RectangleShape2D_wla72")
+debug_color = Color(0.34128827, 0.5011388, 0.9447065, 0.5254902)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=2128292365]
+z_index = 200
+emitting = false
+amount = 30
+texture = ExtResource("3_3tdig")
+lifetime = 5.0
+one_shot = true
+randomness = 0.5
+process_material = ExtResource("4_0npkh")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=860053328]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=552153863]
+position = Vector2(-1, 14.5)
+shape = SubResource("RectangleShape2D_22gus")
+
+[node name="InteractionLabel" type="Label" parent="." unique_id=278786865]
+visible = false
+offset_left = -51.0
+offset_top = -58.0
+offset_right = 52.0
+offset_bottom = -35.0
+theme_override_colors/font_color = Color(0.9280827, 0.6357289, 0.44821018, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 10
+text = "[E] Chop Tree"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ChopTimer" type="Timer" parent="." unique_id=1715468972]
+wait_time = 3.0
+one_shot = true
+
+[node name="ChopProgress" type="ProgressBar" parent="." unique_id=1614617401]
+visible = false
+offset_left = -12.0
+offset_top = -38.0
+offset_right = 12.0
+offset_bottom = -32.0
+theme_override_styles/background = SubResource("StyleBoxFlat_jq0y2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_y5hao")
+show_percentage = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1024194447]
+
+[node name="RespawnTimer" type="Timer" parent="." unique_id=354760686]
+wait_time = 5.0
+one_shot = true
