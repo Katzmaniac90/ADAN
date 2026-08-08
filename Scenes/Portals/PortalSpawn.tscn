@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cmfmbka7ruih7"]
+
+[ext_resource type="Script" uid="uid://b5lxa7umf3784" path="res://Scenes/Portals/portal_spawn.gd" id="1_fs0hi"]
+
+[node name="PortalSpawn" type="Node2D" unique_id=1962457138]
+script = ExtResource("1_fs0hi")

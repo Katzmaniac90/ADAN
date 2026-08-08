@@ -50,7 +50,7 @@ var player_position := Vector2.ZERO
 # PORTAL UNLOCKS
 #=================================================
 
-signal portal_unlocked
+signal portal_unlocked(portal_id)
 
 var unlocked_portals: Dictionary = {}
 
@@ -59,11 +59,12 @@ func is_portal_unlocked(portal_id: String) -> bool:
 
 	return unlocked_portals.get(portal_id, false)
 
+
 func unlock_portal(portal_id: String) -> void:
 
 	unlocked_portals[portal_id] = true
 
-	portal_unlocked.emit()
+	portal_unlocked.emit(portal_id)
 	
 
 #=================================================

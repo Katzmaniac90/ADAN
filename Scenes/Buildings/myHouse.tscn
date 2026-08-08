@@ -5,6 +5,7 @@
 [ext_resource type="TileSet" uid="uid://c1h01xwhckm4f" path="res://TileSet/objects.tres" id="2_pxqje"]
 [ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="3_l6xnb"]
 [ext_resource type="PackedScene" uid="uid://cl083f38u8edk" path="res://Scenes/Doors/myHouseIn.tscn" id="4_s72mp"]
+[ext_resource type="PackedScene" uid="uid://cmfmbka7ruih7" path="res://Scenes/Portals/PortalSpawn.tscn" id="5_l6xnb"]
 [ext_resource type="PackedScene" uid="uid://c1tpmfi2llge8" path="res://Scenes/NPCs/houseJournal.tscn" id="5_sbfyk"]
 
 [node name="myHouse" type="Node2D" unique_id=1626562383]
@@ -22,12 +23,14 @@ tile_set = ExtResource("2_pxqje")
 [node name="Player" parent="." unique_id=226938582 instance=ExtResource("3_l6xnb")]
 position = Vector2(88, 64)
 
+[node name="PortalSpawn" parent="." unique_id=1962457138 instance=ExtResource("5_l6xnb")]
+z_index = 1
+position = Vector2(160, 40)
+destination_scene = "uid://n3sqhc3433es"
+destination_spawn = "HousePortal"
+
 [node name="SkytreePortal" type="Marker2D" parent="." unique_id=1526355225]
 position = Vector2(160, 64)
-
-[node name="SkytreePortalSpawn" type="Marker2D" parent="." unique_id=884603833]
-z_index = 1
-position = Vector2(160, 32)
 
 [node name="PlayerSpawnPoints" type="Node" parent="." unique_id=1938350761]
 

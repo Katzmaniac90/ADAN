@@ -1,33 +1,185 @@
 [gd_scene format=3 uid="uid://dyqjame4psa1g"]
 
 [ext_resource type="Script" uid="uid://ckgceravd7cu5" path="res://Scenes/Portals/portal.gd" id="1_wiqk2"]
-[ext_resource type="Texture2D" uid="uid://d1ne5uh3jlwt1" path="res://crystals/PNG/Assets/Green_crystal2.png" id="2_hh433"]
+[ext_resource type="Texture2D" uid="uid://bp6u3li3q2aqq" path="res://Scenes/Portals/GlowingBall Blue 22frames RPG.png" id="2_hh433"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lrga7"]
 atlas = ExtResource("2_hh433")
-region = Rect2(0, 0, 64, 64)
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61e3t"]
+atlas = ExtResource("2_hh433")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51rui"]
+atlas = ExtResource("2_hh433")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxy2a"]
+atlas = ExtResource("2_hh433")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7gjnf"]
+atlas = ExtResource("2_hh433")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1f8b4"]
+atlas = ExtResource("2_hh433")
+region = Rect2(768, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aiq5j"]
+atlas = ExtResource("2_hh433")
+region = Rect2(576, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rdgob"]
+atlas = ExtResource("2_hh433")
+region = Rect2(384, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wpcf"]
+atlas = ExtResource("2_hh433")
+region = Rect2(192, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aowwe"]
+atlas = ExtResource("2_hh433")
+region = Rect2(0, 192, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wniuo"]
+atlas = ExtResource("2_hh433")
+region = Rect2(0, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1lxun"]
+atlas = ExtResource("2_hh433")
+region = Rect2(192, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsjo6"]
+atlas = ExtResource("2_hh433")
+region = Rect2(384, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thymm"]
+atlas = ExtResource("2_hh433")
+region = Rect2(576, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ni6im"]
+atlas = ExtResource("2_hh433")
+region = Rect2(768, 384, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7sns7"]
+atlas = ExtResource("2_hh433")
+region = Rect2(768, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4a6cj"]
+atlas = ExtResource("2_hh433")
+region = Rect2(576, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q5tmh"]
+atlas = ExtResource("2_hh433")
+region = Rect2(384, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_av56x"]
+atlas = ExtResource("2_hh433")
+region = Rect2(192, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7o5nk"]
+atlas = ExtResource("2_hh433")
+region = Rect2(0, 576, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfmv1"]
+atlas = ExtResource("2_hh433")
+region = Rect2(0, 768, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dqre"]
+atlas = ExtResource("2_hh433")
+region = Rect2(192, 768, 192, 192)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sd12v"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_lrga7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61e3t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_51rui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxy2a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7gjnf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1f8b4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aiq5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rdgob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wpcf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aowwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wniuo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1lxun")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsjo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thymm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ni6im")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7sns7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4a6cj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q5tmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_av56x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7o5nk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfmv1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dqre")
 }],
 "loop": 1,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sd12v"]
-size = Vector2(29, 29)
+size = Vector2(27.25, 27.25)
 
 [node name="Portal" type="Area2D" unique_id=407737873]
 z_index = 1
+y_sort_enabled = true
 texture_filter = 1
 script = ExtResource("1_wiqk2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=226409132]
+scale = Vector2(0.2, 0.2)
 sprite_frames = SubResource("SpriteFrames_sd12v")
+autoplay = "default"
+frame = 1
+frame_progress = 0.59404844
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=822522642]
 shape = SubResource("RectangleShape2D_sd12v")
@@ -35,14 +187,16 @@ shape = SubResource("RectangleShape2D_sd12v")
 [node name="InteractLabel" type="Label" parent="." unique_id=1367746829]
 visible = false
 z_index = 200
-offset_left = -10.0
-offset_top = -34.0
-offset_right = 10.0
-offset_bottom = -11.0
+offset_left = -28.0
+offset_top = -26.0
+offset_right = 28.0
+offset_bottom = -12.0
 theme_override_colors/font_color = Color(0.9280827, 0.6357289, 0.44821018, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 4
-text = "[E]"
+theme_override_font_sizes/font_size = 10
+text = "[E] Teleport"
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
