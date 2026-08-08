@@ -96,6 +96,8 @@ respawn_radius = 0.0
 interaction_text = "[E] Snatch Fish"
 fishsnatching_xp = 50
 bubble_difficulty = 2
+required_fishsnatching_level = 5
+fish_name = "Glimmergill"
 
 [node name="Bubble" type="AnimatedSprite2D" parent="." unique_id=612862930]
 z_index = 1

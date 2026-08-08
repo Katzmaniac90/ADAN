@@ -1,7 +1,7 @@
 extends Panel
 
 
-@onready var inventory_grid = $InventoryGrid
+@onready var inventory_grid = $InventoryScroll/InventoryGrid
 
 
 var item_slot_scene = preload("res://Scenes/World/Item_Slot.tscn")
@@ -9,16 +9,26 @@ var item_slot_scene = preload("res://Scenes/World/Item_Slot.tscn")
 
 var item_textures = {
 
+	# Logs
 	"Greenwood": preload("res://Items/Logs/Tree1Log.png"),
 	"Ironbark": preload("res://Items/Logs/Tree2Log.png"),
 	"Heartwood": preload("res://Items/Logs/Tree3Log.png"),
 	"Ancientwood": preload("res://Items/Logs/Tree4Log.png"),
 	"Elderwood": preload("res://Items/Logs/Tree5Log.png"),
-	"Granite": preload("res://Items/Rocks/Rock1Rock.png"),
-	"Bloodstone": preload("res://Items/Rocks/Rock2Rock.png"),
-	"Verdantstone": preload("res://Items/Rocks/Rock3Rock.png"),
-	"Shale": preload("res://Items/Rocks/Rock4Rock.png"),
-	"Tidestone": preload("res://Items/Rocks/Rock5Rock.png")
+
+	# Rocks
+	"Granite": preload("res://Items/Rocks/Rock1rock.png"),
+	"Bloodstone": preload("res://Items/Rocks/Rock2rock.png"),
+	"Verdantstone": preload("res://Items/Rocks/Rock3rock.png"),
+	"Shale": preload("res://Items/Rocks/Rock4rock.png"),
+	"Tidestone": preload("res://Items/Rocks/Rock5rock.png"),
+
+	# Fish
+	"Bubblefin": preload("res://Items/Fish/Bubble1fish.png"),
+	"Glimmergill": preload("res://Items/Fish/Bubble2fish.png"),
+	"Moonscale": preload("res://Items/Fish/Bubble3fish.png"),
+	"Tidefang": preload("res://Items/Fish/Bubble4fish.png"),
+	"Leviathan": preload("res://Items/Fish/Bubble5fish.png")
 }
 
 

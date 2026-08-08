@@ -6,12 +6,10 @@ var player_near = false
 var chopping = false
 var shake_amount = 1.0
 var original_position: Vector2
-var spawn_position: Vector2
 
 
 @export var min_respawn_time: float = 4.0
 @export var max_respawn_time: float = 8.0
-@export var respawn_radius: float = 10.0
 @export var interaction_height: float = -50
 
 # Axe requirements
@@ -32,7 +30,6 @@ var spawn_position: Vector2
 func _ready():
 
 	original_position = $TreeModified.position
-	spawn_position = global_position
 
 	$InteractionLabel.position = Vector2(0, interaction_height)
 
@@ -122,14 +119,18 @@ func chop_tree():
 
 	# Give skill XP
 	GameManager.add_barkbreaking_xp(barkbreaking_xp)
-	
+
 	# Add log directly to inventory
 	GameManager.add_item(log_name, 1)
+
 	AchievementManager.unlock_if_locked("FIRST_TREE")
 
 	chopping = false
 
 	$ChopProgress.visible = false
+
+	# Free this tree's spawn point
+	ResourceSpawnManager.release_greenwood_spawn(self)
 
 	hide()
 
@@ -166,10 +167,15 @@ func shake_tree():
 
 func _on_respawn_timer_timeout():
 
-	global_position = spawn_position + Vector2(
-	randf_range(-respawn_radius, respawn_radius),
-	randf_range(-respawn_radius, respawn_radius)
-)
+	var spawn_point = ResourceSpawnManager.get_available_greenwood_spawn(self)
+
+	if spawn_point == null:
+
+		$RespawnTimer.start(1.0)
+
+		return
+
+	global_position = spawn_point.global_position
 
 	show()
 
