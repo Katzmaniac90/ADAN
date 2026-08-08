@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dyqjame4psa1g"]
+
+[ext_resource type="Script" uid="uid://ckgceravd7cu5" path="res://Scenes/Portals/portal.gd" id="1_wiqk2"]
+[ext_resource type="Texture2D" uid="uid://d1ne5uh3jlwt1" path="res://crystals/PNG/Assets/Green_crystal2.png" id="2_hh433"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lrga7"]
+atlas = ExtResource("2_hh433")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sd12v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lrga7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sd12v"]
+size = Vector2(29, 29)
+
+[node name="Portal" type="Area2D" unique_id=407737873]
+z_index = 1
+texture_filter = 1
+script = ExtResource("1_wiqk2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=226409132]
+sprite_frames = SubResource("SpriteFrames_sd12v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=822522642]
+shape = SubResource("RectangleShape2D_sd12v")
+
+[node name="InteractLabel" type="Label" parent="." unique_id=1367746829]
+visible = false
+z_index = 200
+offset_left = -10.0
+offset_top = -34.0
+offset_right = 10.0
+offset_bottom = -11.0
+theme_override_colors/font_color = Color(0.9280827, 0.6357289, 0.44821018, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+text = "[E]"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

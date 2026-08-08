@@ -38,11 +38,33 @@ var footwork_steps := 0
 
 var fishsnatching_level := 1
 var fishsnatching_xp := 0
+
 #=================================================
 # PLAYER DATA
 #=================================================
 
 var player_position := Vector2.ZERO
+
+
+#=================================================
+# PORTAL UNLOCKS
+#=================================================
+
+signal portal_unlocked
+
+var unlocked_portals: Dictionary = {}
+
+
+func is_portal_unlocked(portal_id: String) -> bool:
+
+	return unlocked_portals.get(portal_id, false)
+
+func unlock_portal(portal_id: String) -> void:
+
+	unlocked_portals[portal_id] = true
+
+	portal_unlocked.emit()
+	
 
 #=================================================
 # STAMINA
@@ -631,7 +653,10 @@ func save_game():
 		},
 
 		# Achievements
-		"achievements": AchievementManager.save_data()
+		"achievements": AchievementManager.save_data(),
+		
+		# Portals
+		"unlocked_portals": unlocked_portals
 	}
 
 	var file = FileAccess.open(
@@ -701,14 +726,24 @@ func load_game():
 	# Stamina
 
 	max_stamina = data["max_stamina"]
+	
 	# Achievements
 	if data.has("achievements"):
 		AchievementManager.load_data(data["achievements"])
 	
+	# Portals
+	if data.has("unlocked_portals"):
+		unlocked_portals = data["unlocked_portals"]
+	
+	
 	# Make sure achievements match current skill levels
-
 	check_skill_achievements()
 	print("Game Loaded!")
+
+
+
+
+
 
 func _notification(what):
 

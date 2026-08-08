@@ -1,8 +1,12 @@
 extends Node2D
 
+const PORTAL_SCENE = preload("res://Scenes/Portals/Portal.tscn")
+
+@onready var portal_spawn: Marker2D = $SkytreePortalSpawn
 @onready var ground: TileMapLayer = $GroundLayer
 
 func _ready():
+		
 	# Get the rectangle of tiles that are actually used
 	var used = ground.get_used_rect()
 
@@ -20,3 +24,24 @@ func _ready():
 
 	if player:
 		player.set_camera_limits(left, top, right, bottom)
+
+	#Spawning the portal if it has been unlocked	
+	GameManager.portal_unlocked.connect(spawn_portal)
+	
+	if GameManager.is_portal_unlocked("ancient_portal"):
+		spawn_portal()	
+
+
+func spawn_portal():
+
+	if has_node("AncientPortal"):
+		return
+
+	var portal = PORTAL_SCENE.instantiate()
+
+	portal.name = "AncientPortal"
+	portal.global_position = portal_spawn.global_position
+	add_child(portal)
+
+	portal.destination_scene = "res://Scenes/World/skytree_village.tscn"
+	portal.destination_spawn = "HousePortal"

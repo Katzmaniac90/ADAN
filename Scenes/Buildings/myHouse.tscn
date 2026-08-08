@@ -22,6 +22,13 @@ tile_set = ExtResource("2_pxqje")
 [node name="Player" parent="." unique_id=226938582 instance=ExtResource("3_l6xnb")]
 position = Vector2(88, 64)
 
+[node name="SkytreePortal" type="Marker2D" parent="." unique_id=1526355225]
+position = Vector2(160, 64)
+
+[node name="SkytreePortalSpawn" type="Marker2D" parent="." unique_id=884603833]
+z_index = 1
+position = Vector2(160, 32)
+
 [node name="PlayerSpawnPoints" type="Node" parent="." unique_id=1938350761]
 
 [node name="myHouseIn" type="Marker2D" parent="PlayerSpawnPoints" unique_id=1818852010]
