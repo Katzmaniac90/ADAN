@@ -1,7 +1,7 @@
 extends Panel
 
 
-@onready var inventory_grid = $InventoryGrid
+@onready var inventory_grid = $InventoryScroll/InventoryGrid
 
 
 var item_slot_scene = preload("res://Scenes/World/Item_Slot.tscn")

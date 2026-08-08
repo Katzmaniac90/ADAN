@@ -2,12 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://jquypphb3tdc" path="res://tilemap_packed.png" id="1_edkeh"]
 [ext_resource type="PackedScene" uid="uid://banexdacv6htb" path="res://Scenes/Trees/tree.tscn" id="3_wsbuy"]
+[ext_resource type="PackedScene" uid="uid://d1gyjxghia60g" path="res://Scenes/Rocks/rock.tscn" id="3_y1no5"]
 [ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="4_awbjw"]
-[ext_resource type="PackedScene" uid="uid://bw3n5vymx3k7j" path="res://Scenes/Doors/BarkBreakertoWorld.tscn" id="4_bws3g"]
+[ext_resource type="PackedScene" uid="uid://cj4e767mus4fv" path="res://Scenes/Rocks/rock2.tscn" id="4_wv6fo"]
 [ext_resource type="PackedScene" uid="uid://vp2kwubidkxn" path="res://Scenes/Signs/dialogue_ui.tscn" id="5_bws3g"]
 [ext_resource type="PackedScene" uid="uid://b06qc3ulpvb7a" path="res://Scenes/Trees/tree3.tscn" id="5_iqppt"]
+[ext_resource type="PackedScene" uid="uid://dad8gr21u8qox" path="res://Scenes/Rocks/rock3.tscn" id="5_n8nnc"]
 [ext_resource type="PackedScene" uid="uid://cfg8g5u244mmw" path="res://Scenes/Trees/tree4.tscn" id="6_edh4m"]
 [ext_resource type="PackedScene" uid="uid://d3i08ssc8a7rl" path="res://Scenes/Trees/tree2.tscn" id="6_l4js6"]
+[ext_resource type="PackedScene" uid="uid://cojhg2o8dbtr0" path="res://Scenes/Rocks/rock4.tscn" id="6_x4gl3"]
+[ext_resource type="PackedScene" uid="uid://piisa8tqq81v" path="res://Scenes/Rocks/rock5.tscn" id="7_0mi21"]
+[ext_resource type="PackedScene" uid="uid://bklntpi1bp4vb" path="res://Scenes/Trees/tree5.tscn" id="12_1tnds"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0cx3a"]
 texture = ExtResource("1_edkeh")
@@ -309,26 +314,69 @@ tile_set = SubResource("TileSet_p7lff")
 z_index = 2
 position = Vector2(87, 67)
 
+[node name="Rocks" type="Node2D" parent="." unique_id=1726432237]
+
+[node name="Rock" parent="Rocks" unique_id=2000084765 instance=ExtResource("3_y1no5")]
+position = Vector2(70, 214)
+rockpunching_xp = 0
+
+[node name="Rock2" parent="Rocks" unique_id=76731582 instance=ExtResource("4_wv6fo")]
+position = Vector2(135, 217)
+rockpunching_xp = 0
+required_rockpunching_level = 1
+rock_difficulty = 1
+
+[node name="Rock3" parent="Rocks" unique_id=1426547236 instance=ExtResource("5_n8nnc")]
+position = Vector2(206, 216)
+rockpunching_xp = 0
+required_rockpunching_level = 1
+rock_difficulty = 1
+
+[node name="Rock4" parent="Rocks" unique_id=513540608 instance=ExtResource("6_x4gl3")]
+position = Vector2(280, 215)
+rockpunching_xp = 0
+required_rockpunching_level = 1
+rock_difficulty = 1
+
+[node name="Rock5" parent="Rocks" unique_id=1177136216 instance=ExtResource("7_0mi21")]
+position = Vector2(350, 216)
+rockpunching_xp = 0
+required_rockpunching_level = 1
+rock_difficulty = 1
+
 [node name="Trees" type="Node2D" parent="." unique_id=1615783086]
 
-[node name="Tree" parent="Trees" unique_id=2000084765 instance=ExtResource("3_wsbuy")]
-position = Vector2(93, 170)
+[node name="Tree" parent="Trees" unique_id=748453727 instance=ExtResource("3_wsbuy")]
+position = Vector2(71, 122)
+barkbreaking_xp = 0
 
 [node name="Tree2" parent="Trees" unique_id=376954888 instance=ExtResource("6_l4js6")]
-position = Vector2(169, 170)
+position = Vector2(136, 120)
+required_barkbreaking_level = 1
+barkbreaking_xp = 0
+tree_difficulty = 1
 
 [node name="Tree3" parent="Trees" unique_id=655869905 instance=ExtResource("5_iqppt")]
-position = Vector2(242, 170)
+position = Vector2(204, 122)
+required_axe_tier = 1
+required_barkbreaking_level = 1
+barkbreaking_xp = 0
+tree_difficulty = 1
 
 [node name="Tree4" parent="Trees" unique_id=1156940439 instance=ExtResource("6_edh4m")]
-position = Vector2(314, 170)
+position = Vector2(276, 125)
+required_axe_tier = 1
+required_barkbreaking_level = 1
+barkbreaking_xp = 0
+tree_difficulty = 1
 
-[node name="BarkBreakertoWorld" parent="." unique_id=1895642603 instance=ExtResource("4_bws3g")]
-position = Vector2(40, 32)
+[node name="Tree5" parent="Trees" unique_id=2006939358 instance=ExtResource("12_1tnds")]
+position = Vector2(347, 123)
+required_axe_tier = 1
+required_barkbreaking_level = 1
+barkbreaking_xp = 0
+tree_difficulty = 1
 
 [node name="PlayerSpawnPoints" type="Node2D" parent="." unique_id=2116221669]
-
-[node name="BarkBreakerfromWorld" type="Marker2D" parent="PlayerSpawnPoints" unique_id=1924236416]
-position = Vector2(40, 56)
 
 [node name="DialogueUI" parent="." unique_id=353898798 instance=ExtResource("5_bws3g")]

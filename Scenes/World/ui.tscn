@@ -510,13 +510,15 @@ text = "Bag"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="InventoryGrid" type="GridContainer" parent="BagPanel" unique_id=1951881799]
+[node name="InventoryScroll" type="ScrollContainer" parent="BagPanel" unique_id=680187607]
 layout_mode = 0
-offset_left = 7.0
 offset_top = 43.0
-offset_right = 280.0
-offset_bottom = 258.0
-columns = 3
+offset_right = 288.0
+offset_bottom = 266.0
+
+[node name="InventoryGrid" type="GridContainer" parent="BagPanel/InventoryScroll" unique_id=1951881799]
+layout_mode = 2
+columns = 4
 
 [node name="CraftingPanel" type="Panel" parent="." unique_id=354939772]
 offset_left = 832.0
