@@ -1,46 +1,90 @@
 extends Node
 
 #=================================================
-# GREENWOOD SPAWNING
+# RESOURCE SETTINGS
 #=================================================
-
-var greenwood_spawn_points: Array[Marker2D] = []
-var active_greenwood: Array[Node] = []
 
 @export var greenwood_active_count: int = 7
-
-# Keeps track of which spawn point each tree currently occupies
-var occupied_greenwood_points: Dictionary = {}
-
-
-#=================================================
-# SETUP GREENWOOD
-#=================================================
-
-func setup_greenwood(points: Array[Marker2D], trees: Array[Node]):
-
-	greenwood_spawn_points = points
-	active_greenwood = trees
-
-	# Clear any old spawn assignments
-	occupied_greenwood_points.clear()
-
-	spawn_greenwood()
-
+@export var ironbark_active_count: int = 5
+@export var heartwood_active_count: int = 3
+@export var ancientwood_active_count: int = 2
+@export var elderwood_active_count: int = 1
 
 #=================================================
-# INITIAL GREENWOOD SPAWN
+# RESOURCE DATA
 #=================================================
 
-func spawn_greenwood():
+var resource_spawn_points: Dictionary = {}
+var active_resources: Dictionary = {}
 
-	occupied_greenwood_points.clear()
+#=================================================
+# SETUP RESOURCE
+#=================================================
 
-	var available_points = greenwood_spawn_points.duplicate()
+func setup_resource(
+	resource_type: String,
+	points: Array[Marker2D],
+	resources: Array[Node]
+):
+
+	resource_spawn_points[resource_type] = points
+	active_resources[resource_type] = resources
+
+	spawn_resource(resource_type)
+
+#=================================================
+# GET ACTIVE COUNT
+#=================================================
+
+func get_active_count(resource_type: String) -> int:
+
+	match resource_type:
+
+		"Greenwood":
+			return greenwood_active_count
+
+		"Ironbark":
+			return ironbark_active_count
+
+		"Heartwood":
+			return heartwood_active_count
+
+		"Ancientwood":
+			return ancientwood_active_count
+
+		"Elderwood":
+			return elderwood_active_count
+
+	return 0
+
+#=================================================
+# INITIAL SPAWN
+#=================================================
+
+func spawn_resource(resource_type: String):
+
+	if not resource_spawn_points.has(resource_type):
+		print(
+			"❌ No spawn points registered for ",
+			resource_type
+		)
+		return
+
+	if not active_resources.has(resource_type):
+		print(
+			"❌ No resources registered for ",
+			resource_type
+		)
+		return
+
+	var spawn_points = resource_spawn_points[resource_type]
+	var resources = active_resources[resource_type]
+
+	var available_points = spawn_points.duplicate()
 
 	var amount_to_spawn = min(
-		greenwood_active_count,
-		min(active_greenwood.size(), available_points.size())
+		get_active_count(resource_type),
+		min(resources.size(), available_points.size())
 	)
 
 	for i in range(amount_to_spawn):
@@ -54,95 +98,104 @@ func spawn_greenwood():
 
 		available_points.remove_at(random_index)
 
-		var tree = active_greenwood[i]
+		var resource = resources[i]
 
-		tree.global_position = spawn_point.global_position
-		tree.show()
-
-		occupied_greenwood_points[tree] = spawn_point
+		resource.global_position = spawn_point.global_position
+		resource.show()
 
 		print(
-			tree.name,
+			"🌳 ",
+			resource_type,
+			": ",
+			resource.name,
 			" spawned at ",
 			spawn_point.name
 		)
 
-
 #=================================================
-# GET AVAILABLE GREENWOOD SPAWN
+# GET AVAILABLE RESOURCE SPAWN
 #=================================================
 
-func get_available_greenwood_spawn(tree):
+func get_available_resource_spawn(
+	resource_type: String,
+	resource: Node
+):
 
-	var available_points = []
+	if not resource_spawn_points.has(resource_type):
 
-	for point in greenwood_spawn_points:
-
-		var occupied = false
-
-		for other_tree in occupied_greenwood_points:
-
-			# Don't count the tree that is currently respawning
-			if other_tree == tree:
-				continue
-
-			if occupied_greenwood_points[other_tree] == point:
-				occupied = true
-				break
-
-		if not occupied:
-			available_points.append(point)
-
-
-	if available_points.is_empty():
-
-		print("❌ No available Greenwood spawn points!")
+		print(
+			"❌ No spawn points registered for ",
+			resource_type
+		)
 
 		return null
 
+	if not active_resources.has(resource_type):
+
+		print(
+			"❌ No resources registered for ",
+			resource_type
+		)
+
+		return null
+
+	var spawn_points = resource_spawn_points[resource_type]
+	var resources = active_resources[resource_type]
+
+	var available_points = []
+
+	for point in spawn_points:
+
+		var point_occupied = false
+
+		for other_resource in resources:
+
+			if other_resource == resource:
+				continue
+
+			if not other_resource.visible:
+				continue
+
+			if other_resource.global_position.distance_to(
+				point.global_position
+			) < 1.0:
+
+				point_occupied = true
+				break
+
+		if not point_occupied:
+
+			available_points.append(point)
+
+	if available_points.is_empty():
+
+		print(
+			"❌ No available ",
+			resource_type,
+			" spawn point!"
+		)
+
+		return null
 
 	var random_index = randi_range(
 		0,
 		available_points.size() - 1
 	)
 
-	var spawn_point = available_points[random_index]
+	return available_points[random_index]
 
-	occupied_greenwood_points[tree] = spawn_point
+#=================================================
+# RELEASE RESOURCE
+#=================================================
+
+func release_resource_spawn(
+	resource_type: String,
+	resource: Node
+):
 
 	print(
-		"🌳 ",
-		tree.name,
-		" assigned to ",
-		spawn_point.name
+		"🌳 Released ",
+		resource_type,
+		" spawn point for ",
+		resource.name
 	)
-
-	return spawn_point
-
-
-#=================================================
-# RELEASE GREENWOOD SPAWN
-#=================================================
-
-func release_greenwood_spawn(tree):
-
-	if occupied_greenwood_points.has(tree):
-
-		var old_point = occupied_greenwood_points[tree]
-
-		occupied_greenwood_points.erase(tree)
-
-		print(
-			"🌳 ",
-			tree.name,
-			" released ",
-			old_point.name
-		)
-
-	else:
-
-		print(
-			"⚠️ ",
-			tree.name,
-			" had no recorded Greenwood spawn point."
-		)

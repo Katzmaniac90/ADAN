@@ -323,7 +323,9 @@ position = Vector2(87, 67)
 
 [node name="Rock" parent="Rocks" unique_id=2000084765 instance=ExtResource("3_y1no5")]
 position = Vector2(70, 214)
-rockpunching_xp = 0
+min_respawn_time = 1.0
+max_respawn_time = 1.0
+rockpunching_xp = 10000
 
 [node name="Rock2" parent="Rocks" unique_id=76731582 instance=ExtResource("4_wv6fo")]
 position = Vector2(135, 217)
@@ -353,7 +355,9 @@ rock_difficulty = 1
 
 [node name="Tree" parent="Trees" unique_id=748453727 instance=ExtResource("3_wsbuy")]
 position = Vector2(71, 122)
-barkbreaking_xp = 0
+min_respawn_time = 1.0
+max_respawn_time = 1.0
+barkbreaking_xp = 10000
 
 [node name="Tree2" parent="Trees" unique_id=376954888 instance=ExtResource("6_l4js6")]
 position = Vector2(136, 120)
@@ -390,7 +394,9 @@ tree_difficulty = 1
 
 [node name="Bubble" parent="." unique_id=1471351366 instance=ExtResource("14_1tnds")]
 position = Vector2(70, 291)
-fishsnatching_xp = 0
+min_respawn_time = 1.0
+max_respawn_time = 1.0
+fishsnatching_xp = 10000
 
 [node name="Bubble2" parent="." unique_id=84544856 instance=ExtResource("15_jed4i")]
 position = Vector2(134, 291)
