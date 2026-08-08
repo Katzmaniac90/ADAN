@@ -24,6 +24,7 @@ GameTimer="*uid://bl3bgnssd7jol"
 Transition="*uid://c8itbu3p5bidn"
 MessageManager="*uid://did52kuas82ye"
 UIManager="*uid://dmab0bly7cdj2"
+ResourceSpawnManager="*uid://c2h4tqouypdf0"
 
 [display]
 

@@ -249,25 +249,25 @@ position = Vector2(600, 584)
 
 [node name="tree" type="Node" parent="." unique_id=638692912]
 
-[node name="Tree" parent="tree" unique_id=2000084765 instance=ExtResource("9_gi1og")]
+[node name="Tree" parent="tree" unique_id=2000084765 groups=["Greenwood"] instance=ExtResource("9_gi1og")]
 position = Vector2(392, 104)
 
-[node name="Tree2" parent="tree" unique_id=78567847 instance=ExtResource("9_gi1og")]
+[node name="Tree2" parent="tree" unique_id=78567847 groups=["Greenwood"] instance=ExtResource("9_gi1og")]
 position = Vector2(896, 72)
 
-[node name="Tree3" parent="tree" unique_id=70579239 instance=ExtResource("9_gi1og")]
+[node name="Tree3" parent="tree" unique_id=70579239 groups=["Greenwood"] instance=ExtResource("9_gi1og")]
 position = Vector2(1168, 232)
 
-[node name="Tree4" parent="tree" unique_id=913360592 instance=ExtResource("9_gi1og")]
+[node name="Tree4" parent="tree" unique_id=913360592 groups=["Greenwood"] instance=ExtResource("9_gi1og")]
 position = Vector2(640, 672)
 
-[node name="Tree5" parent="tree" unique_id=1067915088 instance=ExtResource("9_gi1og")]
+[node name="Tree5" parent="tree" unique_id=1067915088 groups=["Greenwood"] instance=ExtResource("9_gi1og")]
 position = Vector2(216, 568)
 
-[node name="Tree6" parent="tree" unique_id=766232920 instance=ExtResource("9_gi1og")]
+[node name="Tree6" parent="tree" unique_id=766232920 groups=["Greenwood"] instance=ExtResource("9_gi1og")]
 position = Vector2(824, 336)
 
-[node name="Tree7" parent="tree" unique_id=1297143024 instance=ExtResource("9_gi1og")]
+[node name="Tree7" parent="tree" unique_id=1297143024 groups=["Greenwood"] instance=ExtResource("9_gi1og")]
 position = Vector2(536, 448)
 
 [node name="tree2" type="Node" parent="." unique_id=1989087057]
@@ -314,8 +314,56 @@ position = Vector2(1264, 96)
 [node name="Rock3" parent="rock" unique_id=697637087 instance=ExtResource("13_a0upg")]
 position = Vector2(440, 112)
 
-[node name="Bubble" parent="." unique_id=1471351366 instance=ExtResource("33_6l7xl")]
+[node name="Bubbles" type="Node" parent="." unique_id=758441455]
+
+[node name="Bubble" parent="Bubbles" unique_id=1471351366 instance=ExtResource("33_6l7xl")]
 position = Vector2(432, 609)
 
-[node name="Bubble2" parent="." unique_id=761893128 instance=ExtResource("33_6l7xl")]
+[node name="Bubble2" parent="Bubbles" unique_id=761893128 instance=ExtResource("33_6l7xl")]
 position = Vector2(1086, 435)
+
+[node name="ResourceSpawnPoints" type="Node2D" parent="." unique_id=532251298]
+
+[node name="Greenwood" type="Node2D" parent="ResourceSpawnPoints" unique_id=146367630]
+
+[node name="Spawn01" type="Marker2D" parent="ResourceSpawnPoints/Greenwood" unique_id=778608889 groups=["GreenwoodSpawn"]]
+position = Vector2(387, 102)
+
+[node name="Spawn02" type="Marker2D" parent="ResourceSpawnPoints/Greenwood" unique_id=694010332 groups=["GreenwoodSpawn"]]
+position = Vector2(172, 277)
+
+[node name="Spawn03" type="Marker2D" parent="ResourceSpawnPoints/Greenwood" unique_id=1781604632 groups=["GreenwoodSpawn"]]
+position = Vector2(648, 50)
+
+[node name="Spawn04" type="Marker2D" parent="ResourceSpawnPoints/Greenwood" unique_id=1346097449 groups=["GreenwoodSpawn"]]
+position = Vector2(604, 213)
+
+[node name="Spawn05" type="Marker2D" parent="ResourceSpawnPoints/Greenwood" unique_id=599316775 groups=["GreenwoodSpawn"]]
+position = Vector2(787, 651)
+
+[node name="Spawn06" type="Marker2D" parent="ResourceSpawnPoints/Greenwood" unique_id=830807231 groups=["GreenwoodSpawn"]]
+position = Vector2(292, 653)
+
+[node name="Spawn07" type="Marker2D" parent="ResourceSpawnPoints/Greenwood" unique_id=264797869 groups=["GreenwoodSpawn"]]
+position = Vector2(707, 117)
+
+[node name="Spawn08" type="Marker2D" parent="ResourceSpawnPoints/Greenwood" unique_id=1424142032 groups=["GreenwoodSpawn"]]
+position = Vector2(864, 409)
+
+[node name="Spawn09" type="Marker2D" parent="ResourceSpawnPoints/Greenwood" unique_id=1800360417 groups=["GreenwoodSpawn"]]
+position = Vector2(639, 667)
+
+[node name="Spawn10" type="Marker2D" parent="ResourceSpawnPoints/Greenwood" unique_id=1760292276 groups=["GreenwoodSpawn"]]
+position = Vector2(218, 562)
+
+[node name="Spawn11" type="Marker2D" parent="ResourceSpawnPoints/Greenwood" unique_id=504733273 groups=["GreenwoodSpawn"]]
+position = Vector2(826, 332)
+
+[node name="Spawn12" type="Marker2D" parent="ResourceSpawnPoints/Greenwood" unique_id=120311142 groups=["GreenwoodSpawn"]]
+position = Vector2(896, 71)
+
+[node name="Spawn13" type="Marker2D" parent="ResourceSpawnPoints/Greenwood" unique_id=59727325 groups=["GreenwoodSpawn"]]
+position = Vector2(299, 321)
+
+[node name="Spawn14" type="Marker2D" parent="ResourceSpawnPoints/Greenwood" unique_id=5971879 groups=["GreenwoodSpawn"]]
+position = Vector2(552, 315)
