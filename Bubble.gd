@@ -32,6 +32,7 @@ var spawn_position: Vector2
 
 @export var fishsnatching_xp: int = 25
 @export var bubble_difficulty: int = 1
+@export var required_fishsnatching_level: int = 1
 
 
 #=================================================
@@ -137,7 +138,7 @@ func _process(delta):
 
 func start_snatching():
 
-	if GameManager.fishsnatching_level < 1:
+	if GameManager.fishsnatching_level < required_fishsnatching_level:
 
 		MessageManager.send_message(
 			"You're not a high enough level yet."

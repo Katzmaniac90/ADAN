@@ -94,6 +94,7 @@ min_respawn_time = 30.0
 max_respawn_time = 60.0
 respawn_radius = 0.0
 interaction_text = "[E] Snatch Fish"
+fish_name = "Bubblefin"
 
 [node name="Bubble" type="AnimatedSprite2D" parent="." unique_id=612862930]
 z_index = 1

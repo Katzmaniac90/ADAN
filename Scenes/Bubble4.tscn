@@ -95,6 +95,9 @@ max_respawn_time = 120.0
 respawn_radius = 0.0
 interaction_text = "[E] Snatch Fish"
 fishsnatching_xp = 200
+bubble_difficulty = 4
+required_fishsnatching_level = 15
+fish_name = "Tidefang"
 
 [node name="Bubble" type="AnimatedSprite2D" parent="." unique_id=612862930]
 z_index = 1
