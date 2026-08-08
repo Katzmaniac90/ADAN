@@ -36,28 +36,28 @@ func update_recipe():
 
 			axe_name.text = "Wood Axe"
 
-			requirements.text = "Requires:\n10 Tree1 Logs"
+			requirements.text = "Requires:\n10 Greenwoods"
 
 
 		"Tree2 Axe":
 
 			axe_name.text = "Tree2 Axe"
 
-			requirements.text = "Requires:\n20 Tree1 Logs\n20 Tree2 Logs"
+			requirements.text = "Requires:\n20 Greenwoods\n20 Ironbarks"
 
 
 		"Tree3 Axe":
 
 			axe_name.text = "Tree3 Axe"
 
-			requirements.text = "Requires:\n30 Tree1 Logs\n30 Tree2 Logs\n30 Tree3 Logs"
+			requirements.text = "Requires:\n30 Greenwoods\n30 Ironbarks\n30 Heartwoods"
 
 
 		"Super Saiyan Axe":
 
 			axe_name.text = "Super Saiyan Axe"
 
-			requirements.text = "Requires:\n1 Tree4 Log"
+			requirements.text = "Requires:\n1 Ancientwood"
 
 
 		"MAX":

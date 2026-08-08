@@ -31,6 +31,7 @@ max_respawn_time = 160.0
 rockpunching_xp = 100
 required_rockpunching_level = 10
 rock_difficulty = 3
+rock_drop = "Verdantstone"
 interaction_text = "[E] Punch Rock"
 
 [node name="RockModified" type="Sprite2D" parent="." unique_id=573872850]

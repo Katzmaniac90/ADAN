@@ -37,7 +37,7 @@ required_axe_tier = 3
 required_barkbreaking_level = 15
 barkbreaking_xp = 200
 tree_difficulty = 4
-log_name = "Tree4 Log"
+log_name = "Ancientwood"
 interaction_text = "[E] Chop Tree"
 
 [node name="TreeModified" type="Sprite2D" parent="." unique_id=573872850]

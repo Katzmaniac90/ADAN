@@ -25,7 +25,7 @@ var spawn_position: Vector2
 @export var tree_difficulty: int = 1
 
 # Different tree drops
-@export var log_name: String = "Tree1 Log"
+@export var log_name: String = "Greenwood"
 @export var interaction_text: String = "Chop Tree"
 
 

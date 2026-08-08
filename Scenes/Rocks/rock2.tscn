@@ -31,6 +31,7 @@ max_respawn_time = 140.0
 rockpunching_xp = 50
 required_rockpunching_level = 5
 rock_difficulty = 2
+rock_drop = "Bloodstone"
 interaction_text = "[E] Punch Rock"
 
 [node name="RockModified" type="Sprite2D" parent="." unique_id=573872850]

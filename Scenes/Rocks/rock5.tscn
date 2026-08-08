@@ -31,6 +31,7 @@ max_respawn_time = 200.0
 rockpunching_xp = 400
 required_rockpunching_level = 20
 rock_difficulty = 5
+rock_drop = "Tidestone"
 interaction_text = "[E] Punch Rock"
 
 [node name="RockModified" type="Sprite2D" parent="." unique_id=573872850]

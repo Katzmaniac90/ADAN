@@ -20,12 +20,12 @@ func update_craft_button():
 
 	show()
 
-	var tree4 = GameManager.get_item_count("Tree4 Log")
+	var tree4 = GameManager.get_item_count("Ancientwood")
 
 
 	if tree4 >= 1:
 		text = "Craft Super Saiyan Axe"
 		disabled = false
 	else:
-		text = "Need Tree4 Logs: %d/1" % tree4
+		text = "Need Ancientwoods: %d/1" % tree4
 		disabled = true
