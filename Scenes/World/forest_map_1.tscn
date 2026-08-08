@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://bf1esea0mf3pf" path="res://Scenes/NPCs/Forest1_NPC5.tscn" id="27_qnspf"]
 [ext_resource type="PackedScene" uid="uid://bq58ah507tic" path="res://Scenes/NPCs/rabbit.tscn" id="29_um4sv"]
 [ext_resource type="PackedScene" uid="uid://dej7fywpq3bbx" path="res://Scenes/Bubble.tscn" id="33_6l7xl"]
+[ext_resource type="Script" uid="uid://r2w8nv4xhg7h" path="res://Scenes/World/ResourceSpawnManager.gd" id="34_5805a"]
 
 [node name="ForestMap1" type="Node2D" unique_id=782872810]
 y_sort_enabled = true
@@ -367,3 +368,6 @@ position = Vector2(299, 321)
 
 [node name="Spawn14" type="Marker2D" parent="ResourceSpawnPoints/Greenwood" unique_id=5971879 groups=["GreenwoodSpawn"]]
 position = Vector2(552, 315)
+
+[node name="ResourceSpawnManager" type="Node2D" parent="." unique_id=1913625918]
+script = ExtResource("34_5805a")
