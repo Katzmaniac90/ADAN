@@ -439,10 +439,10 @@ func get_axe_name(tier:int) -> String:
 
 func craft_wooden_axe():
 
-	if inventory.get("Tree1 Log",0) < 10:
+	if inventory.get("Greenwood",0) < 10:
 		return false
 
-	inventory["Tree1 Log"] -= 10
+	inventory["Greenwood"] -= 10
 	current_axe = "Wood Axe"
 	AchievementManager.unlock_if_locked("FIRST_AXE")
 	inventory_changed.emit()
@@ -453,14 +453,14 @@ func craft_wooden_axe():
 
 func craft_tree2_axe():
 
-	if inventory.get("Tree1 Log",0) < 20:
+	if inventory.get("Greenwood",0) < 20:
 		return false
 
-	if inventory.get("Tree2 Log",0) < 20:
+	if inventory.get("Ironbark",0) < 20:
 		return false
 
-	inventory["Tree1 Log"] -= 20
-	inventory["Tree2 Log"] -= 20
+	inventory["Greenwood"] -= 20
+	inventory["Ironbark"] -= 20
 
 	current_axe = "Tree2 Axe"
 
@@ -472,18 +472,18 @@ func craft_tree2_axe():
 
 func craft_tree3_axe():
 
-	if inventory.get("Tree1 Log",0) < 30:
+	if inventory.get("Greenwood",0) < 30:
 		return false
 
-	if inventory.get("Tree2 Log",0) < 30:
+	if inventory.get("Ironbark",0) < 30:
 		return false
 
-	if inventory.get("Tree3 Log",0) < 30:
+	if inventory.get("Heartwood",0) < 30:
 		return false
 
-	inventory["Tree1 Log"] -= 30
-	inventory["Tree2 Log"] -= 30
-	inventory["Tree3 Log"] -= 30
+	inventory["Greenwood"] -= 30
+	inventory["Ironbark"] -= 30
+	inventory["Heartwood"] -= 30
 
 	current_axe = "Tree3 Axe"
 
@@ -495,10 +495,10 @@ func craft_tree3_axe():
 
 func craft_super_saiyan_axe():
 
-	if inventory.get("Tree4 Log",0) < 1:
+	if inventory.get("Ancientwood",0) < 1:
 		return false
 
-	inventory["Tree4 Log"] -= 1
+	inventory["Ancientwood"] -= 1
 
 	current_axe = "Super Saiyan Axe"
 	AchievementManager.unlock_if_locked("ALL_AXES")

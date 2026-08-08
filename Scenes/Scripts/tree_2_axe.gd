@@ -20,13 +20,13 @@ func update_craft_button():
 
 	show()
 
-	var tree1 = GameManager.get_item_count("Tree1 Log")
-	var tree2 = GameManager.get_item_count("Tree2 Log")
+	var tree1 = GameManager.get_item_count("Greenwood")
+	var tree2 = GameManager.get_item_count("Ironbark")
 
 
 	if tree1 >= 20 and tree2 >= 20:
 		text = "Craft Tree2 Axe"
 		disabled = false
 	else:
-		text = "Need Tree1 Logs: %d/20\nNeed Tree2 Logs: %d/20" % [tree1, tree2]
+		text = "Need Greenwoods: %d/20\nNeed Ironbarks: %d/20" % [tree1, tree2]
 		disabled = true

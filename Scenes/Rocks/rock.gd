@@ -1,6 +1,5 @@
 extends StaticBody2D
 
-
 var player_near = false
 var punching = false
 var shake_amount := 1.0
@@ -10,13 +9,17 @@ var original_position: Vector2
 @export var max_respawn_time: float = 8.0
 
 # Rock settings
+
 @export var rockpunching_xp: int = 25
 @export var required_rockpunching_level: int = 1
 @export var rock_difficulty: int = 1
 
-@export var punch_time: float = 10.0
-@export var interaction_text: String = "Chop Tree"
+# Rock drops
 
+@export var rock_drop: String = "Granite"
+
+@export var punch_time: float = 10.0
+@export var interaction_text: String = "Punch Rock"
 
 func _ready():
 
@@ -31,7 +34,6 @@ func _ready():
 	$PunchProgress.visible = false
 
 
-
 func _on_body_entered(body):
 
 	if body.name == "Player":
@@ -39,7 +41,6 @@ func _on_body_entered(body):
 		player_near = true
 		$InteractionLabel.text = interaction_text
 		$InteractionLabel.visible = true
-
 
 
 func _on_body_exited(body):
@@ -66,7 +67,7 @@ func _process(delta):
 			return
 
 		$PunchProgress.value += (100.0 / punch_time) * delta
-		
+
 		shake_rock()
 
 		if Input.is_action_just_pressed("interact"):
@@ -78,7 +79,6 @@ func _process(delta):
 	if player_near and Input.is_action_just_pressed("interact"):
 
 		start_punching()
-
 
 
 func start_punching():
@@ -100,34 +100,34 @@ func start_punching():
 	$PunchTimer.start(punch_time)
 
 
-
 func _on_punch_timer_timeout():
 
 	punch_rock()
-
 
 
 func punch_rock():
 
 	var player = get_tree().get_first_node_in_group("player")
 
+	# Give skill XP
 	GameManager.add_rockpunching_xp(rockpunching_xp)
+
+	# Give rock resource
+	GameManager.add_item(rock_drop, 1)
+
 	AchievementManager.unlock_if_locked("FIRST_ROCK")
 
 	print("ROCK PUNCHED!")
 	print("Rockpunching XP +", rockpunching_xp)
-
+	print("Received ", rock_drop)
 
 	punching = false
 
-
 	$PunchProgress.visible = false
-
 
 	hide()
 
 	$CollisionShape2D.disabled = true
-
 
 	var r = randf()
 
@@ -137,9 +137,7 @@ func punch_rock():
 		sqrt(r)
 	)
 
-
 	$RespawnTimer.start(random_respawn)
-
 
 
 func _on_respawn_timer_timeout():
@@ -147,7 +145,8 @@ func _on_respawn_timer_timeout():
 	show()
 
 	$CollisionShape2D.disabled = false
-	
+
+
 func cancel_punching():
 
 	print("Stopped punching")
@@ -160,6 +159,8 @@ func cancel_punching():
 	$PunchProgress.visible = false
 
 	$InteractionLabel.visible = player_near
+
+
 func shake_rock():
 
 	if punching:

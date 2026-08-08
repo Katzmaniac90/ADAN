@@ -9,11 +9,16 @@ var item_slot_scene = preload("res://Scenes/World/Item_Slot.tscn")
 
 var item_textures = {
 
-	"Tree1 Log": preload("res://Items/Logs/Tree1Log.png"),
-	"Tree2 Log": preload("res://Items/Logs/Tree2Log.png"),
-	"Tree3 Log": preload("res://Items/Logs/Tree3Log.png"),
-	"Tree4 Log": preload("res://Items/Logs/Tree4Log.png")
-
+	"Greenwood": preload("res://Items/Logs/Tree1Log.png"),
+	"Ironbark": preload("res://Items/Logs/Tree2Log.png"),
+	"Heartwood": preload("res://Items/Logs/Tree3Log.png"),
+	"Ancientwood": preload("res://Items/Logs/Tree4Log.png"),
+	"Elderwood": preload("res://Items/Logs/Tree5Log.png"),
+	"Granite": preload("res://Items/Rocks/Rock1Rock.png"),
+	"Bloodstone": preload("res://Items/Rocks/Rock2Rock.png"),
+	"Verdantstone": preload("res://Items/Rocks/Rock3Rock.png"),
+	"Shale": preload("res://Items/Rocks/Rock4Rock.png"),
+	"Tidestone": preload("res://Items/Rocks/Rock5Rock.png")
 }
 
 

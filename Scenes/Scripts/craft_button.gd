@@ -20,7 +20,7 @@ func update_craft_button():
 
 	show()
 
-	var logs = GameManager.get_item_count("Tree1 Log")
+	var logs = GameManager.get_item_count("Greenwood")
 
 
 	if logs >= 10:
@@ -28,5 +28,5 @@ func update_craft_button():
 		disabled = false
 	else:
 		var needed = 10 - logs
-		text = "Need %d more Tree1 Logs\n(Wooden Axe)" % needed
+		text = "Need %d more Greenwoods\n(Wooden Axe)" % needed
 		disabled = true

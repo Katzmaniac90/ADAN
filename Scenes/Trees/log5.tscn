@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://btaoj5v2ipvsc"]
+
+[ext_resource type="Script" uid="uid://dqqqs32o3jf1w" path="res://Scenes/Scripts/log.gd" id="1_mraq6"]
+[ext_resource type="Texture2D" uid="uid://hysa6k0ba8x3" path="res://trees/PNG/Assets_separately/Trees_texture_shadow_dark/Broken_tree4.png" id="2_mraq6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yarrl"]
+size = Vector2(10, 6)
+
+[node name="Log" type="StaticBody2D" unique_id=1450102656]
+script = ExtResource("1_mraq6")
+item_name = "Tree4 Log"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1610669406]
+z_index = 5
+y_sort_enabled = true
+position = Vector2(1, 9.536743e-07)
+scale = Vector2(0.29375, 0.2625)
+texture = ExtResource("2_mraq6")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1017855555]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1290230654]
+z_index = 1
+position = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_yarrl")

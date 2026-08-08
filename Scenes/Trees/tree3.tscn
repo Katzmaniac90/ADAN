@@ -36,7 +36,7 @@ required_axe_tier = 2
 required_barkbreaking_level = 10
 barkbreaking_xp = 100
 tree_difficulty = 3
-log_name = "Tree3 Log"
+log_name = "Heartwood"
 interaction_text = "[E] Chop Tree"
 
 [node name="TreeModified" type="Sprite2D" parent="." unique_id=573872850]

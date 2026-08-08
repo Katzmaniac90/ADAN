@@ -36,7 +36,7 @@ required_axe_tier = 1
 required_barkbreaking_level = 5
 barkbreaking_xp = 50
 tree_difficulty = 2
-log_name = "Tree2 Log"
+log_name = "Ironbark"
 interaction_text = "[E] Chop Tree"
 
 [node name="TreeModified" type="Sprite2D" parent="." unique_id=573872850]

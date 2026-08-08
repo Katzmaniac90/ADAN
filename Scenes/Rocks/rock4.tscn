@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://cojhg2o8dbtr0"]
+
+[ext_resource type="Script" uid="uid://byaidobuu438e" path="res://Scenes/Rocks/rock.gd" id="1_1mrfd"]
+[ext_resource type="Texture2D" uid="uid://dak48dh2pxuqb" path="res://rocks_and_stones/PNG/Objects_separately/Rock6_grass_shadow1.png" id="2_1mrfd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wla72"]
+size = Vector2(23, 25.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22gus"]
+size = Vector2(30, 32)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq0y2"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y5hao"]
+bg_color = Color(0.11772732, 0.4863708, 0.7360337, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[node name="Rock" type="StaticBody2D" unique_id=2000084765]
+z_index = 5
+script = ExtResource("1_1mrfd")
+min_respawn_time = 90.0
+max_respawn_time = 180.0
+rockpunching_xp = 200
+required_rockpunching_level = 15
+rock_difficulty = 4
+rock_drop = "Shale"
+interaction_text = "[E] Punch Rock"
+
+[node name="RockModified" type="Sprite2D" parent="." unique_id=573872850]
+z_index = 1
+position = Vector2(0, 4.7683716e-07)
+scale = Vector2(0.5, 0.438)
+texture = ExtResource("2_1mrfd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141913667]
+shape = SubResource("RectangleShape2D_wla72")
+debug_color = Color(0.34128827, 0.5011388, 0.9447065, 0.5254902)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=860053328]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=552153863]
+shape = SubResource("RectangleShape2D_22gus")
+
+[node name="InteractionLabel" type="Label" parent="." unique_id=278786865]
+visible = false
+z_index = 100
+offset_left = -52.0
+offset_top = -43.0
+offset_right = 51.0
+offset_bottom = -20.0
+theme_override_colors/font_color = Color(0.38039216, 0.2509804, 0.31764707, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 1
+theme_override_font_sizes/font_size = 10
+text = "[E] Chop Tree"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PunchProgress" type="ProgressBar" parent="." unique_id=1614617401]
+visible = false
+offset_left = -12.0
+offset_top = -38.0
+offset_right = 12.0
+offset_bottom = -32.0
+theme_override_styles/background = SubResource("StyleBoxFlat_jq0y2")
+theme_override_styles/fill = SubResource("StyleBoxFlat_y5hao")
+show_percentage = false
+
+[node name="PunchTimer" type="Timer" parent="." unique_id=1715468972]
+wait_time = 3.0
+one_shot = true
+
+[node name="RespawnTimer" type="Timer" parent="." unique_id=354760686]
+wait_time = 5.0
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=483983309]
