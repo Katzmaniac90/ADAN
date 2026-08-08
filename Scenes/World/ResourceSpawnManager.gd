@@ -6,65 +6,38 @@ extends Node
 
 @export var greenwood_active_count: int = 7
 
-
 #=================================================
 # GREENWOOD DATA
 #=================================================
 
-var greenwood_spawn_points: Array[Node] = []
-var occupied_greenwood_points: Dictionary = {}
+var greenwood_spawn_points: Array[Marker2D] = []
+var active_greenwood: Array[Node] = []
 
 
 #=================================================
-# READY
+# SETUP
 #=================================================
 
-func _ready():
+func setup_greenwood(points: Array[Marker2D], trees: Array[Node]):
 
-	print("================================")
-	print("RESOURCE SPAWN MANAGER IS RUNNING")
-	print("================================")
+	greenwood_spawn_points = points
+	active_greenwood = trees
 
 	spawn_greenwood()
 
 
 #=================================================
-# INITIAL GREENWOOD SPAWN
+# INITIAL SPAWN
 #=================================================
 
 func spawn_greenwood():
-
-	var trees = get_tree().get_nodes_in_group("Greenwood")
-	var spawn_points = get_tree().get_nodes_in_group("GreenwoodSpawn")
-
-	print("Greenwood trees found: ", trees.size())
-	print("Greenwood spawn points found: ", spawn_points.size())
-
-
-	if trees.is_empty():
-
-		print("ERROR: No Greenwood trees found.")
-
-		return
-
-
-	if spawn_points.is_empty():
-
-		print("ERROR: No Greenwood spawn points found.")
-
-		return
-
-
-	greenwood_spawn_points = spawn_points
-
 
 	var available_points = greenwood_spawn_points.duplicate()
 
 	var amount_to_spawn = min(
 		greenwood_active_count,
-		min(trees.size(), available_points.size())
+		min(active_greenwood.size(), available_points.size())
 	)
-
 
 	for i in range(amount_to_spawn):
 
@@ -77,16 +50,21 @@ func spawn_greenwood():
 
 		available_points.remove_at(random_index)
 
-		var tree = trees[i]
+		var tree = active_greenwood[i]
 
 		tree.global_position = spawn_point.global_position
 		tree.show()
 
-		occupied_greenwood_points[tree] = spawn_point
+		print(
+			"🌳 ",
+			tree.name,
+			" spawned at ",
+			spawn_point.name
+		)
 
 
 #=================================================
-# GET AVAILABLE GREENWOOD SPAWN
+# GET AVAILABLE SPAWN
 #=================================================
 
 func get_available_greenwood_spawn(tree):
@@ -95,14 +73,30 @@ func get_available_greenwood_spawn(tree):
 
 	for point in greenwood_spawn_points:
 
-		if not occupied_greenwood_points.values().has(point):
+		var point_occupied = false
 
+		for other_tree in active_greenwood:
+
+			if other_tree == tree:
+				continue
+
+			if not other_tree.visible:
+				continue
+
+			if other_tree.global_position.distance_to(
+				point.global_position
+			) < 1.0:
+
+				point_occupied = true
+				break
+
+		if not point_occupied:
 			available_points.append(point)
 
 
 	if available_points.is_empty():
 
-		print("No available Greenwood spawn points!")
+		print("❌ No available Greenwood spawn point!")
 
 		return null
 
@@ -112,19 +106,16 @@ func get_available_greenwood_spawn(tree):
 		available_points.size() - 1
 	)
 
-	var spawn_point = available_points[random_index]
-
-	occupied_greenwood_points[tree] = spawn_point
-
-	return spawn_point
+	return available_points[random_index]
 
 
 #=================================================
-# RELEASE GREENWOOD SPAWN
+# RELEASE
 #=================================================
 
 func release_greenwood_spawn(tree):
 
-	if occupied_greenwood_points.has(tree):
-
-		occupied_greenwood_points.erase(tree)
+	print(
+		"🌳 Released spawn point for ",
+		tree.name
+	)

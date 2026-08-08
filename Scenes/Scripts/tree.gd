@@ -130,7 +130,10 @@ func chop_tree():
 	$ChopProgress.visible = false
 
 	# Free this tree's spawn point
-	ResourceSpawnManager.release_greenwood_spawn(self)
+	var resource_manager = get_tree().get_first_node_in_group("ResourceSpawnManager")
+
+	if resource_manager:
+		resource_manager.release_greenwood_spawn(self)
 
 	hide()
 
@@ -167,6 +170,8 @@ func shake_tree():
 
 func _on_respawn_timer_timeout():
 
+	print("🌳 GREENWOOD RESPAWN TIMER FIRED: ", name)
+
 	var spawn_point = ResourceSpawnManager.get_available_greenwood_spawn(self)
 
 	if spawn_point == null:
@@ -174,6 +179,13 @@ func _on_respawn_timer_timeout():
 		$RespawnTimer.start(1.0)
 
 		return
+
+	print(
+		"🌳 Moving ",
+		name,
+		" to ",
+		spawn_point.name
+	)
 
 	global_position = spawn_point.global_position
 
