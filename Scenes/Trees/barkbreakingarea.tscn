@@ -13,6 +13,11 @@
 [ext_resource type="PackedScene" uid="uid://cojhg2o8dbtr0" path="res://Scenes/Rocks/rock4.tscn" id="6_x4gl3"]
 [ext_resource type="PackedScene" uid="uid://piisa8tqq81v" path="res://Scenes/Rocks/rock5.tscn" id="7_0mi21"]
 [ext_resource type="PackedScene" uid="uid://bklntpi1bp4vb" path="res://Scenes/Trees/tree5.tscn" id="12_1tnds"]
+[ext_resource type="PackedScene" uid="uid://dej7fywpq3bbx" path="res://Scenes/Bubble.tscn" id="14_1tnds"]
+[ext_resource type="PackedScene" uid="uid://ppso8f2jfw5l" path="res://Scenes/Bubble2.tscn" id="15_jed4i"]
+[ext_resource type="PackedScene" uid="uid://dw2e1hqoskjw8" path="res://Scenes/Bubble3.tscn" id="16_mnune"]
+[ext_resource type="PackedScene" uid="uid://1y24n3wkrm2n" path="res://Scenes/Bubble4.tscn" id="17_syw35"]
+[ext_resource type="PackedScene" uid="uid://buyklpd7502kg" path="res://Scenes/Bubble5.tscn" id="18_eisn6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0cx3a"]
 texture = ExtResource("1_edkeh")
@@ -377,6 +382,36 @@ required_barkbreaking_level = 1
 barkbreaking_xp = 0
 tree_difficulty = 1
 
+[node name="Fish" type="Node2D" parent="." unique_id=206279329]
+
 [node name="PlayerSpawnPoints" type="Node2D" parent="." unique_id=2116221669]
 
 [node name="DialogueUI" parent="." unique_id=353898798 instance=ExtResource("5_bws3g")]
+
+[node name="Bubble" parent="." unique_id=1471351366 instance=ExtResource("14_1tnds")]
+position = Vector2(70, 291)
+fishsnatching_xp = 0
+
+[node name="Bubble2" parent="." unique_id=84544856 instance=ExtResource("15_jed4i")]
+position = Vector2(134, 291)
+fishsnatching_xp = 0
+bubble_difficulty = 1
+required_fishsnatching_level = 1
+
+[node name="Bubble3" parent="." unique_id=1851560703 instance=ExtResource("16_mnune")]
+position = Vector2(211, 289)
+fishsnatching_xp = 0
+bubble_difficulty = 1
+required_fishsnatching_level = 1
+
+[node name="Bubble4" parent="." unique_id=1996742430 instance=ExtResource("17_syw35")]
+position = Vector2(281, 289)
+fishsnatching_xp = 0
+bubble_difficulty = 1
+required_fishsnatching_level = 1
+
+[node name="Bubble5" parent="." unique_id=1322506537 instance=ExtResource("18_eisn6")]
+position = Vector2(354, 289)
+fishsnatching_xp = 0
+bubble_difficulty = 1
+required_fishsnatching_level = 1
