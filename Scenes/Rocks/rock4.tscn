@@ -26,8 +26,8 @@ corner_radius_bottom_left = 3
 [node name="Rock" type="StaticBody2D" unique_id=2000084765]
 z_index = 5
 script = ExtResource("1_1mrfd")
-min_respawn_time = 90.0
-max_respawn_time = 180.0
+min_respawn_time = 20.0
+max_respawn_time = 60.0
 rockpunching_xp = 200
 required_rockpunching_level = 15
 rock_difficulty = 4

@@ -29,8 +29,13 @@
 [ext_resource type="PackedScene" uid="uid://dxx1g3k0iej6p" path="res://Scenes/Signs/SkytreeSign2.tscn" id="20_46umo"]
 [ext_resource type="PackedScene" uid="uid://d0pe5h3yyc8oj" path="res://Scenes/Signs/SkytreeSign3.tscn" id="21_3ogje"]
 [ext_resource type="PackedScene" uid="uid://b0ivigp80axxj" path="res://Scenes/NPCs/SkytreeNPC1.tscn" id="26_5w68m"]
+[ext_resource type="PackedScene" uid="uid://bklntpi1bp4vb" path="res://Scenes/Trees/tree5.tscn" id="29_hjksd"]
 [ext_resource type="PackedScene" uid="uid://cmfmbka7ruih7" path="res://Scenes/Portals/PortalSpawn.tscn" id="31_hhu0b"]
+[ext_resource type="PackedScene" uid="uid://cj4e767mus4fv" path="res://Scenes/Rocks/rock2.tscn" id="31_vwy7c"]
+[ext_resource type="PackedScene" uid="uid://dad8gr21u8qox" path="res://Scenes/Rocks/rock3.tscn" id="32_384r2"]
 [ext_resource type="PackedScene" uid="uid://ny0lkjqhrtuk" path="res://Scenes/Portals/PortalUnlockObject.tscn" id="32_hjksd"]
+[ext_resource type="PackedScene" uid="uid://cojhg2o8dbtr0" path="res://Scenes/Rocks/rock4.tscn" id="33_wk4fs"]
+[ext_resource type="PackedScene" uid="uid://piisa8tqq81v" path="res://Scenes/Rocks/rock5.tscn" id="34_ncp7b"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cgwvv"]
 size = Vector2(240, 5)
@@ -256,90 +261,140 @@ shape = SubResource("RectangleShape2D_jpemb")
 position = Vector2(1232, 504)
 shape = SubResource("RectangleShape2D_jpemb")
 
-[node name="tree" type="Node" parent="." unique_id=1414093296]
+[node name="Trees" type="Node" parent="." unique_id=763776874]
 
-[node name="Tree" parent="tree" unique_id=2000084765 instance=ExtResource("12_cgwvv")]
+[node name="tree" type="Node" parent="Trees" unique_id=1414093296]
+
+[node name="Tree" parent="Trees/tree" unique_id=2000084765 groups=["Greenwood"] instance=ExtResource("12_cgwvv")]
 position = Vector2(296, 88)
 
-[node name="Tree7" parent="tree" unique_id=263218857 instance=ExtResource("12_cgwvv")]
-position = Vector2(1224, 1368)
+[node name="Tree7" parent="Trees/tree" unique_id=263218857 groups=["Greenwood"] instance=ExtResource("12_cgwvv")]
+position = Vector2(647, 1349)
 
-[node name="Tree8" parent="tree" unique_id=1696877595 instance=ExtResource("12_cgwvv")]
+[node name="Tree8" parent="Trees/tree" unique_id=1696877595 groups=["Greenwood"] instance=ExtResource("12_cgwvv")]
 position = Vector2(1192, 1008)
 
-[node name="Tree2" parent="tree" unique_id=33374625 instance=ExtResource("12_cgwvv")]
+[node name="Tree2" parent="Trees/tree" unique_id=33374625 groups=["Greenwood"] instance=ExtResource("12_cgwvv")]
 position = Vector2(96, 792)
 
-[node name="Tree3" parent="tree" unique_id=1525083532 instance=ExtResource("12_cgwvv")]
+[node name="Tree3" parent="Trees/tree" unique_id=1525083532 groups=["Greenwood"] instance=ExtResource("12_cgwvv")]
 position = Vector2(160, 1368)
 
-[node name="Tree4" parent="tree" unique_id=1273600299 instance=ExtResource("12_cgwvv")]
+[node name="Tree4" parent="Trees/tree" unique_id=1273600299 groups=["Greenwood"] instance=ExtResource("12_cgwvv")]
 position = Vector2(680, 952)
 
-[node name="Tree5" parent="tree" unique_id=145920437 instance=ExtResource("12_cgwvv")]
+[node name="Tree5" parent="Trees/tree" unique_id=145920437 groups=["Greenwood"] instance=ExtResource("12_cgwvv")]
 position = Vector2(1040, 288)
 
-[node name="Tree9" parent="tree" unique_id=1271391800 instance=ExtResource("12_cgwvv")]
+[node name="Tree9" parent="Trees/tree" unique_id=1271391800 groups=["Greenwood"] instance=ExtResource("12_cgwvv")]
 position = Vector2(880, 288)
 
-[node name="Tree6" parent="tree" unique_id=1529526573 instance=ExtResource("12_cgwvv")]
+[node name="Tree6" parent="Trees/tree" unique_id=1529526573 groups=["Greenwood"] instance=ExtResource("12_cgwvv")]
 position = Vector2(1224, 192)
 
-[node name="tree2" type="Node" parent="." unique_id=719240975]
+[node name="tree2" type="Node" parent="Trees" unique_id=719240975]
 
-[node name="Tree" parent="tree2" unique_id=319904442 instance=ExtResource("13_kpd8o")]
+[node name="Tree" parent="Trees/tree2" unique_id=319904442 groups=["Ironbark"] instance=ExtResource("13_kpd8o")]
 position = Vector2(608, 488)
 
-[node name="Tree2" parent="tree2" unique_id=15817891 instance=ExtResource("13_kpd8o")]
+[node name="Tree2" parent="Trees/tree2" unique_id=15817891 groups=["Ironbark"] instance=ExtResource("13_kpd8o")]
 position = Vector2(1344, 1024)
 
-[node name="Tree3" parent="tree2" unique_id=1850518207 instance=ExtResource("13_kpd8o")]
+[node name="Tree3" parent="Trees/tree2" unique_id=1850518207 groups=["Ironbark"] instance=ExtResource("13_kpd8o")]
 position = Vector2(504, 768)
 
-[node name="Tree4" parent="tree2" unique_id=1911397871 instance=ExtResource("13_kpd8o")]
+[node name="Tree4" parent="Trees/tree2" unique_id=1911397871 groups=["Ironbark"] instance=ExtResource("13_kpd8o")]
 position = Vector2(88, 1112)
 
-[node name="Tree5" parent="tree2" unique_id=4145134 instance=ExtResource("13_kpd8o")]
+[node name="Tree5" parent="Trees/tree2" unique_id=4145134 groups=["Ironbark"] instance=ExtResource("13_kpd8o")]
 position = Vector2(1280, 160)
 
-[node name="Tree6" parent="tree2" unique_id=55115121 instance=ExtResource("13_kpd8o")]
+[node name="Tree6" parent="Trees/tree2" unique_id=55115121 groups=["Ironbark"] instance=ExtResource("13_kpd8o")]
 position = Vector2(480, 584)
 
-[node name="tree3" type="Node" parent="." unique_id=68547817]
+[node name="tree3" type="Node" parent="Trees" unique_id=68547817]
 
-[node name="Tree" parent="tree3" unique_id=997598181 instance=ExtResource("14_5ru53")]
-position = Vector2(424, -48)
+[node name="Tree" parent="Trees/tree3" unique_id=997598181 groups=["Heartwood"] instance=ExtResource("14_5ru53")]
+position = Vector2(832, 164)
 
-[node name="Tree2" parent="tree3" unique_id=675148006 instance=ExtResource("14_5ru53")]
+[node name="Tree2" parent="Trees/tree3" unique_id=675148006 groups=["Heartwood"] instance=ExtResource("14_5ru53")]
 position = Vector2(944, 936)
 
-[node name="Tree3" parent="tree3" unique_id=759354847 instance=ExtResource("14_5ru53")]
+[node name="Tree3" parent="Trees/tree3" unique_id=759354847 groups=["Heartwood"] instance=ExtResource("14_5ru53")]
 position = Vector2(696, 168)
 
-[node name="Tree4" parent="tree3" unique_id=344568885 instance=ExtResource("14_5ru53")]
+[node name="Tree4" parent="Trees/tree3" unique_id=344568885 groups=["Heartwood"] instance=ExtResource("14_5ru53")]
 position = Vector2(592, -48)
 
-[node name="tree4" type="Node" parent="." unique_id=1802032109]
+[node name="tree4" type="Node" parent="Trees" unique_id=1802032109]
 
-[node name="Tree" parent="tree4" unique_id=2060585959 instance=ExtResource("15_ef8gn")]
-position = Vector2(1376, 1256)
+[node name="Tree" parent="Trees/tree4" unique_id=2060585959 groups=["Ancientwood"] instance=ExtResource("15_ef8gn")]
+position = Vector2(1238, 1373)
 
-[node name="rock" type="Node" parent="." unique_id=1176212133]
+[node name="Tree2" parent="Trees/tree4" unique_id=1903013034 groups=["Ancientwood"] instance=ExtResource("15_ef8gn")]
+position = Vector2(434, -43)
 
-[node name="Rock" parent="rock" unique_id=1910452217 instance=ExtResource("16_cgjli")]
+[node name="tree5" type="Node" parent="Trees" unique_id=230247284]
+
+[node name="Tree" parent="Trees/tree5" unique_id=2070540123 groups=["Elderwood"] instance=ExtResource("29_hjksd")]
+position = Vector2(1365, 1252)
+
+[node name="Rocks" type="Node" parent="." unique_id=1077522026]
+
+[node name="rock1" type="Node" parent="Rocks" unique_id=1176212133]
+
+[node name="Rock" parent="Rocks/rock1" unique_id=1910452217 instance=ExtResource("16_cgjli")]
 position = Vector2(-24, 392)
 
-[node name="Rock2" parent="rock" unique_id=2103914290 instance=ExtResource("16_cgjli")]
+[node name="Rock2" parent="Rocks/rock1" unique_id=2103914290 instance=ExtResource("16_cgjli")]
 position = Vector2(632, 584)
 
-[node name="Rock3" parent="rock" unique_id=1545795100 instance=ExtResource("16_cgjli")]
+[node name="Rock3" parent="Rocks/rock1" unique_id=1545795100 instance=ExtResource("16_cgjli")]
 position = Vector2(1128, 936)
 
-[node name="Rock4" parent="rock" unique_id=1619797703 instance=ExtResource("16_cgjli")]
+[node name="Rock4" parent="Rocks/rock1" unique_id=1619797703 instance=ExtResource("16_cgjli")]
 position = Vector2(1016, 96)
 
-[node name="Rock5" parent="rock" unique_id=1067017184 instance=ExtResource("16_cgjli")]
+[node name="Rock5" parent="Rocks/rock1" unique_id=1067017184 instance=ExtResource("16_cgjli")]
 position = Vector2(912, 1264)
+
+[node name="rock2" type="Node" parent="Rocks" unique_id=649496467]
+
+[node name="Rock" parent="Rocks/rock2" unique_id=656185791 groups=["Bloodstone"] instance=ExtResource("31_vwy7c")]
+position = Vector2(1031, 178)
+
+[node name="Rock2" parent="Rocks/rock2" unique_id=1656795904 groups=["Bloodstone"] instance=ExtResource("31_vwy7c")]
+position = Vector2(728, 934)
+
+[node name="Rock3" parent="Rocks/rock2" unique_id=770848913 groups=["Bloodstone"] instance=ExtResource("31_vwy7c")]
+position = Vector2(127, 669)
+
+[node name="Rock4" parent="Rocks/rock2" unique_id=1191246433 groups=["Bloodstone"] instance=ExtResource("31_vwy7c")]
+position = Vector2(383, 1260)
+
+[node name="rock3" type="Node" parent="Rocks" unique_id=1949147415]
+
+[node name="Rock" parent="Rocks/rock3" unique_id=1939050167 groups=["Verdantstone"] instance=ExtResource("32_384r2")]
+position = Vector2(1052, 356)
+
+[node name="Rock2" parent="Rocks/rock3" unique_id=1189930279 groups=["Verdantstone"] instance=ExtResource("32_384r2")]
+position = Vector2(824, 645)
+
+[node name="Rock3" parent="Rocks/rock3" unique_id=183947205 groups=["Verdantstone"] instance=ExtResource("32_384r2")]
+position = Vector2(1130, 532)
+
+[node name="rock4" type="Node" parent="Rocks" unique_id=9254540]
+
+[node name="Rock4" parent="Rocks/rock4" unique_id=1254787933 groups=["Shalestone"] instance=ExtResource("33_wk4fs")]
+position = Vector2(151, 153)
+
+[node name="Rock" parent="Rocks/rock4" unique_id=1326267371 groups=["Shalestone"] instance=ExtResource("33_wk4fs")]
+position = Vector2(433, 325)
+
+[node name="rock5" type="Node" parent="Rocks" unique_id=859601790]
+
+[node name="Rock" parent="Rocks/rock5" unique_id=1297096397 groups=["Tidestone"] instance=ExtResource("34_ncp7b")]
+position = Vector2(1205, 953)
 
 [node name="PortalUnlockObject2" parent="." unique_id=1034601297 instance=ExtResource("32_hjksd")]
 y_sort_enabled = true
@@ -356,3 +411,218 @@ destination_spawn = "SkytreePortal"
 [node name="HousePortal" type="Marker2D" parent="." unique_id=700249637]
 z_index = 1
 position = Vector2(960, 336)
+
+[node name="ResourceSpawnPoints" type="Node2D" parent="." unique_id=1374382227]
+
+[node name="Trees" type="Node2D" parent="ResourceSpawnPoints" unique_id=560591098]
+
+[node name="Greenwood" type="Node2D" parent="ResourceSpawnPoints/Trees" unique_id=16422699]
+
+[node name="Spawn01" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=1288274649 groups=["GreenwoodSpawn"]]
+position = Vector2(255, 659)
+
+[node name="Spawn02" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=1357458819 groups=["GreenwoodSpawn"]]
+position = Vector2(457, 1017)
+
+[node name="Spawn03" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=1692333405 groups=["GreenwoodSpawn"]]
+position = Vector2(803, 0)
+
+[node name="Spawn04" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=53631850 groups=["GreenwoodSpawn"]]
+position = Vector2(825, 469)
+
+[node name="Spawn05" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=2028029721 groups=["GreenwoodSpawn"]]
+position = Vector2(312, 314)
+
+[node name="Spawn06" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=1455783158 groups=["GreenwoodSpawn"]]
+position = Vector2(186, 801)
+
+[node name="Spawn07" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=778837953 groups=["GreenwoodSpawn"]]
+position = Vector2(986, 351)
+
+[node name="Spawn08" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=532162216 groups=["GreenwoodSpawn"]]
+position = Vector2(1191, 1018)
+
+[node name="Spawn09" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=160804367 groups=["GreenwoodSpawn"]]
+position = Vector2(1227, 205)
+
+[node name="Spawn10" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=1642570886 groups=["GreenwoodSpawn"]]
+position = Vector2(649, 1353)
+
+[node name="Spawn11" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=996994109 groups=["GreenwoodSpawn"]]
+position = Vector2(682, 946)
+
+[node name="Spawn12" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=1818921104 groups=["GreenwoodSpawn"]]
+position = Vector2(159, 1367)
+
+[node name="Spawn13" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=947308978 groups=["GreenwoodSpawn"]]
+position = Vector2(95, 796)
+
+[node name="Spawn14" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=1695506865 groups=["GreenwoodSpawn"]]
+position = Vector2(299, 95)
+
+[node name="Ironbark" type="Node2D" parent="ResourceSpawnPoints/Trees" unique_id=463013430]
+
+[node name="IronbarkSpawn1" type="Marker2D" parent="ResourceSpawnPoints/Trees/Ironbark" unique_id=1900341845 groups=["IronbarkSpawn"]]
+position = Vector2(916, 1037)
+
+[node name="IronbarkSpawn2" type="Marker2D" parent="ResourceSpawnPoints/Trees/Ironbark" unique_id=642082386 groups=["IronbarkSpawn"]]
+position = Vector2(494, 901)
+
+[node name="IronbarkSpawn3" type="Marker2D" parent="ResourceSpawnPoints/Trees/Ironbark" unique_id=2140858059 groups=["IronbarkSpawn"]]
+position = Vector2(233, 349)
+
+[node name="IronbarkSpawn4" type="Marker2D" parent="ResourceSpawnPoints/Trees/Ironbark" unique_id=345526691 groups=["IronbarkSpawn"]]
+position = Vector2(702, 640)
+
+[node name="IronbarkSpawn5" type="Marker2D" parent="ResourceSpawnPoints/Trees/Ironbark" unique_id=1671513840 groups=["IronbarkSpawn"]]
+position = Vector2(1345, 1022)
+
+[node name="IronbarkSpawn6" type="Marker2D" parent="ResourceSpawnPoints/Trees/Ironbark" unique_id=1896160956 groups=["IronbarkSpawn"]]
+position = Vector2(1277, 159)
+
+[node name="IronbarkSpawn7" type="Marker2D" parent="ResourceSpawnPoints/Trees/Ironbark" unique_id=1497222235 groups=["IronbarkSpawn"]]
+position = Vector2(602, 485)
+
+[node name="IronbarkSpawn8" type="Marker2D" parent="ResourceSpawnPoints/Trees/Ironbark" unique_id=902159157 groups=["IronbarkSpawn"]]
+position = Vector2(504, 759)
+
+[node name="IronbarkSpawn9" type="Marker2D" parent="ResourceSpawnPoints/Trees/Ironbark" unique_id=1972567214 groups=["IronbarkSpawn"]]
+position = Vector2(485, 590)
+
+[node name="IronbarkSpawn10" type="Marker2D" parent="ResourceSpawnPoints/Trees/Ironbark" unique_id=1796273080 groups=["IronbarkSpawn"]]
+position = Vector2(95, 1115)
+
+[node name="Heartwood" type="Node2D" parent="ResourceSpawnPoints/Trees" unique_id=380546940]
+
+[node name="Heartwoodspawn1" type="Marker2D" parent="ResourceSpawnPoints/Trees/Heartwood" unique_id=825058494 groups=["HeartwoodSpawn"]]
+position = Vector2(1139, 110)
+
+[node name="Heartwoodspawn2" type="Marker2D" parent="ResourceSpawnPoints/Trees/Heartwood" unique_id=1905998416 groups=["HeartwoodSpawn"]]
+position = Vector2(942, 930)
+
+[node name="Heartwoodspawn3" type="Marker2D" parent="ResourceSpawnPoints/Trees/Heartwood" unique_id=304976626 groups=["HeartwoodSpawn"]]
+position = Vector2(694, 169)
+
+[node name="Heartwoodspawn4" type="Marker2D" parent="ResourceSpawnPoints/Trees/Heartwood" unique_id=719913003 groups=["HeartwoodSpawn"]]
+position = Vector2(823, 160)
+
+[node name="Heartwoodspawn5" type="Marker2D" parent="ResourceSpawnPoints/Trees/Heartwood" unique_id=463775191 groups=["HeartwoodSpawn"]]
+position = Vector2(599, -38)
+
+[node name="Ancientwood" type="Node2D" parent="ResourceSpawnPoints/Trees" unique_id=460389134]
+
+[node name="AncientwoodSpawn1" type="Marker2D" parent="ResourceSpawnPoints/Trees/Ancientwood" unique_id=791925557 groups=["AncientwoodSpawn"]]
+position = Vector2(828, 79)
+
+[node name="AncientwoodSpawn2" type="Marker2D" parent="ResourceSpawnPoints/Trees/Ancientwood" unique_id=938765364 groups=["AncientwoodSpawn"]]
+position = Vector2(438, -36)
+
+[node name="AncientwoodSpawn3" type="Marker2D" parent="ResourceSpawnPoints/Trees/Ancientwood" unique_id=645070743 groups=["AncientwoodSpawn"]]
+position = Vector2(1236, 1372)
+
+[node name="Elderwood" type="Node2D" parent="ResourceSpawnPoints/Trees" unique_id=1085879653]
+
+[node name="ElderWoodSpawn" type="Marker2D" parent="ResourceSpawnPoints/Trees/Elderwood" unique_id=1972845404 groups=["ElderwoodSpawn"]]
+position = Vector2(1365, 1252)
+
+[node name="Rocks" type="Node2D" parent="ResourceSpawnPoints" unique_id=300136611]
+
+[node name="Granite" type="Node2D" parent="ResourceSpawnPoints/Rocks" unique_id=1645341468]
+
+[node name="Spawn1" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=639649582 groups=["Granitestonespawn"]]
+position = Vector2(1011, 503)
+
+[node name="Spawn2" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=849118214 groups=["Granitestonespawn"]]
+position = Vector2(225, 567)
+
+[node name="Spawn3" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=51798350 groups=["Granitestonespawn"]]
+position = Vector2(800, 300)
+
+[node name="Spawn4" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=818789303 groups=["Granitestonespawn"]]
+position = Vector2(654, 298)
+
+[node name="Spawn5" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=348348235 groups=["Granitestonespawn"]]
+position = Vector2(206, 347)
+
+[node name="Spawn6" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=921889010 groups=["Granitestonespawn"]]
+position = Vector2(898, 918)
+
+[node name="Spawn7" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=2025049206 groups=["Granitestonespawn"]]
+position = Vector2(349, 949)
+
+[node name="Spawn8" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=1713889162 groups=["Granitestonespawn"]]
+position = Vector2(1189, 336)
+
+[node name="Spawn9" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=1703591364 groups=["Granitestonespawn"]]
+position = Vector2(518, 372)
+
+[node name="Spawn10" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=2133590943 groups=["Granitestonespawn"]]
+position = Vector2(475, 641)
+
+[node name="Bloodstone" type="Node2D" parent="ResourceSpawnPoints/Rocks" unique_id=1831911415]
+
+[node name="Spawn1" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=1989500889 groups=["Bloodstonespawn"]]
+position = Vector2(-82, 929)
+
+[node name="Spawn2" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=405305578 groups=["Bloodstonespawn"]]
+position = Vector2(274, 993)
+
+[node name="Spawn3" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=1767755374 groups=["Bloodstonespawn"]]
+position = Vector2(481, 625)
+
+[node name="Spawn4" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=713831974 groups=["Bloodstonespawn"]]
+position = Vector2(64, 761)
+
+[node name="Spawn5" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=806124959 groups=["Bloodstonespawn"]]
+position = Vector2(1074, 621)
+
+[node name="Spawn6" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=2029134354 groups=["Bloodstonespawn"]]
+position = Vector2(162, 1193)
+
+[node name="Spawn7" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=1998327857 groups=["Bloodstonespawn"]]
+position = Vector2(507, 860)
+
+[node name="Spawn8" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=1204760187 groups=["Bloodstonespawn"]]
+position = Vector2(-95, 603)
+
+[node name="Verdantstone" type="Node2D" parent="ResourceSpawnPoints/Rocks" unique_id=822891094]
+
+[node name="Spawn1" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=2146148548 groups=["Verdantstonespawn"]]
+position = Vector2(277, 500)
+
+[node name="Spawn2" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=2028065547 groups=["Verdantstonespawn"]]
+position = Vector2(1085, 985)
+
+[node name="Spawn3" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=190578178 groups=["Verdantstonespawn"]]
+position = Vector2(956, 919)
+
+[node name="Spawn4" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=27621940 groups=["Verdantstonespawn"]]
+position = Vector2(207, 926)
+
+[node name="Spawn5" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=536860223 groups=["Verdantstonespawn"]]
+position = Vector2(438, 637)
+
+[node name="Spawn6" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=954916020 groups=["Verdantstonespawn"]]
+position = Vector2(512, 812)
+
+[node name="Shale" type="Node2D" parent="ResourceSpawnPoints/Rocks" unique_id=899333553]
+
+[node name="Spawn1" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Shale" unique_id=614190340 groups=["Shalestonespawn"]]
+position = Vector2(426, 32)
+
+[node name="Spawn2" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Shale" unique_id=1357688970 groups=["Shalestonespawn"]]
+position = Vector2(80, 350)
+
+[node name="Spawn3" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Shale" unique_id=654728255 groups=["Shalestonespawn"]]
+position = Vector2(904, 140)
+
+[node name="Spawn4" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Shale" unique_id=1854732558 groups=["Shalestonespawn"]]
+position = Vector2(623, -12)
+
+[node name="Tidestone" type="Node2D" parent="ResourceSpawnPoints/Rocks" unique_id=1296826696]
+
+[node name="Spawn1" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Tidestone" unique_id=1784872383 groups=["Tidestonespawn"]]
+position = Vector2(1205, 953)
+
+[node name="Spawn2" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Tidestone" unique_id=284233953 groups=["Tidestonespawn"]]
+position = Vector2(572, 746)

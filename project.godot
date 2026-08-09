@@ -33,6 +33,21 @@ window/size/viewport_height=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+Greenwood=""
+Ironbark=""
+Heartwood=""
+Ancientwood=""
+Elderwood=""
+Bloodstone=""
+Verdantstone=""
+Shalestone=""
+Tidestone=""
+Granitestone=""
+Bloodstonespawn=""
+Verdantstonespawn=""
+
 [input]
 
 interact={

@@ -7,7 +7,7 @@
 size = Vector2(23, 25.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22gus"]
-size = Vector2(30, 32)
+size = Vector2(44, 52)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jq0y2"]
 bg_color = Color(0, 0, 0, 1)
@@ -26,8 +26,8 @@ corner_radius_bottom_left = 3
 [node name="Rock" type="StaticBody2D" unique_id=2000084765]
 z_index = 5
 script = ExtResource("1_bxoes")
-min_respawn_time = 100.0
-max_respawn_time = 200.0
+min_respawn_time = 25.0
+max_respawn_time = 75.0
 rockpunching_xp = 400
 required_rockpunching_level = 20
 rock_difficulty = 5
