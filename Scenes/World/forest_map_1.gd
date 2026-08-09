@@ -2,7 +2,6 @@ extends Node2D
 
 @onready var ground: TileMapLayer = $GroundLayer
 
-
 func _ready():
 
 	#=================================================
@@ -187,4 +186,164 @@ func _ready():
 		"Elderwood",
 		elderwood_spawn_points,
 		elderwood_trees
+	)
+
+
+	#=================================================
+	# GRANITE RESOURCE SPAWNING
+	#=================================================
+
+	var granite_rocks = get_tree().get_nodes_in_group(
+		"Granite"
+	)
+
+	var granite_spawn_points: Array[Marker2D] = []
+
+	for point in get_tree().get_nodes_in_group(
+		"GraniteSpawn"
+	):
+
+		if point is Marker2D:
+			granite_spawn_points.append(point)
+
+
+	print("================================")
+	print("FOREST MAP 1 GRANITE SETUP")
+	print("Granite rocks: ", granite_rocks.size())
+	print("Granite spawn points: ", granite_spawn_points.size())
+	print("================================")
+
+
+	ResourceSpawnManager.setup_resource(
+		"Granite",
+		granite_spawn_points,
+		granite_rocks
+	)
+
+
+	#=================================================
+	# BLOODSTONE RESOURCE SPAWNING
+	#=================================================
+
+	var bloodstone_rocks = get_tree().get_nodes_in_group(
+		"Bloodstone"
+	)
+
+	var bloodstone_spawn_points: Array[Marker2D] = []
+
+	for point in get_tree().get_nodes_in_group(
+		"BloodstoneSpawn"
+	):
+
+		if point is Marker2D:
+			bloodstone_spawn_points.append(point)
+
+
+	print("================================")
+	print("FOREST MAP 1 BLOODSTONE SETUP")
+	print("Bloodstone rocks: ", bloodstone_rocks.size())
+	print("Bloodstone spawn points: ", bloodstone_spawn_points.size())
+	print("================================")
+
+
+	ResourceSpawnManager.setup_resource(
+		"Bloodstone",
+		bloodstone_spawn_points,
+		bloodstone_rocks
+	)
+
+
+	#=================================================
+	# VERDANTSTONE RESOURCE SPAWNING
+	#=================================================
+
+	var verdantstone_rocks = get_tree().get_nodes_in_group(
+		"Verdantstone"
+	)
+
+	var verdantstone_spawn_points: Array[Marker2D] = []
+
+	for point in get_tree().get_nodes_in_group(
+		"VerdantstoneSpawn"
+	):
+
+		if point is Marker2D:
+			verdantstone_spawn_points.append(point)
+
+
+	print("================================")
+	print("FOREST MAP 1 VERDANTSTONE SETUP")
+	print("Verdantstone rocks: ", verdantstone_rocks.size())
+	print("Verdantstone spawn points: ", verdantstone_spawn_points.size())
+	print("================================")
+
+
+	ResourceSpawnManager.setup_resource(
+		"Verdantstone",
+		verdantstone_spawn_points,
+		verdantstone_rocks
+	)
+
+
+	#=================================================
+	# SHALE RESOURCE SPAWNING
+	#=================================================
+
+	var shale_rocks = get_tree().get_nodes_in_group(
+		"Shale"
+	)
+
+	var shale_spawn_points: Array[Marker2D] = []
+
+	for point in get_tree().get_nodes_in_group(
+		"ShaleSpawn"
+	):
+
+		if point is Marker2D:
+			shale_spawn_points.append(point)
+
+
+	print("================================")
+	print("FOREST MAP 1 SHALE SETUP")
+	print("Shale rocks: ", shale_rocks.size())
+	print("Shale spawn points: ", shale_spawn_points.size())
+	print("================================")
+
+
+	ResourceSpawnManager.setup_resource(
+		"Shale",
+		shale_spawn_points,
+		shale_rocks
+	)
+
+
+	#=================================================
+	# TIDESTONE RESOURCE SPAWNING
+	#=================================================
+
+	var tidestone_rocks = get_tree().get_nodes_in_group(
+		"Tidestone"
+	)
+
+	var tidestone_spawn_points: Array[Marker2D] = []
+
+	for point in get_tree().get_nodes_in_group(
+		"TidestoneSpawn"
+	):
+
+		if point is Marker2D:
+			tidestone_spawn_points.append(point)
+
+
+	print("================================")
+	print("FOREST MAP 1 TIDESTONE SETUP")
+	print("Tidestone rocks: ", tidestone_rocks.size())
+	print("Tidestone spawn points: ", tidestone_spawn_points.size())
+	print("================================")
+
+
+	ResourceSpawnManager.setup_resource(
+		"Tidestone",
+		tidestone_spawn_points,
+		tidestone_rocks
 	)

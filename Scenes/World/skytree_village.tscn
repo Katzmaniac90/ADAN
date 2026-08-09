@@ -343,19 +343,19 @@ position = Vector2(1365, 1252)
 
 [node name="rock1" type="Node" parent="Rocks" unique_id=1176212133]
 
-[node name="Rock" parent="Rocks/rock1" unique_id=1910452217 instance=ExtResource("16_cgjli")]
+[node name="Rock" parent="Rocks/rock1" unique_id=1910452217 groups=["Granite"] instance=ExtResource("16_cgjli")]
 position = Vector2(-24, 392)
 
-[node name="Rock2" parent="Rocks/rock1" unique_id=2103914290 instance=ExtResource("16_cgjli")]
+[node name="Rock2" parent="Rocks/rock1" unique_id=2103914290 groups=["Granite"] instance=ExtResource("16_cgjli")]
 position = Vector2(632, 584)
 
-[node name="Rock3" parent="Rocks/rock1" unique_id=1545795100 instance=ExtResource("16_cgjli")]
+[node name="Rock3" parent="Rocks/rock1" unique_id=1545795100 groups=["Granite"] instance=ExtResource("16_cgjli")]
 position = Vector2(1128, 936)
 
-[node name="Rock4" parent="Rocks/rock1" unique_id=1619797703 instance=ExtResource("16_cgjli")]
+[node name="Rock4" parent="Rocks/rock1" unique_id=1619797703 groups=["Granite"] instance=ExtResource("16_cgjli")]
 position = Vector2(1016, 96)
 
-[node name="Rock5" parent="Rocks/rock1" unique_id=1067017184 instance=ExtResource("16_cgjli")]
+[node name="Rock5" parent="Rocks/rock1" unique_id=1067017184 groups=["Granite"] instance=ExtResource("16_cgjli")]
 position = Vector2(912, 1264)
 
 [node name="rock2" type="Node" parent="Rocks" unique_id=649496467]
@@ -385,10 +385,10 @@ position = Vector2(1130, 532)
 
 [node name="rock4" type="Node" parent="Rocks" unique_id=9254540]
 
-[node name="Rock4" parent="Rocks/rock4" unique_id=1254787933 groups=["Shalestone"] instance=ExtResource("33_wk4fs")]
+[node name="Rock4" parent="Rocks/rock4" unique_id=1254787933 groups=["Shale"] instance=ExtResource("33_wk4fs")]
 position = Vector2(151, 153)
 
-[node name="Rock" parent="Rocks/rock4" unique_id=1326267371 groups=["Shalestone"] instance=ExtResource("33_wk4fs")]
+[node name="Rock" parent="Rocks/rock4" unique_id=1326267371 groups=["Shale"] instance=ExtResource("33_wk4fs")]
 position = Vector2(433, 325)
 
 [node name="rock5" type="Node" parent="Rocks" unique_id=859601790]
@@ -529,100 +529,100 @@ position = Vector2(1365, 1252)
 
 [node name="Granite" type="Node2D" parent="ResourceSpawnPoints/Rocks" unique_id=1645341468]
 
-[node name="Spawn1" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=639649582 groups=["Granitestonespawn"]]
+[node name="Spawn1" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=639649582 groups=["GraniteSpawn"]]
 position = Vector2(1011, 503)
 
-[node name="Spawn2" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=849118214 groups=["Granitestonespawn"]]
+[node name="Spawn2" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=849118214 groups=["GraniteSpawn"]]
 position = Vector2(225, 567)
 
-[node name="Spawn3" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=51798350 groups=["Granitestonespawn"]]
+[node name="Spawn3" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=51798350 groups=["GraniteSpawn"]]
 position = Vector2(800, 300)
 
-[node name="Spawn4" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=818789303 groups=["Granitestonespawn"]]
+[node name="Spawn4" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=818789303 groups=["GraniteSpawn"]]
 position = Vector2(654, 298)
 
-[node name="Spawn5" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=348348235 groups=["Granitestonespawn"]]
+[node name="Spawn5" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=348348235 groups=["GraniteSpawn"]]
 position = Vector2(206, 347)
 
-[node name="Spawn6" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=921889010 groups=["Granitestonespawn"]]
+[node name="Spawn6" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=921889010 groups=["GraniteSpawn"]]
 position = Vector2(898, 918)
 
-[node name="Spawn7" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=2025049206 groups=["Granitestonespawn"]]
+[node name="Spawn7" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=2025049206 groups=["GraniteSpawn"]]
 position = Vector2(349, 949)
 
-[node name="Spawn8" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=1713889162 groups=["Granitestonespawn"]]
+[node name="Spawn8" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=1713889162 groups=["GraniteSpawn"]]
 position = Vector2(1189, 336)
 
-[node name="Spawn9" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=1703591364 groups=["Granitestonespawn"]]
+[node name="Spawn9" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=1703591364 groups=["GraniteSpawn"]]
 position = Vector2(518, 372)
 
-[node name="Spawn10" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=2133590943 groups=["Granitestonespawn"]]
+[node name="Spawn10" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=2133590943 groups=["GraniteSpawn"]]
 position = Vector2(475, 641)
 
 [node name="Bloodstone" type="Node2D" parent="ResourceSpawnPoints/Rocks" unique_id=1831911415]
 
-[node name="Spawn1" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=1989500889 groups=["Bloodstonespawn"]]
+[node name="Spawn1" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=1989500889 groups=["BloodstoneSpawn"]]
 position = Vector2(-82, 929)
 
-[node name="Spawn2" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=405305578 groups=["Bloodstonespawn"]]
+[node name="Spawn2" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=405305578 groups=["BloodstoneSpawn"]]
 position = Vector2(274, 993)
 
-[node name="Spawn3" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=1767755374 groups=["Bloodstonespawn"]]
+[node name="Spawn3" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=1767755374 groups=["BloodstoneSpawn"]]
 position = Vector2(481, 625)
 
-[node name="Spawn4" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=713831974 groups=["Bloodstonespawn"]]
+[node name="Spawn4" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=713831974 groups=["BloodstoneSpawn"]]
 position = Vector2(64, 761)
 
-[node name="Spawn5" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=806124959 groups=["Bloodstonespawn"]]
+[node name="Spawn5" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=806124959 groups=["BloodstoneSpawn"]]
 position = Vector2(1074, 621)
 
-[node name="Spawn6" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=2029134354 groups=["Bloodstonespawn"]]
+[node name="Spawn6" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=2029134354 groups=["BloodstoneSpawn"]]
 position = Vector2(162, 1193)
 
-[node name="Spawn7" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=1998327857 groups=["Bloodstonespawn"]]
+[node name="Spawn7" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=1998327857 groups=["BloodstoneSpawn"]]
 position = Vector2(507, 860)
 
-[node name="Spawn8" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=1204760187 groups=["Bloodstonespawn"]]
+[node name="Spawn8" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=1204760187 groups=["BloodstoneSpawn"]]
 position = Vector2(-95, 603)
 
 [node name="Verdantstone" type="Node2D" parent="ResourceSpawnPoints/Rocks" unique_id=822891094]
 
-[node name="Spawn1" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=2146148548 groups=["Verdantstonespawn"]]
+[node name="Spawn1" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=2146148548 groups=["VerdantstoneSpawn"]]
 position = Vector2(277, 500)
 
-[node name="Spawn2" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=2028065547 groups=["Verdantstonespawn"]]
+[node name="Spawn2" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=2028065547 groups=["VerdantstoneSpawn"]]
 position = Vector2(1085, 985)
 
-[node name="Spawn3" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=190578178 groups=["Verdantstonespawn"]]
+[node name="Spawn3" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=190578178 groups=["VerdantstoneSpawn"]]
 position = Vector2(956, 919)
 
-[node name="Spawn4" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=27621940 groups=["Verdantstonespawn"]]
+[node name="Spawn4" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=27621940 groups=["VerdantstoneSpawn"]]
 position = Vector2(207, 926)
 
-[node name="Spawn5" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=536860223 groups=["Verdantstonespawn"]]
+[node name="Spawn5" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=536860223 groups=["VerdantstoneSpawn"]]
 position = Vector2(438, 637)
 
-[node name="Spawn6" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=954916020 groups=["Verdantstonespawn"]]
+[node name="Spawn6" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Verdantstone" unique_id=954916020 groups=["VerdantstoneSpawn"]]
 position = Vector2(512, 812)
 
 [node name="Shale" type="Node2D" parent="ResourceSpawnPoints/Rocks" unique_id=899333553]
 
-[node name="Spawn1" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Shale" unique_id=614190340 groups=["Shalestonespawn"]]
+[node name="Spawn1" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Shale" unique_id=614190340 groups=["ShaleSpawn"]]
 position = Vector2(426, 32)
 
-[node name="Spawn2" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Shale" unique_id=1357688970 groups=["Shalestonespawn"]]
+[node name="Spawn2" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Shale" unique_id=1357688970 groups=["ShaleSpawn"]]
 position = Vector2(80, 350)
 
-[node name="Spawn3" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Shale" unique_id=654728255 groups=["Shalestonespawn"]]
+[node name="Spawn3" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Shale" unique_id=654728255 groups=["ShaleSpawn"]]
 position = Vector2(904, 140)
 
-[node name="Spawn4" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Shale" unique_id=1854732558 groups=["Shalestonespawn"]]
+[node name="Spawn4" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Shale" unique_id=1854732558 groups=["ShaleSpawn"]]
 position = Vector2(623, -12)
 
 [node name="Tidestone" type="Node2D" parent="ResourceSpawnPoints/Rocks" unique_id=1296826696]
 
-[node name="Spawn1" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Tidestone" unique_id=1784872383 groups=["Tidestonespawn"]]
+[node name="Spawn1" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Tidestone" unique_id=1784872383 groups=["TidestoneSpawn"]]
 position = Vector2(1205, 953)
 
-[node name="Spawn2" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Tidestone" unique_id=284233953 groups=["Tidestonespawn"]]
+[node name="Spawn2" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Tidestone" unique_id=284233953 groups=["TidestoneSpawn"]]
 position = Vector2(572, 746)

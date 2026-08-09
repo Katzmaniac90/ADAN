@@ -142,9 +142,56 @@ func punch_rock():
 
 func _on_respawn_timer_timeout():
 
+	print(
+		"🔄 ",
+		rock_drop,
+		" respawn timer fired: ",
+		name
+	)
+
+	var spawn_point = ResourceSpawnManager.get_available_resource_spawn(
+		rock_drop,
+		self
+	)
+
+	if spawn_point == null:
+
+		print(
+			"❌ No available spawn point for ",
+			rock_drop,
+			": ",
+			name
+		)
+
+		# Try again in a few seconds
+		$RespawnTimer.start(2.0)
+
+		return
+
+
+	print(
+		"📍 Moving ",
+		name,
+		" from ",
+		global_position,
+		" → ",
+		spawn_point.name,
+		" ",
+		spawn_point.global_position
+	)
+
+	global_position = spawn_point.global_position
+
 	show()
 
 	$CollisionShape2D.disabled = false
+
+	print(
+		"✅ ",
+		name,
+		" respawned at ",
+		spawn_point.name
+	)
 
 
 func cancel_punching():

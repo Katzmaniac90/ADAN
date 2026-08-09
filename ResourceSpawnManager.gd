@@ -9,6 +9,11 @@ extends Node
 @export var heartwood_active_count: int = 3
 @export var ancientwood_active_count: int = 2
 @export var elderwood_active_count: int = 1
+@export var granite_active_count: int = 5
+@export var bloodstone_active_count: int = 4
+@export var verdantstone_active_count: int = 3
+@export var shale_active_count: int = 2
+@export var tidestone_active_count: int = 1
 
 #=================================================
 # RESOURCE DATA
@@ -54,6 +59,21 @@ func get_active_count(resource_type: String) -> int:
 
 		"Elderwood":
 			return elderwood_active_count
+			
+		"Granite":
+			return granite_active_count
+
+		"Bloodstone":
+			return bloodstone_active_count
+
+		"Verdantstone":
+			return verdantstone_active_count
+
+		"Shale":
+			return shale_active_count
+
+		"Tidestone":
+			return tidestone_active_count
 
 	return 0
 
@@ -130,6 +150,7 @@ func get_available_resource_spawn(
 
 		return null
 
+
 	if not active_resources.has(resource_type):
 
 		print(
@@ -139,12 +160,30 @@ func get_available_resource_spawn(
 
 		return null
 
+
 	var spawn_points = resource_spawn_points[resource_type]
 	var resources = active_resources[resource_type]
 
 	var available_points = []
 
+	# Remember where the resource currently is
+	var old_position = resource.global_position
+
+
 	for point in spawn_points:
+
+		#-----------------------------------------
+		# NEVER RETURN TO THE SAME SPAWN POINT
+		#-----------------------------------------
+
+		if point.global_position.distance_to(old_position) < 1.0:
+
+			continue
+
+
+		#-----------------------------------------
+		# CHECK IF ANOTHER RESOURCE IS THERE
+		#-----------------------------------------
 
 		var point_occupied = false
 
@@ -163,26 +202,60 @@ func get_available_resource_spawn(
 				point_occupied = true
 				break
 
+
 		if not point_occupied:
 
 			available_points.append(point)
+
+
+	#-----------------------------------------
+	# NO AVAILABLE SPAWN
+	#-----------------------------------------
 
 	if available_points.is_empty():
 
 		print(
 			"❌ No available ",
 			resource_type,
-			" spawn point!"
+			" spawn point for ",
+			resource.name
 		)
 
 		return null
+
+
+	#-----------------------------------------
+	# PICK RANDOM AVAILABLE SPAWN
+	#-----------------------------------------
 
 	var random_index = randi_range(
 		0,
 		available_points.size() - 1
 	)
 
-	return available_points[random_index]
+	var selected_point = available_points[random_index]
+
+
+	#-----------------------------------------
+	# DEBUG OUTPUT
+	#-----------------------------------------
+
+	print(
+		"🔄 ",
+		resource.name,
+		" (",
+		resource_type,
+		") ",
+		"depleted at ",
+		old_position,
+		" → respawning at ",
+		selected_point.name,
+		" ",
+		selected_point.global_position
+	)
+
+
+	return selected_point
 
 #=================================================
 # RELEASE RESOURCE
