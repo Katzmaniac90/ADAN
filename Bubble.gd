@@ -1,13 +1,10 @@
 extends StaticBody2D
 
-
 var player_near := false
 var snatching := false
 
 var shake_amount := 1.0
 var original_position: Vector2
-var spawn_position: Vector2
-
 
 #=================================================
 # RESPAWN
@@ -15,8 +12,6 @@ var spawn_position: Vector2
 
 @export var min_respawn_time: float = 4.0
 @export var max_respawn_time: float = 8.0
-@export var respawn_radius: float = 10.0
-
 
 #=================================================
 # INTERACTION
@@ -24,7 +19,6 @@ var spawn_position: Vector2
 
 @export var interaction_height: float = -50.0
 @export var interaction_text: String = "Snatch Fish"
-
 
 #=================================================
 # FISHSNATCHING
@@ -34,13 +28,11 @@ var spawn_position: Vector2
 @export var bubble_difficulty: int = 1
 @export var required_fishsnatching_level: int = 1
 
-
 #=================================================
-# FISH DROP
+# FISH DROP / RESOURCE TYPE
 #=================================================
 
 @export var fish_name: String = "Fish"
-
 
 #=================================================
 # READY
@@ -49,7 +41,6 @@ var spawn_position: Vector2
 func _ready():
 
 	original_position = $Bubble.position
-	spawn_position = global_position
 
 	$InteractionLabel.position = Vector2(
 		0,
@@ -193,12 +184,22 @@ func snatch_fish():
 	)
 
 
+	print(
+		"🐟 ",
+		name,
+		" (",
+		fish_name,
+		") collected at ",
+		global_position
+	)
+
+
 	snatching = false
 
 	$SnatchProgress.visible = false
 
 
-	# Hide bubble
+	# Hide fish
 	hide()
 
 	$CollisionShape2D.disabled = true
@@ -245,20 +246,65 @@ func shake_bubble():
 
 func _on_respawn_timer_timeout():
 
-	global_position = spawn_position + Vector2(
-		randf_range(
-			-respawn_radius,
-			respawn_radius
-		),
-		randf_range(
-			-respawn_radius,
-			respawn_radius
-		)
+	print(
+		"🔄 ",
+		fish_name,
+		" respawn timer fired: ",
+		name
 	)
 
+
+	# Ask ResourceSpawnManager for a new location
+	var spawn_point = ResourceSpawnManager.get_available_resource_spawn(
+		fish_name,
+		self
+	)
+
+
+	# No available spawn point
+	if spawn_point == null:
+
+		print(
+			"❌ No available ",
+			fish_name,
+			" spawn point for ",
+			name
+		)
+
+		# Try again in two seconds
+		$RespawnTimer.start(2.0)
+
+		return
+
+
+	print(
+		"📍 Moving ",
+		name,
+		" from ",
+		global_position,
+		" → ",
+		spawn_point.name,
+		" ",
+		spawn_point.global_position
+	)
+
+
+	# Move fish to new spawn point
+	global_position = spawn_point.global_position
+
+
+	# Show fish
 	show()
 
 	$CollisionShape2D.disabled = false
+
+
+	print(
+		"✅ ",
+		name,
+		" respawned at ",
+		spawn_point.name
+	)
 
 
 #=================================================

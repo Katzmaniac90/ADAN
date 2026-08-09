@@ -9,11 +9,19 @@ extends Node
 @export var heartwood_active_count: int = 3
 @export var ancientwood_active_count: int = 2
 @export var elderwood_active_count: int = 1
+
 @export var granite_active_count: int = 5
 @export var bloodstone_active_count: int = 4
 @export var verdantstone_active_count: int = 3
 @export var shale_active_count: int = 2
 @export var tidestone_active_count: int = 1
+
+@export var bubblefin_active_count: int = 5
+@export var glimmergill_active_count: int = 4
+@export var moonscale_active_count: int = 3
+@export var tidefang_active_count: int = 2
+@export var leviathan_active_count: int = 1
+
 
 #=================================================
 # RESOURCE DATA
@@ -21,6 +29,7 @@ extends Node
 
 var resource_spawn_points: Dictionary = {}
 var active_resources: Dictionary = {}
+
 
 #=================================================
 # SETUP RESOURCE
@@ -36,6 +45,7 @@ func setup_resource(
 	active_resources[resource_type] = resources
 
 	spawn_resource(resource_type)
+
 
 #=================================================
 # GET ACTIVE COUNT
@@ -59,7 +69,7 @@ func get_active_count(resource_type: String) -> int:
 
 		"Elderwood":
 			return elderwood_active_count
-			
+
 		"Granite":
 			return granite_active_count
 
@@ -75,7 +85,23 @@ func get_active_count(resource_type: String) -> int:
 		"Tidestone":
 			return tidestone_active_count
 
+		"Bubblefin":
+			return bubblefin_active_count
+
+		"Glimmergill":
+			return glimmergill_active_count
+
+		"Moonscale":
+			return moonscale_active_count
+
+		"Tidefang":
+			return tidefang_active_count
+
+		"Leviathan":
+			return leviathan_active_count
+
 	return 0
+
 
 #=================================================
 # INITIAL SPAWN
@@ -84,28 +110,39 @@ func get_active_count(resource_type: String) -> int:
 func spawn_resource(resource_type: String):
 
 	if not resource_spawn_points.has(resource_type):
+
 		print(
 			"❌ No spawn points registered for ",
 			resource_type
 		)
+
 		return
 
+
 	if not active_resources.has(resource_type):
+
 		print(
 			"❌ No resources registered for ",
 			resource_type
 		)
+
 		return
+
 
 	var spawn_points = resource_spawn_points[resource_type]
 	var resources = active_resources[resource_type]
 
 	var available_points = spawn_points.duplicate()
 
+
 	var amount_to_spawn = min(
 		get_active_count(resource_type),
-		min(resources.size(), available_points.size())
+		min(
+			resources.size(),
+			available_points.size()
+		)
 	)
+
 
 	for i in range(amount_to_spawn):
 
@@ -124,13 +161,14 @@ func spawn_resource(resource_type: String):
 		resource.show()
 
 		print(
-			"🌳 ",
+			"🌱 ",
 			resource_type,
 			": ",
 			resource.name,
 			" spawned at ",
 			spawn_point.name
 		)
+
 
 #=================================================
 # GET AVAILABLE RESOURCE SPAWN
@@ -165,6 +203,7 @@ func get_available_resource_spawn(
 	var resources = active_resources[resource_type]
 
 	var available_points = []
+
 
 	# Remember where the resource currently is
 	var old_position = resource.global_position
@@ -257,6 +296,7 @@ func get_available_resource_spawn(
 
 	return selected_point
 
+
 #=================================================
 # RELEASE RESOURCE
 #=================================================
@@ -267,7 +307,7 @@ func release_resource_spawn(
 ):
 
 	print(
-		"🌳 Released ",
+		"🔓 Released ",
 		resource_type,
 		" spawn point for ",
 		resource.name

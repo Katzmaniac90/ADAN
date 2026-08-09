@@ -90,8 +90,8 @@ corner_radius_bottom_left = 3
 [node name="Bubble" type="StaticBody2D" unique_id=1471351366]
 scale = Vector2(0.4, 0.4)
 script = ExtResource("1_ogohe")
-min_respawn_time = 60.0
-max_respawn_time = 120.0
+min_respawn_time = 20.0
+max_respawn_time = 60.0
 respawn_radius = 0.0
 interaction_text = "[E] Snatch Fish"
 fishsnatching_xp = 200

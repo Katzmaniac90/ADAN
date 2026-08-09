@@ -32,7 +32,6 @@ var item_textures = {
 }
 
 
-
 func _ready():
 
 	UIManager.register_window(self)

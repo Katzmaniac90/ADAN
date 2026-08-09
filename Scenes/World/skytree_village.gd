@@ -265,3 +265,123 @@ func _ready():
 		tidestone_spawn_points,
 		tidestone_rocks
 	)
+
+
+	#=================================================
+	# BUBBLEFIN
+	#=================================================
+
+	var bubblefin_fish = get_tree().get_nodes_in_group("Bubblefin")
+	var bubblefin_spawn_points: Array[Marker2D] = []
+
+	for point in get_tree().get_nodes_in_group("BubblefinSpawn"):
+		if point is Marker2D:
+			bubblefin_spawn_points.append(point)
+
+	print("================================")
+	print("SECOND MAP BUBBLEFIN SETUP")
+	print("Bubblefin fish: ", bubblefin_fish.size())
+	print("Bubblefin spawn points: ", bubblefin_spawn_points.size())
+	print("================================")
+
+	ResourceSpawnManager.setup_resource(
+		"Bubblefin",
+		bubblefin_spawn_points,
+		bubblefin_fish
+	)
+
+
+	#=================================================
+	# GLIMMERGILL
+	#=================================================
+
+	var glimmergill_fish = get_tree().get_nodes_in_group("Glimmergill")
+	var glimmergill_spawn_points: Array[Marker2D] = []
+
+	for point in get_tree().get_nodes_in_group("GlimmergillSpawn"):
+		if point is Marker2D:
+			glimmergill_spawn_points.append(point)
+
+	print("================================")
+	print("SECOND MAP GLIMMERGILL SETUP")
+	print("Glimmergill fish: ", glimmergill_fish.size())
+	print("Glimmergill spawn points: ", glimmergill_spawn_points.size())
+	print("================================")
+
+	ResourceSpawnManager.setup_resource(
+		"Glimmergill",
+		glimmergill_spawn_points,
+		glimmergill_fish
+	)
+
+
+	#=================================================
+	# MOONSCALE
+	#=================================================
+
+	var moonscale_fish = get_tree().get_nodes_in_group("Moonscale")
+	var moonscale_spawn_points: Array[Marker2D] = []
+
+	for point in get_tree().get_nodes_in_group("MoonscaleSpawn"):
+		if point is Marker2D:
+			moonscale_spawn_points.append(point)
+
+	print("================================")
+	print("SECOND MAP MOONSCALE SETUP")
+	print("Moonscale fish: ", moonscale_fish.size())
+	print("Moonscale spawn points: ", moonscale_spawn_points.size())
+	print("================================")
+
+	ResourceSpawnManager.setup_resource(
+		"Moonscale",
+		moonscale_spawn_points,
+		moonscale_fish
+	)
+
+
+	#=================================================
+	# TIDEFANG
+	#=================================================
+
+	var tidefang_fish = get_tree().get_nodes_in_group("Tidefang")
+	var tidefang_spawn_points: Array[Marker2D] = []
+
+	for point in get_tree().get_nodes_in_group("TidefangSpawn"):
+		if point is Marker2D:
+			tidefang_spawn_points.append(point)
+
+	print("================================")
+	print("SECOND MAP TIDEFANG SETUP")
+	print("Tidefang fish: ", tidefang_fish.size())
+	print("Tidefang spawn points: ", tidefang_spawn_points.size())
+	print("================================")
+
+	ResourceSpawnManager.setup_resource(
+		"Tidefang",
+		tidefang_spawn_points,
+		tidefang_fish
+	)
+
+
+	#=================================================
+	# LEVIATHAN
+	#=================================================
+
+	var leviathan_fish = get_tree().get_nodes_in_group("Leviathan")
+	var leviathan_spawn_points: Array[Marker2D] = []
+
+	for point in get_tree().get_nodes_in_group("LeviathanSpawn"):
+		if point is Marker2D:
+			leviathan_spawn_points.append(point)
+
+	print("================================")
+	print("SECOND MAP LEVIATHAN SETUP")
+	print("Leviathan fish: ", leviathan_fish.size())
+	print("Leviathan spawn points: ", leviathan_spawn_points.size())
+	print("================================")
+
+	ResourceSpawnManager.setup_resource(
+		"Leviathan",
+		leviathan_spawn_points,
+		leviathan_fish
+	)
