@@ -266,6 +266,22 @@ shape = SubResource("RectangleShape2D_jpemb")
 position = Vector2(1232, 504)
 shape = SubResource("RectangleShape2D_jpemb")
 
+[node name="PortalUnlockObject2" parent="." unique_id=1034601297 instance=ExtResource("32_hjksd")]
+y_sort_enabled = true
+position = Vector2(1072, -8)
+interaction_text = "[E] Unlock Portal"
+
+[node name="PortalSpawn" parent="." unique_id=1962457138 instance=ExtResource("31_hhu0b")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(960, 304)
+destination_scene = "uid://feefsv0w62fx"
+destination_spawn = "SkytreePortal"
+
+[node name="HousePortal" type="Marker2D" parent="." unique_id=700249637]
+z_index = 1
+position = Vector2(960, 336)
+
 [node name="Resources" type="Node" parent="." unique_id=1497490198]
 
 [node name="Trees" type="Node" parent="Resources" unique_id=763776874]
@@ -429,22 +445,6 @@ position = Vector2(541, 753)
 
 [node name="Bubble2" parent="Resources/Bubbles/Bubble5" unique_id=1640987846 groups=["Leviathan"] instance=ExtResource("39_qe1nr")]
 position = Vector2(1197, 984)
-
-[node name="PortalUnlockObject2" parent="." unique_id=1034601297 instance=ExtResource("32_hjksd")]
-y_sort_enabled = true
-position = Vector2(1072, -8)
-interaction_text = "[E] Unlock Portal"
-
-[node name="PortalSpawn" parent="." unique_id=1962457138 instance=ExtResource("31_hhu0b")]
-z_index = 1
-y_sort_enabled = true
-position = Vector2(960, 304)
-destination_scene = "uid://feefsv0w62fx"
-destination_spawn = "SkytreePortal"
-
-[node name="HousePortal" type="Marker2D" parent="." unique_id=700249637]
-z_index = 1
-position = Vector2(960, 336)
 
 [node name="ResourceSpawnPoints" type="Node2D" parent="." unique_id=1374382227]
 
