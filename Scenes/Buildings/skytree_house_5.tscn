@@ -4,6 +4,7 @@
 [ext_resource type="TileSet" uid="uid://c1h01xwhckm4f" path="res://TileSet/objects.tres" id="2_5yckn"]
 [ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="3_5yckn"]
 [ext_resource type="PackedScene" uid="uid://diefx0bc0sesc" path="res://Scenes/Doors/SkytreeHouse5Out.tscn" id="4_ohndg"]
+[ext_resource type="PackedScene" uid="uid://1fp6mejt7g1w" path="res://Scenes/NPCs/axe_trader.tscn" id="5_f2ix4"]
 
 [node name="SkytreeHouse5" type="Node2D" unique_id=936046320]
 y_sort_enabled = true
@@ -39,3 +40,6 @@ position = Vector2(200, 200)
 [node name="SkytreeHouse5Out" parent="Doors" unique_id=1895642603 instance=ExtResource("4_ohndg")]
 z_index = 1
 position = Vector2(200, 224)
+
+[node name="AxeTrader" parent="." unique_id=1364145027 instance=ExtResource("5_f2ix4")]
+position = Vector2(200, 84)

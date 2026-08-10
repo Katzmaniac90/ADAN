@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://1fp6mejt7g1w"]
+
+[ext_resource type="Script" uid="uid://5l5q63fhtfxf" path="res://axetrader.gd" id="1_7jd7o"]
+[ext_resource type="Texture2D" uid="uid://puvfkps5h88d" path="res://rocks_and_stones/PNG/Objects_separately/Rock8_ground_shadow_dark4.png" id="2_ppa4d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wla72"]
+radius = 19.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7jd7o"]
+radius = 22.022715
+
+[node name="AxeTrader" type="CharacterBody2D" unique_id=1364145027]
+script = ExtResource("1_7jd7o")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1542005730]
+texture = ExtResource("2_ppa4d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=181537670]
+shape = SubResource("CircleShape2D_wla72")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=450766307]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1098796481]
+shape = SubResource("CircleShape2D_7jd7o")

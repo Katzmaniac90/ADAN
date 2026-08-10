@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://bbw2ncejtjj7x"]
+
+[node name="AxeTraderUI" type="Control" unique_id=876595982]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ShopWindow" type="NinePatchRect" parent="." unique_id=1658870828]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Title" type="Label" parent="ShopWindow" unique_id=720290213]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="CloseButton" type="Button" parent="ShopWindow" unique_id=2057299481]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="PreviousButton" type="Button" parent="ShopWindow" unique_id=1857870521]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="AxeDisplay" type="Control" parent="ShopWindow" unique_id=1244757409]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AxeImage" type="TextureRect" parent="ShopWindow/AxeDisplay" unique_id=647341801]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AxeName" type="Label" parent="ShopWindow/AxeDisplay" unique_id=864594238]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="AxeStats" type="Label" parent="ShopWindow/AxeDisplay" unique_id=1738498858]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Requirements" type="Label" parent="ShopWindow/AxeDisplay" unique_id=1516993770]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="ActionButton" type="Button" parent="ShopWindow/AxeDisplay" unique_id=376789499]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+
+[node name="StatusLabel" type="Label" parent="ShopWindow/AxeDisplay" unique_id=675054119]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
