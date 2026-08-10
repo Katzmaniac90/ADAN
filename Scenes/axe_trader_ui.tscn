@@ -1,62 +1,96 @@
 [gd_scene format=3 uid="uid://bbw2ncejtjj7x"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsbsd"]
+bg_color = Color(0.96727496, 0.3438558, 0.5343366, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [node name="AxeTraderUI" type="Control" unique_id=876595982]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ShopWindow" type="NinePatchRect" parent="." unique_id=1658870828]
+[node name="ShopWindow" type="Panel" parent="." unique_id=817869771]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 170.0
+offset_bottom = 170.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_xsbsd")
 
 [node name="Title" type="Label" parent="ShopWindow" unique_id=720290213]
 layout_mode = 0
-offset_right = 40.0
+offset_right = 170.0
 offset_bottom = 23.0
+text = "AXE TRADER"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CloseButton" type="Button" parent="ShopWindow" unique_id=2057299481]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 15.0
+offset_top = 55.0
+offset_right = 60.0
+offset_bottom = 95.0
 
 [node name="PreviousButton" type="Button" parent="ShopWindow" unique_id=1857870521]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 77.0
+offset_top = 154.0
+offset_right = 100.0
+offset_bottom = 162.0
 
 [node name="AxeDisplay" type="Control" parent="ShopWindow" unique_id=1244757409]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 2.0
+offset_top = 20.0
+offset_right = 169.0
+offset_bottom = 145.0
 
 [node name="AxeImage" type="TextureRect" parent="ShopWindow/AxeDisplay" unique_id=647341801]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 60.0
+offset_top = 44.0
+offset_right = 100.0
+offset_bottom = 84.0
 
 [node name="AxeName" type="Label" parent="ShopWindow/AxeDisplay" unique_id=864594238]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 62.0
+offset_top = 22.0
+offset_right = 102.0
+offset_bottom = 45.0
 
 [node name="AxeStats" type="Label" parent="ShopWindow/AxeDisplay" unique_id=1738498858]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 62.0
+offset_top = 88.0
+offset_right = 102.0
+offset_bottom = 111.0
 
 [node name="Requirements" type="Label" parent="ShopWindow/AxeDisplay" unique_id=1516993770]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 8.0
+offset_top = 65.0
+offset_right = 48.0
+offset_bottom = 88.0
 
 [node name="ActionButton" type="Button" parent="ShopWindow/AxeDisplay" unique_id=376789499]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 129.0
+offset_top = 103.0
+offset_right = 145.0
+offset_bottom = 120.0
 
 [node name="StatusLabel" type="Label" parent="ShopWindow/AxeDisplay" unique_id=675054119]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_left = 26.0
+offset_top = 103.0
+offset_right = 66.0
+offset_bottom = 126.0
