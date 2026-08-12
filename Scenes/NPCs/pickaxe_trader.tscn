@@ -11,6 +11,7 @@ radius = 22.022715
 [node name="Pickaxetrader" type="CharacterBody2D" unique_id=2088194910]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1956397507]
+scale = Vector2(0.643, 0.6)
 texture = ExtResource("1_7qjui")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1053290517]

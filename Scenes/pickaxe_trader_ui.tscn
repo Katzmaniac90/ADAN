@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://ciy7derumrwsn"]
+
+[ext_resource type="Script" uid="uid://i2rskt44tq4h" path="res://Scenes/pickaxe_trader_panel.gd" id="1_ejtrq"]
+[ext_resource type="Script" uid="uid://diunbbkm4tyt5" path="res://Scenes/drag_bar.gd" id="2_fxskq"]
+[ext_resource type="Texture2D" uid="uid://dvg332p32ekv5" path="res://Items/Axes/Hands.png" id="3_lr2xd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wla72"]
+bg_color = Color(0.14354825, 0.23337242, 0.496127, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8biva"]
+bg_color = Color(0.886004, 0.26244184, 0.3113789, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_85gge"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_77un7"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fq1i"]
+bg_color = Color(0.30555284, 0.5290693, 0.16318756, 1)
+
+[node name="PickaxeTraderUI" type="CanvasLayer" unique_id=1271025638]
+
+[node name="PickaxeTraderPanel" type="Panel" parent="." unique_id=1923479293]
+offset_right = 506.0
+offset_bottom = 670.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wla72")
+script = ExtResource("1_ejtrq")
+
+[node name="DragBar" type="Control" parent="PickaxeTraderPanel" unique_id=720223164]
+anchors_preset = 0
+offset_right = 504.0
+offset_bottom = 50.0
+script = ExtResource("2_fxskq")
+
+[node name="Title" type="Label" parent="PickaxeTraderPanel" unique_id=720290213]
+layout_mode = 0
+offset_right = 492.0
+offset_bottom = 23.0
+text = "PICKAXE TRADER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CloseButton" type="Button" parent="PickaxeTraderPanel" unique_id=2057299481]
+layout_mode = 0
+offset_left = 463.0
+offset_top = 3.0
+offset_right = 513.0
+offset_bottom = 53.0
+scale = Vector2(0.8, 0.8)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_8biva")
+text = "x"
+
+[node name="PreviousButton" type="Button" parent="PickaxeTraderPanel" unique_id=1857870521]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 150.0
+offset_right = 150.0
+offset_bottom = 250.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_85gge")
+text = "<"
+
+[node name="NextButton" type="Button" parent="PickaxeTraderPanel" unique_id=1681174734]
+layout_mode = 0
+offset_left = 400.0
+offset_top = 150.0
+offset_right = 500.0
+offset_bottom = 250.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_77un7")
+text = ">"
+
+[node name="PickaxeDisplay" type="Control" parent="PickaxeTraderPanel" unique_id=1244757409]
+anchors_preset = 0
+offset_left = 148.0
+offset_top = 20.0
+offset_right = 352.0
+offset_bottom = 405.0
+
+[node name="PickaxeName" type="Label" parent="PickaxeTraderPanel/PickaxeDisplay" unique_id=864594238]
+layout_mode = 0
+offset_top = 241.0
+offset_right = 200.0
+offset_bottom = 311.0
+text = "Wood Wrecker"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PickaxeStats" type="Label" parent="PickaxeTraderPanel/PickaxeDisplay" unique_id=1738498858]
+visible = false
+layout_mode = 0
+offset_top = 127.0
+offset_right = 175.0
+offset_bottom = 150.0
+text = "Barkbreaking Power: 5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Requirements" type="Label" parent="PickaxeTraderPanel/PickaxeDisplay" unique_id=1516993770]
+layout_mode = 0
+offset_left = -2.0
+offset_top = 355.0
+offset_right = 198.0
+offset_bottom = 421.0
+theme_override_font_sizes/font_size = 14
+text = "Required Materials
+10 Greenwood
+5 Granite"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ActionButton" type="Button" parent="PickaxeTraderPanel/PickaxeDisplay" unique_id=376789499]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 536.0
+offset_right = 146.0
+offset_bottom = 636.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fq1i")
+text = "CRAFT"
+
+[node name="StatusLabel" type="Label" parent="PickaxeTraderPanel/PickaxeDisplay" unique_id=675054119]
+layout_mode = 0
+offset_left = -3.0
+offset_top = 486.0
+offset_right = 197.0
+offset_bottom = 509.0
+text = "Locked"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PageLabel" type="Label" parent="PickaxeTraderPanel/PickaxeDisplay" unique_id=932802041]
+layout_mode = 0
+offset_left = 64.0
+offset_top = 5.0
+offset_right = 136.0
+offset_bottom = 33.0
+
+[node name="PickaxeImage" type="TextureRect" parent="PickaxeTraderPanel/PickaxeDisplay" unique_id=647341801]
+layout_mode = 0
+offset_left = 1.0000095
+offset_top = 38.999985
+offset_right = 1001.0
+offset_bottom = 1039.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_lr2xd")
