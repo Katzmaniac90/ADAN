@@ -9,10 +9,10 @@ var drag_offset := Vector2.ZERO
 
 
 var hands_icon = preload("res://Items/Axes/Hands.png")
-var wood_axe_icon = preload("res://Items/Axes/WoodAxe.png")
-var tree2_axe_icon = preload("res://Items/Axes/Tree2Axe.png")
-var tree3_axe_icon = preload("res://Items/Axes/Tree3Axe.png")
-var super_axe_icon = preload("res://Items/Axes/SuperSaiyanAxe.png")
+var wood_axe_icon = preload("res://Items/Axes/Woodwrecker.png")
+var tree2_axe_icon = preload("res://Items/Axes/Timbertitan.png")
+var tree3_axe_icon = preload("res://Items/Axes/Lumberlord.png")
+var super_axe_icon = preload("res://Items/Axes/Barkbreaker.png")
 
 
 func _ready():
@@ -76,18 +76,18 @@ func update_equipment():
 			axe_icon.texture = hands_icon
 			axe_icon.tooltip_text = "Hands"
 
-		"Wood Axe":
+		"Wood Wrecker":
 			axe_icon.texture = wood_axe_icon
-			axe_icon.tooltip_text = "Wood Axe"
+			axe_icon.tooltip_text = "Wood Wrecker"
 
-		"Tree2 Axe":
+		"Timber Titan":
 			axe_icon.texture = tree2_axe_icon
-			axe_icon.tooltip_text = "Tree2 Axe"
+			axe_icon.tooltip_text = "Timber Titan"
 
-		"Tree3 Axe":
+		"Lumber Lord":
 			axe_icon.texture = tree3_axe_icon
-			axe_icon.tooltip_text = "Tree3 Axe"
+			axe_icon.tooltip_text = "Lumber Lord"
 
-		"Super Saiyan Axe":
+		"Barkbreaker":
 			axe_icon.texture = super_axe_icon
-			axe_icon.tooltip_text = "Super Saiyan Axe"
+			axe_icon.tooltip_text = "Barkbreaker"

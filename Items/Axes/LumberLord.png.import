@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dpat222limbf8"
-path="res://.godot/imported/SuperSaiyanAxe.png-52f4465440a0f180caa4cef17032ed86.ctex"
+uid="uid://bdxcal0wse8lf"
+path="res://.godot/imported/LumberLord.png-98169b53ce0eb4e08617017d0de1104d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/Axes/SuperSaiyanAxe.png"
-dest_files=["res://.godot/imported/SuperSaiyanAxe.png-52f4465440a0f180caa4cef17032ed86.ctex"]
+source_file="res://Items/Axes/LumberLord.png"
+dest_files=["res://.godot/imported/LumberLord.png-98169b53ce0eb4e08617017d0de1104d.ctex"]
 
 [params]
 

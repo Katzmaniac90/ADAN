@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dw58v3rakcva"
-path="res://.godot/imported/Tree2Axe.png-adb394c490b8e8ee9006538f9d74bbd3.ctex"
+uid="uid://dpat222limbf8"
+path="res://.godot/imported/BarkBreaker.png-67357037c3d82cdf20fb9f80f494ea83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/Axes/Tree2Axe.png"
-dest_files=["res://.godot/imported/Tree2Axe.png-adb394c490b8e8ee9006538f9d74bbd3.ctex"]
+source_file="res://Items/Axes/BarkBreaker.png"
+dest_files=["res://.godot/imported/BarkBreaker.png-67357037c3d82cdf20fb9f80f494ea83.ctex"]
 
 [params]
 
