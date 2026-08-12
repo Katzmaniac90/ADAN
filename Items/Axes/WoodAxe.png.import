@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bcmdqtssywehe"
-path="res://.godot/imported/WoodAxe.png-21c7ee5550a8ecec50a6016ec9d79044.ctex"
+path="res://.godot/imported/Woodaxe.png-78e2487036da6bac5f417a785a945790.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/Axes/WoodAxe.png"
-dest_files=["res://.godot/imported/WoodAxe.png-21c7ee5550a8ecec50a6016ec9d79044.ctex"]
+source_file="res://Items/Axes/Woodaxe.png"
+dest_files=["res://.godot/imported/Woodaxe.png-78e2487036da6bac5f417a785a945790.ctex"]
 
 [params]
 

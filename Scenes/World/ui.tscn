@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://downni7fa8j0n" path="res://Scenes/World/fish-modified.png" id="9_cfpjy"]
 [ext_resource type="Texture2D" uid="uid://dvg332p32ekv5" path="res://Items/Axes/Hands.png" id="9_d7t7b"]
 [ext_resource type="Texture2D" uid="uid://dvm5l6ageepmd" path="res://Scenes/World/smelter-modified.png" id="10_cq0k0"]
-[ext_resource type="Script" uid="uid://bl1a2ul4wqiqx" path="res://Scenes/Scripts/crafting_panel.gd" id="11_iikbr"]
 [ext_resource type="Script" uid="uid://bxe4faow6o12k" path="res://Scenes/Scripts/bag_panel.gd" id="11_y5qpw"]
 [ext_resource type="Script" uid="uid://cbiwu06aksnm5" path="res://Scenes/Scripts/achievement_panel.gd" id="15_04dqr"]
 [ext_resource type="PackedScene" uid="uid://dbv5srempllnu" path="res://Scenes/World/intro_screen.tscn" id="15_cfpjy"]
@@ -50,18 +49,6 @@ corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_caeob"]
-bg_color = Color(0.23137255, 0.23137255, 0.23137255, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-border_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 8
-corner_radius_top_right = 8
-corner_radius_bottom_right = 8
-corner_radius_bottom_left = 8
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cfpjy"]
 bg_color = Color(0.23137255, 0.23137255, 0.23137255, 1)
 border_width_left = 2
 border_width_top = 2
@@ -520,83 +507,6 @@ offset_bottom = 266.0
 layout_mode = 2
 columns = 4
 
-[node name="CraftingPanel" type="Panel" parent="." unique_id=354939772]
-offset_left = 832.0
-offset_top = 392.0
-offset_right = 1278.0
-offset_bottom = 723.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_cfpjy")
-script = ExtResource("11_iikbr")
-
-[node name="Title" type="Label" parent="CraftingPanel" unique_id=896528218]
-layout_mode = 0
-offset_left = 11.0
-offset_top = 5.0
-offset_right = 435.0
-offset_bottom = 28.0
-text = "Crafting Menu"
-horizontal_alignment = 1
-
-[node name="RecipeContainer" type="Label" parent="CraftingPanel" unique_id=456602793]
-layout_mode = 0
-offset_left = 3.0
-offset_top = 28.0
-offset_right = 440.0
-offset_bottom = 320.0
-
-[node name="RecipeCard" type="Label" parent="CraftingPanel/RecipeContainer" unique_id=1256317740]
-custom_minimum_size = Vector2(50, 200)
-layout_mode = 0
-offset_left = 3.0
-offset_top = 6.0
-offset_right = 440.0
-offset_bottom = 296.0
-
-[node name="AxeIcon" type="TextureRect" parent="CraftingPanel/RecipeContainer/RecipeCard" unique_id=1176707271]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 0
-offset_left = 4.0
-offset_top = 94.0
-offset_right = 88.0
-offset_bottom = 178.0
-
-[node name="Info" type="Label" parent="CraftingPanel/RecipeContainer/RecipeCard" unique_id=703990330]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 0
-offset_left = 82.0
-offset_top = 117.0
-offset_right = 220.0
-offset_bottom = 184.0
-
-[node name="Name" type="Label" parent="CraftingPanel/RecipeContainer/RecipeCard/Info" unique_id=864367908]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 0
-offset_left = 6.0
-offset_top = -29.0
-offset_right = 141.0
-offset_bottom = 65.0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Requirements" type="Label" parent="CraftingPanel/RecipeContainer/RecipeCard/Info" unique_id=960818762]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 0
-offset_left = -67.0
-offset_top = 84.0
-offset_right = 343.0
-offset_bottom = 165.0
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CraftButton" type="Button" parent="CraftingPanel/RecipeContainer/RecipeCard" unique_id=2097782314]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 0
-offset_left = 227.0
-offset_top = 86.0
-offset_right = 427.0
-offset_bottom = 186.0
-text = "CRAFT"
-
 [node name="AchievementPanel" type="Panel" parent="." unique_id=2109892220]
 visible = false
 offset_top = -2.0
@@ -696,7 +606,6 @@ max_value = 5.0
 value = 5.0
 show_percentage = false
 
-[connection signal="pressed" from="CraftingPanel/RecipeContainer/RecipeCard/CraftButton" to="CraftingPanel" method="_on_craft_button_pressed"]
 [connection signal="pressed" from="MusicPlayer/MusicButton" to="MusicPlayer" method="_on_music_button_pressed"]
 
 [editable path="AchievementPopup"]

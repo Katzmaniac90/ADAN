@@ -397,13 +397,27 @@ func check_skill_achievements():
 # AXES
 #=================================================
 
-func get_axe_tier():
+func get_axe_tier() -> int:
 
 	match current_axe:
 
 		"Hands":
 			return 0
 
+		"Wood Wrecker":
+			return 1
+
+		"Timber Titan":
+			return 2
+
+		"Lumber Lord":
+			return 3
+
+		"Barkbreaker":
+			return 4
+
+		# Old names - keep these temporarily so
+		# existing saves / scripts don't break.
 		"Wood Axe":
 			return 1
 
@@ -418,92 +432,127 @@ func get_axe_tier():
 
 	return 0
 
-func get_axe_name(tier:int) -> String:
+
+func get_axe_name(tier: int) -> String:
 
 	match tier:
+
 		0:
 			return "Hands"
+
 		1:
-			return "Wood Axe"
+			return "Wood Wrecker"
+
 		2:
-			return "Tree2 Axe"
+			return "Timber Titan"
+
 		3:
-			return "Tree3 Axe"
+			return "Lumber Lord"
+
 		4:
-			return "Super Saiyan Axe"
+			return "Barkbreaker"
 
 	return "Unknown Axe"
 
 
+func get_next_axe():
+
+	match get_axe_tier():
+
+		0:
+			return "Wood Wrecker"
+
+		1:
+			return "Timber Titan"
+
+		2:
+			return "Lumber Lord"
+
+		3:
+			return "Barkbreaker"
+
+		4:
+			return "MAX"
+
+	return "MAX"
 
 
+#=================================================
+# AXE TRADING
+#=================================================
 
-func craft_wooden_axe():
+func get_axe_requirements(axe_name: String) -> Dictionary:
 
-	if inventory.get("Greenwood",0) < 10:
+	match axe_name:
+
+		"Wood Wrecker":
+			return {
+				"Greenwood": 10,
+				"Granite": 5
+			}
+
+		"Timber Titan":
+			return {
+				"Ironbark": 15,
+				"Bloodstone": 10
+			}
+
+		"Lumber Lord":
+			return {
+				"Heartwood": 20,
+				"Verdantstone": 15
+			}
+
+		"Barkbreaker":
+			return {
+				"Ancientwood": 25,
+				"Tidestone": 20
+			}
+
+	return {}
+
+
+func can_trade_for_axe(axe_name: String) -> bool:
+
+	var requirements = get_axe_requirements(axe_name)
+
+	if requirements.is_empty():
 		return false
 
-	inventory["Greenwood"] -= 10
-	current_axe = "Wood Axe"
-	AchievementManager.unlock_if_locked("FIRST_AXE")
-	inventory_changed.emit()
+	for item_name in requirements:
+
+		if get_item_count(item_name) < requirements[item_name]:
+			return false
 
 	return true
 
 
+func trade_for_axe(axe_name: String) -> bool:
 
-func craft_tree2_axe():
-
-	if inventory.get("Greenwood",0) < 20:
+	if not can_trade_for_axe(axe_name):
 		return false
 
-	if inventory.get("Ironbark",0) < 20:
-		return false
+	var requirements = get_axe_requirements(axe_name)
 
-	inventory["Greenwood"] -= 20
-	inventory["Ironbark"] -= 20
+	for item_name in requirements:
 
-	current_axe = "Tree2 Axe"
+		inventory[item_name] -= requirements[item_name]
+
+	current_axe = axe_name
+
+	# First axe achievement
+	if axe_name == "Wood Wrecker":
+		AchievementManager.unlock_if_locked("FIRST_AXE")
+
+	# Best axe achievement
+	if axe_name == "Barkbreaker":
+		AchievementManager.unlock_if_locked("ALL_AXES")
 
 	inventory_changed.emit()
 
-	return true
-
-
-
-func craft_tree3_axe():
-
-	if inventory.get("Greenwood",0) < 30:
-		return false
-
-	if inventory.get("Ironbark",0) < 30:
-		return false
-
-	if inventory.get("Heartwood",0) < 30:
-		return false
-
-	inventory["Greenwood"] -= 30
-	inventory["Ironbark"] -= 30
-	inventory["Heartwood"] -= 30
-
-	current_axe = "Tree3 Axe"
-
-	inventory_changed.emit()
-
-	return true
-
-
-
-func craft_super_saiyan_axe():
-
-	if inventory.get("Ancientwood",0) < 1:
-		return false
-
-	inventory["Ancientwood"] -= 1
-
-	current_axe = "Super Saiyan Axe"
-	AchievementManager.unlock_if_locked("ALL_AXES")
-	inventory_changed.emit()
+	MessageManager.send_message(
+		"You traded for the " + axe_name + "!"
+	)
 
 	return true
 
@@ -583,28 +632,6 @@ func add_fishsnatching_xp(amount):
 #=================================================
 # AXE PROGRESSION
 #=================================================
-
-func get_next_axe():
-
-	match current_axe:
-
-		"Hands":
-			return "Wood Axe"
-
-		"Wood Axe":
-			return "Tree2 Axe"
-
-		"Tree2 Axe":
-			return "Tree3 Axe"
-
-		"Tree3 Axe":
-			return "Super Saiyan Axe"
-
-		"Super Saiyan Axe":
-			return "MAX"
-
-		_:
-			return "MAX"
 
 func xp_message(amount:int, skill_name:String):
 
