@@ -92,11 +92,10 @@ func start_punching():
 	punching = true
 
 	$InteractionLabel.visible = false
-
 	$PunchProgress.visible = true
-
 	$PunchProgress.value = 0
-
+	$GPUParticles2D.emitting = true
+	
 	$PunchTimer.start(punch_time)
 
 
@@ -124,6 +123,7 @@ func punch_rock():
 	punching = false
 
 	$PunchProgress.visible = false
+	$GPUParticles2D.emitting = false
 
 	hide()
 
@@ -204,6 +204,7 @@ func cancel_punching():
 
 	$PunchProgress.value = 0
 	$PunchProgress.visible = false
+	$GPUParticles2D.emitting = false
 
 	$InteractionLabel.visible = player_near
 

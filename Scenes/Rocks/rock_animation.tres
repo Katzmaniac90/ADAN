@@ -1,4 +1,4 @@
-[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://dbd0kn8eg18jl"]
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://cf5kmmf3nufm0"]
 
 [sub_resource type="Curve" id="Curve_pfen2"]
 _data = [Vector2(0.05325444, 0), 0.0, 0.0, 0, 0, Vector2(0.5384615, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.078651786), 0.0, 0.0, 0, 0]
@@ -19,10 +19,10 @@ curve = SubResource("Curve_nm08u")
 [resource]
 lifetime_randomness = 1.0
 particle_flag_disable_z = true
-emission_shape_offset = Vector3(-2, -7, 300)
+emission_shape_offset = Vector3(-2, -2, 300)
 emission_shape_scale = Vector3(1, 1, 300)
 emission_shape = 3
-emission_box_extents = Vector3(20, 20, 300)
+emission_box_extents = Vector3(15, 15, 300)
 angle_min = -254.09999
 angle_max = -49.09999
 initial_velocity_min = 15.0

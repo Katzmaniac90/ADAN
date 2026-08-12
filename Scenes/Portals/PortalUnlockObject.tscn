@@ -173,7 +173,7 @@ z_index = 1
 script = ExtResource("1_d7aqw")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1347868025]
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_sd12v")
 autoplay = "default"
 frame = 17
