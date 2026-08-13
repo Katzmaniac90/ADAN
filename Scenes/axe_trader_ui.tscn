@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://bbw2ncejtjj7x"]
 
 [ext_resource type="Script" uid="uid://c4ovgiehokr6x" path="res://Scenes/axe_trader_panel.gd" id="2_8fq1i"]
-[ext_resource type="Texture2D" uid="uid://bcmdqtssywehe" path="res://Items/Axes/Woodaxe.png" id="2_77un7"]
 [ext_resource type="Script" uid="uid://diunbbkm4tyt5" path="res://Scenes/drag_bar.gd" id="2_86rq6"]
+[ext_resource type="Texture2D" uid="uid://dvg332p32ekv5" path="res://Items/Axes/Hands.png" id="3_77un7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wla72"]
 bg_color = Color(0.14354825, 0.23337242, 0.496127, 1)
@@ -23,13 +23,13 @@ bg_color = Color(0.30555284, 0.5290693, 0.16318756, 1)
 
 [node name="AxeTraderPanel" type="Panel" parent="." unique_id=1923479293]
 offset_right = 506.0
-offset_bottom = 407.0
+offset_bottom = 670.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wla72")
 script = ExtResource("2_8fq1i")
 
 [node name="DragBar" type="Control" parent="AxeTraderPanel" unique_id=720223164]
 anchors_preset = 0
-offset_right = 495.0
+offset_right = 504.0
 offset_bottom = 50.0
 script = ExtResource("2_86rq6")
 
@@ -43,10 +43,10 @@ vertical_alignment = 1
 
 [node name="CloseButton" type="Button" parent="AxeTraderPanel" unique_id=2057299481]
 layout_mode = 0
-offset_left = 481.00006
-offset_top = 19.999998
-offset_right = 497.25018
-offset_bottom = 43.0
+offset_left = 463.0
+offset_top = 3.0
+offset_right = 513.0
+offset_bottom = 53.0
 scale = Vector2(0.8, 0.8)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_8biva")
@@ -54,10 +54,10 @@ text = "x"
 
 [node name="PreviousButton" type="Button" parent="AxeTraderPanel" unique_id=1857870521]
 layout_mode = 0
-offset_left = 15.0
-offset_top = 129.0
-offset_right = 215.0
-offset_bottom = 329.0
+offset_left = 50.0
+offset_top = 150.0
+offset_right = 150.0
+offset_bottom = 250.0
 scale = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
@@ -66,10 +66,10 @@ text = "<"
 
 [node name="NextButton" type="Button" parent="AxeTraderPanel" unique_id=1681174734]
 layout_mode = 0
-offset_left = 382.0
-offset_top = 122.0
-offset_right = 582.0
-offset_bottom = 322.0
+offset_left = 400.0
+offset_top = 150.0
+offset_right = 500.0
+offset_bottom = 250.0
 scale = Vector2(0.5, 0.5)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 20
@@ -78,17 +78,16 @@ text = ">"
 
 [node name="AxeDisplay" type="Control" parent="AxeTraderPanel" unique_id=1244757409]
 anchors_preset = 0
-offset_left = 11.0
-offset_top = 19.0
-offset_right = 488.0
-offset_bottom = 404.0
+offset_left = 148.0
+offset_top = 20.0
+offset_right = 352.0
+offset_bottom = 405.0
 
 [node name="AxeName" type="Label" parent="AxeTraderPanel/AxeDisplay" unique_id=864594238]
 layout_mode = 0
-offset_left = 140.0
-offset_top = 236.0
-offset_right = 338.0
-offset_bottom = 259.0
+offset_top = 241.0
+offset_right = 200.0
+offset_bottom = 311.0
 text = "Wood Wrecker"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -105,10 +104,10 @@ vertical_alignment = 1
 
 [node name="Requirements" type="Label" parent="AxeTraderPanel/AxeDisplay" unique_id=1516993770]
 layout_mode = 0
-offset_left = 164.0
-offset_top = 253.0
-offset_right = 325.0
-offset_bottom = 328.0
+offset_left = -2.0
+offset_top = 355.0
+offset_right = 198.0
+offset_bottom = 421.0
 theme_override_font_sizes/font_size = 14
 text = "Required Materials
 10 Greenwood
@@ -118,36 +117,36 @@ vertical_alignment = 1
 
 [node name="ActionButton" type="Button" parent="AxeTraderPanel/AxeDisplay" unique_id=376789499]
 layout_mode = 0
-offset_left = 210.0
-offset_top = 346.0
-offset_right = 273.0
-offset_bottom = 377.0
+offset_left = 46.0
+offset_top = 536.0
+offset_right = 146.0
+offset_bottom = 636.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_8fq1i")
 text = "CRAFT"
 
 [node name="StatusLabel" type="Label" parent="AxeTraderPanel/AxeDisplay" unique_id=675054119]
 layout_mode = 0
-offset_left = 155.0
-offset_top = 323.0
-offset_right = 324.0
-offset_bottom = 346.0
+offset_left = -3.0
+offset_top = 486.0
+offset_right = 197.0
+offset_bottom = 509.0
 text = "Locked"
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="PageLabel" type="Label" parent="AxeTraderPanel/AxeDisplay" unique_id=932802041]
 layout_mode = 0
-offset_left = 205.0
-offset_top = 3.0
-offset_right = 277.0
-offset_bottom = 31.0
+offset_left = 64.0
+offset_top = 5.0
+offset_right = 136.0
+offset_bottom = 33.0
 
 [node name="AxeImage" type="TextureRect" parent="AxeTraderPanel/AxeDisplay" unique_id=647341801]
 layout_mode = 0
-offset_left = 138.0
-offset_top = 37.999985
-offset_right = 1138.0
-offset_bottom = 1038.0
+offset_left = 1.0000095
+offset_top = 38.999985
+offset_right = 1001.0
+offset_bottom = 1039.0
 scale = Vector2(0.2, 0.2)
-texture = ExtResource("2_77un7")
+texture = ExtResource("3_77un7")

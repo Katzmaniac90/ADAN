@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bcmdqtssywehe"
-path="res://.godot/imported/WoodAxe.png-21c7ee5550a8ecec50a6016ec9d79044.ctex"
+uid="uid://dw58v3rakcva"
+path="res://.godot/imported/TimberTitan.png-a3ec1573e68b2194fc78952016b95119.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/Axes/WoodAxe.png"
-dest_files=["res://.godot/imported/WoodAxe.png-21c7ee5550a8ecec50a6016ec9d79044.ctex"]
+source_file="res://Items/Axes/TimberTitan.png"
+dest_files=["res://.godot/imported/TimberTitan.png-a3ec1573e68b2194fc78952016b95119.ctex"]
 
 [params]
 

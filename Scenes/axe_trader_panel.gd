@@ -8,23 +8,28 @@ extends Panel
 var axes = [
 	{
 		"name": "Hands",
-		"power": 0
+		"power": 0,
+		"image": preload("res://Items/Axes/hands.png")
 	},
 	{
 		"name": "Wood Wrecker",
-		"power": 5
+		"power": 5,
+		"image": preload("res://Items/Axes/woodwrecker.png")
 	},
 	{
 		"name": "Timber Titan",
-		"power": 10
+		"power": 10,
+		"image": preload("res://Items/Axes/timbertitan.png")
 	},
 	{
 		"name": "Lumber Lord",
-		"power": 20
+		"power": 20,
+		"image": preload("res://Items/Axes/lumberlord.png")
 	},
 	{
 		"name": "Barkbreaker",
-		"power": 40
+		"power": 40,
+		"image": preload("res://Items/Axes/barkbreaker.png")
 	}
 ]
 
@@ -66,6 +71,8 @@ func _ready():
 func show_axe():
 
 	var axe = axes[current_axe_index]
+
+	$AxeDisplay/AxeImage.texture = axe["image"]
 
 	var axe_name: String = axe["name"]
 

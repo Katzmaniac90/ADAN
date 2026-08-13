@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bdxcal0wse8lf"
-path="res://.godot/imported/Tree3Axe.png-921d3ae22727cd6eb8c14f50d0075c36.ctex"
+uid="uid://bcmdqtssywehe"
+path="res://.godot/imported/WoodWrecker.png-cd2a9278189b6d841bab80c78eb5350e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Items/Axes/Tree3Axe.png"
-dest_files=["res://.godot/imported/Tree3Axe.png-921d3ae22727cd6eb8c14f50d0075c36.ctex"]
+source_file="res://Items/Axes/WoodWrecker.png"
+dest_files=["res://.godot/imported/WoodWrecker.png-cd2a9278189b6d841bab80c78eb5350e.ctex"]
 
 [params]
 
