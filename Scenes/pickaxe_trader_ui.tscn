@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dvg332p32ekv5" path="res://Items/Axes/Hands.png" id="3_lr2xd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wla72"]
-bg_color = Color(0.14354825, 0.23337242, 0.496127, 1)
+bg_color = Color(0.5973006, 0.17011818, 0.5526867, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8biva"]
 bg_color = Color(0.886004, 0.26244184, 0.3113789, 1)
