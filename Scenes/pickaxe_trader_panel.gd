@@ -2,39 +2,38 @@ extends Panel
 
 
 #=================================================
-# AXE DATA
+# PICKAXE DATA
 #=================================================
 
-var axes = [
+var pickaxes = [
 	{
 		"name": "Hands",
 		"power": 0,
-		"image": preload("res://Items/Axes/hands.png")
+		"image": preload("res://Items/Pickaxes/Hands.png")
 	},
 	{
-		"name": "Wood Wrecker",
+		"name": "Rock Wrecker",
 		"power": 5,
-		"image": preload("res://Items/Axes/woodwrecker.png")
+		"image": preload("res://Items/Pickaxes/RockWrecker.png")
 	},
 	{
-		"name": "Timber Titan",
+		"name": "Stone Titan",
 		"power": 10,
-		"image": preload("res://Items/Axes/timbertitan.png")
+		"image": preload("res://Items/Pickaxes/StoneTitan.png")
 	},
 	{
-		"name": "Lumber Lord",
+		"name": "Mining Lord",
 		"power": 20,
-		"image": preload("res://Items/Axes/lumberlord.png")
+		"image": preload("res://Items/Pickaxes/MiningLord.png")
 	},
 	{
-		"name": "Barkbreaker",
+		"name": "Rockbreaker",
 		"power": 40,
-		"image": preload("res://Items/Axes/barkbreaker.png")
+		"image": preload("res://Items/Pickaxes/Rockbreaker.png")
 	}
 ]
 
-
-var current_axe_index := 0
+var current_pickaxe_index := 0
 
 
 #=================================================
@@ -53,7 +52,7 @@ func _ready():
 		_on_next_pressed
 	)
 
-	$AxeDisplay/ActionButton.pressed.connect(
+	$PickaxeDisplay/ActionButton.pressed.connect(
 		_on_action_pressed
 	)
 
@@ -61,36 +60,36 @@ func _ready():
 		_on_inventory_changed
 	)
 
-	show_axe()
+	show_pickaxe()
 
 
 #=================================================
-# DISPLAY AXE
+# DISPLAY PICKAXE
 #=================================================
 
-func show_axe():
+func show_pickaxe():
 
-	var axe = axes[current_axe_index]
+	var pickaxe = pickaxes[current_pickaxe_index]
 
-	$AxeDisplay/AxeImage.texture = axe["image"]
+	$PickaxeDisplay/PickaxeImage.texture = pickaxe["image"]
 
-	var axe_name: String = axe["name"]
+	var pickaxe_name: String = pickaxe["name"]
 
 
 	#-------------------------------
 	# Name
 	#-------------------------------
 
-	$AxeDisplay/AxeName.text = axe_name
+	$PickaxeDisplay/PickaxeName.text = pickaxe_name
 
 
 	#-------------------------------
 	# Stats
 	#-------------------------------
 
-	$AxeDisplay/AxeStats.text = (
+	$PickaxeDisplay/pickaxeStats.text = (
 		"Woodcutting Power: "
-		+ str(axe["power"])
+		+ str(pickaxe["power"])
 	)
 
 
@@ -98,8 +97,8 @@ func show_axe():
 	# Requirements
 	#-------------------------------
 
-	var requirements = GameManager.get_axe_requirements(
-		axe_name
+	var requirements = GameManager.get_pickaxe_requirements(
+		pickaxe_name
 	)
 
 	var requirement_text := "REQUIRED MATERIALS\n\n"
@@ -129,88 +128,88 @@ func show_axe():
 			)
 
 
-	$AxeDisplay/Requirements.text = requirement_text
+	$PickaxeDisplay/Requirements.text = requirement_text
 
 
 	#-------------------------------
 	# Status / Button
 	#-------------------------------
 
-	if axe_name == "Hands":
+	if pickaxe_name == "Hands":
 
-		$AxeDisplay/StatusLabel.text = "STARTING TOOL"
+		$PickaxeDisplay/StatusLabel.text = "STARTING TOOL"
 
-		$AxeDisplay/ActionButton.text = "EQUIPPED"
+		$PickaxeDisplay/ActionButton.text = "EQUIPPED"
 
-		$AxeDisplay/ActionButton.disabled = true
-
-
-	elif GameManager.current_axe == axe_name:
-
-		$AxeDisplay/StatusLabel.text = "CURRENTLY EQUIPPED"
-
-		$AxeDisplay/ActionButton.text = "EQUIPPED"
-
-		$AxeDisplay/ActionButton.disabled = true
+		$PickaxeDisplay/ActionButton.disabled = true
 
 
-	elif GameManager.can_trade_for_axe(axe_name):
+	elif GameManager.current_pickaxe == pickaxe_name:
 
-		$AxeDisplay/StatusLabel.text = "READY TO TRADE"
+		$PickaxeDisplay/StatusLabel.text = "CURRENTLY EQUIPPED"
 
-		$AxeDisplay/ActionButton.text = "TRADE FOR AXE"
+		$PickaxeDisplay/ActionButton.text = "EQUIPPED"
 
-		$AxeDisplay/ActionButton.disabled = false
+		$PickaxeDisplay/ActionButton.disabled = true
+
+
+	elif GameManager.can_trade_for_pickaxe(pickaxe_name):
+
+		$PickaxeDisplay/StatusLabel.text = "READY TO TRADE"
+
+		$PickaxeDisplay/ActionButton.text = "TRADE FOR AXE"
+
+		$PickaxeDisplay/ActionButton.disabled = false
 
 
 	else:
 
-		$AxeDisplay/StatusLabel.text = "NOT ENOUGH MATERIALS"
+		$PickaxeDisplay/StatusLabel.text = "NOT ENOUGH MATERIALS"
 
-		$AxeDisplay/ActionButton.text = "TRADE FOR AXE"
+		$PickaxeDisplay/ActionButton.text = "TRADE FOR AXE"
 
-		$AxeDisplay/ActionButton.disabled = true
+		$PickaxeDisplay/ActionButton.disabled = true
 
 
 	#-------------------------------
 	# Page Number
 	#-------------------------------
 
-	$AxeDisplay/PageLabel.text = (
-		str(current_axe_index + 1)
+	$PickaxeDisplay/PageLabel.text = (
+		str(current_pickaxe_index + 1)
 		+ " / "
-		+ str(axes.size())
+		+ str(pickaxes.size())
 	)
 
 
 #=================================================
-# PREVIOUS AXE
+# PREVIOUS PICKAXE
 #=================================================
 
 func _on_previous_pressed():
 
-	current_axe_index -= 1
+	current_pickaxe_index -= 1
 
-	if current_axe_index < 0:
+	if current_pickaxe_index < 0:
 
-		current_axe_index = axes.size() - 1
+		current_pickaxe_index = pickaxes.size() - 1
 
-	show_axe()
+	show_pickaxe()
 
 
 #=================================================
-# NEXT AXE
+# NEXT PICKAXE
 #=================================================
 
 func _on_next_pressed():
 
-	current_axe_index += 1
+	current_pickaxe_index += 1
 
-	if current_axe_index >= axes.size():
+	if current_pickaxe_index >= pickaxes.size():
 
-		current_axe_index = 0
+		current_pickaxe_index = 0
 
-	show_axe()
+	show_pickaxe()
 
 
 #=================================================
@@ -219,19 +218,19 @@ func _on_next_pressed():
 
 func _on_action_pressed():
 
-	var axe_name: String = axes[current_axe_index]["name"]
+	var pickaxe_name: String = pickaxes[current_pickaxe_index]["name"]
 
 	var success = GameManager.trade_for_axe(
-		axe_name
+		pickaxe_name
 	)
 
 	if success:
 
-		show_axe()
+		show_pickaxe()
 
 	else:
 
-		$AxeDisplay/StatusLabel.text = (
+		$PickaxeDisplay/StatusLabel.text = (
 			"NOT ENOUGH MATERIALS"
 		)
 
@@ -242,7 +241,7 @@ func _on_action_pressed():
 
 func _on_inventory_changed():
 
-	show_axe()
+	show_pickaxe()
 
 
 #=================================================
