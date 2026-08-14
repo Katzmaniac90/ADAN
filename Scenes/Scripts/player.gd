@@ -55,6 +55,14 @@ func _ready():
 
 func _physics_process(delta):
 
+	#=========================
+	# Busy Check
+	#=========================
+
+	if is_busy:
+		velocity = Vector2.ZERO
+		return
+		
 
 	#=========================
 	# Update Stamina
@@ -80,17 +88,6 @@ func _physics_process(delta):
 
 		stamina_bar.show()
 
-
-
-	#=========================
-	# Busy Check
-	#=========================
-
-	if is_busy:
-
-		velocity = Vector2.ZERO
-		move_and_slide()
-		return
 
 
 
@@ -223,3 +220,9 @@ func set_camera_limits(left: int, top: int, right: int, bottom: int):
 	camera.limit_top = top
 	camera.limit_right = right
 	camera.limit_bottom = bottom
+
+
+#Boat Interaction Function
+func set_boat_state(on_boat: bool) -> void:
+	is_busy = on_boat
+	velocity = Vector2.ZERO

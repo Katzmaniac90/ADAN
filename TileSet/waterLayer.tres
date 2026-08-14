@@ -1,6 +1,7 @@
 [gd_resource type="TileSet" format=3 uid="uid://br6x5w4eg5uum"]
 
 [ext_resource type="Texture2D" uid="uid://bhd25ts7l4mul" path="res://New Assets/mystic_woods_2.2_PREMIUM/sprites/tilesets/mainTileset/water-sheet.png" id="1_iyuup"]
+[ext_resource type="Texture2D" uid="uid://b2niunwl2gl3c" path="res://New Assets/mystic_woods_2.2_PREMIUM/sprites/tilesets/floors/wooden.png" id="2_h6cmg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_h6cmg"]
 texture = ExtResource("1_iyuup")
@@ -219,9 +220,14 @@ texture = ExtResource("1_iyuup")
 3:1/0/terrains_peering_bit/top_left_corner = 0
 3:1/0/terrains_peering_bit/top_side = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8gvym"]
+texture = ExtResource("2_h6cmg")
+0:0/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 1
 terrain_set_0/mode = 0
 terrain_set_0/terrain_0/name = "water"
 terrain_set_0/terrain_0/color = Color(7.0655944e-05, 0.3111721, 0.8943163, 1)
 sources/0 = SubResource("TileSetAtlasSource_h6cmg")
+sources/1 = SubResource("TileSetAtlasSource_8gvym")
