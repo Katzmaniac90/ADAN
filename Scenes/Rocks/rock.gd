@@ -8,18 +8,21 @@ var original_position: Vector2
 @export var min_respawn_time: float = 4.0
 @export var max_respawn_time: float = 8.0
 
-# Rock settings
+#=================================================
+# ROCK SETTINGS
+#=================================================
 
 @export var rockpunching_xp: int = 25
 @export var required_rockpunching_level: int = 1
 @export var rock_difficulty: int = 1
 
-# Rock drops
+#=================================================
+# ROCK DROPS
+#=================================================
 
 @export var rock_drop: String = "Granite"
-
-@export var punch_time: float = 10.0
 @export var interaction_text: String = "Punch Rock"
+
 
 func _ready():
 
@@ -39,6 +42,7 @@ func _on_body_entered(body):
 	if body.name == "Player":
 
 		player_near = true
+
 		$InteractionLabel.text = interaction_text
 		$InteractionLabel.visible = true
 
@@ -48,6 +52,7 @@ func _on_body_exited(body):
 	if body.name == "Player":
 
 		player_near = false
+
 		$InteractionLabel.visible = false
 
 		if punching:
@@ -66,10 +71,14 @@ func _process(delta):
 			cancel_punching()
 			return
 
-		$PunchProgress.value += (100.0 / punch_time) * delta
+		# Update progress based on current pickaxe speed
+		$PunchProgress.value += (
+			100.0 / get_punch_time()
+		) * delta
 
 		shake_rock()
 
+		# Press interact again to cancel
 		if Input.is_action_just_pressed("interact"):
 
 			cancel_punching()
@@ -78,14 +87,21 @@ func _process(delta):
 
 	if player_near and Input.is_action_just_pressed("interact"):
 
-		start_punching()
+		if not punching:
+
+			start_punching()
 
 
 func start_punching():
 
+	# Skill level controls whether the resource
+	# can be gathered.
 	if GameManager.rockpunching_level < required_rockpunching_level:
 
-		print("Your Rockpunching level is too low!")
+		MessageManager.send_message(
+			"You can't do that yet"
+		)
+
 		return
 
 
@@ -95,8 +111,10 @@ func start_punching():
 	$PunchProgress.visible = true
 	$PunchProgress.value = 0
 	$GPUParticles2D.emitting = true
-	
-	$PunchTimer.start(punch_time)
+
+	$PunchTimer.start(
+		get_punch_time()
+	)
 
 
 func _on_punch_timer_timeout():
@@ -106,19 +124,31 @@ func _on_punch_timer_timeout():
 
 func punch_rock():
 
-	var player = get_tree().get_first_node_in_group("player")
-
 	# Give skill XP
-	GameManager.add_rockpunching_xp(rockpunching_xp)
+	GameManager.add_rockpunching_xp(
+		rockpunching_xp
+	)
 
 	# Give rock resource
-	GameManager.add_item(rock_drop, 1)
+	GameManager.add_item(
+		rock_drop,
+		1
+	)
 
-	AchievementManager.unlock_if_locked("FIRST_ROCK")
+	AchievementManager.unlock_if_locked(
+		"FIRST_ROCK"
+	)
 
 	print("ROCK PUNCHED!")
-	print("Rockpunching XP +", rockpunching_xp)
-	print("Received ", rock_drop)
+	print(
+		"Rockpunching XP +",
+		rockpunching_xp
+	)
+
+	print(
+		"Received ",
+		rock_drop
+	)
 
 	punching = false
 
@@ -129,6 +159,8 @@ func punch_rock():
 
 	$CollisionShape2D.disabled = true
 
+
+	# Random respawn time
 	var r = randf()
 
 	var random_respawn = lerp(
@@ -137,7 +169,9 @@ func punch_rock():
 		sqrt(r)
 	)
 
-	$RespawnTimer.start(random_respawn)
+	$RespawnTimer.start(
+		random_respawn
+	)
 
 
 func _on_respawn_timer_timeout():
@@ -149,10 +183,12 @@ func _on_respawn_timer_timeout():
 		name
 	)
 
+
 	var spawn_point = ResourceSpawnManager.get_available_resource_spawn(
 		rock_drop,
 		self
 	)
+
 
 	if spawn_point == null:
 
@@ -163,7 +199,6 @@ func _on_respawn_timer_timeout():
 			name
 		)
 
-		# Try again in a few seconds
 		$RespawnTimer.start(2.0)
 
 		return
@@ -208,6 +243,41 @@ func cancel_punching():
 
 	$InteractionLabel.visible = player_near
 
+
+#=================================================
+# PUNCH SPEED
+#=================================================
+
+func get_punch_time():
+
+	var pickaxe_speed = 1.0
+
+	match GameManager.current_pickaxe:
+
+		"Hands":
+			pickaxe_speed = 1.0
+
+		"Rock Wrecker":
+			pickaxe_speed = 0.5
+
+		"Stone Titan":
+			pickaxe_speed = 0.35
+
+		"Mining Lord":
+			pickaxe_speed = 0.25
+
+		"Rockpuncher":
+			pickaxe_speed = 0.1
+
+
+	var base_time = rock_difficulty * 10.0
+
+	return base_time * pickaxe_speed
+
+
+#=================================================
+# ROCK SHAKE
+#=================================================
 
 func shake_rock():
 

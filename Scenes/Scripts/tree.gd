@@ -10,10 +10,6 @@ var original_position: Vector2
 @export var interaction_height: float = -50
 @export var resource_type: String = "Greenwood"
 
-# Axe requirements
-
-@export var required_axe_tier: int = 0
-
 # Barkbreaking requirements
 
 @export var required_barkbreaking_level: int = 1
@@ -102,11 +98,10 @@ func _process(delta):
 
 func start_chopping():
 
-	if GameManager.get_axe_tier() < required_axe_tier \
-	or GameManager.barkbreaking_level < required_barkbreaking_level:
+	if GameManager.barkbreaking_level < required_barkbreaking_level:
 
 		MessageManager.send_message(
-			"You're not a high enough level yet."
+			"You can't do that yet"
 		)
 
 		return
@@ -247,32 +242,22 @@ func get_chop_time():
 	match GameManager.current_axe:
 
 		"Hands":
-
 			axe_speed = 1.0
 
-
-		"Wood Axe":
-
+		"Wood Wrecker":
 			axe_speed = 0.5
 
-
-		"Tree2 Axe":
-
+		"Timber Titan":
 			axe_speed = 0.35
 
-
-		"Tree3 Axe":
-
+		"Lumber Lord":
 			axe_speed = 0.25
 
-
-		"Super Saiyan Axe":
-
+		"Barkbreaker":
 			axe_speed = 0.1
 
 
 	var base_time = tree_difficulty * 10.0
-
 
 	return base_time * axe_speed
 

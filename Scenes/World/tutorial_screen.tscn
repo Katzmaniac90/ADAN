@@ -34,14 +34,15 @@ text = "Move Around
 Use WASD to explore the world
 
 Gather Resources
-Chop trees and collect materials to build your supplies.
+Chop trees, punch rocks, snatch fish and collect 
+materials to build your supplies.
 
 Improve Your Skills
 The actions you perform will increase your 
 skills over time.
 
-Craft New Tools
-Use gathered resources to create better equipment 
+Trade for New Tools
+Use gathered resources to trade for better equipment 
 and unlock new possibilities.
 
 Explore
@@ -61,17 +62,16 @@ offset_right = 954.0
 offset_bottom = 672.0
 theme_override_font_sizes/font_size = 14
 text = "Controls
-[E] - Chop Trees or Punch Rocks
-[G] - Smack NPCs
+[E] - Chop Trees, Punch Rocks, or Snatch Fish
 [T] - Equipment Page
 [B] - Bag / Inventory
 [K] - Skills Page
-[L] - Crafting Menu
 [Y] - Achievements
+[Spacebar] - Sprint
 
 Skills
 ADAN currently has 
-four available skills with four more coming soon!
+four available skills
 
 🌳Barkbreaking🌳
 Collect logs and craft better axes to chop stronger trees.
@@ -79,14 +79,11 @@ Collect logs and craft better axes to chop stronger trees.
 Rockpunching
 Punch rocks to gain experience and improve your strength.
 
-👊Smacking👊
-Smack humanoids to gain experience.
-(Some NPCs are hidden throughout the world)
+Fishsnatching
+Snatch fish right from the floating bubbles
 
 🏃Footwork🏃
-Simply playing the game and moving around will 
-improve your Footwork skill.
-gain xp
+Sprinting around the map will improve your Footwork skill.
 
 "
 horizontal_alignment = 1
