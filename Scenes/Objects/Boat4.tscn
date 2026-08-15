@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://ca6km6ugwjnsm"]
+
+[ext_resource type="Script" uid="uid://i2jey56ituno" path="res://Scenes/Objects/boat.gd" id="1_8yyqj"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vpaxa"]
+load_path = "res://.godot/imported/boat-new.png-5fa18a853ea3ed1af517d892dd28c4ab.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sd12v"]
+size = Vector2(11.945, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_po1pm"]
+size = Vector2(30.6945, 24)
+
+[node name="Boat" type="CharacterBody2D" unique_id=758494171]
+z_index = 1
+z_as_relative = false
+texture_filter = 1
+script = ExtResource("1_8yyqj")
+destination_a = Vector2(1496, 832)
+destination_b = Vector2(1240, 832)
+
+[node name="BoatSprite" type="Sprite2D" parent="." unique_id=94500406]
+scale = Vector2(0.75, 0.75)
+texture = SubResource("CompressedTexture2D_vpaxa")
+
+[node name="BoatCollision" type="CollisionShape2D" parent="." unique_id=743977458]
+y_sort_enabled = true
+position = Vector2(1.09, 1.385)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_sd12v")
+
+[node name="BoardingArea" type="Area2D" parent="." unique_id=1044481996]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BoardingArea" unique_id=1882162657]
+position = Vector2(0.65275, 4)
+shape = SubResource("RectangleShape2D_po1pm")
+
+[node name="BoardingPoint" type="Marker2D" parent="." unique_id=2132181723]
+position = Vector2(0.675, -4.725)
+
+[node name="DestinationA" type="Marker2D" parent="." unique_id=1300427900]
+
+[node name="DestinationB" type="Marker2D" parent="." unique_id=486967937]
+
+[node name="ExitPoint" type="Marker2D" parent="." unique_id=1935687698]
+position = Vector2(0, 24)
+
+[connection signal="body_entered" from="BoardingArea" to="." method="_on_boarding_area_body_entered"]
