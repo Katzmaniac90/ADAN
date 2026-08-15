@@ -527,4 +527,4 @@ destination_b = Vector2(1250, 824)
 travel_speed = 30.0
 
 [node name="FishingRodTrader" parent="." unique_id=1364145027 instance=ExtResource("28_u4eeb")]
-position = Vector2(956, 782)
+position = Vector2(1215, 1355)
