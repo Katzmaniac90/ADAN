@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://1y24n3wkrm2n" path="res://Scenes/Bubble4.tscn" id="25_j3tey"]
 [ext_resource type="PackedScene" uid="uid://buyklpd7502kg" path="res://Scenes/Bubble5.tscn" id="26_ekykv"]
 [ext_resource type="PackedScene" uid="uid://cyidxhqu3ij6b" path="res://Scenes/Objects/Boat.tscn" id="27_836uy"]
+[ext_resource type="PackedScene" uid="uid://c5y8w0cncuha5" path="res://Scenes/NPCs/fishingrod_trader.tscn" id="28_u4eeb"]
 
 [node name="WoodfishLake" type="Node2D" unique_id=1254743531]
 y_sort_enabled = true
@@ -524,3 +525,6 @@ position = Vector2(1496, 824)
 destination_a = Vector2(1496, 824)
 destination_b = Vector2(1250, 824)
 travel_speed = 30.0
+
+[node name="FishingRodTrader" parent="." unique_id=1364145027 instance=ExtResource("28_u4eeb")]
+position = Vector2(956, 782)

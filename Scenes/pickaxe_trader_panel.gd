@@ -2,39 +2,39 @@ extends Panel
 
 
 #=================================================
-# PICKAXE DATA
+# FISHING ROD DATA
 #=================================================
 
-var pickaxes = [
+var fishing_rods = [
 	{
 		"name": "Hands",
 		"power": 0,
 		"image": preload("res://Items/Axes/Hands.png")
 	},
 	{
-		"name": "Rock Wrecker",
+		"name": "Fishwrecker",
 		"power": 5,
-		"image": preload("res://Items/Pickaxes/RockWrecker.png")
+		"image": preload("res://Items/Fishingrods/Fishwrecker.png")
 	},
 	{
-		"name": "Stone Titan",
+		"name": "Reel Titan",
 		"power": 10,
-		"image": preload("res://Items/Pickaxes/StoneTitan.png")
+		"image": preload("res://Items/Fishingrods/Reeltitan.png")
 	},
 	{
-		"name": "Mining Lord",
+		"name": "Angler Lord",
 		"power": 20,
-		"image": preload("res://Items/Pickaxes/MiningLord.png")
+		"image": preload("res://Items/Fishingrods/Anglerlord.png")
 	},
 	{
-		"name": "Rockpuncher",
+		"name": "Fishmaster",
 		"power": 40,
-		"image": preload("res://Items/Pickaxes/Rockpuncher.png")
+		"image": preload("res://Items/Fishingrods/Fishmaster.png")
 	}
 ]
 
 
-var current_pickaxe_index := 0
+var current_fishing_rod_index := 0
 
 
 #=================================================
@@ -53,7 +53,7 @@ func _ready():
 		_on_next_pressed
 	)
 
-	$PickaxeDisplay/ActionButton.pressed.connect(
+	$FishingrodDisplay/ActionButton.pressed.connect(
 		_on_action_pressed
 	)
 
@@ -61,36 +61,36 @@ func _ready():
 		_on_inventory_changed
 	)
 
-	show_pickaxe()
+	show_fishing_rod()
 
 
 #=================================================
-# DISPLAY PICKAXE
+# DISPLAY FISHING ROD
 #=================================================
 
-func show_pickaxe():
+func show_fishing_rod():
 
-	var pickaxe = pickaxes[current_pickaxe_index]
+	var fishing_rod = fishing_rods[current_fishing_rod_index]
 
-	$PickaxeDisplay/PickaxeImage.texture = pickaxe["image"]
+	$FishingrodDisplay/FishingrodImage.texture = fishing_rod["image"]
 
-	var pickaxe_name: String = pickaxe["name"]
+	var fishing_rod_name: String = fishing_rod["name"]
 
 
 	#-------------------------------
 	# Name
 	#-------------------------------
 
-	$PickaxeDisplay/PickaxeName.text = pickaxe_name
+	$FishingrodDisplay/FishingrodName.text = fishing_rod_name
 
 
 	#-------------------------------
 	# Stats
 	#-------------------------------
 
-	$PickaxeDisplay/PickaxeStats.text = (
-		"Rockpunching Power: "
-		+ str(pickaxe["power"])
+	$FishingrodDisplay/FishingrodStats.text = (
+		"Fishsnatching Power: "
+		+ str(fishing_rod["power"])
 	)
 
 
@@ -98,8 +98,8 @@ func show_pickaxe():
 	# Requirements
 	#-------------------------------
 
-	var requirements = GameManager.get_pickaxe_requirements(
-		pickaxe_name
+	var requirements = GameManager.get_fishing_rod_requirements(
+		fishing_rod_name
 	)
 
 	var requirement_text := "REQUIRED MATERIALS\n\n"
@@ -129,88 +129,88 @@ func show_pickaxe():
 			)
 
 
-	$PickaxeDisplay/Requirements.text = requirement_text
+	$FishingrodDisplay/Requirements.text = requirement_text
 
 
 	#-------------------------------
 	# Status / Button
 	#-------------------------------
 
-	if pickaxe_name == "Hands":
+	if fishing_rod_name == "Hands":
 
-		$PickaxeDisplay/StatusLabel.text = "STARTING TOOL"
+		$FishingrodDisplay/StatusLabel.text = "STARTING TOOL"
 
-		$PickaxeDisplay/ActionButton.text = "EQUIPPED"
+		$FishingrodDisplay/ActionButton.text = "EQUIPPED"
 
-		$PickaxeDisplay/ActionButton.disabled = true
-
-
-	elif GameManager.current_pickaxe == pickaxe_name:
-
-		$PickaxeDisplay/StatusLabel.text = "CURRENTLY EQUIPPED"
-
-		$PickaxeDisplay/ActionButton.text = "EQUIPPED"
-
-		$PickaxeDisplay/ActionButton.disabled = true
+		$FishingrodDisplay/ActionButton.disabled = true
 
 
-	elif GameManager.can_trade_for_pickaxe(pickaxe_name):
+	elif GameManager.current_fishing_rod == fishing_rod_name:
 
-		$PickaxeDisplay/StatusLabel.text = "READY TO TRADE"
+		$FishingrodDisplay/StatusLabel.text = "CURRENTLY EQUIPPED"
 
-		$PickaxeDisplay/ActionButton.text = "TRADE FOR PICKAXE"
+		$FishingrodDisplay/ActionButton.text = "EQUIPPED"
 
-		$PickaxeDisplay/ActionButton.disabled = false
+		$FishingrodDisplay/ActionButton.disabled = true
+
+
+	elif GameManager.can_trade_for_fishing_rod(fishing_rod_name):
+
+		$FishingrodDisplay/StatusLabel.text = "READY TO TRADE"
+
+		$FishingrodDisplay/ActionButton.text = "TRADE FOR FISHING ROD"
+
+		$FishingrodDisplay/ActionButton.disabled = false
 
 
 	else:
 
-		$PickaxeDisplay/StatusLabel.text = "NOT ENOUGH MATERIALS"
+		$FishingrodDisplay/StatusLabel.text = "NOT ENOUGH MATERIALS"
 
-		$PickaxeDisplay/ActionButton.text = "TRADE FOR PICKAXE"
+		$FishingrodDisplay/ActionButton.text = "TRADE FOR FISHING ROD"
 
-		$PickaxeDisplay/ActionButton.disabled = true
+		$FishingrodDisplay/ActionButton.disabled = true
 
 
 	#-------------------------------
 	# Page Number
 	#-------------------------------
 
-	$PickaxeDisplay/PageLabel.text = (
-		str(current_pickaxe_index + 1)
+	$FishingrodDisplay/PageLabel.text = (
+		str(current_fishing_rod_index + 1)
 		+ " / "
-		+ str(pickaxes.size())
+		+ str(fishing_rods.size())
 	)
 
 
 #=================================================
-# PREVIOUS PICKAXE
+# PREVIOUS FISHING ROD
 #=================================================
 
 func _on_previous_pressed():
 
-	current_pickaxe_index -= 1
+	current_fishing_rod_index -= 1
 
-	if current_pickaxe_index < 0:
+	if current_fishing_rod_index < 0:
 
-		current_pickaxe_index = pickaxes.size() - 1
+		current_fishing_rod_index = fishing_rods.size() - 1
 
-	show_pickaxe()
+	show_fishing_rod()
 
 
 #=================================================
-# NEXT PICKAXE
+# NEXT FISHING ROD
 #=================================================
 
 func _on_next_pressed():
 
-	current_pickaxe_index += 1
+	current_fishing_rod_index += 1
 
-	if current_pickaxe_index >= pickaxes.size():
+	if current_fishing_rod_index >= fishing_rods.size():
 
-		current_pickaxe_index = 0
+		current_fishing_rod_index = 0
 
-	show_pickaxe()
+	show_fishing_rod()
 
 
 #=================================================
@@ -219,19 +219,19 @@ func _on_next_pressed():
 
 func _on_action_pressed():
 
-	var pickaxe_name: String = pickaxes[current_pickaxe_index]["name"]
+	var fishing_rod_name: String = fishing_rods[current_fishing_rod_index]["name"]
 
-	var success = GameManager.trade_for_pickaxe(
-		pickaxe_name
+	var success = GameManager.trade_for_fishing_rod(
+		fishing_rod_name
 	)
 
 	if success:
 
-		show_pickaxe()
+		show_fishing_rod()
 
 	else:
 
-		$PickaxeDisplay/StatusLabel.text = (
+		$FishingrodDisplay/StatusLabel.text = (
 			"NOT ENOUGH MATERIALS"
 		)
 
@@ -242,7 +242,7 @@ func _on_action_pressed():
 
 func _on_inventory_changed():
 
-	show_pickaxe()
+	show_fishing_rod()
 
 
 #=================================================

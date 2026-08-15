@@ -5,6 +5,8 @@ extends Node
 #=================================================
 
 var current_axe := "Hands"
+var current_pickaxe := "Hands"
+var current_fishing_rod := "Hands"
 var inventory := {}
 
 signal inventory_changed
@@ -562,8 +564,6 @@ func trade_for_axe(axe_name: String) -> bool:
 # PICKAXES
 #=================================================
 
-var current_pickaxe := "Hands"
-
 
 func get_pickaxe_tier() -> int:
 
@@ -683,6 +683,132 @@ func trade_for_pickaxe(pickaxe_name: String) -> bool:
 	return true
 
 #=================================================
+# FISHING RODS
+#=================================================
+
+func get_fishing_rod_tier() -> int:
+
+	match current_fishing_rod:
+
+		"Hands":
+			return 0
+
+		"Fishwrecker":
+			return 1
+
+		"Reel Titan":
+			return 2
+
+		"Angler Lord":
+			return 3
+
+		"Fishmaster":
+			return 4
+
+	return 0
+
+
+func get_fishing_rod_name(tier: int) -> String:
+
+	match tier:
+
+		0:
+			return "Hands"
+
+		1:
+			return "Fishwrecker"
+
+		2:
+			return "Reel Titan"
+
+		3:
+			return "Angler Lord"
+
+		4:
+			return "Fishmaster"
+
+	return "Unknown Fishing Rod"
+
+
+func get_fishing_rod_requirements(
+	fishing_rod_name: String
+) -> Dictionary:
+
+	match fishing_rod_name:
+
+		"Fishwrecker":
+			return {
+				"Bubblefin": 20
+			}
+
+		"Reel Titan":
+			return {
+				"Glimmergill": 30,
+				"Bubblefin": 10
+			}
+
+		"Angler Lord":
+			return {
+				"Moonscale": 40,
+				"Glimmergill": 10,
+				"Bubblefin": 10
+			}
+
+		"Fishmaster":
+			return {
+				"Tidefang": 50,
+				"Moonscale": 10,
+				"Glimmergill": 10,
+				"Bubblefin": 10
+			}
+
+	return {}
+
+
+func can_trade_for_fishing_rod(
+	fishing_rod_name: String
+) -> bool:
+
+	var requirements = get_fishing_rod_requirements(
+		fishing_rod_name
+	)
+
+	if requirements.is_empty():
+		return false
+
+	for item_name in requirements:
+
+		if get_item_count(item_name) < requirements[item_name]:
+			return false
+
+	return true
+
+
+func trade_for_fishing_rod(
+	fishing_rod_name: String
+) -> bool:
+
+	if not can_trade_for_fishing_rod(fishing_rod_name):
+		return false
+
+	var requirements = get_fishing_rod_requirements(
+		fishing_rod_name
+	)
+
+	for item_name in requirements:
+
+		inventory[item_name] -= requirements[item_name]
+
+	current_fishing_rod = fishing_rod_name
+
+	inventory_changed.emit()
+
+	MessageManager.send_message(
+		"You traded for the " + fishing_rod_name + "!"
+	)
+
+	return true
+#=================================================
 # FOOTWORK
 #=================================================
 
@@ -779,6 +905,8 @@ func save_game():
 		# Inventory
 		"inventory": inventory,
 		"current_axe": current_axe,
+		"current_pickaxe": current_pickaxe,
+		"current_fishing_rod": current_fishing_rod,
 
 		# Skills
 		"skills": {
@@ -854,6 +982,16 @@ func load_game():
 	inventory = data["inventory"]
 
 	current_axe = data["current_axe"]
+
+	current_pickaxe = data.get(
+		"current_pickaxe",
+		"Hands"
+)
+
+	current_fishing_rod = data.get(
+		"current_fishing_rod",
+		"Hands"
+)
 
 
 
