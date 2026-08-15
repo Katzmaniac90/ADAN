@@ -1,67 +1,13 @@
 [gd_scene format=3 uid="uid://cyidxhqu3ij6b"]
 
 [ext_resource type="Script" uid="uid://i2jey56ituno" path="res://Scenes/Objects/boat.gd" id="1_2np5p"]
-[ext_resource type="Texture2D" uid="uid://bs7realgby0pl" path="res://Scenes/Objects/Boat2.png" id="1_il6rs"]
-[ext_resource type="Texture2D" uid="uid://u0d7eauim7qn" path="res://Scenes/Objects/Boat2-down.png" id="1_sgwrw"]
-[ext_resource type="Texture2D" uid="uid://xgvsskh846b" path="res://Scenes/Objects/Boat2-left.png" id="2_2np5p"]
-[ext_resource type="Texture2D" uid="uid://ddicn0jfamh0e" path="res://Scenes/Objects/Boat2-right.png" id="3_sa23p"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wkxu7"]
-atlas = ExtResource("1_sgwrw")
-region = Rect2(0, 0, 31, 73)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_badhr"]
-atlas = ExtResource("2_2np5p")
-region = Rect2(0, 0, 73, 31)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3rvpq"]
-atlas = ExtResource("3_sa23p")
-region = Rect2(0, 0, 73, 31)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_me8tf"]
-atlas = ExtResource("1_il6rs")
-region = Rect2(0, 0, 31, 73)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_sd12v"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wkxu7")
-}],
-"loop": 1,
-"name": &"down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_badhr")
-}],
-"loop": 1,
-"name": &"left",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3rvpq")
-}],
-"loop": 1,
-"name": &"right",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_me8tf")
-}],
-"loop": 1,
-"name": &"up",
-"speed": 5.0
-}]
+[ext_resource type="Texture2D" uid="uid://bof7v0h4i63k5" path="res://Scenes/Objects/Boat.png" id="2_me8tf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sd12v"]
-size = Vector2(14, 16)
+size = Vector2(11.945, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_po1pm"]
-size = Vector2(42.25, 56)
+size = Vector2(34.25, 56)
 
 [node name="Boat" type="CharacterBody2D" unique_id=758494171]
 z_index = 1
@@ -71,15 +17,13 @@ script = ExtResource("1_2np5p")
 destination_a = Vector2(1496, 832)
 destination_b = Vector2(1240, 832)
 
-[node name="BoatSprite" type="AnimatedSprite2D" parent="." unique_id=2004938393]
+[node name="BoatSprite" type="Sprite2D" parent="." unique_id=94500406]
 scale = Vector2(0.75, 0.75)
-sprite_frames = SubResource("SpriteFrames_sd12v")
-animation = &"left"
-autoplay = "left"
+texture = ExtResource("2_me8tf")
 
 [node name="BoatCollision" type="CollisionShape2D" parent="." unique_id=743977458]
 y_sort_enabled = true
-position = Vector2(7, 1.385)
+position = Vector2(1.09, 1.385)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_sd12v")
 
@@ -87,7 +31,7 @@ shape = SubResource("RectangleShape2D_sd12v")
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoardingArea" unique_id=1882162657]
-position = Vector2(1.2567024e-07, -10.875)
+position = Vector2(0, -8)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_po1pm")
 
@@ -99,6 +43,6 @@ position = Vector2(0.675, -4.725)
 [node name="DestinationB" type="Marker2D" parent="." unique_id=486967937]
 
 [node name="ExitPoint" type="Marker2D" parent="." unique_id=1935687698]
-position = Vector2(8, -48)
+position = Vector2(8, -32)
 
 [connection signal="body_entered" from="BoardingArea" to="." method="_on_boarding_area_body_entered"]
