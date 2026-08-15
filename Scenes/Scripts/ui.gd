@@ -14,6 +14,8 @@ func _ready():
 
 	fade_timer.timeout.connect(fade_messages)
 
+	fade_timer.wait_time = 15.0
+
 	MessageManager.send_message("Welcome to ADAN!")
 
 func add_message(text:String):

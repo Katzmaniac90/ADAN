@@ -28,6 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://1y24n3wkrm2n" path="res://Scenes/Bubble4.tscn" id="25_j3tey"]
 [ext_resource type="PackedScene" uid="uid://buyklpd7502kg" path="res://Scenes/Bubble5.tscn" id="26_ekykv"]
 [ext_resource type="PackedScene" uid="uid://cyidxhqu3ij6b" path="res://Scenes/Objects/Boat.tscn" id="27_836uy"]
+[ext_resource type="PackedScene" uid="uid://c5y8w0cncuha5" path="res://Scenes/NPCs/fishingrod_trader.tscn" id="28_u4eeb"]
 [ext_resource type="PackedScene" uid="uid://dqtpbhhxd06t4" path="res://Scenes/Objects/Boat2.tscn" id="29_kbbxi"]
 [ext_resource type="PackedScene" uid="uid://dr1utte52ff7p" path="res://Scenes/Objects/Boat3.tscn" id="30_61n7f"]
 [ext_resource type="PackedScene" uid="uid://ca6km6ugwjnsm" path="res://Scenes/Objects/Boat4.tscn" id="31_t72ix"]
@@ -555,3 +556,6 @@ destination_a = Vector2(1352, 512)
 destination_b = Vector2(568, 512)
 travel_speed = 50.0
 stop_time = 7.0
+
+[node name="FishingRodTrader" parent="." unique_id=1364145027 instance=ExtResource("28_u4eeb")]
+position = Vector2(959, 902)

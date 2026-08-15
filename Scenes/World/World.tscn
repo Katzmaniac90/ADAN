@@ -48,8 +48,6 @@ tile_map_data = PackedByteArray("AAAAACIAAwAEAAAAAAAAACMAAwAEAAAAAAAAACQAAwAEAAA
 tile_set = ExtResource("4_lp0bp")
 
 [node name="Player" parent="." unique_id=226938582 instance=ExtResource("6_kuxid")]
-z_index = 1
-y_sort_enabled = true
 position = Vector2(446, 354)
 
 [node name="sign1" parent="." unique_id=1266481847 instance=ExtResource("9_kuxid")]
