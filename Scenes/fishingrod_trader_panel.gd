@@ -2,39 +2,39 @@ extends Panel
 
 
 #=================================================
-# AXE DATA
+# FISHING ROD DATA
 #=================================================
 
-var axes = [
+var fishing_rods = [
 	{
 		"name": "Hands",
 		"power": 0,
-		"image": preload("res://Items/Axes/hands.png")
+		"image": preload("res://Items/Axes/Hands.png")
 	},
 	{
-		"name": "Wood Wrecker",
+		"name": "Fishwrecker",
 		"power": 5,
-		"image": preload("res://Items/Axes/woodwrecker.png")
+		"image": preload("res://Items/Fishingrods/Fishwrecker.png")
 	},
 	{
-		"name": "Timber Titan",
+		"name": "Reel Titan",
 		"power": 10,
-		"image": preload("res://Items/Axes/timbertitan.png")
+		"image": preload("res://Items/Fishingrods/Reeltitan.png")
 	},
 	{
-		"name": "Lumber Lord",
+		"name": "Angler Lord",
 		"power": 20,
-		"image": preload("res://Items/Axes/lumberlord.png")
+		"image": preload("res://Items/Fishingrods/Anglerlord.png")
 	},
 	{
-		"name": "Barkbreaker",
+		"name": "Fishmaster",
 		"power": 40,
-		"image": preload("res://Items/Axes/barkbreaker.png")
+		"image": preload("res://Items/Fishingrods/Fishmaster.png")
 	}
 ]
 
 
-var current_axe_index := 0
+var current_fishing_rod_index := 0
 
 
 #=================================================
@@ -53,7 +53,7 @@ func _ready():
 		_on_next_pressed
 	)
 
-	$AxeDisplay/ActionButton.pressed.connect(
+	$FishingrodDisplay/ActionButton.pressed.connect(
 		_on_action_pressed
 	)
 
@@ -61,36 +61,36 @@ func _ready():
 		_on_inventory_changed
 	)
 
-	show_axe()
+	show_fishing_rod()
 
 
 #=================================================
-# DISPLAY AXE
+# DISPLAY FISHING ROD
 #=================================================
 
-func show_axe():
+func show_fishing_rod():
 
-	var axe = axes[current_axe_index]
+	var fishing_rod = fishing_rods[current_fishing_rod_index]
 
-	$AxeDisplay/AxeImage.texture = axe["image"]
+	$FishingrodDisplay/FishingrodImage.texture = fishing_rod["image"]
 
-	var axe_name: String = axe["name"]
+	var fishing_rod_name: String = fishing_rod["name"]
 
 
 	#-------------------------------
 	# Name
 	#-------------------------------
 
-	$AxeDisplay/AxeName.text = axe_name
+	$FishingrodDisplay/FishingrodName.text = fishing_rod_name
 
 
 	#-------------------------------
 	# Stats
 	#-------------------------------
 
-	$AxeDisplay/AxeStats.text = (
-		"Woodcutting Power: "
-		+ str(axe["power"])
+	$FishingrodDisplay/FishingrodStats.text = (
+		"Fishsnatching Power: "
+		+ str(fishing_rod["power"])
 	)
 
 
@@ -98,8 +98,8 @@ func show_axe():
 	# Requirements
 	#-------------------------------
 
-	var requirements = GameManager.get_axe_requirements(
-		axe_name
+	var requirements = GameManager.get_fishing_rod_requirements(
+		fishing_rod_name
 	)
 
 	var requirement_text := "REQUIRED MATERIALS\n\n"
@@ -121,7 +121,7 @@ func show_axe():
 
 			requirement_text += (
 				item_name
-				+ "    "
+				+ ": "
 				+ str(player_amount)
 				+ " / "
 				+ str(required_amount)
@@ -129,88 +129,90 @@ func show_axe():
 			)
 
 
-	$AxeDisplay/Requirements.text = requirement_text
+	$FishingrodDisplay/Requirements.text = requirement_text
 
 
 	#-------------------------------
 	# Status / Button
 	#-------------------------------
 
-	if axe_name == "Hands":
+	if fishing_rod_name == "Hands":
 
-		$AxeDisplay/StatusLabel.text = "STARTING TOOL"
+		$FishingrodDisplay/StatusLabel.text = "STARTING TOOL"
 
-		$AxeDisplay/ActionButton.text = "EQUIPPED"
+		$FishingrodDisplay/ActionButton.text = "EQUIPPED"
 
-		$AxeDisplay/ActionButton.disabled = true
-
-
-	elif GameManager.current_axe == axe_name:
-
-		$AxeDisplay/StatusLabel.text = "CURRENTLY EQUIPPED"
-
-		$AxeDisplay/ActionButton.text = "EQUIPPED"
-
-		$AxeDisplay/ActionButton.disabled = true
+		$FishingrodDisplay/ActionButton.disabled = true
 
 
-	elif GameManager.can_trade_for_axe(axe_name):
+	elif GameManager.current_fishing_rod == fishing_rod_name:
 
-		$AxeDisplay/StatusLabel.text = "READY TO TRADE"
+		$FishingrodDisplay/StatusLabel.text = "CURRENTLY EQUIPPED"
 
-		$AxeDisplay/ActionButton.text = "TRADE FOR AXE"
+		$FishingrodDisplay/ActionButton.text = "EQUIPPED"
 
-		$AxeDisplay/ActionButton.disabled = false
+		$FishingrodDisplay/ActionButton.disabled = true
+
+
+	elif GameManager.can_trade_for_fishing_rod(
+		fishing_rod_name
+	):
+
+		$FishingrodDisplay/StatusLabel.text = "READY TO TRADE"
+
+		$FishingrodDisplay/ActionButton.text = "TRADE FOR FISHING ROD"
+
+		$FishingrodDisplay/ActionButton.disabled = false
 
 
 	else:
 
-		$AxeDisplay/StatusLabel.text = "NOT ENOUGH MATERIALS"
+		$FishingrodDisplay/StatusLabel.text = "NOT ENOUGH MATERIALS"
 
-		$AxeDisplay/ActionButton.text = "TRADE FOR AXE"
+		$FishingrodDisplay/ActionButton.text = "TRADE FOR FISHING ROD"
 
-		$AxeDisplay/ActionButton.disabled = true
+		$FishingrodDisplay/ActionButton.disabled = true
 
 
 	#-------------------------------
 	# Page Number
 	#-------------------------------
 
-	$AxeDisplay/PageLabel.text = (
-		str(current_axe_index + 1)
+	$FishingrodDisplay/PageLabel.text = (
+		str(current_fishing_rod_index + 1)
 		+ " / "
-		+ str(axes.size())
+		+ str(fishing_rods.size())
 	)
 
 
 #=================================================
-# PREVIOUS AXE
+# PREVIOUS FISHING ROD
 #=================================================
 
 func _on_previous_pressed():
 
-	current_axe_index -= 1
+	current_fishing_rod_index -= 1
 
-	if current_axe_index < 0:
+	if current_fishing_rod_index < 0:
 
-		current_axe_index = axes.size() - 1
+		current_fishing_rod_index = fishing_rods.size() - 1
 
-	show_axe()
+	show_fishing_rod()
 
 
 #=================================================
-# NEXT AXE
+# NEXT FISHING ROD
 #=================================================
 
 func _on_next_pressed():
 
-	current_axe_index += 1
+	current_fishing_rod_index += 1
 
-	if current_axe_index >= axes.size():
+	if current_fishing_rod_index >= fishing_rods.size():
 
-		current_axe_index = 0
+		current_fishing_rod_index = 0
 
-	show_axe()
+	show_fishing_rod()
 
 
 #=================================================
@@ -219,19 +221,21 @@ func _on_next_pressed():
 
 func _on_action_pressed():
 
-	var axe_name: String = axes[current_axe_index]["name"]
+	var fishing_rod_name: String = (
+		fishing_rods[current_fishing_rod_index]["name"]
+	)
 
-	var success = GameManager.trade_for_axe(
-		axe_name
+	var success = GameManager.trade_for_fishing_rod(
+		fishing_rod_name
 	)
 
 	if success:
 
-		show_axe()
+		show_fishing_rod()
 
 	else:
 
-		$AxeDisplay/StatusLabel.text = (
+		$FishingrodDisplay/StatusLabel.text = (
 			"NOT ENOUGH MATERIALS"
 		)
 
@@ -242,7 +246,7 @@ func _on_action_pressed():
 
 func _on_inventory_changed():
 
-	show_axe()
+	show_fishing_rod()
 
 
 #=================================================

@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="3_5yckn"]
 [ext_resource type="PackedScene" uid="uid://diefx0bc0sesc" path="res://Scenes/Doors/SkytreeHouse5Out.tscn" id="4_ohndg"]
 [ext_resource type="PackedScene" uid="uid://1fp6mejt7g1w" path="res://Scenes/NPCs/axe_trader.tscn" id="5_f2ix4"]
+[ext_resource type="PackedScene" uid="uid://c5y8w0cncuha5" path="res://Scenes/NPCs/fishingrod_trader.tscn" id="6_mv1at"]
+[ext_resource type="PackedScene" uid="uid://eptpm8fv5tcp" path="res://Scenes/NPCs/pickaxe_trader.tscn" id="7_nd4m7"]
 
 [node name="SkytreeHouse5" type="Node2D" unique_id=936046320]
 y_sort_enabled = true
@@ -40,4 +42,10 @@ z_index = 1
 position = Vector2(200, 224)
 
 [node name="AxeTrader" parent="." unique_id=1364145027 instance=ExtResource("5_f2ix4")]
-position = Vector2(201, 106)
+position = Vector2(200, 84)
+
+[node name="FishingRodTrader" parent="." unique_id=1168546259 instance=ExtResource("6_mv1at")]
+position = Vector2(305, 164)
+
+[node name="Pickaxetrader" parent="." unique_id=2088194910 instance=ExtResource("7_nd4m7")]
+position = Vector2(95, 153)

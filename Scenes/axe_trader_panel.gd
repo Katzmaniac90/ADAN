@@ -9,27 +9,27 @@ var axes = [
 	{
 		"name": "Hands",
 		"power": 0,
-		"image": preload("res://Items/Axes/hands.png")
+		"image": preload("res://Items/Axes/Hands.png")
 	},
 	{
 		"name": "Wood Wrecker",
 		"power": 5,
-		"image": preload("res://Items/Axes/woodwrecker.png")
+		"image": preload("res://Items/Axes/Woodwrecker.png")
 	},
 	{
 		"name": "Timber Titan",
 		"power": 10,
-		"image": preload("res://Items/Axes/timbertitan.png")
+		"image": preload("res://Items/Axes/Timbertitan.png")
 	},
 	{
 		"name": "Lumber Lord",
 		"power": 20,
-		"image": preload("res://Items/Axes/lumberlord.png")
+		"image": preload("res://Items/Axes/Lumberlord.png")
 	},
 	{
 		"name": "Barkbreaker",
 		"power": 40,
-		"image": preload("res://Items/Axes/barkbreaker.png")
+		"image": preload("res://Items/Axes/Barkbreaker.png")
 	}
 ]
 
@@ -121,7 +121,7 @@ func show_axe():
 
 			requirement_text += (
 				item_name
-				+ "    "
+				+ ": "
 				+ str(player_amount)
 				+ " / "
 				+ str(required_amount)

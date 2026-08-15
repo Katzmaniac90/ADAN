@@ -48,13 +48,10 @@ func open_shop():
 
 	var shop = AXE_TRADER_UI.instantiate()
 
-	# Add the CanvasLayer to the main game scene.
 	get_tree().current_scene.add_child(shop)
 
-	# Get the Panel inside the CanvasLayer.
 	var panel = shop.get_node("AxeTraderPanel")
 
-	# Center the window on screen.
 	var viewport_size = get_viewport().get_visible_rect().size
 
 	panel.position = (
