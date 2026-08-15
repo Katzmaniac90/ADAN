@@ -202,10 +202,10 @@ offset_bottom = 88.464
 [node name="LevelLabel" type="Label" parent="SkillsPanel/Fishsnatching" unique_id=805242406]
 custom_minimum_size = Vector2(20, 0)
 layout_mode = 0
-offset_left = 10.0
-offset_top = 3.0
-offset_right = 114.0
-offset_bottom = 26.0
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 113.0
+offset_bottom = 29.0
 theme_override_constants/outline_size = 1
 theme_override_font_sizes/font_size = 12
 theme_override_styles/normal = SubResource("StyleBoxFlat_l88uj")
