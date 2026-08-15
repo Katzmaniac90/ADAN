@@ -487,26 +487,28 @@ func get_axe_requirements(axe_name: String) -> Dictionary:
 
 		"Wood Wrecker":
 			return {
-				"Greenwood": 10,
-				"Granite": 5
+				"Greenwood": 20
 			}
 
 		"Timber Titan":
 			return {
-				"Ironbark": 15,
-				"Bloodstone": 10
+				"Ironbark": 30,
+				"Greenwood": 10
 			}
 
 		"Lumber Lord":
 			return {
-				"Heartwood": 20,
-				"Verdantstone": 15
+				"Heartwood": 40,
+				"Ironbark": 10,
+				"Greenwood": 10
 			}
 
 		"Barkbreaker":
 			return {
-				"Ancientwood": 25,
-				"Tidestone": 20
+				"Ancientwood": 50,
+				"Heartwood": 10,
+				"Ironbark": 10,
+				"Greenwood": 10
 			}
 
 	return {}
@@ -556,6 +558,129 @@ func trade_for_axe(axe_name: String) -> bool:
 
 	return true
 
+#=================================================
+# PICKAXES
+#=================================================
+
+var current_pickaxe := "Hands"
+
+
+func get_pickaxe_tier() -> int:
+
+	match current_pickaxe:
+
+		"Hands":
+			return 0
+
+		"Rock Wrecker":
+			return 1
+
+		"Stone Titan":
+			return 2
+
+		"Mining Lord":
+			return 3
+
+		"Rockpuncher":
+			return 4
+
+	return 0
+
+
+func get_pickaxe_name(tier: int) -> String:
+
+	match tier:
+
+		0:
+			return "Hands"
+
+		1:
+			return "Rock Wrecker"
+
+		2:
+			return "Stone Titan"
+
+		3:
+			return "Mining Lord"
+
+		4:
+			return "Rockpuncher"
+
+	return "Unknown Pickaxe"
+
+
+func get_pickaxe_requirements(pickaxe_name: String) -> Dictionary:
+
+	match pickaxe_name:
+
+		"Rock Wrecker":
+			return {
+				"Granite": 20
+			}
+
+		"Stone Titan":
+			return {
+				"Bloodstone": 30,
+				"Granite": 10
+			}
+
+		"Mining Lord":
+			return {
+				"Verdantstone": 40,
+				"Bloodstone": 10,
+				"Granite": 10
+			}
+
+		"Rockpuncher":
+			return {
+				"Shale": 50,
+				"Verdantstone": 10,
+				"Bloodstone": 10,
+				"Granite": 10
+			}
+
+	return {}
+
+
+func can_trade_for_pickaxe(pickaxe_name: String) -> bool:
+
+	var requirements = get_pickaxe_requirements(
+		pickaxe_name
+	)
+
+	if requirements.is_empty():
+		return false
+
+	for item_name in requirements:
+
+		if get_item_count(item_name) < requirements[item_name]:
+			return false
+
+	return true
+
+
+func trade_for_pickaxe(pickaxe_name: String) -> bool:
+
+	if not can_trade_for_pickaxe(pickaxe_name):
+		return false
+
+	var requirements = get_pickaxe_requirements(
+		pickaxe_name
+	)
+
+	for item_name in requirements:
+
+		inventory[item_name] -= requirements[item_name]
+
+	current_pickaxe = pickaxe_name
+
+	inventory_changed.emit()
+
+	MessageManager.send_message(
+		"You traded for the " + pickaxe_name + "!"
+	)
+
+	return true
 
 #=================================================
 # FOOTWORK

@@ -9,7 +9,7 @@ var pickaxes = [
 	{
 		"name": "Hands",
 		"power": 0,
-		"image": preload("res://Items/Pickaxes/Hands.png")
+		"image": preload("res://Items/Axes/Hands.png")
 	},
 	{
 		"name": "Rock Wrecker",
@@ -27,11 +27,12 @@ var pickaxes = [
 		"image": preload("res://Items/Pickaxes/MiningLord.png")
 	},
 	{
-		"name": "Rockbreaker",
+		"name": "Rockpuncher",
 		"power": 40,
-		"image": preload("res://Items/Pickaxes/Rockbreaker.png")
+		"image": preload("res://Items/Pickaxes/Rockpuncher.png")
 	}
 ]
+
 
 var current_pickaxe_index := 0
 
@@ -87,8 +88,8 @@ func show_pickaxe():
 	# Stats
 	#-------------------------------
 
-	$PickaxeDisplay/pickaxeStats.text = (
-		"Woodcutting Power: "
+	$PickaxeDisplay/PickaxeStats.text = (
+		"Rockpunching Power: "
 		+ str(pickaxe["power"])
 	)
 
@@ -120,7 +121,7 @@ func show_pickaxe():
 
 			requirement_text += (
 				item_name
-				+ "    "
+				+ ": "
 				+ str(player_amount)
 				+ " / "
 				+ str(required_amount)
@@ -157,7 +158,7 @@ func show_pickaxe():
 
 		$PickaxeDisplay/StatusLabel.text = "READY TO TRADE"
 
-		$PickaxeDisplay/ActionButton.text = "TRADE FOR AXE"
+		$PickaxeDisplay/ActionButton.text = "TRADE FOR PICKAXE"
 
 		$PickaxeDisplay/ActionButton.disabled = false
 
@@ -166,7 +167,7 @@ func show_pickaxe():
 
 		$PickaxeDisplay/StatusLabel.text = "NOT ENOUGH MATERIALS"
 
-		$PickaxeDisplay/ActionButton.text = "TRADE FOR AXE"
+		$PickaxeDisplay/ActionButton.text = "TRADE FOR PICKAXE"
 
 		$PickaxeDisplay/ActionButton.disabled = true
 
@@ -220,7 +221,7 @@ func _on_action_pressed():
 
 	var pickaxe_name: String = pickaxes[current_pickaxe_index]["name"]
 
-	var success = GameManager.trade_for_axe(
+	var success = GameManager.trade_for_pickaxe(
 		pickaxe_name
 	)
 
