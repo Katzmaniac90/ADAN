@@ -88,8 +88,6 @@ tile_map_data = PackedByteArray("AABEAC0AAgAIAAYAAABFAC0AAgAIAAYAAABGAC0AAgAIAAY
 tile_set = ExtResource("5_lrxny")
 
 [node name="Player" parent="." unique_id=226938582 instance=ExtResource("1_df3cc")]
-z_index = 1
-y_sort_enabled = true
 texture_filter = 1
 position = Vector2(576, 272)
 

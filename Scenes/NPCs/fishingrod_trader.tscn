@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c5y8w0cncuha5"]
 
-[ext_resource type="Script" uid="uid://5l5q63fhtfxf" path="res://axetrader.gd" id="1_kbn28"]
+[ext_resource type="Script" uid="uid://bm32lkdjdevtl" path="res://fishingrodtrader.gd" id="1_kbn28"]
 [ext_resource type="Texture2D" uid="uid://dsseddj8y8eug" path="res://trees/PNG/Assets_separately/Trees/Snow_christmass_tree3.png" id="2_kbn28"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wla72"]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://duktjvu4cymv4"]
 
-[ext_resource type="Script" uid="uid://i2rskt44tq4h" path="res://Scenes/pickaxe_trader_panel.gd" id="1_njo1i"]
+[ext_resource type="Script" uid="uid://b08smn0ks4b10" path="res://Scenes/fishingrod_trader_panel.gd" id="1_njo1i"]
 [ext_resource type="Script" uid="uid://diunbbkm4tyt5" path="res://Scenes/drag_bar.gd" id="2_4w1ag"]
 [ext_resource type="Texture2D" uid="uid://dvg332p32ekv5" path="res://Items/Axes/Hands.png" id="3_afat3"]
 
