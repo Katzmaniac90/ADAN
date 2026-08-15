@@ -6,7 +6,7 @@
 load_path = "res://.godot/imported/boat-new.png-5fa18a853ea3ed1af517d892dd28c4ab.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sd12v"]
-size = Vector2(11.945, 16)
+size = Vector2(12.5875, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_po1pm"]
 size = Vector2(30.6945, 24)
@@ -25,7 +25,7 @@ texture = SubResource("CompressedTexture2D_vpaxa")
 
 [node name="BoatCollision" type="CollisionShape2D" parent="." unique_id=743977458]
 y_sort_enabled = true
-position = Vector2(1.09, 1.385)
+position = Vector2(1.09, -2)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_sd12v")
 
@@ -33,7 +33,7 @@ shape = SubResource("RectangleShape2D_sd12v")
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BoardingArea" unique_id=1882162657]
-position = Vector2(0.65275, 4)
+position = Vector2(0.653, 9.185)
 shape = SubResource("RectangleShape2D_po1pm")
 
 [node name="BoardingPoint" type="Marker2D" parent="." unique_id=2132181723]
