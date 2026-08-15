@@ -1,19 +1,37 @@
 [gd_scene format=3 uid="uid://1fp6mejt7g1w"]
 
 [ext_resource type="Script" uid="uid://5l5q63fhtfxf" path="res://axetrader.gd" id="1_7jd7o"]
-[ext_resource type="Texture2D" uid="uid://puvfkps5h88d" path="res://rocks_and_stones/PNG/Objects_separately/Rock8_ground_shadow_dark4.png" id="2_ppa4d"]
+[ext_resource type="Texture2D" uid="uid://kkca8kpiw06t" path="res://Scenes/NPCs/NPC Assets/NPC_Forest1.png" id="2_7jd7o"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ppa4d"]
+atlas = ExtResource("2_7jd7o")
+region = Rect2(0, 0, 212, 278)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sd12v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ppa4d")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_wla72"]
-radius = 19.0
+radius = 8.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_7jd7o"]
 radius = 22.022715
 
 [node name="AxeTrader" type="CharacterBody2D" unique_id=1364145027]
+texture_filter = 1
 script = ExtResource("1_7jd7o")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1542005730]
-texture = ExtResource("2_ppa4d")
+[node name="Sprite2D" type="AnimatedSprite2D" parent="." unique_id=292497349]
+scale = Vector2(0.06, 0.06)
+sprite_frames = SubResource("SpriteFrames_sd12v")
+autoplay = "default"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=181537670]
 shape = SubResource("CircleShape2D_wla72")
