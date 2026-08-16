@@ -4,7 +4,7 @@ extends Panel
 @onready var inventory_grid = $InventoryScroll/InventoryGrid
 
 
-var item_slot_scene = preload("res://Scenes/World/Item_Slot.tscn")
+var item_slot_scene = preload("res://Scenes/World/item_slot.tscn")
 
 
 var item_textures = {

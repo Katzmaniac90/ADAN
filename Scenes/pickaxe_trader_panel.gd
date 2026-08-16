@@ -27,9 +27,9 @@ var pickaxes = [
 		"image": preload("res://Items/Pickaxes/MiningLord.png")
 	},
 	{
-		"name": "Rockpuncher",
+		"name": "RockPuncher",
 		"power": 40,
-		"image": preload("res://Items/Pickaxes/Rockpuncher.png")
+		"image": preload("res://Items/Pickaxes/RockPuncher.png")
 	}
 ]
 

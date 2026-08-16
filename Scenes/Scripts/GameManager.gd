@@ -1,5 +1,6 @@
 extends Node
 
+var autosave_timer: Timer
 #=================================================
 # INVENTORY
 #=================================================
@@ -581,7 +582,7 @@ func get_pickaxe_tier() -> int:
 		"Mining Lord":
 			return 3
 
-		"Rockpuncher":
+		"Rock Puncher":
 			return 4
 
 	return 0
@@ -604,7 +605,7 @@ func get_pickaxe_name(tier: int) -> String:
 			return "Mining Lord"
 
 		4:
-			return "Rockpuncher"
+			return "Rock Puncher"
 
 	return "Unknown Pickaxe"
 
@@ -631,7 +632,7 @@ func get_pickaxe_requirements(pickaxe_name: String) -> Dictionary:
 				"Granite": 10
 			}
 
-		"Rockpuncher":
+		"RockPuncher":
 			return {
 				"Shale": 50,
 				"Verdantstone": 10,
@@ -900,6 +901,8 @@ const SAVE_PATH = "user://savegame.json"
 
 func save_game():
 
+	print("💾 Saving game...")
+
 	var save_data = {
 
 		# Inventory
@@ -935,7 +938,7 @@ func save_game():
 
 		# Achievements
 		"achievements": AchievementManager.save_data(),
-		
+
 		# Portals
 		"unlocked_portals": unlocked_portals
 	}
@@ -945,10 +948,19 @@ func save_game():
 		FileAccess.WRITE
 	)
 
-	file.store_string(JSON.stringify(save_data))
+	if file == null:
+
+		print("❌ Failed to open save file.")
+
+		return
+
+	file.store_string(
+		JSON.stringify(save_data)
+	)
+
 	file.close()
 
-	print("Game Saved!")
+	print("💾 Game Saved!")
 
 func load_game():
 
@@ -1046,5 +1058,15 @@ func _notification(what):
 
 func _ready():
 
-	GameManager.load_game()
+	autosave_timer = Timer.new()
+	autosave_timer.wait_time = 30.0
+	autosave_timer.one_shot = false
+
+	add_child(autosave_timer)
+
+	autosave_timer.timeout.connect(save_game)
+
+	autosave_timer.start()
+
+	load_game()
 	

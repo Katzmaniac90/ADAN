@@ -25,7 +25,7 @@ offset_right = 823.0
 offset_bottom = 129.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_wla72")
 
-[node name="TitlePanel" type="Label" parent="Panel" unique_id=884682775]
+[node name="TitleLabel" type="Label" parent="Panel" unique_id=884682775]
 layout_mode = 0
 offset_right = 222.0
 offset_bottom = 23.0

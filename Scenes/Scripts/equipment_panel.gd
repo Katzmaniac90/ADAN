@@ -21,10 +21,10 @@ var drag_offset := Vector2.ZERO
 #=================================================
 
 var hands_icon = preload("res://Items/Axes/Hands.png")
-var wood_axe_icon = preload("res://Items/Axes/Woodwrecker.png")
-var tree2_axe_icon = preload("res://Items/Axes/Timbertitan.png")
-var tree3_axe_icon = preload("res://Items/Axes/Lumberlord.png")
-var super_axe_icon = preload("res://Items/Axes/Barkbreaker.png")
+var wood_axe_icon = preload("res://Items/Axes/WoodWrecker.png")
+var tree2_axe_icon = preload("res://Items/Axes/TimberTitan.png")
+var tree3_axe_icon = preload("res://Items/Axes/LumberLord.png")
+var super_axe_icon = preload("res://Items/Axes/BarkBreaker.png")
 
 
 #=================================================
@@ -35,7 +35,7 @@ var hands_pickaxe_icon = preload("res://Items/Axes/Hands.png")
 var rock_wrecker_icon = preload("res://Items/Pickaxes/RockWrecker.png")
 var stone_titan_icon = preload("res://Items/Pickaxes/StoneTitan.png")
 var mining_lord_icon = preload("res://Items/Pickaxes/MiningLord.png")
-var rockpuncher_icon = preload("res://Items/Pickaxes/Rockpuncher.png")
+var rockpuncher_icon = preload("res://Items/Pickaxes/RockPuncher.png")
 
 
 #=================================================
@@ -163,10 +163,10 @@ func update_axe():
 			axe_icon.texture = tree3_axe_icon
 			axe_icon.tooltip_text = "Lumber Lord"
 
-		"Barkbreaker":
+		"BarkBreaker":
 
 			axe_icon.texture = super_axe_icon
-			axe_icon.tooltip_text = "Barkbreaker"
+			axe_icon.tooltip_text = "BarkBreaker"
 
 
 #=================================================
@@ -199,10 +199,10 @@ func update_pickaxe():
 			pickaxe_icon.texture = mining_lord_icon
 			pickaxe_icon.tooltip_text = "Mining Lord"
 
-		"Rockpuncher":
+		"RockPuncher":
 
 			pickaxe_icon.texture = rockpuncher_icon
-			pickaxe_icon.tooltip_text = "Rockpuncher"
+			pickaxe_icon.tooltip_text = "RockPuncher"
 
 
 #=================================================

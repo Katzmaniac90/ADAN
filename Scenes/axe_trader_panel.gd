@@ -14,22 +14,22 @@ var axes = [
 	{
 		"name": "Wood Wrecker",
 		"power": 5,
-		"image": preload("res://Items/Axes/Woodwrecker.png")
+		"image": preload("res://Items/Axes/WoodWrecker.png")
 	},
 	{
 		"name": "Timber Titan",
 		"power": 10,
-		"image": preload("res://Items/Axes/Timbertitan.png")
+		"image": preload("res://Items/Axes/TimberTitan.png")
 	},
 	{
 		"name": "Lumber Lord",
 		"power": 20,
-		"image": preload("res://Items/Axes/Lumberlord.png")
+		"image": preload("res://Items/Axes/LumberLord.png")
 	},
 	{
 		"name": "Barkbreaker",
 		"power": 40,
-		"image": preload("res://Items/Axes/Barkbreaker.png")
+		"image": preload("res://Items/Axes/BarkBreaker.png")
 	}
 ]
 

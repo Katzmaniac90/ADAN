@@ -266,7 +266,7 @@ func get_punch_time():
 		"Mining Lord":
 			pickaxe_speed = 0.25
 
-		"Rockpuncher":
+		"Rock Puncher":
 			pickaxe_speed = 0.1
 
 
