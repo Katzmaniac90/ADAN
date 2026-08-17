@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://eptpm8fv5tcp"]
 
 [ext_resource type="Script" uid="uid://csbte2by5wawy" path="res://pickaxetrader.gd" id="1_rqbl8"]
-[ext_resource type="Texture2D" uid="uid://cxnmr7gnwuc5" path="res://Scenes/NPCs/NPC Assets/mapNPC1.png" id="2_rqbl8"]
+[ext_resource type="Texture2D" uid="uid://d1meg7s5woy5f" path="res://Scenes/NPCs/NPC Assets/mineNPC1.png" id="2_rqbl8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m3aib"]
 atlas = ExtResource("2_rqbl8")
-region = Rect2(0, 0, 212, 276)
+region = Rect2(0, 0, 221, 280)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sd12v"]
 animations = [{

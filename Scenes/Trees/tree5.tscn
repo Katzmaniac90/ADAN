@@ -33,7 +33,6 @@ min_respawn_time = 25.0
 max_respawn_time = 75.0
 interaction_height = -60.0
 resource_type = "Elderwood"
-required_axe_tier = 4
 required_barkbreaking_level = 20
 barkbreaking_xp = 400
 tree_difficulty = 5
@@ -57,8 +56,7 @@ z_index = 200
 emitting = false
 amount = 30
 texture = ExtResource("3_3tdig")
-lifetime = 5.0
-one_shot = true
+lifetime = 3.0
 randomness = 0.5
 process_material = ExtResource("4_0npkh")
 
@@ -70,6 +68,7 @@ shape = SubResource("RectangleShape2D_22gus")
 
 [node name="InteractionLabel" type="Label" parent="." unique_id=278786865]
 visible = false
+z_index = 100
 offset_left = -51.0
 offset_top = -58.0
 offset_right = 52.0
@@ -88,6 +87,7 @@ one_shot = true
 
 [node name="ChopProgress" type="ProgressBar" parent="." unique_id=1614617401]
 visible = false
+z_index = 100
 offset_left = -12.0
 offset_top = -38.0
 offset_right = 12.0

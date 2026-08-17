@@ -62,6 +62,7 @@ shape = SubResource("RectangleShape2D_22gus")
 
 [node name="InteractionLabel" type="Label" parent="." unique_id=278786865]
 visible = false
+z_index = 100
 offset_left = -52.0
 offset_top = -46.0
 offset_right = 51.0
@@ -80,6 +81,7 @@ one_shot = true
 
 [node name="ChopProgress" type="ProgressBar" parent="." unique_id=1614617401]
 visible = false
+z_index = 100
 offset_left = -12.0
 offset_top = -38.0
 offset_right = 12.0

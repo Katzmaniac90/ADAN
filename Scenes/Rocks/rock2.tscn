@@ -79,6 +79,7 @@ vertical_alignment = 1
 
 [node name="PunchProgress" type="ProgressBar" parent="." unique_id=1614617401]
 visible = false
+z_index = 100
 offset_left = -12.0
 offset_top = -38.0
 offset_right = 12.0
