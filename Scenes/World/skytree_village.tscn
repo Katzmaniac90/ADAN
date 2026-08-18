@@ -31,6 +31,7 @@
 [ext_resource type="PackedScene" uid="uid://d0pe5h3yyc8oj" path="res://Scenes/Signs/SkytreeSign3.tscn" id="21_3ogje"]
 [ext_resource type="PackedScene" uid="uid://b0ivigp80axxj" path="res://Scenes/NPCs/SkytreeNPC1.tscn" id="26_5w68m"]
 [ext_resource type="PackedScene" uid="uid://balqy81kj3iun" path="res://Scenes/Doors/SkytreetoWoodfish.tscn" id="26_ds0v1"]
+[ext_resource type="PackedScene" uid="uid://beijdl3fllxpn" path="res://Scenes/Doors/SkytreeHouse6Out.tscn" id="27_25shd"]
 [ext_resource type="PackedScene" uid="uid://bklntpi1bp4vb" path="res://Scenes/Trees/tree5.tscn" id="29_hjksd"]
 [ext_resource type="PackedScene" uid="uid://cmfmbka7ruih7" path="res://Scenes/Portals/PortalSpawn.tscn" id="31_hhu0b"]
 [ext_resource type="PackedScene" uid="uid://cj4e767mus4fv" path="res://Scenes/Rocks/rock2.tscn" id="31_vwy7c"]
@@ -216,6 +217,10 @@ position = Vector2(552, 240)
 z_index = 1
 position = Vector2(360, 1448)
 
+[node name="SkytreeHouse6Out" type="Marker2D" parent="PlayerSpawnPoints" unique_id=180820627]
+z_index = 1
+position = Vector2(1096, 760)
+
 [node name="Doors" type="Node" parent="." unique_id=1465727669]
 
 [node name="SkytreeEnter" parent="Doors" unique_id=1895642603 instance=ExtResource("9_lx3ns")]
@@ -257,6 +262,10 @@ position = Vector2(552, 216)
 
 [node name="SkytreetoWoodfish" parent="Doors" unique_id=1215509350 instance=ExtResource("26_ds0v1")]
 position = Vector2(360, 1472)
+
+[node name="SkytreeHouse6Out" parent="Doors" unique_id=2042879476 instance=ExtResource("27_25shd")]
+z_index = 1
+position = Vector2(1096, 744)
 
 [node name="BridgeCollisions" type="Node" parent="." unique_id=308711863]
 
