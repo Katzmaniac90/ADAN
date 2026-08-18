@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://2fhmb6ynyxi3"]
+
+[ext_resource type="Script" uid="uid://cohns0vu7xftv" path="res://Scenes/Scripts/sign.gd" id="1_q6pwt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6qqsy"]
+load_path = "res://.godot/imported/npc-chat-box1.png-d5e5d6a56e6860a70a1ab59fbbbd098e.ctex"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sd12v"]
+size = Vector2(25.5, 34.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_po1pm"]
+size = Vector2(16, 9.625)
+
+[node name="sign" type="Area2D" unique_id=431273787]
+z_index = 1
+y_sort_enabled = true
+texture_filter = 1
+script = ExtResource("1_q6pwt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1196799763]
+y_sort_enabled = true
+texture_filter = 1
+scale = Vector2(0.03, 0.03)
+texture = SubResource("CompressedTexture2D_6qqsy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=986234630]
+texture_filter = 1
+position = Vector2(0, 6.75)
+shape = SubResource("RectangleShape2D_sd12v")
+
+[node name="Label" type="Label" parent="." unique_id=1750671623]
+visible = false
+z_index = 100
+texture_filter = 1
+offset_left = -7.0
+offset_top = -26.0
+offset_right = 7.0
+offset_bottom = -10.0
+theme_override_colors/font_color = Color(0.8117647, 0.72156864, 0.5803922, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/font_size = 11
+text = "[E]"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1207821136]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1671283922]
+shape = SubResource("RectangleShape2D_po1pm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

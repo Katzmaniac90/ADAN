@@ -153,6 +153,7 @@ text = "Close"
 
 [node name="InteractPrompt" type="Label" parent="." unique_id=405801034]
 visible = false
+z_index = 100
 offset_left = -10.0
 offset_top = -30.0
 offset_right = 10.0

@@ -119,10 +119,8 @@ position = Vector2(992, 456)
 [node name="sign1" parent="." unique_id=431273787 instance=ExtResource("19_m0cql")]
 z_index = 1
 position = Vector2(368, 968)
-sign_text = "Skytree Village --->
-?????
-|
-v"
+sign_text = "Skytree Village - East
+Woodfish Lake - South"
 
 [node name="sign2" parent="." unique_id=573640038 instance=ExtResource("20_46umo")]
 z_index = 1
@@ -145,7 +143,7 @@ position = Vector2(320, 992)
 npc_name = "Amy the Adventurous"
 dialogue_text = "Well hi there! Always fun to see new faces in the forest :)
 
-Take care not to get lost though, it can be pretty easy to get caught up in the trees, especially just south of Skytree Village. The woods down there are as dense as any I've ever seen! I almost couldn't find a way back out myself.. 
+Take care not to get lost though, it can be pretty easy to get caught up in the trees, especially just south of Skytree Village. The woods down there are as dense as any I've ever seen! I almost couldn't find a way back out myself... 
 
 I did stumble upon a cool looking path towards the back of the woods, but there was a big tree in the way and I couldn't get through :/  I wonder what's back there..."
 wander_radius_blocks = 8.0
@@ -158,13 +156,13 @@ dialogue_text = "Welcome to Skytree! I'm one of the newest members of the Barkbr
 
 I've always wanted to join the guild when I was a kid, and I have all the stories I've heard about the forest to thank for that. 
 
-Take the trees right behind me for example.. They seem like they've grown in such a specific way right? 
+Take the trees right behind me for example... They seem like they've grown in such a specific way right? 
 
 Well.. To most that pass through, it's known and remembered as a shrine of sorts. A patch of trees and bushes that are as old as Skytree itself.. And that's all true, it's a place for us Barkbreakers to connect and look back on our history. And it's where every new Barkbreaker gets initiated! 
 
-But if you've been here for as long as I have.. The oldest of our guild say this little shrine of ours was more than just a symbol of our guild and our little village. There was something mystical about it long ago.. Legend has it our first Guild Master once walked into the shrine and across the entire forest in the blink of an eye!! 
+But if you've been here for as long as I have... The oldest of our guild say this little shrine of ours was more than just a symbol of our guild and our little village. There was something mystical about it long ago... Legend has it our first Guild Master once walked into the shrine and across the entire forest in the blink of an eye!! 
 
-A crazy thought, but one that still captivates me to this day.. 
+A crazy thought, but one that still captivates me to this day... 
 
 "
 wander_radius_blocks = 0.0
