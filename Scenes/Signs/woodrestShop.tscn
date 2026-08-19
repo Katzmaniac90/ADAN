@@ -25,6 +25,7 @@ shape = SubResource("RectangleShape2D_sd12v")
 
 [node name="Label" type="Label" parent="." unique_id=1750671623]
 visible = false
+z_index = 100
 texture_filter = 1
 offset_left = -7.0
 offset_top = -26.0

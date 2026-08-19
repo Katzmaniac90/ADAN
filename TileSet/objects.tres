@@ -310,6 +310,7 @@ texture = ExtResource("2_afubd")
 9:2/size_in_atlas = Vector2i(1, 2)
 9:2/0 = 0
 9:2/0/y_sort_origin = 8
+9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:2/0 = 0
 10:3/0 = 0
 11:2/size_in_atlas = Vector2i(1, 2)
