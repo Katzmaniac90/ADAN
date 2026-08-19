@@ -530,8 +530,13 @@ position = Vector2(136, 144)
 [node name="Journal" parent="." unique_id=1646254127 instance=ExtResource("5_sbfyk")]
 position = Vector2(88, 21)
 npc_name = "Dad's Journal"
-dialogue_text = "I'm going to include a brief back-story for the game here. Explain why we are here and what our goal is. 
+dialogue_text = "My son... I'll be away for while and I'm not sure when I'll return. I have something very important I have to complete somewhere very far away, in a place you are not yet familiar with... I hope to see you again someday, but for now, I have something I need your help with while I'm gone. I hope you're up for an adventure! 
 
-The overall goals will be achievements and collecting \"badges\" (or something else, whatever it is) and bringing them back here to put into a special case or something that we'll put within this house. 
+Some of our family's most treasured possessions have been stolen by an unknown group... each one hidden in separate secret locations all across the forest. I don't have much time to explain, but all may be revealed in time... If you're up for it, I'd like you to collect them and bring them back to the house where they belong. 
 
-I'll revisist this journal later! "
+This will not be an easy task... Aquiring these artifacts will not only require the unveiling of their physical locations, but also traversing the obstacles that will block your path. You'll need some skills [press K]... 
+
+You'll need to master the art of Barkbreaking, Rockpunching, Fishsnatching and Footworking in order to fully explore our world and all of its secrets. Only then, will you be able to complete this quest... There should be a tree, a rock and a pond just outside the house on the path to the southeast to get you started. Just a tiny taste to get a handle on the basics. And don't be afraid to ask for help along the way. The locals are good people, you can learn a lot from them. 
+
+There's so much more to learn... and not enough time for me to go over everything. You'll have to discover the rest on your own, but I know you can do it... I'm sure I'll see you again when the time is right. But until then... take care son...
+"
