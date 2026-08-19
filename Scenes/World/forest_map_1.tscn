@@ -113,9 +113,13 @@ dialogue_text = "Hey kid, welcome to the forest! There's a ton of stuff  to do h
 
 Take all these dang trees and bushes for example... Most of 'em aren't worth a darn thing unfortunately. They just sit around and look pretty... which aint a terrible thing I suppose, but it sure as hell don't help us break bigger bark or provide us with anything worth crafting! 
 
-You see this tree behind me though right? Looks a bit different than the rest, don't it? This is the kinda thing you want to look out for when your out in these woods. Chop that puppy down and you'll have something you can actually use! 
+You see the slighly weird looking trees though right? The ones that look a bit different than the rest? That is the kinda thing you want to look out for when your out in these woods. Chop those puppies down and you'll have something you can actually use! 
 
-There be all types of bark out there to break, so get choppin! And if you come across somethin a bit too tough, make a note and come back later. Aint no rush! "
+There be all types of bark out there to break, so get choppin! And if you come across somethin a bit too tough, make a note and come back later. Aint no rush! 
+
+I know it can be confusing for most newcomers, but if you need a bit of extra help, definitely check out the Barkbreakers Guild over in Skytree Village. The guild is chock full of info on breaking bark, the tools of our craft and so much more! 
+
+If yer lookin' to get to Skytree, take the road here ALL THE WAY east. Then take the road south and follow any signs you see from there. Good luck buddy! "
 
 [node name="npc2" parent="." unique_id=328006261 instance=ExtResource("24_min6c")]
 z_index = 1
