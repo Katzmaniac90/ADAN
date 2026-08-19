@@ -27,6 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://bg5bn4y4cp0bf" path="res://Scenes/NPCs/deer.tscn" id="15_lfkx7"]
 [ext_resource type="PackedScene" uid="uid://drggi6v8avcx3" path="res://Scenes/NPCs/fox.tscn" id="17_kf352"]
 [ext_resource type="PackedScene" uid="uid://df2jwhbixs64o" path="res://Scenes/NPCs/Forest1_NPC6.tscn" id="17_xgqn1"]
+[ext_resource type="PackedScene" uid="uid://1kdq0uoooqli" path="res://Scenes/NPCs/Forest1_NPC7.tscn" id="18_p0pab"]
 [ext_resource type="PackedScene" uid="uid://dgogndu07p8vk" path="res://Scenes/NPCs/Forest1_NPC1.tscn" id="23_jaerj"]
 [ext_resource type="PackedScene" uid="uid://ccimvymae6vd7" path="res://Scenes/NPCs/Forest1_NPC2.tscn" id="24_min6c"]
 [ext_resource type="PackedScene" uid="uid://d3w17myaps70v" path="res://Scenes/NPCs/Forest1_NPC3.tscn" id="25_xmhxr"]
@@ -185,6 +186,19 @@ Far away from here there's a MASSIVE body of water called Woodfish Lake, home of
 
 To get there you'll need to first take the main road here in Woodrest east, and then you'll follow that road south past Skytree Village. There should be a sign or two along the way as long as you don't stray too far from the path. Happy Snatching friend!"
 wander_radius_blocks = 0.0
+
+[node name="npc7" parent="." unique_id=286864222 instance=ExtResource("18_p0pab")]
+position = Vector2(518, 606)
+npc_name = "Otto the Oddly Optimistic"
+dialogue_text = "I'm so HAPPY that I finally traded for some new tools to gather these resources with! I was getting really tired of using my bare hands for literally everything... You start to lose hope after a while, you know what I mean? 
+
+I suppose some may say it's a tad disappointing to find out that new equipment doesn't let you gather higher level resources... Just need some more levels for that I guess! 
+
+BUT look at the bright side! What is nice is that I can now gather these resources so much faster now! AND the best part?! I can finally work on plucking the splinters, gravel and fish scales from my palms! Pretty neat! :D 
+
+The new gear is also really cool to look at too by pressing [T]. It's nice to have something to admire along the way! 
+
+How did I get these? I saved up some resources to trade for them at each of the Guilds across the forest! The requirements seem like they start out pretty simple, but you're gonna have to gather up some higher level stuff if you want the best of the best! "
 
 [node name="deer" parent="." unique_id=1139369764 instance=ExtResource("15_lfkx7")]
 position = Vector2(1096, 528)
