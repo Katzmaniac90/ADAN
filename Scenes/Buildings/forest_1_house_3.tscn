@@ -21,8 +21,6 @@ tile_map_data = PackedByteArray("AAALAAYABgAEAAQAAAAAAAYABgADAAQAAAABAAYABgABAAA
 tile_set = ExtResource("2_47e4k")
 
 [node name="Player" parent="." unique_id=226938582 instance=ExtResource("3_5pcx5")]
-z_index = 1
-y_sort_enabled = true
 position = Vector2(16, 96)
 
 [node name="PlayerSpawnPoints" type="Node" parent="." unique_id=1938350761]
@@ -42,6 +40,6 @@ dialogue_text = "Oh hey there bud! How's your time in ADAN been so far? Getting 
 
 Anyway! 
 
-Houses and other buildings like this can be super helpful! Always check every house you see. There's always something cool to find! Treasure, secrets, shops and other objects like us that you can talk to! Pretty cool, right?!"
+Houses and other buildings like this can be super helpful! Always check every house you see. There's always something cool to find! Treasure, secrets, shops and other people like us that you can talk to! Pretty cool, right?!"
 wander_radius_blocks = 0.0
 tile_size = 16.0
