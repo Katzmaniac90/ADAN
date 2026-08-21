@@ -345,7 +345,7 @@ position = Vector2(1040, 288)
 position = Vector2(880, 288)
 
 [node name="Tree6" parent="Resources/Trees/tree" unique_id=1529526573 groups=["Greenwood"] instance=ExtResource("12_cgwvv")]
-position = Vector2(1224, 192)
+position = Vector2(1224, 200)
 
 [node name="tree2" type="Node" parent="Resources/Trees" unique_id=719240975]
 
@@ -509,7 +509,7 @@ position = Vector2(992, 377)
 position = Vector2(1191, 1018)
 
 [node name="Spawn09" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=160804367 groups=["GreenwoodSpawn"]]
-position = Vector2(1224, 192)
+position = Vector2(1224, 200)
 
 [node name="Spawn10" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=1642570886 groups=["GreenwoodSpawn"]]
 position = Vector2(649, 1353)

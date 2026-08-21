@@ -255,6 +255,9 @@ func process_skill_xp(skill_name:String, xp_amount:int):
 
 			footwork_xp += xp_amount
 
+			# First Footwork XP achievement
+			AchievementManager.unlock_if_locked("FOOTWORK_1")
+	
 			while footwork_xp >= get_required_xp(footwork_level) and footwork_level < MAX_SKILL_LEVEL:
 
 				footwork_xp -= get_required_xp(footwork_level)
@@ -544,14 +547,6 @@ func trade_for_axe(axe_name: String) -> bool:
 		inventory[item_name] -= requirements[item_name]
 
 	current_axe = axe_name
-
-	# First axe achievement
-	if axe_name == "Wood Wrecker":
-		AchievementManager.unlock_if_locked("FIRST_AXE")
-
-	# Best axe achievement
-	if axe_name == "Barkbreaker":
-		AchievementManager.unlock_if_locked("ALL_AXES")
 
 	inventory_changed.emit()
 
