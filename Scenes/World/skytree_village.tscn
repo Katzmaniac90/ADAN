@@ -637,7 +637,7 @@ position = Vector2(274, 993)
 position = Vector2(481, 625)
 
 [node name="Spawn4" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=713831974 groups=["BloodstoneSpawn"]]
-position = Vector2(64, 761)
+position = Vector2(157, 773)
 
 [node name="Spawn5" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Bloodstone" unique_id=806124959 groups=["BloodstoneSpawn"]]
 position = Vector2(1074, 621)
