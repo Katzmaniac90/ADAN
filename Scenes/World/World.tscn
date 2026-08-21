@@ -63,7 +63,8 @@ z_index = 1
 position = Vector2(411, 346)
 sign_text = "[E] - Interact | [T] - Equipment
 [B] - Inventory | [K] - Skills
-[Y] - Achievements"
+[Y] - Achievements
+[Spacebar] - Sprint"
 
 [node name="sign2" parent="." unique_id=1852069965 instance=ExtResource("9_0phyg")]
 z_index = 1
@@ -84,6 +85,7 @@ dialogue_text = "Hello there! I'm the first NPC ever created! Wow... actually ki
 [B] - Bag / Inventory
 [K] - Skills Page
 [Y] - Achievements
+[Spacebar] - Sprint
 
 Now I know the sign over there tells you the same thing, but I mean come on... let's be honest... signs are dumb! They can't even move! Look at me, I can actually wander around like a REAL person!! 
 

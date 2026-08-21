@@ -5,11 +5,11 @@
 [ext_resource type="Script" uid="uid://b486xt56rg72o" path="res://Scenes/Scripts/skills_panel.gd" id="3_wh8m4"]
 [ext_resource type="Texture2D" uid="uid://c75h2wgdoc8di" path="res://rocks_and_stones/PNG/Objects_separately/Rock1_1.png" id="4_ardup"]
 [ext_resource type="Texture2D" uid="uid://dqxxsr30py8lu" path="res://Items/Weapons/sword.png" id="5_d7t7b"]
-[ext_resource type="Texture2D" uid="uid://bvvk1b1f6fts6" path="res://Scenes/World/running.png" id="6_lccpl"]
+[ext_resource type="Texture2D" uid="uid://n8dt02rsag10" path="res://Items/Fish/fsh.png" id="5_md356"]
+[ext_resource type="Texture2D" uid="uid://cmem3goluh0tg" path="res://Scenes/World/runn.png" id="7_md356"]
 [ext_resource type="Texture2D" uid="uid://kkiupyopba0o" path="res://Scenes/World/Creation.png" id="7_y5qpw"]
 [ext_resource type="Script" uid="uid://dp5ytejonv6bk" path="res://Scenes/Scripts/equipment_panel.gd" id="8_ardup"]
 [ext_resource type="Texture2D" uid="uid://hbnby33ljwu1" path="res://Scenes/World/growcraft-modified.png" id="8_caeob"]
-[ext_resource type="Texture2D" uid="uid://downni7fa8j0n" path="res://Scenes/World/fish-modified.png" id="9_cfpjy"]
 [ext_resource type="Texture2D" uid="uid://dvg332p32ekv5" path="res://Items/Axes/Hands.png" id="9_d7t7b"]
 [ext_resource type="Texture2D" uid="uid://dvm5l6ageepmd" path="res://Scenes/World/smelter-modified.png" id="10_cq0k0"]
 [ext_resource type="Script" uid="uid://bxe4faow6o12k" path="res://Scenes/Scripts/bag_panel.gd" id="11_y5qpw"]
@@ -215,13 +215,13 @@ vertical_alignment = 1
 [node name="FishIcon" type="TextureRect" parent="SkillsPanel/Fishsnatching" unique_id=993352819]
 custom_minimum_size = Vector2(20, 20)
 layout_mode = 0
-offset_left = 33.0
-offset_top = 29.0
-offset_right = 155.5
-offset_bottom = 146.5
+offset_left = 10.0
+offset_top = 38.0
+offset_right = 215.0
+offset_bottom = 135.5
 scale = Vector2(0.4, 0.4)
 tooltip_text = "Fishsnatching"
-texture = ExtResource("9_cfpjy")
+texture = ExtResource("5_md356")
 expand_mode = 1
 
 [node name="XPLabel" type="Label" parent="SkillsPanel/Fishsnatching" unique_id=1451934851]
@@ -307,13 +307,13 @@ anchor_left = 0.009433962
 anchor_top = 0.009009009
 anchor_right = 0.009433962
 anchor_bottom = 0.009009009
-offset_left = 24.0
-offset_top = 27.0
-offset_right = 124.0
-offset_bottom = 127.0
+offset_left = 14.0
+offset_top = 19.0
+offset_right = 162.0
+offset_bottom = 161.0
 scale = Vector2(0.5, 0.5)
 tooltip_text = "Footwork"
-texture = ExtResource("6_lccpl")
+texture = ExtResource("7_md356")
 expand_mode = 1
 
 [node name="XPLabel" type="Label" parent="SkillsPanel/Footwork" unique_id=1368240177]

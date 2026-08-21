@@ -49,25 +49,6 @@ var achievements = {
 	},
 
 
-
-	#=================================================
-	# AXES
-	#=================================================
-
-	"FIRST_AXE": {
-		"name": "First Tool",
-		"description": "Craft your first axe",
-		"unlocked": false
-	},
-
-	"ALL_AXES": {
-		"name": "Axe Collector",
-		"description": "Craft all four axes",
-		"unlocked": false
-	},
-
-
-
 	#=================================================
 	# ROCKPUNCHING
 	#=================================================
