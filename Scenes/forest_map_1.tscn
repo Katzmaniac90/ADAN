@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://douv21w04siip"]
+[gd_scene format=4 uid="uid://cigrvl7ul4vhs"]
 
 [ext_resource type="PackedScene" uid="uid://bqtkrfptg4qyj" path="res://Scenes/Players/player.tscn" id="1_df3cc"]
 [ext_resource type="Script" uid="uid://r3vihfperocf" path="res://Scenes/World/forest_map_1.gd" id="1_g55e4"]
