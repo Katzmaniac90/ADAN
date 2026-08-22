@@ -39,46 +39,7 @@ func spawn_greenwood():
 		min(active_greenwood.size(), available_points.size())
 	)
 
-	#=================================================
-	# GUARANTEED BARRY TREE
-	#=================================================
-
-	var barry_spawn = null
-
-	for point in available_points:
-
-		if point.name == "BarryTreeSpawn":
-
-			barry_spawn = point
-			break
-
-
-	if barry_spawn != null and amount_to_spawn > 0:
-
-		var barry_tree = active_greenwood[0]
-
-		barry_tree.global_position = barry_spawn.global_position
-		barry_tree.show()
-
-		available_points.erase(barry_spawn)
-
-		print(
-			"🌳 ",
-			barry_tree.name,
-			" guaranteed at Barry's spawn"
-		)
-
-		amount_to_spawn -= 1
-
-
-	#=================================================
-	# RANDOM TREE SPAWNING
-	#=================================================
-
 	for i in range(amount_to_spawn):
-
-		if available_points.is_empty():
-			break
 
 		var random_index = randi_range(
 			0,
@@ -89,7 +50,7 @@ func spawn_greenwood():
 
 		available_points.remove_at(random_index)
 
-		var tree = active_greenwood[i + 1]
+		var tree = active_greenwood[i]
 
 		tree.global_position = spawn_point.global_position
 		tree.show()
