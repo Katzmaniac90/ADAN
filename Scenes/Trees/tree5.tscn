@@ -6,7 +6,7 @@
 [ext_resource type="Material" uid="uid://dbd0kn8eg18jl" path="res://Scenes/Trees/particle_process_trees.tres" id="4_0npkh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wla72"]
-size = Vector2(32, 27)
+size = Vector2(32, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22gus"]
 size = Vector2(36, 39)
@@ -47,7 +47,7 @@ scale = Vector2(1.1421876, 1.2359375)
 texture = ExtResource("2_5285b")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1141913667]
-position = Vector2(-1, 22.5)
+position = Vector2(-1, 20.5)
 shape = SubResource("RectangleShape2D_wla72")
 debug_color = Color(0.34128827, 0.5011388, 0.9447065, 0.5254902)
 
@@ -63,7 +63,7 @@ process_material = ExtResource("4_0npkh")
 [node name="Area2D" type="Area2D" parent="." unique_id=860053328]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=552153863]
-position = Vector2(-1, 19)
+position = Vector2(-1, 14.5)
 shape = SubResource("RectangleShape2D_22gus")
 
 [node name="InteractionLabel" type="Label" parent="." unique_id=278786865]

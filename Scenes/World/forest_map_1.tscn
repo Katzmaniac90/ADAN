@@ -333,7 +333,7 @@ position = Vector2(600, 584)
 [node name="tree" type="Node" parent="Resources/Trees" unique_id=638692912]
 
 [node name="Tree" parent="Resources/Trees/tree" unique_id=2000084765 groups=["Greenwood"] instance=ExtResource("9_gi1og")]
-position = Vector2(394, 106)
+position = Vector2(392, 104)
 
 [node name="Tree2" parent="Resources/Trees/tree" unique_id=78567847 groups=["Greenwood"] instance=ExtResource("9_gi1og")]
 position = Vector2(896, 73)
@@ -493,8 +493,8 @@ position = Vector2(1170, 645)
 
 [node name="Greenwood" type="Node2D" parent="ResourceSpawnPoints/Trees" unique_id=146367630]
 
-[node name="BarryTreeSpawn" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=778608889 groups=["GreenwoodSpawn"]]
-position = Vector2(394, 106)
+[node name="Spawn01" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=778608889 groups=["GreenwoodSpawn"]]
+position = Vector2(387, 102)
 
 [node name="Spawn02" type="Marker2D" parent="ResourceSpawnPoints/Trees/Greenwood" unique_id=694010332 groups=["GreenwoodSpawn"]]
 position = Vector2(172, 277)
@@ -631,7 +631,7 @@ position = Vector2(796, 96)
 [node name="Spawn9" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=2042290630 groups=["GraniteSpawn"]]
 position = Vector2(444, 115)
 
-[node name="RhondaRockSpawn" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=548452375 groups=["GraniteSpawn"]]
+[node name="Spawn10" type="Marker2D" parent="ResourceSpawnPoints/Rocks/Granite" unique_id=548452375 groups=["GraniteSpawn"]]
 position = Vector2(401, 384)
 
 [node name="Bloodstone" type="Node2D" parent="ResourceSpawnPoints/Rocks" unique_id=1644882128]

@@ -133,7 +133,6 @@ func spawn_resource(resource_type: String):
 	var resources = active_resources[resource_type]
 
 	var available_points = spawn_points.duplicate()
-	var resources_to_spawn = resources.duplicate()
 
 
 	var amount_to_spawn = min(
@@ -145,109 +144,21 @@ func spawn_resource(resource_type: String):
 	)
 
 
-	#=================================================
-	# GUARANTEED NPC RESOURCES
-	#=================================================
-
-	#-------------------------------------------------
-	# BARRY'S TREE
-	#-------------------------------------------------
-
-	if resource_type == "Greenwood":
-
-		var barry_spawn = null
-
-		for point in available_points:
-
-			if point.name == "BarryTreeSpawn":
-
-				barry_spawn = point
-				break
-
-
-		if barry_spawn != null and amount_to_spawn > 0:
-
-			var barry_tree = resources_to_spawn[0]
-
-			barry_tree.global_position = barry_spawn.global_position
-			barry_tree.show()
-
-			available_points.erase(barry_spawn)
-			resources_to_spawn.erase(barry_tree)
-
-			amount_to_spawn -= 1
-
-			print(
-				"🌳 Barry's tree guaranteed at ",
-				barry_spawn.name
-			)
-
-
-	#-------------------------------------------------
-	# RHONDA'S GRANITE
-	#-------------------------------------------------
-
-	if resource_type == "Granite":
-
-		var rhonda_spawn = null
-
-		for point in available_points:
-
-			if point.name == "RhondaRockSpawn":
-
-				rhonda_spawn = point
-				break
-
-
-		if rhonda_spawn != null and amount_to_spawn > 0:
-
-			var rhonda_rock = resources_to_spawn[0]
-
-			rhonda_rock.global_position = rhonda_spawn.global_position
-			rhonda_rock.show()
-
-			available_points.erase(rhonda_spawn)
-			resources_to_spawn.erase(rhonda_rock)
-
-			amount_to_spawn -= 1
-
-			print(
-				"🪨 Rhonda's rock guaranteed at ",
-				rhonda_spawn.name
-			)
-
-
-	#=================================================
-	# RANDOM SPAWNING
-	#=================================================
-
 	for i in range(amount_to_spawn):
 
-		if available_points.is_empty():
-			break
-
-		if resources_to_spawn.is_empty():
-			break
-
-
-		var random_point_index = randi_range(
+		var random_index = randi_range(
 			0,
 			available_points.size() - 1
 		)
 
-		var spawn_point = available_points[random_point_index]
+		var spawn_point = available_points[random_index]
 
-		available_points.remove_at(random_point_index)
+		available_points.remove_at(random_index)
 
-
-		var resource = resources_to_spawn[0]
-
-		resources_to_spawn.remove_at(0)
-
+		var resource = resources[i]
 
 		resource.global_position = spawn_point.global_position
 		resource.show()
-
 
 		print(
 			"🌱 ",
