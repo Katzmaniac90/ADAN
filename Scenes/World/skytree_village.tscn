@@ -449,7 +449,7 @@ position = Vector2(433, 325)
 [node name="rock5" type="Node" parent="Resources/Rocks" unique_id=859601790]
 
 [node name="Rock" parent="Resources/Rocks/rock5" unique_id=1297096397 groups=["Tidestone"] instance=ExtResource("34_ncp7b")]
-position = Vector2(1205, 952)
+position = Vector2(1207, 952)
 
 [node name="Bubbles" type="Node" parent="Resources" unique_id=1094737314]
 
